@@ -163,6 +163,7 @@ $finder
 	->ignoreVCS(true)
 	->name('*.php')
 	->in(WP_CLI_ROOT . '/php')
+	->in(WP_CLI_BUNDLE_ROOT . '/php')
 	->in(WP_CLI_VENDOR_DIR . '/mustache')
 	->in(WP_CLI_VENDOR_DIR . '/rmccue/requests')
 	->in(WP_CLI_VENDOR_DIR . '/composer')
@@ -191,9 +192,6 @@ if ( 'cli' === BUILD ) {
 } else {
 	$finder
 		->in(WP_CLI_VENDOR_DIR . '/wp-cli')
-		->in(WP_CLI_VENDOR_DIR . '/wp-cli/wp-cli-tests/features/bootstrap') // These are required for scaffold-package-command.
-		->in(WP_CLI_VENDOR_DIR . '/wp-cli/wp-cli-tests/features/steps')
-		->in(WP_CLI_VENDOR_DIR . '/wp-cli/wp-cli-tests/features/extra')
 		->in(WP_CLI_VENDOR_DIR . '/nb/oxymel')
 		->in(WP_CLI_VENDOR_DIR . '/psr')
 		->in(WP_CLI_VENDOR_DIR . '/seld')
@@ -291,7 +289,7 @@ add_file( $phar, WP_CLI_VENDOR_DIR . '/rmccue/requests/library/Requests/Transpor
 set_file_contents( $phar, WP_CLI_ROOT . '/COMPOSER_VERSIONS', get_composer_versions( $current_version ) );
 set_file_contents( $phar, WP_CLI_ROOT . '/VERSION', $current_version );
 
-$phar_boot = str_replace( WP_CLI_BASE_PATH, '', WP_CLI_ROOT . '/php/boot-phar.php' );
+$phar_boot = str_replace( WP_CLI_BASE_PATH, '', WP_CLI_BUNDLE_ROOT . '/php/boot-phar.php' );
 $phar->setStub( <<<EOB
 #!/usr/bin/env php
 <?php
