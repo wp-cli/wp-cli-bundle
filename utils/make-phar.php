@@ -1,17 +1,20 @@
 <?php
 
-define( 'WP_CLI_ROOT', dirname( dirname( __FILE__ ) ) );
+define( 'WP_CLI_BUNDLE_ROOT', dirname( dirname( __FILE__ ) ) );
 
-if ( file_exists( WP_CLI_ROOT . '/vendor/autoload.php' ) ) {
-	define( 'WP_CLI_BASE_PATH', WP_CLI_ROOT );
-	define( 'WP_CLI_VENDOR_DIR' , WP_CLI_ROOT . '/vendor' );
-} elseif ( file_exists( dirname( dirname( WP_CLI_ROOT ) ) . '/autoload.php' ) ) {
-	define( 'WP_CLI_BASE_PATH', dirname( dirname( dirname( WP_CLI_ROOT ) ) ) );
-	define( 'WP_CLI_VENDOR_DIR' , dirname( dirname( WP_CLI_ROOT ) ) );
+if ( file_exists( WP_CLI_BUNDLE_ROOT . '/vendor/autoload.php' ) ) {
+	define( 'WP_CLI_BASE_PATH', WP_CLI_BUNDLE_ROOT );
+	define( 'WP_CLI_VENDOR_DIR' , WP_CLI_BUNDLE_ROOT . '/vendor' );
+} elseif ( file_exists( dirname( dirname( WP_CLI_BUNDLE_ROOT ) ) . '/autoload.php' ) ) {
+	define( 'WP_CLI_BASE_PATH', dirname( dirname( dirname( WP_CLI_BUNDLE_ROOT ) ) ) );
+	define( 'WP_CLI_VENDOR_DIR' , dirname( dirname( WP_CLI_BUNDLE_ROOT ) ) );
 } else {
 	fwrite( STDERR, 'Missing vendor/autoload.php' . PHP_EOL );
 	exit(1);
 }
+
+define( 'WP_CLI_ROOT', WP_CLI_VENDOR_DIR . '/wp-cli/wp-cli' );
+
 require WP_CLI_VENDOR_DIR . '/autoload.php';
 require WP_CLI_ROOT . '/php/utils.php';
 
@@ -19,7 +22,7 @@ use Symfony\Component\Finder\Finder;
 use WP_CLI\Utils;
 use WP_CLI\Configurator;
 
-$configurator = new Configurator( WP_CLI_ROOT . '/utils/make-phar-spec.php' );
+$configurator = new Configurator( WP_CLI_BUNDLE_ROOT . '/utils/make-phar-spec.php' );
 
 list( $args, $assoc_args, $runtime_config ) = $configurator->parse_args( array_slice( $GLOBALS['argv'], 1 ) );
 
@@ -100,7 +103,7 @@ function set_file_contents( $phar, $path, $content ) {
 }
 
 function get_composer_versions( $current_version ) {
-	$composer_lock_path = WP_CLI_ROOT . '/composer.lock';
+	$composer_lock_path = WP_CLI_BUNDLE_ROOT . '/composer.lock';
 	if ( ! ( $get_composer_lock = file_get_contents( $composer_lock_path ) ) || ! ( $composer_lock = json_decode( $get_composer_lock, true ) ) ) {
 		fwrite( STDERR, sprintf( "Warning: Failed to read '%s'." . PHP_EOL, $composer_lock_path ) );
 		return '';
@@ -160,6 +163,7 @@ $finder
 	->ignoreVCS(true)
 	->name('*.php')
 	->in(WP_CLI_ROOT . '/php')
+	->in(WP_CLI_BUNDLE_ROOT . '/php')
 	->in(WP_CLI_VENDOR_DIR . '/mustache')
 	->in(WP_CLI_VENDOR_DIR . '/rmccue/requests')
 	->in(WP_CLI_VENDOR_DIR . '/composer')
@@ -188,9 +192,6 @@ if ( 'cli' === BUILD ) {
 } else {
 	$finder
 		->in(WP_CLI_VENDOR_DIR . '/wp-cli')
-		->in(WP_CLI_ROOT . '/features/bootstrap') // These are required for scaffold-package-command.
-		->in(WP_CLI_ROOT . '/features/steps')
-		->in(WP_CLI_ROOT . '/features/extra')
 		->in(WP_CLI_VENDOR_DIR . '/nb/oxymel')
 		->in(WP_CLI_VENDOR_DIR . '/psr')
 		->in(WP_CLI_VENDOR_DIR . '/seld')
@@ -232,7 +233,7 @@ foreach ( $finder as $file ) {
 
 if ( 'cli' !== BUILD ) {
 	// Include base project files, because the autoloader will load them
-	if ( WP_CLI_BASE_PATH !== WP_CLI_ROOT ) {
+	if ( WP_CLI_BASE_PATH !== WP_CLI_BUNDLE_ROOT ) {
 		$finder = new Finder();
 		$finder
 			->files()
@@ -273,35 +274,13 @@ if ( 'cli' !== BUILD ) {
 	foreach ( $finder as $file ) {
 		add_file( $phar, $file );
 	}
-	
-	$finder = new Finder();
-	$finder
-		->files()
-		->ignoreVCS(true)
-		->ignoreDotFiles(false)
-		->in( WP_CLI_VENDOR_DIR . '/wp-cli/extension-command/templates')
-		;
-	foreach ( $finder as $file ) {
-		add_file( $phar, $file );
-	}
-	
-	$finder = new Finder();
-	$finder
-		->files()
-		->ignoreVCS(true)
-		->ignoreDotFiles(false)
-		->in( WP_CLI_VENDOR_DIR . '/wp-cli/core-command/templates')
-		;
-	foreach ( $finder as $file ) {
-		add_file( $phar, $file );
-	}
 }
 
 add_file( $phar, WP_CLI_VENDOR_DIR . '/autoload.php' );
 add_file( $phar, WP_CLI_VENDOR_DIR . '/autoload_commands.php' );
 add_file( $phar, WP_CLI_VENDOR_DIR . '/autoload_framework.php' );
 if ( 'cli' !== BUILD ) {
-	add_file( $phar, WP_CLI_ROOT . '/ci/behat-tags.php' );
+	add_file( $phar, WP_CLI_BUNDLE_ROOT . '/ci/behat-tags.php' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/LICENSE' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/res/composer-schema.json' );
 }
@@ -310,7 +289,7 @@ add_file( $phar, WP_CLI_VENDOR_DIR . '/rmccue/requests/library/Requests/Transpor
 set_file_contents( $phar, WP_CLI_ROOT . '/COMPOSER_VERSIONS', get_composer_versions( $current_version ) );
 set_file_contents( $phar, WP_CLI_ROOT . '/VERSION', $current_version );
 
-$phar_boot = str_replace( WP_CLI_BASE_PATH, '', WP_CLI_ROOT . '/php/boot-phar.php' );
+$phar_boot = str_replace( WP_CLI_BASE_PATH, '', WP_CLI_BUNDLE_ROOT . '/php/boot-phar.php' );
 $phar->setStub( <<<EOB
 #!/usr/bin/env php
 <?php
