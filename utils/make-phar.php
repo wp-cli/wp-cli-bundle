@@ -170,6 +170,7 @@ $finder
 	->in(WP_CLI_VENDOR_DIR . '/ramsey/array_column')
 	->in(WP_CLI_VENDOR_DIR . '/symfony/finder')
 	->in(WP_CLI_VENDOR_DIR . '/symfony/polyfill-mbstring')
+	->in(WP_CLI_VENDOR_DIR . '/symfony/process')
 	->notName('behat-tags.php')
 	->notPath('#(?:[^/]+-command|php-cli-tools)/vendor/#') // For running locally, in case have composer installed or symlinked them.
 	->exclude('examples')
@@ -197,7 +198,6 @@ if ( 'cli' === BUILD ) {
 		->in(WP_CLI_VENDOR_DIR . '/seld')
 		->in(WP_CLI_VENDOR_DIR . '/symfony/console')
 		->in(WP_CLI_VENDOR_DIR . '/symfony/filesystem')
-		->in(WP_CLI_VENDOR_DIR . '/symfony/process')
 		->in(WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema')
 		->exclude('demo')
 		->exclude('nb/oxymel/OxymelTest.php')
@@ -278,7 +278,6 @@ if ( 'cli' !== BUILD ) {
 
 add_file( $phar, WP_CLI_VENDOR_DIR . '/autoload.php' );
 if ( 'cli' !== BUILD ) {
-	add_file( $phar, WP_CLI_BUNDLE_ROOT . '/ci/behat-tags.php' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/LICENSE' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/res/composer-schema.json' );
 }
