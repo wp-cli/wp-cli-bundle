@@ -46,7 +46,7 @@
         "wp-cli/shell-command": "^1.0",
         "wp-cli/super-admin-command": "^1.0",
         "wp-cli/widget-command": "^1.0",
-        "wp-cli/wp-cli": "dev-4748-split-off-bundle"
+        "wp-cli/wp-cli": "dev-master"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
