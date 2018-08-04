@@ -1,6 +1,6 @@
 <?php
 
-define( 'WP_CLI_BUNDLE_ROOT', dirname( dirname( __FILE__ ) ) );
+define( 'WP_CLI_BUNDLE_ROOT', rtrim( dirname( dirname( __FILE__ ) ), '/' ) );
 
 if ( file_exists( WP_CLI_BUNDLE_ROOT . '/vendor/autoload.php' ) ) {
 	define( 'WP_CLI_BASE_PATH', WP_CLI_BUNDLE_ROOT );
@@ -13,7 +13,7 @@ if ( file_exists( WP_CLI_BUNDLE_ROOT . '/vendor/autoload.php' ) ) {
 	exit(1);
 }
 
-define( 'WP_CLI_ROOT', WP_CLI_VENDOR_DIR . '/wp-cli/wp-cli' );
+define( 'WP_CLI_ROOT', rtrim( WP_CLI_VENDOR_DIR, '/' ) . '/wp-cli/wp-cli' );
 
 require WP_CLI_VENDOR_DIR . '/autoload.php';
 require WP_CLI_ROOT . '/php/utils.php';
@@ -233,7 +233,7 @@ foreach ( $finder as $file ) {
 
 if ( 'cli' !== BUILD ) {
 	// Include base project files, because the autoloader will load them
-	if ( WP_CLI_BASE_PATH !== WP_CLI_BUNDLE_ROOT ) {
+	if ( WP_CLI_BASE_PATH !== WP_CLI_BUNDLE_ROOT && is_dir( WP_CLI_BASE_PATH . '/src' ) ) {
 		$finder = new Finder();
 		$finder
 			->files()
@@ -287,6 +287,7 @@ set_file_contents( $phar, WP_CLI_ROOT . '/COMPOSER_VERSIONS', get_composer_versi
 set_file_contents( $phar, WP_CLI_ROOT . '/VERSION', $current_version );
 
 $phar_boot = str_replace( WP_CLI_BASE_PATH, '', WP_CLI_BUNDLE_ROOT . '/php/boot-phar.php' );
+$phar_boot = '/' . ltrim( $phar_boot, '/' );
 $phar->setStub( <<<EOB
 #!/usr/bin/env php
 <?php
@@ -302,5 +303,5 @@ $phar->stopBuffering();
 chmod( DEST_PATH, 0755 ); // Make executable.
 
 if ( ! BE_QUIET ) {
-	echo "Generated " . DEST_PATH . PHP_EOL;
+	echo 'Generated ' . DEST_PATH . PHP_EOL;
 }
