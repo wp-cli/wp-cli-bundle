@@ -7,20 +7,6 @@
     ],
     "homepage": "https://wp-cli.org",
     "license": "MIT",
-    "support": {
-        "issues": "https://github.com/wp-cli/wp-cli-bundle/issues",
-        "source": "https://github.com/wp-cli/wp-cli-bundle",
-        "docs": "https://make.wordpress.org/cli/handbook/"
-    },
-    "config": {
-        "platform": {
-            "php": "5.4"
-        },
-        "process-timeout": 7200,
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=5.4",
         "wp-cli/cache-command": "^1.0",
@@ -52,35 +38,49 @@
         "roave/security-advisories": "dev-master",
         "wp-cli/wp-cli-tests": "^0"
     },
+    "suggest": {
+        "psy/psysh": "Enhanced `wp shell` functionality"
+    },
+    "config": {
+        "platform": {
+            "php": "5.4"
+        },
+        "process-timeout": 7200,
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    },
     "repositories": [
         {
             "type": "path",
             "url": "../wp-cli-refactor"
         }
     ],
-    "suggest": {
-        "psy/psysh": "Enhanced `wp shell` functionality"
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "post-install-cmd": [
             "./utils/git-setup-pre-commit-hook"
         ],
+        "behat": "run-behat-tests",
         "lint": "run-linter-tests",
         "phpcs": "run-phpcs-tests",
         "phpunit": "run-php-unit-tests",
-        "behat": "run-behat-tests",
+        "placeholder": "value",
         "prepare-tests": "install-package-tests",
         "test": [
             "@lint",
             "@phpcs",
             "@phpunit",
             "@behat"
-        ],
-        "placeholder": "value"
+        ]
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0.x-dev"
-        }
+    "support": {
+        "issues": "https://github.com/wp-cli/wp-cli-bundle/issues",
+        "source": "https://github.com/wp-cli/wp-cli-bundle",
+        "docs": "https://make.wordpress.org/cli/handbook/"
     }
 }
