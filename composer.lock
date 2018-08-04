@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca027bfb7742f5d828c91ad53bb8a7e1",
+    "content-hash": "59e4d7c806be4720fe1731b6058396fb",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2664,12 +2664,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "96c46cc2ab6c695ea005eec2d1865c0d46d88cf3"
+                "reference": "037cbf10044c7f19df8dd7922c2222a2c1a37032"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/96c46cc2ab6c695ea005eec2d1865c0d46d88cf3",
-                "reference": "96c46cc2ab6c695ea005eec2d1865c0d46d88cf3",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/037cbf10044c7f19df8dd7922c2222a2c1a37032",
+                "reference": "037cbf10044c7f19df8dd7922c2222a2c1a37032",
                 "shasum": ""
             },
             "require": {
@@ -2714,7 +2714,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-08-03T20:38:09+00:00"
+            "time": "2018-08-04T09:05:31+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -4605,16 +4605,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "3f67cd14f9c7bbb11999d887703ce08872b25449"
+                "reference": "90f71595d52bf20301961201e9d39bb190d5ddab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/3f67cd14f9c7bbb11999d887703ce08872b25449",
-                "reference": "3f67cd14f9c7bbb11999d887703ce08872b25449",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/90f71595d52bf20301961201e9d39bb190d5ddab",
+                "reference": "90f71595d52bf20301961201e9d39bb190d5ddab",
                 "shasum": ""
             },
             "require": {
@@ -4632,8 +4632,8 @@
                 "wp-coding-standards/wpcs": "^1"
             },
             "require-dev": {
-                "wp-cli/regenerate-readme": "dev-master",
-                "wp-cli/wp-cli": "dev-4748-split-off-bundle"
+                "wp-cli/regenerate-readme": "^0",
+                "wp-cli/wp-cli": "^2"
             },
             "bin": [
                 "bin/run-linter-tests",
@@ -4666,7 +4666,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-08-03T21:05:05+00:00"
+            "time": "2018-08-04T07:47:19+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -4715,9 +4715,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
-        "roave/security-advisories": 20,
-        "wp-cli/wp-cli-tests": 20
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

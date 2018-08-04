@@ -46,11 +46,11 @@
         "wp-cli/shell-command": "^1.0",
         "wp-cli/super-admin-command": "^1.0",
         "wp-cli/widget-command": "^1.0",
-        "wp-cli/wp-cli": "dev-master"
+        "wp-cli/wp-cli": "^2"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
-        "wp-cli/wp-cli-tests": "dev-master"
+        "wp-cli/wp-cli-tests": "^0"
     },
     "repositories": [
         {
@@ -75,7 +75,8 @@
             "@phpcs",
             "@phpunit",
             "@behat"
-        ]
+        ],
+        "placeholder": "value"
     },
     "extra": {
         "branch-alias": {
