@@ -69,14 +69,14 @@ function add_file( $phar, $path ) {
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?!finder|polyfill-mbstring)[^\/]+\/',
+					'\/symfony\/(?!finder|polyfill-mbstring|process)\'',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
 				);
 			} else {
 				$strips = array(
 					'\/(?:behat|gherkin)\/src\/',
 					'\/phpunit\/',
-					'\/symfony\/(?!console|filesystem|finder|polyfill-mbstring|process)[^\/]+\/',
+					'\/symfony\/(?!console|filesystem|finder|polyfill-mbstring|process)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
@@ -169,6 +169,7 @@ $finder
 	->in(WP_CLI_VENDOR_DIR . '/composer')
 	->in(WP_CLI_VENDOR_DIR . '/ramsey/array_column')
 	->in(WP_CLI_VENDOR_DIR . '/symfony/finder')
+	->in(WP_CLI_VENDOR_DIR . '/symfony/polyfill-ctype')
 	->in(WP_CLI_VENDOR_DIR . '/symfony/polyfill-mbstring')
 	->in(WP_CLI_VENDOR_DIR . '/symfony/process')
 	->notName('behat-tags.php')
