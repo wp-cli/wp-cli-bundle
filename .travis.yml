@@ -12,6 +12,7 @@ notifications:
 branches:
   only:
     - master
+    - /^release-.+$/
 
 cache:
   directories:
@@ -20,7 +21,7 @@ cache:
 env:
   global:
     - PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
-    - WP_CLI_BIN_DIR="$TRAVIS_BUILD_DIR/vendor/bin"
+    - WP_CLI_BIN_DIR=/tmp/wp-cli-phar
 
 before_install:
   - |
@@ -37,6 +38,7 @@ before_install:
 
 install:
   - composer install
+  - ./ci/prepare.sh
   - composer prepare-tests
 
 script:
@@ -72,3 +74,6 @@ jobs:
       php: 5.4
       dist: precise
       env: WP_VERSION=latest
+    - stage: deploy
+      env: DEPLOY_BRANCH=master
+      script: ./ci/deploy.sh
