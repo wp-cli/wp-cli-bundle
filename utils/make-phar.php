@@ -226,6 +226,7 @@ $finder
 	->ignoreVCS(true)
 	->ignoreDotFiles(false)
 	->in( WP_CLI_ROOT . '/templates')
+	->in( WP_CLI_VENDOR_DIR . '/wp-cli/*-command/templates' )
 	;
 
 foreach ( $finder as $file ) {
@@ -252,28 +253,6 @@ if ( 'cli' !== BUILD ) {
 		foreach ( glob( WP_CLI_BASE_PATH . '/*.php' ) as $file ) {
 			add_file( $phar, $file );
 		}
-	}
-
-	$finder = new Finder();
-	$finder
-		->files()
-		->ignoreVCS(true)
-		->ignoreDotFiles(false)
-		->in( WP_CLI_VENDOR_DIR . '/wp-cli/config-command/templates')
-		;
-	foreach ( $finder as $file ) {
-		add_file( $phar, $file );
-	}
-
-	$finder = new Finder();
-	$finder
-		->files()
-		->ignoreVCS(true)
-		->ignoreDotFiles(false)
-		->in( WP_CLI_VENDOR_DIR . '/wp-cli/scaffold-command/templates')
-		;
-	foreach ( $finder as $file ) {
-		add_file( $phar, $file );
 	}
 }
 
