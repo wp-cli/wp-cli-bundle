@@ -41,7 +41,7 @@ git config push.default "current"
 if [[ "$TRAVIS_BRANCH" == "release-"* ]]; then
 	fname="phar/wp-cli-release.phar"
 else
-	fname="phar/wp-cli-v2-nightly.phar"
+	fname="phar/wp-cli-nightly.phar"
 fi
 
 mv /tmp/wp-cli-phar/wp $fname
