@@ -15,7 +15,7 @@ fi
 
 composer install --no-interaction --prefer-source
 
-CLI_VERSION=$(head -n 1 VERSION)
+CLI_VERSION=$(head -n 1 vendor/wp-cli/wp-cli/VERSION)
 if [[ $CLI_VERSION == *"-alpha"* ]]
 then
 	GIT_HASH=$(git rev-parse HEAD)
