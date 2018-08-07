@@ -20,6 +20,7 @@
         "wp-cli/eval-command": "^2",
         "wp-cli/export-command": "^2",
         "wp-cli/extension-command": "^2",
+        "wp-cli/i18n-command": "^2",
         "wp-cli/import-command": "^2",
         "wp-cli/language-command": "^2",
         "wp-cli/media-command": "^2",
