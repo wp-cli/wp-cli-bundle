@@ -2398,20 +2398,21 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "fc590ec3c48fac99f36bde526f99090893ccde3b"
+                "reference": "d6637f39d9e1eeb9c93c5fb108c4f6e3cd9de2cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/fc590ec3c48fac99f36bde526f99090893ccde3b",
-                "reference": "fc590ec3c48fac99f36bde526f99090893ccde3b",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/d6637f39d9e1eeb9c93c5fb108c4f6e3cd9de2cf",
+                "reference": "d6637f39d9e1eeb9c93c5fb108c4f6e3cd9de2cf",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": ">=1.2.0 <1.7.0 || ^1.7.1",
+                "ext-json": "*",
                 "wp-cli/wp-cli": "^2"
             },
             "require-dev": {
@@ -2454,7 +2455,7 @@
             ],
             "description": "Lists, installs, and removes WP-CLI packages.",
             "homepage": "https://github.com/wp-cli/package-command",
-            "time": "2018-08-06T13:28:35+00:00"
+            "time": "2018-08-07T09:46:57+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2976,12 +2977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "ecb9ed7e63475aeb00b317013a2b9c48c1a4c8ab"
+                "reference": "a5b101b9c38ecdef1d9c548e2fca8d3ab8574d96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/ecb9ed7e63475aeb00b317013a2b9c48c1a4c8ab",
-                "reference": "ecb9ed7e63475aeb00b317013a2b9c48c1a4c8ab",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/a5b101b9c38ecdef1d9c548e2fca8d3ab8574d96",
+                "reference": "a5b101b9c38ecdef1d9c548e2fca8d3ab8574d96",
                 "shasum": ""
             },
             "require": {
@@ -3026,7 +3027,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-08-05T15:46:45+00:00"
+            "time": "2018-08-07T11:19:18+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
