@@ -54,6 +54,11 @@
             "dev-master": "2.0.x-dev"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "WP_CLI\\Maintenance\\": "utils/maintenance"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
