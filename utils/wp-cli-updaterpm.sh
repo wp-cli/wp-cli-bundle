@@ -6,7 +6,7 @@
 # DATE          :2017-07-12
 # AUTHOR        :Viktor Szépe <viktor@szepe.net>
 # LICENSE       :The MIT License (MIT)
-# URL           :https://github.com/wp-cli/wp-cli/tree/master/utils
+# URL           :https://github.com/wp-cli/wp-cli-bundle/tree/master/utils
 # BASH-VERSION  :4.2+
 # DEPENDS       :apt-get install rpm rpmlint php-cli
 
@@ -96,7 +96,7 @@ elif ([ $(type -P "rpm2cpio") ] && [ $(type -P "cpio") ]); then
 
 	if [ -f "usr/bin/wp" ] ; then
 		echo "RPM test succeeded"
-	else 
+	else
 		echo "RPM test failed"
 	fi
 	rm -rfv ../rpm-test-$$
