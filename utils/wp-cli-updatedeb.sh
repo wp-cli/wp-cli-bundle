@@ -28,10 +28,10 @@ dump_control() {
 Package: php-wpcli
 Version: 0.0.0
 Architecture: all
-Maintainer: Daniel Bachhuber <daniel@handbuilt.co>
+Maintainer: Alain Schlesser <alain.schlesser@gmail.com>
 Section: php
 Priority: optional
-Depends: php5-cli (>= 5.3.29) | php-cli | php7-cli, php5-mysql | php5-mysqlnd | php7.0-mysql | php7.1-mysql, mysql-client | mariadb-client
+Depends: php5-cli (>= 5.4) | php-cli | php7-cli, php5-mysql | php5-mysqlnd | php7.0-mysql | php7.1-mysql, mysql-client | mariadb-client
 Homepage: http://wp-cli.org/
 Description: wp-cli is a set of command-line tools for managing
  WordPress installations. You can update plugins, set up multisite
