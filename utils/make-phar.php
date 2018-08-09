@@ -200,6 +200,8 @@ if ( 'cli' === BUILD ) {
 		->in(WP_CLI_VENDOR_DIR . '/symfony/console')
 		->in(WP_CLI_VENDOR_DIR . '/symfony/filesystem')
 		->in(WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema')
+		->in(WP_CLI_VENDOR_DIR . '/gettext')
+		->in(WP_CLI_VENDOR_DIR . '/mck89')
 		->exclude('demo')
 		->exclude('nb/oxymel/OxymelTest.php')
 		->exclude('composer/spdx-licenses')
