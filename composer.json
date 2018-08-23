@@ -37,7 +37,7 @@
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
-        "wp-cli/wp-cli-tests": "^2"
+        "wp-cli/wp-cli-tests": "^2.0.7"
     },
     "suggest": {
         "psy/psysh": "Enhanced `wp shell` functionality"
@@ -66,6 +66,7 @@
             "./utils/git-setup-pre-commit-hook"
         ],
         "behat": "run-behat-tests",
+        "behat-rerun": "rerun-behat-tests",
         "lint": "run-linter-tests",
         "phpcs": "run-phpcs-tests",
         "phpunit": "run-php-unit-tests",
