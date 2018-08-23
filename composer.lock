@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1766bd481c58429b187c359917c970be",
+    "content-hash": "b4ead0168a45f8f67828daa8277f3bb3",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2973,16 +2973,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "55a71cce0562fd9d6f7d742cbe2d85a6ea1a80e5"
+                "reference": "116a0198d343a9db0fbc52e26590ac726963e852"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/55a71cce0562fd9d6f7d742cbe2d85a6ea1a80e5",
-                "reference": "55a71cce0562fd9d6f7d742cbe2d85a6ea1a80e5",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/116a0198d343a9db0fbc52e26590ac726963e852",
+                "reference": "116a0198d343a9db0fbc52e26590ac726963e852",
                 "shasum": ""
             },
             "require": {
@@ -3000,7 +3000,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2"
+                "wp-cli/wp-cli-tests": "^2.0.8"
             },
             "bin": [
                 "bin/wp",
@@ -3027,7 +3027,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-08-08T19:37:37+00:00"
+            "time": "2018-08-23T20:29:32+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
