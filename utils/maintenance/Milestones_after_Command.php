@@ -1,6 +1,5 @@
 <?php namespace WP_CLI\Maintenance;
 
-use DateTime;
 use WP_CLI;
 
 final class Milestones_After_Command {

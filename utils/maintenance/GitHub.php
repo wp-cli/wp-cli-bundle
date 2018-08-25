@@ -35,7 +35,7 @@ class GitHub {
 	 *
 	 * @param string $project
 	 * @param string $tag
-	 * @param array $args
+	 * @param array  $args
 	 *
 	 * @return array|false
 	 */
@@ -53,6 +53,124 @@ class GitHub {
 		$args['per_page'] = 100;
 
 		list( $body, $headers ) = self::request( $request_url, $args );
+
+		return $body;
+	}
+
+	/**
+	 * Gets the issues that are labeled with a given label.
+	 *
+	 * @param string $project
+	 * @param string $label
+	 * @param array  $args
+	 *
+	 * @return array|false
+	 */
+	public static function get_issues_by_label(
+		$project,
+		$label,
+		$args = array()
+	) {
+		$request_url = sprintf(
+			self::API_ROOT . 'repos/%s/issues',
+			$project
+		);
+
+		$args['per_page'] = 100;
+		$args['labels']   = $label;
+
+		list( $body, $headers ) = self::request( $request_url, $args );
+
+		return $body;
+	}
+
+	/**
+	 * Removes a label from an issue.
+	 *
+	 * @param string $project
+	 * @param string $issue
+	 * @param string $label
+	 * @param array  $args
+	 *
+	 * @return array|false
+	 */
+	public static function remove_label(
+		$project,
+		$issue,
+		$label,
+		$args = array()
+	) {
+		$request_url = sprintf(
+			self::API_ROOT . 'repos/%s/issues/%s/labels/%s',
+			$project,
+			$issue,
+			$label
+		);
+
+		$headers['http_verb'] = 'DELETE';
+
+		list( $body, $headers ) = self::request( $request_url, $args,
+			$headers );
+
+		return $body;
+	}
+
+	/**
+	 * Adds a label to an issue.
+	 *
+	 * @param string $project
+	 * @param string $issue
+	 * @param string $label
+	 * @param array  $args
+	 *
+	 * @return array|false
+	 */
+	public static function add_label(
+		$project,
+		$issue,
+		$label,
+		$args = array()
+	) {
+		$request_url = sprintf(
+			self::API_ROOT . 'repos/%s/issues/%s/labels',
+			$project,
+			$issue,
+			$label
+		);
+
+		$headers['http_verb'] = 'POST';
+
+		$args = array( $label );
+
+		list( $body, $headers ) = self::request( $request_url, $args,
+			$headers );
+
+		return $body;
+	}
+
+	/**
+	 * Delete a label from a repository.
+	 *
+	 * @param string $project
+	 * @param string $label
+	 * @param array  $args
+	 *
+	 * @return array|false
+	 */
+	public static function delete_label(
+		$project,
+		$label,
+		$args = array()
+	) {
+		$request_url = sprintf(
+			self::API_ROOT . 'repos/%s/labels/%s',
+			$project,
+			$label
+		);
+
+		$headers['http_verb'] = 'DELETE';
+
+		list( $body, $headers ) = self::request( $request_url, $args, $headers );
 
 		return $body;
 	}
@@ -131,19 +249,39 @@ class GitHub {
 	 *
 	 * @param string $url
 	 * @param array  $args
+	 * @param array  $headers
 	 *
 	 * @return array|false
 	 */
-	public static function request( $url, $args = array() ) {
-		$headers = array(
-			'Accept'     => 'application/vnd.github.v3+json',
-			'User-Agent' => 'WP-CLI',
+	public static function request(
+		$url,
+		$args = array(),
+		$headers = array()
+	) {
+		$headers = array_merge(
+			$headers,
+			array(
+				'Accept'     => 'application/vnd.github.v3+json',
+				'User-Agent' => 'WP-CLI',
+			)
 		);
 		if ( $token = getenv( 'GITHUB_TOKEN' ) ) {
 			$headers['Authorization'] = 'token ' . $token;
 		}
-		$response = Utils\http_request( 'GET', $url, $args, $headers );
-		if ( 200 !== $response->status_code ) {
+
+		$verb = 'GET';
+		if ( isset( $headers['http_verb'] ) ) {
+			$verb = $headers['http_verb'];
+			unset( $headers['http_verb'] );
+		}
+
+		if ( 'POST' === $verb ) {
+			$args = json_encode( $args );
+		}
+
+		$response = Utils\http_request( $verb, $url, $args, $headers );
+
+		if ( 20 != substr( $response->status_code, 0, 2 ) ) {
 			if ( isset( $args['throw_errors'] ) && false === $args['throw_errors'] ) {
 				return false;
 			}
