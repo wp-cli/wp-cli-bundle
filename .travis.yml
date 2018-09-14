@@ -43,7 +43,7 @@ install:
 
 script:
   - composer phpunit
-  - composer behat
+  - composer behat || composer behat-rerun
 
 jobs:
   include:
