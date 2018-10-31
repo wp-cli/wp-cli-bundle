@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "a7942aea08c6e2244e6a53c5741b8dcf",
@@ -2977,12 +2977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "d21f6632dd697401cf90810dc66650c26b3d388c"
+                "reference": "32b560c0060f33e48b39356f4faac985db709d00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/d21f6632dd697401cf90810dc66650c26b3d388c",
-                "reference": "d21f6632dd697401cf90810dc66650c26b3d388c",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/32b560c0060f33e48b39356f4faac985db709d00",
+                "reference": "32b560c0060f33e48b39356f4faac985db709d00",
                 "shasum": ""
             },
             "require": {
@@ -3027,7 +3027,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-10-29T16:54:37+00:00"
+            "time": "2018-10-30 14:51:41"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -4041,6 +4041,17 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Roave/SecurityAdvisories.git",
+                "reference": "0d96c6cd7cee8572be836fca71f9f01c8b1c0cb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0d96c6cd7cee8572be836fca71f9f01c8b1c0cb2",
+                "reference": "0d96c6cd7cee8572be836fca71f9f01c8b1c0cb2",
+                "shasum": ""
+            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
