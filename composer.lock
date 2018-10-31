@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "a7942aea08c6e2244e6a53c5741b8dcf",
@@ -2106,16 +2106,16 @@
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "62b7659cb321106dea7c4edd403e77b5d754200e"
+                "reference": "4c1277668faa6ee815b5ad3dbbc1f70eb4316b4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/62b7659cb321106dea7c4edd403e77b5d754200e",
-                "reference": "62b7659cb321106dea7c4edd403e77b5d754200e",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/4c1277668faa6ee815b5ad3dbbc1f70eb4316b4f",
+                "reference": "4c1277668faa6ee815b5ad3dbbc1f70eb4316b4f",
                 "shasum": ""
             },
             "require": {
@@ -2158,7 +2158,7 @@
             ],
             "description": "Provides internationalization tools for WordPress projects.",
             "homepage": "https://github.com/wp-cli/i18n-command",
-            "time": "2018-10-29T15:04:14+00:00"
+            "time": "2018-10-31T12:18:32+00:00"
         },
         {
             "name": "wp-cli/import-command",
@@ -2977,12 +2977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "32b560c0060f33e48b39356f4faac985db709d00"
+                "reference": "99192fbb2e8660987bbeaf6535ca01d0c66ab601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/32b560c0060f33e48b39356f4faac985db709d00",
-                "reference": "32b560c0060f33e48b39356f4faac985db709d00",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/99192fbb2e8660987bbeaf6535ca01d0c66ab601",
+                "reference": "99192fbb2e8660987bbeaf6535ca01d0c66ab601",
                 "shasum": ""
             },
             "require": {
@@ -3027,7 +3027,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-10-30 14:51:41"
+            "time": "2018-10-31T09:46:53+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -4041,17 +4041,6 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "0d96c6cd7cee8572be836fca71f9f01c8b1c0cb2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0d96c6cd7cee8572be836fca71f9f01c8b1c0cb2",
-                "reference": "0d96c6cd7cee8572be836fca71f9f01c8b1c0cb2",
-                "shasum": ""
-            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
