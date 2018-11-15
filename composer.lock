@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "a7942aea08c6e2244e6a53c5741b8dcf",
@@ -2628,16 +2628,16 @@
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "2ee679ff1746dcf9b28a0d6c1a7f9b02de7916d2"
+                "reference": "a8a025c2de090564293595f3ab4b24cc39544869"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/2ee679ff1746dcf9b28a0d6c1a7f9b02de7916d2",
-                "reference": "2ee679ff1746dcf9b28a0d6c1a7f9b02de7916d2",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/a8a025c2de090564293595f3ab4b24cc39544869",
+                "reference": "a8a025c2de090564293595f3ab4b24cc39544869",
                 "shasum": ""
             },
             "require": {
@@ -2686,7 +2686,7 @@
             ],
             "description": "Generates code for post types, taxonomies, blocks, plugins, child themes, etc.",
             "homepage": "https://github.com/wp-cli/scaffold-command",
-            "time": "2018-08-14T17:05:41+00:00"
+            "time": "2018-11-09T22:29:03+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
@@ -2977,15 +2977,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "fb25dc91f9456a75b518db51bdb676c9ab8b2418"
+                "reference": "9559bb509450a9d2676e1985d21702fd4c2d73b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/fb25dc91f9456a75b518db51bdb676c9ab8b2418",
-                "reference": "fb25dc91f9456a75b518db51bdb676c9ab8b2418",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/9559bb509450a9d2676e1985d21702fd4c2d73b5",
+                "reference": "9559bb509450a9d2676e1985d21702fd4c2d73b5",
                 "shasum": ""
             },
             "require": {
+                "ext-curl": "*",
+                "ext-posix": "*",
+                "ext-readline": "*",
                 "mustache/mustache": "~2.4",
                 "php": ">=5.4",
                 "ramsey/array_column": "~1.1",
@@ -3001,6 +3004,9 @@
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
                 "wp-cli/wp-cli-tests": "^2.0.8"
+            },
+            "suggest": {
+                "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
             "bin": [
                 "bin/wp",
@@ -3027,7 +3033,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-11-12 04:43:47"
+            "time": "2018-11-14T14:54:44+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -4041,17 +4047,6 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "74a42b8d8d9f9cd672be58e7d1c65094da4ae971"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/74a42b8d8d9f9cd672be58e7d1c65094da4ae971",
-                "reference": "74a42b8d8d9f9cd672be58e7d1c65094da4ae971",
-                "shasum": ""
-            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
