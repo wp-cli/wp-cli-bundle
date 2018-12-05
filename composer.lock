@@ -2106,16 +2106,16 @@
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v2.0.3",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "4c1277668faa6ee815b5ad3dbbc1f70eb4316b4f"
+                "reference": "3050d9c953aa108477957cde693f36fd6506948d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/4c1277668faa6ee815b5ad3dbbc1f70eb4316b4f",
-                "reference": "4c1277668faa6ee815b5ad3dbbc1f70eb4316b4f",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/3050d9c953aa108477957cde693f36fd6506948d",
+                "reference": "3050d9c953aa108477957cde693f36fd6506948d",
                 "shasum": ""
             },
             "require": {
@@ -2135,7 +2135,8 @@
                 "bundled": true,
                 "commands": [
                     "i18n",
-                    "i18n make-pot"
+                    "i18n make-pot",
+                    "i18n make-json"
                 ]
             },
             "autoload": {
@@ -2158,7 +2159,7 @@
             ],
             "description": "Provides internationalization tools for WordPress projects.",
             "homepage": "https://github.com/wp-cli/i18n-command",
-            "time": "2018-10-31T12:18:32+00:00"
+            "time": "2018-12-05T16:57:17+00:00"
         },
         {
             "name": "wp-cli/import-command",
