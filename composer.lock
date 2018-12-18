@@ -2297,16 +2297,16 @@
         },
         {
             "name": "wp-cli/media-command",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/media-command.git",
-                "reference": "fe65ffc7924434cd044195720fb176de86bfa716"
+                "reference": "b69c2b224e0b55ead0c44dfe7d248cc304004ceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/fe65ffc7924434cd044195720fb176de86bfa716",
-                "reference": "fe65ffc7924434cd044195720fb176de86bfa716",
+                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/b69c2b224e0b55ead0c44dfe7d248cc304004ceb",
+                "reference": "b69c2b224e0b55ead0c44dfe7d248cc304004ceb",
                 "shasum": ""
             },
             "require": {
@@ -2350,7 +2350,7 @@
             ],
             "description": "Imports files as attachments, regenerates thumbnails, or lists registered image sizes.",
             "homepage": "https://github.com/wp-cli/media-command",
-            "time": "2018-10-25T10:14:39+00:00"
+            "time": "2018-12-18T12:20:48+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
@@ -2632,16 +2632,16 @@
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "b97e3e0d2cbe129b8df62ce2cbcabe4cdbad9a3a"
+                "reference": "1c5530e8692b91d2d343042620717a8bb2ab2573"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/b97e3e0d2cbe129b8df62ce2cbcabe4cdbad9a3a",
-                "reference": "b97e3e0d2cbe129b8df62ce2cbcabe4cdbad9a3a",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/1c5530e8692b91d2d343042620717a8bb2ab2573",
+                "reference": "1c5530e8692b91d2d343042620717a8bb2ab2573",
                 "shasum": ""
             },
             "require": {
@@ -2690,7 +2690,7 @@
             ],
             "description": "Generates code for post types, taxonomies, blocks, plugins, child themes, etc.",
             "homepage": "https://github.com/wp-cli/scaffold-command",
-            "time": "2018-11-21T16:44:59+00:00"
+            "time": "2018-12-18T12:19:52+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
@@ -2981,12 +2981,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "024b84b0b1a10d916b35e11150d4e8a63b679ac4"
+                "reference": "639eb33aac1dc043c6a72323779ea836fb7795e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/024b84b0b1a10d916b35e11150d4e8a63b679ac4",
-                "reference": "024b84b0b1a10d916b35e11150d4e8a63b679ac4",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/639eb33aac1dc043c6a72323779ea836fb7795e5",
+                "reference": "639eb33aac1dc043c6a72323779ea836fb7795e5",
                 "shasum": ""
             },
             "require": {
@@ -3036,7 +3036,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-12-14T23:42:17+00:00"
+            "time": "2018-12-17T14:06:25+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5021,16 +5021,16 @@
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-                "reference": "7aa217ab38156c5cb4eae0f04ae376027c407a9b"
+                "reference": "f328bcafd97377e8e5e5d7b244d5ddbf301a3a5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/7aa217ab38156c5cb4eae0f04ae376027c407a9b",
-                "reference": "7aa217ab38156c5cb4eae0f04ae376027c407a9b",
+                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/f328bcafd97377e8e5e5d7b244d5ddbf301a3a5c",
+                "reference": "f328bcafd97377e8e5e5d7b244d5ddbf301a3a5c",
                 "shasum": ""
             },
             "require": {
@@ -5060,7 +5060,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2018-11-12T10:13:12+00:00"
+            "time": "2018-12-18T09:43:51+00:00"
         }
     ],
     "aliases": [],
