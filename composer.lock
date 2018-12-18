@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7942aea08c6e2244e6a53c5741b8dcf",
+    "content-hash": "0a0202a7b155a966565c17f5f902d340",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1442,21 +1442,21 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "bb4c50e24a9d5e761e8804ba8b8735ddfc98d423"
+                "reference": "54fdd306f5c6f136a9c4046358380eda4c92fd0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/bb4c50e24a9d5e761e8804ba8b8735ddfc98d423",
-                "reference": "bb4c50e24a9d5e761e8804ba8b8735ddfc98d423",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/54fdd306f5c6f136a9c4046358380eda4c92fd0c",
+                "reference": "54fdd306f5c6f136a9c4046358380eda4c92fd0c",
                 "shasum": ""
             },
             "require": {
                 "composer/semver": "^1.4",
-                "wp-cli/wp-cli": "dev-master"
+                "wp-cli/wp-cli": "^2.1"
             },
             "require-dev": {
                 "wp-cli/checksum-command": "^1 || ^2",
@@ -1505,7 +1505,7 @@
             ],
             "description": "Downloads, installs, updates, and manages a WordPress installation.",
             "homepage": "https://github.com/wp-cli/core-command",
-            "time": "2018-12-12T13:08:59+00:00"
+            "time": "2018-12-18T16:55:35+00:00"
         },
         {
             "name": "wp-cli/cron-command",
@@ -2402,22 +2402,22 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "b295eec9f503000a3bea9c247397db4b0b4839c9"
+                "reference": "9cd0995fe59b2cbcf1cadb81f93c0f1191de9209"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/b295eec9f503000a3bea9c247397db4b0b4839c9",
-                "reference": "b295eec9f503000a3bea9c247397db4b0b4839c9",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/9cd0995fe59b2cbcf1cadb81f93c0f1191de9209",
+                "reference": "9cd0995fe59b2cbcf1cadb81f93c0f1191de9209",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": ">=1.2.0 <1.7.0 || ^1.7.1",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "dev-master"
+                "wp-cli/wp-cli": "^2.1"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
@@ -2459,7 +2459,7 @@
             ],
             "description": "Lists, installs, and removes WP-CLI packages.",
             "homepage": "https://github.com/wp-cli/package-command",
-            "time": "2018-10-02T10:24:48+00:00"
+            "time": "2018-12-18T17:19:48+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2977,16 +2977,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-master",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "639eb33aac1dc043c6a72323779ea836fb7795e5"
+                "reference": "6dde820a8f6f183f4b6d751e5be1cd343974f333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/639eb33aac1dc043c6a72323779ea836fb7795e5",
-                "reference": "639eb33aac1dc043c6a72323779ea836fb7795e5",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/6dde820a8f6f183f4b6d751e5be1cd343974f333",
+                "reference": "6dde820a8f6f183f4b6d751e5be1cd343974f333",
                 "shasum": ""
             },
             "require": {
@@ -3018,7 +3018,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -3036,7 +3036,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-12-17T14:06:25+00:00"
+            "time": "2018-12-18T17:37:51+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5066,7 +5066,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
