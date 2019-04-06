@@ -73,7 +73,7 @@ jobs:
     - stage: test
       php: 5.4
       dist: precise
-      env: WP_VERSION=latest
+      env: WP_VERSION=5.1
     - stage: deploy
       env: DEPLOY_BRANCH=master
       script: ./ci/deploy.sh
