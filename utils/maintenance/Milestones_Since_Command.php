@@ -41,7 +41,9 @@ final class Milestones_Since_Command {
 		);
 
 		$milestone_titles = array_map(
-			function ( $milestone ) { return $milestone->title; },
+			function ( $milestone ) {
+				return $milestone->title;
+			},
 			$milestones
 		);
 

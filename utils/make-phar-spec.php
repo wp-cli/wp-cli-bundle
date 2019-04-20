@@ -1,37 +1,37 @@
 <?php
 
 return array(
-	'output' => array(
+	'output'        => array(
 		'runtime' => '=<path>',
-		'file' => '<path>',
-		'desc' => 'Path to output file',
+		'file'    => '<path>',
+		'desc'    => 'Path to output file',
 	),
 
-	'version' => array(
+	'version'       => array(
 		'runtime' => '=<version>',
-		'file' => '<version>',
-		'desc' => 'New package version',
+		'file'    => '<version>',
+		'desc'    => 'New package version',
 	),
 
 	'store-version' => array(
 		'runtime' => '',
-		'file' => '<bool>',
+		'file'    => '<bool>',
 		'default' => false,
-		'desc' => 'If true the contents of ./VERSION will be set to the value passed to --version',
+		'desc'    => 'If true the contents of ./VERSION will be set to the value passed to --version',
 	),
 
-	'quiet' => array(
+	'quiet'         => array(
 		'runtime' => '',
-		'file' => '<bool>',
+		'file'    => '<bool>',
 		'default' => false,
-		'desc' => 'Suppress informational messages',
+		'desc'    => 'Suppress informational messages',
 	),
 
-	'build' => array(
+	'build'         => array(
 		'runtime' => '=<cli>',
-		'file' => '<cli>',
+		'file'    => '<cli>',
 		'default' => '',
-		'desc' => 'Create a minimum test build "cli", that only supports cli commands',
+		'desc'    => 'Create a minimum test build "cli", that only supports cli commands',
 	),
 );
 

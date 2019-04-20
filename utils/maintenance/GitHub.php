@@ -109,8 +109,11 @@ class GitHub {
 
 		$headers['http_verb'] = 'DELETE';
 
-		list( $body, $headers ) = self::request( $request_url, $args,
-			$headers );
+		list( $body, $headers ) = self::request(
+			$request_url,
+			$args,
+			$headers
+		);
 
 		return $body;
 	}
@@ -142,8 +145,11 @@ class GitHub {
 
 		$args = array( $label );
 
-		list( $body, $headers ) = self::request( $request_url, $args,
-			$headers );
+		list( $body, $headers ) = self::request(
+			$request_url,
+			$args,
+			$headers
+		);
 
 		return $body;
 	}
