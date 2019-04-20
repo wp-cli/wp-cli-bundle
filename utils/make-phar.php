@@ -63,7 +63,7 @@ function add_file( $phar, $path ) {
 		static $strip_res = null;
 		if ( null === $strip_res ) {
 			if ( 'cli' === BUILD ) {
-				$strips = array(
+				$strips = [
 					'\/(?:behat|composer|gherkin)\/src\/',
 					'\/phpunit\/',
 					'\/nb\/oxymel\/',
@@ -71,16 +71,16 @@ function add_file( $phar, $path ) {
 					'\/wp-cli\/[^\n]+?-command\/',
 					'\/symfony\/(?!finder|polyfill-mbstring|process)\'',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
-				);
+				];
 			} else {
-				$strips = array(
+				$strips = [
 					'\/(?:behat|gherkin)\/src\/',
 					'\/phpunit\/',
 					'\/symfony\/(?!console|filesystem|finder|polyfill-mbstring|process)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
-				);
+				];
 			}
 			$strip_res = array_map(
 				function ( $v ) {
@@ -107,19 +107,30 @@ function set_file_contents( $phar, $path, $content ) {
 
 function get_composer_versions( $current_version ) {
 	$composer_lock_path = WP_CLI_BUNDLE_ROOT . '/composer.lock';
-	if ( ! ( $get_composer_lock = file_get_contents( $composer_lock_path ) ) || ! ( $composer_lock = json_decode( $get_composer_lock, true ) ) ) {
+	$composer_lock_file = file_get_contents( $composer_lock_path );
+	if ( ! $composer_lock_file ) {
 		fwrite( STDERR, sprintf( "Warning: Failed to read '%s'." . PHP_EOL, $composer_lock_path ) );
 		return '';
 	}
+
+	$composer_lock = json_decode( $composer_lock_file, true );
+	if ( ! $composer_lock ) {
+		fwrite( STDERR, sprintf( "Warning: Could not decode '%s'." . PHP_EOL, $composer_lock_path ) );
+		return '';
+	}
+
 	if ( ! isset( $composer_lock['packages'] ) ) {
 		fwrite( STDERR, sprintf( "Warning: No packages in '%s'." . PHP_EOL, $composer_lock_path ) );
 		return '';
 	}
-	$vendor_versions = array( implode( ' ', array( 'wp-cli/wp-cli', $current_version, date( 'c' ) ) ) );
-	$missing_names   = $missing_versions = $missing_references = 0;
+
+	$vendor_versions    = [ implode( ' ', [ 'wp-cli/wp-cli', $current_version, date( 'c' ) ] ) ];
+	$missing_names      = 0;
+	$missing_versions   = 0;
+	$missing_references = 0;
 	foreach ( $composer_lock['packages'] as $package ) {
 		if ( isset( $package['name'] ) ) {
-			$vendor_version = array( $package['name'] );
+			$vendor_version = [ $package['name'] ];
 			if ( isset( $package['version'] ) ) {
 				$vendor_version[] = $package['version'];
 			} else {
@@ -136,7 +147,7 @@ function get_composer_versions( $current_version ) {
 			}
 			$vendor_versions[] = implode( ' ', $vendor_version );
 		} else {
-			$vendor_versions[] = implode( ' ', array( 'unknown_package', 'unknown_version', 'unknown_reference' ) );
+			$vendor_versions[] = implode( ' ', [ 'unknown_package', 'unknown_version', 'unknown_reference' ] );
 			$missing_names++;
 		}
 	}

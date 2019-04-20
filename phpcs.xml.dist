@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="WP-CLI-shell">
-	<description>Custom ruleset for WP-CLI-shell-command</description>
+<ruleset name="WP-CLI-bundle">
+	<description>Custom ruleset for WP-CLI-bundle</description>
 
 	<!--
 	#############################################################################
@@ -57,9 +57,15 @@
 	#############################################################################
 	-->
 
-	<!-- Exclude existing classes from the prefix rule as it would break BC to prefix them now. -->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound">
-		<exclude-pattern>*/src/Shell_Command\.php$</exclude-pattern>
+	<!-- This is a procedural stand-alone file that is never loaded in a WordPress context,
+		 so this file does not have to comply with WP naming conventions. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<exclude-pattern>*/utils/get-package-require-from-composer\.php$</exclude-pattern>
+		<exclude-pattern>*/utils/make-phar\.php$</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WP.GlobalVariablesOverride">
+		<exclude-pattern>*/utils/get-package-require-from-composer\.php$</exclude-pattern>
+		<exclude-pattern>*/utils/make-phar\.php$</exclude-pattern>
 	</rule>
 
 </ruleset>

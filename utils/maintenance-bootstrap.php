@@ -1,7 +1,9 @@
 <?php
 
-$autoloader = dirname( __DIR__ ) . '/vendor/autoload.php';
-require_once $autoloader;
+$wpcli_maintenance_autoloader = dirname( __DIR__ ) . '/vendor/autoload.php';
+if ( is_readable( $wpcli_maintenance_autoloader ) ) {
+	require_once $wpcli_maintenance_autoloader;
+}
 
 WP_CLI::add_command( 'contrib-list', 'WP_CLI\Maintenance\Contrib_list_Command' );
 WP_CLI::add_command( 'milestones-after', 'WP_CLI\Maintenance\Milestones_After_Command' );

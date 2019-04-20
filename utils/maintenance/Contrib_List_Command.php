@@ -25,11 +25,11 @@ final class Contrib_List_Command {
 	 */
 	public function __invoke( $_, $assoc_args ) {
 
-		$contributors       = array();
+		$contributors       = [];
 		$pull_request_count = 0;
 
 		// Get the contributors to the current open large project milestones
-		foreach ( array( 'wp-cli/wp-cli-bundle', 'wp-cli/wp-cli', 'wp-cli/handbook', 'wp-cli/wp-cli.github.com' ) as $repo ) {
+		foreach ( [ 'wp-cli/wp-cli-bundle', 'wp-cli/wp-cli', 'wp-cli/handbook', 'wp-cli/wp-cli.github.com' ] as $repo ) {
 			$milestones = GitHub::get_project_milestones( $repo );
 			// Cheap way to get the latest milestone
 			$milestone = array_shift( $milestones );
@@ -50,7 +50,7 @@ final class Contrib_List_Command {
 		// TODO: Bundle repo needs to be switched to `wp-cli/wp-cli-bundle` for next release.
 		$bundle = 'wp-cli/wp-cli';
 
-		$milestones = GitHub::get_project_milestones( 'wp-cli/wp-cli', array( 'state' => 'closed' ) );
+		$milestones = GitHub::get_project_milestones( 'wp-cli/wp-cli', [ 'state' => 'closed' ] );
 		// Cheap way to get the latest closed milestone
 		$milestone = array_shift( $milestones );
 		$tag       = is_object( $milestone ) ? "v{$milestone->title}" : 'master';
@@ -99,7 +99,7 @@ final class Contrib_List_Command {
 				continue;
 			}
 			// Closed milestones denote a tagged release
-			$milestones       = GitHub::get_project_milestones( $package_name, array( 'state' => 'closed' ) );
+			$milestones       = GitHub::get_project_milestones( $package_name, [ 'state' => 'closed' ] );
 			$milestone_ids    = array();
 			$milestone_titles = array();
 			foreach ( $milestones as $milestone ) {
@@ -129,7 +129,7 @@ final class Contrib_List_Command {
 
 		// Sort and render the contributor list
 		asort( $contributors, SORT_NATURAL | SORT_FLAG_CASE );
-		if ( in_array( $assoc_args['format'], array( 'markdown', 'html' ) ) ) {
+		if ( in_array( $assoc_args['format'], [ 'markdown', 'html' ], true ) ) {
 			$contrib_list = '';
 			foreach ( $contributors as $url => $login ) {
 				if ( 'markdown' === $assoc_args['format'] ) {

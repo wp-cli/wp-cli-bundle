@@ -28,7 +28,7 @@ final class Release_Date_Command {
 
 		$release = GitHub::get_release_by_tag(
 			$repo,
-			0 === strpos( $milestone_name, 'v' )
+			strpos( $milestone_name, 'v' ) === 0
 				? $milestone_name
 				: "v{$milestone_name}",
 			array( 'state' => 'all' )

@@ -16,7 +16,7 @@ class GitHub {
 	 */
 	public static function get_project_milestones(
 		$project,
-		$args = array()
+		$args = []
 	) {
 		$request_url = sprintf(
 			self::API_ROOT . 'repos/%s/milestones',
@@ -42,7 +42,7 @@ class GitHub {
 	public static function get_release_by_tag(
 		$project,
 		$tag,
-		$args = array()
+		$args = []
 	) {
 		$request_url = sprintf(
 			self::API_ROOT . 'repos/%s/releases/tags/%s',
@@ -69,7 +69,7 @@ class GitHub {
 	public static function get_issues_by_label(
 		$project,
 		$label,
-		$args = array()
+		$args = []
 	) {
 		$request_url = sprintf(
 			self::API_ROOT . 'repos/%s/issues',
@@ -98,7 +98,7 @@ class GitHub {
 		$project,
 		$issue,
 		$label,
-		$args = array()
+		$args = []
 	) {
 		$request_url = sprintf(
 			self::API_ROOT . 'repos/%s/issues/%s/labels/%s',
@@ -132,7 +132,7 @@ class GitHub {
 		$project,
 		$issue,
 		$label,
-		$args = array()
+		$args = []
 	) {
 		$request_url = sprintf(
 			self::API_ROOT . 'repos/%s/issues/%s/labels',
@@ -143,7 +143,7 @@ class GitHub {
 
 		$headers['http_verb'] = 'POST';
 
-		$args = array( $label );
+		$args = [ $label ];
 
 		list( $body, $headers ) = self::request(
 			$request_url,
@@ -166,7 +166,7 @@ class GitHub {
 	public static function delete_label(
 		$project,
 		$label,
-		$args = array()
+		$args = []
 	) {
 		$request_url = sprintf(
 			self::API_ROOT . 'repos/%s/labels/%s',
@@ -198,13 +198,13 @@ class GitHub {
 			$project
 		);
 
-		$args = array(
+		$args = [
 			'per_page'  => 100,
 			'milestone' => $milestone_id,
 			'state'     => 'all',
-		);
+		];
 
-		$pull_requests = array();
+		$pull_requests = [];
 		do {
 			list( $body, $headers ) = self::request( $request_url, $args );
 			foreach ( $body as $issue ) {
@@ -212,7 +212,7 @@ class GitHub {
 					$pull_requests[] = $issue;
 				}
 			}
-			$args        = array();
+			$args        = [];
 			$request_url = false;
 			// Set $request_url to 'rel="next" if present'
 			if ( ! empty( $headers['Link'] ) ) {
@@ -240,7 +240,7 @@ class GitHub {
 	public static function parse_contributors_from_pull_requests(
 		$pull_requests
 	) {
-		$contributors = array();
+		$contributors = [];
 		foreach ( $pull_requests as $pull_request ) {
 			if ( ! empty( $pull_request->user ) ) {
 				$contributors[ $pull_request->user->html_url ] = $pull_request->user->login;
@@ -261,17 +261,19 @@ class GitHub {
 	 */
 	public static function request(
 		$url,
-		$args = array(),
-		$headers = array()
+		$args = [],
+		$headers = []
 	) {
 		$headers = array_merge(
 			$headers,
-			array(
+			[
 				'Accept'     => 'application/vnd.github.v3+json',
 				'User-Agent' => 'WP-CLI',
-			)
+			]
 		);
-		if ( $token = getenv( 'GITHUB_TOKEN' ) ) {
+
+		$token = getenv( 'GITHUB_TOKEN' );
+		if ( $token ) {
 			$headers['Authorization'] = 'token ' . $token;
 		}
 
@@ -287,7 +289,7 @@ class GitHub {
 
 		$response = Utils\http_request( $verb, $url, $args, $headers );
 
-		if ( 20 != substr( $response->status_code, 0, 2 ) ) {
+		if ( 20 !== absint( substr( $response->status_code, 0, 2 ) ) ) {
 			if ( isset( $args['throw_errors'] ) && false === $args['throw_errors'] ) {
 				return false;
 			}
@@ -301,6 +303,6 @@ class GitHub {
 			);
 		}
 
-		return array( json_decode( $response->body ), $response->headers );
+		return [ json_decode( $response->body ), $response->headers ];
 	}
 }
