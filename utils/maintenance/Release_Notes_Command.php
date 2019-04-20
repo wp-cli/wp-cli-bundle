@@ -69,12 +69,12 @@ final class Release_Notes_Command {
 	private function get_bundle_release_notes( $source, $format ) {
 		// Get the release notes for the current open large project milestones.
 		foreach (
-			array(
+			[
 				'wp-cli/wp-cli-bundle',
 				'wp-cli/wp-cli',
 				'wp-cli/handbook',
 				'wp-cli/wp-cli.github.com',
-			) as $repo
+			] as $repo
 		) {
 			$milestones = GitHub::get_project_milestones( $repo );
 			// Cheap way to get the latest milestone
@@ -100,7 +100,7 @@ final class Release_Notes_Command {
 
 		$milestones = GitHub::get_project_milestones(
 			'wp-cli/wp-cli',
-			array( 'state' => 'closed' )
+			[ 'state' => 'closed' ]
 		);
 		// Cheap way to get the latest closed milestone
 		$milestone = array_shift( $milestones );
@@ -128,10 +128,10 @@ final class Release_Notes_Command {
 		$composer_json = json_decode( $response->body, true );
 
 		// TODO: Only need for initial v2.
-		$composer_json['packages'][] = array(
+		$composer_json['packages'][] = [
 			'name'    => 'wp-cli/i18n-command',
 			'version' => 'v2',
-		);
+		];
 		usort(
 			$composer_json['packages'],
 			function ( $a, $b ) {
@@ -145,14 +145,14 @@ final class Release_Notes_Command {
 			if ( ! preg_match( '#^wp-cli/.+-command$#', $package_name )
 				&& ! in_array(
 					$package_name,
-					array(
+					[
 						'wp-cli/wp-cli-tests',
 						'wp-cli/regenerate-readme',
 						'wp-cli/autoload-splitter',
 						'wp-cli/wp-config-transformer',
 						'wp-cli/php-cli-tools',
 						'wp-cli/spyc',
-					),
+					],
 					true
 				) ) {
 				continue;
@@ -163,7 +163,7 @@ final class Release_Notes_Command {
 			// Closed milestones denote a tagged release
 			$milestones = GitHub::get_project_milestones(
 				$package_name,
-				array( 'state' => 'closed' )
+				[ 'state' => 'closed' ]
 			);
 			foreach ( $milestones as $milestone ) {
 				if ( ! version_compare(
@@ -198,10 +198,10 @@ final class Release_Notes_Command {
 
 		$potential_milestones = GitHub::get_project_milestones(
 			$repo,
-			array( 'state' => 'all' )
+			[ 'state' => 'all' ]
 		);
 
-		$milestones = array();
+		$milestones = [];
 		foreach ( $potential_milestones as $potential_milestone ) {
 			if ( in_array(
 				$potential_milestone->title,
@@ -228,7 +228,7 @@ final class Release_Notes_Command {
 			);
 		}
 
-		$entries = array();
+		$entries = [];
 		foreach ( $milestones as $milestone ) {
 			switch ( $source ) {
 				case 'release':
@@ -239,7 +239,7 @@ final class Release_Notes_Command {
 					$release = GitHub::get_release_by_tag(
 						$repo,
 						$tag,
-						array( 'throw_errors' => false )
+						[ 'throw_errors' => false ]
 					);
 
 					if ( $release ) {

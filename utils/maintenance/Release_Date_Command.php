@@ -31,7 +31,7 @@ final class Release_Date_Command {
 			strpos( $milestone_name, 'v' ) === 0
 				? $milestone_name
 				: "v{$milestone_name}",
-			array( 'state' => 'all' )
+			[ 'state' => 'all' ]
 		);
 
 		WP_CLI::log( $release->published_at );

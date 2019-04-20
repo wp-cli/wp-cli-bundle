@@ -29,7 +29,7 @@ final class Milestones_After_Command {
 		$milestones        = array_filter(
 			GitHub::get_project_milestones(
 				$repo,
-				array( 'state' => 'closed' )
+				[ 'state' => 'closed' ]
 			),
 			function ( $milestone ) use (
 				$milestone_name,
