@@ -2704,23 +2704,23 @@
         },
         {
             "name": "wp-cli/server-command",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/server-command.git",
-                "reference": "29635948d6a885bc4fea4c106f1a17f6745bd139"
+                "reference": "c900a1036c29991420296b66a14ed771245c61a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/29635948d6a885bc4fea4c106f1a17f6745bd139",
-                "reference": "29635948d6a885bc4fea4c106f1a17f6745bd139",
+                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/c900a1036c29991420296b66a14ed771245c61a2",
+                "reference": "c900a1036c29991420296b66a14ed771245c61a2",
                 "shasum": ""
             },
             "require": {
                 "wp-cli/wp-cli": "^2"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2753,7 +2753,7 @@
             ],
             "description": "Launches PHP's built-in web server for a specific WordPress installation.",
             "homepage": "https://github.com/wp-cli/server-command",
-            "time": "2018-10-25T10:15:46+00:00"
+            "time": "2019-04-21T09:58:15+00:00"
         },
         {
             "name": "wp-cli/shell-command",
