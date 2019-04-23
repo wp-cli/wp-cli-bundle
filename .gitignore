@@ -6,8 +6,6 @@ PHAR_BUILD_VERSION
 /packages
 /vendor
 /*.phar
-/codesniffer
-/PHP_Codesniffer-VariableAnalysis
 .*.swp
 *.log
 phpunit.xml
