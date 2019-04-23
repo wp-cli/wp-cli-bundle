@@ -109,11 +109,7 @@ class GitHub {
 
 		$headers['http_verb'] = 'DELETE';
 
-		list( $body, $headers ) = self::request(
-			$request_url,
-			$args,
-			$headers
-		);
+		list( $body, $headers ) = self::request( $request_url, $args, $headers );
 
 		return $body;
 	}
@@ -145,11 +141,7 @@ class GitHub {
 
 		$args = [ $label ];
 
-		list( $body, $headers ) = self::request(
-			$request_url,
-			$args,
-			$headers
-		);
+		list( $body, $headers ) = self::request( $request_url, $args, $headers );
 
 		return $body;
 	}
@@ -289,7 +281,7 @@ class GitHub {
 
 		$response = Utils\http_request( $verb, $url, $args, $headers );
 
-		if ( 20 !== absint( substr( $response->status_code, 0, 2 ) ) ) {
+		if ( 20 !== (int) substr( $response->status_code, 0, 2 ) ) {
 			if ( isset( $args['throw_errors'] ) && false === $args['throw_errors'] ) {
 				return false;
 			}
