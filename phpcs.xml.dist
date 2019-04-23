@@ -46,8 +46,9 @@
 	#############################################################################
 	-->
 
-	<!-- This is a procedural stand-alone file that is never loaded in a WordPress context,
-		 so this file does not have to comply with WP naming conventions. -->
+	<!-- These are two procedural stand-alone file that is never loaded in a
+		WordPress context, so these files do not have to comply with WP naming
+		conventions. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<exclude-pattern>*/utils/get-package-require-from-composer\.php$</exclude-pattern>
 		<exclude-pattern>*/utils/make-phar\.php$</exclude-pattern>
