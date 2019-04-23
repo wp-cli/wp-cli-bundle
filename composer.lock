@@ -1272,16 +1272,16 @@
         },
         {
             "name": "wp-cli/checksum-command",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/checksum-command.git",
-                "reference": "b16e808ef59122970fe5e70ddc28b766aba529fc"
+                "reference": "e16dafd2aaac2a857ebb1247378ec017e934bde6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/b16e808ef59122970fe5e70ddc28b766aba529fc",
-                "reference": "b16e808ef59122970fe5e70ddc28b766aba529fc",
+                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/e16dafd2aaac2a857ebb1247378ec017e934bde6",
+                "reference": "e16dafd2aaac2a857ebb1247378ec017e934bde6",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1289,7 @@
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -1323,20 +1323,20 @@
             ],
             "description": "Verifies file integrity by comparing to published checksums.",
             "homepage": "https://github.com/wp-cli/checksum-command",
-            "time": "2018-09-06T07:57:31+00:00"
+            "time": "2019-04-22T09:04:31+00:00"
         },
         {
             "name": "wp-cli/config-command",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/config-command.git",
-                "reference": "21daa36c3960676ef58ab4e4db35106134ddcb79"
+                "reference": "79f9ae8a95405fc55f3ae239b4d3dfcdbd814217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/21daa36c3960676ef58ab4e4db35106134ddcb79",
-                "reference": "21daa36c3960676ef58ab4e4db35106134ddcb79",
+                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/79f9ae8a95405fc55f3ae239b4d3dfcdbd814217",
+                "reference": "79f9ae8a95405fc55f3ae239b4d3dfcdbd814217",
                 "shasum": ""
             },
             "require": {
@@ -1345,7 +1345,7 @@
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -1392,7 +1392,7 @@
             ],
             "description": "Generates and reads the wp-config.php file.",
             "homepage": "https://github.com/wp-cli/config-command",
-            "time": "2018-12-12T13:09:35+00:00"
+            "time": "2019-04-22T13:20:03+00:00"
         },
         {
             "name": "wp-cli/core-command",
@@ -2757,23 +2757,23 @@
         },
         {
             "name": "wp-cli/shell-command",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/shell-command.git",
-                "reference": "bd6a2edc208386052c22012435e5d10b2b838ac5"
+                "reference": "56f0ff1bc36f6da2fb73cb932214adcde58270d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/bd6a2edc208386052c22012435e5d10b2b838ac5",
-                "reference": "bd6a2edc208386052c22012435e5d10b2b838ac5",
+                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/56f0ff1bc36f6da2fb73cb932214adcde58270d8",
+                "reference": "56f0ff1bc36f6da2fb73cb932214adcde58270d8",
                 "shasum": ""
             },
             "require": {
                 "wp-cli/wp-cli": "^2"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2807,7 +2807,7 @@
             ],
             "description": "Opens an interactive PHP console for running and testing PHP code.",
             "homepage": "https://github.com/wp-cli/shell-command",
-            "time": "2019-01-29T17:06:33+00:00"
+            "time": "2019-04-22T13:16:49+00:00"
         },
         {
             "name": "wp-cli/super-admin-command",
