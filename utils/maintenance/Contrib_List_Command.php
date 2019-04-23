@@ -6,6 +6,19 @@ use WP_CLI\Utils;
 final class Contrib_List_Command {
 
 	/**
+	 * Packages excluded from contributor list generation.
+	 * @var array
+	 */
+	private $excluded_packages = [
+		'wp-cli/wp-cli-tests',
+		'wp-cli/regenerate-readme',
+		'wp-cli/autoload-splitter',
+		'wp-cli/wp-config-transformer',
+		'wp-cli/php-cli-tools',
+		'wp-cli/spyc',
+	];
+
+	/**
 	 * Lists all contributors to this release.
 	 *
 	 * Run within the main WP-CLI project repository.
@@ -84,18 +97,7 @@ final class Contrib_List_Command {
 			$package_name       = $package['name'];
 			$version_constraint = str_replace( 'v', '', $package['version'] );
 			if ( ! preg_match( '#^wp-cli/.+-command$#', $package_name )
-				&& ! in_array(
-					$package_name,
-					[
-						'wp-cli/wp-cli-tests',
-						'wp-cli/regenerate-readme',
-						'wp-cli/autoload-splitter',
-						'wp-cli/wp-config-transformer',
-						'wp-cli/php-cli-tools',
-						'wp-cli/spyc',
-					],
-					true
-				) ) {
+				&& ! in_array( $package_name, $this->excluded_packages, true ) ) {
 				continue;
 			}
 			// Closed milestones denote a tagged release

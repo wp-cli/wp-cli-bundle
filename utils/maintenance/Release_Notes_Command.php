@@ -6,6 +6,32 @@ use WP_CLI\Utils;
 final class Release_Notes_Command {
 
 	/**
+	 * Packages excluded from contributor list generation.
+	 * @var array
+	 */
+	private $excluded_packages = [
+		'wp-cli/wp-cli-tests',
+		'wp-cli/regenerate-readme',
+		'wp-cli/autoload-splitter',
+		'wp-cli/wp-config-transformer',
+		'wp-cli/php-cli-tools',
+		'wp-cli/spyc',
+	];
+
+	/**
+	 * Higher-level packages that represent the principal project building
+	 * blocks.
+	 *
+	 * @var array
+	 */
+	private $higher_level_packages = [
+		'wp-cli/wp-cli-bundle',
+		'wp-cli/wp-cli',
+		'wp-cli/handbook',
+		'wp-cli/wp-cli.github.com',
+	];
+
+	/**
 	 * Gets the release notes for one or more milestones of a repository.
 	 *
 	 * ## OPTIONS
@@ -68,14 +94,7 @@ final class Release_Notes_Command {
 
 	private function get_bundle_release_notes( $source, $format ) {
 		// Get the release notes for the current open large project milestones.
-		foreach (
-			[
-				'wp-cli/wp-cli-bundle',
-				'wp-cli/wp-cli',
-				'wp-cli/handbook',
-				'wp-cli/wp-cli.github.com',
-			] as $repo
-		) {
+		foreach ( $this->higher_level_packages as $repo ) {
 			$milestones = GitHub::get_project_milestones( $repo );
 			// Cheap way to get the latest milestone
 			$milestone = array_shift( $milestones );
@@ -143,18 +162,7 @@ final class Release_Notes_Command {
 			$package_name       = $package['name'];
 			$version_constraint = str_replace( 'v', '', $package['version'] );
 			if ( ! preg_match( '#^wp-cli/.+-command$#', $package_name )
-				&& ! in_array(
-					$package_name,
-					[
-						'wp-cli/wp-cli-tests',
-						'wp-cli/regenerate-readme',
-						'wp-cli/autoload-splitter',
-						'wp-cli/wp-config-transformer',
-						'wp-cli/php-cli-tools',
-						'wp-cli/spyc',
-					],
-					true
-				) ) {
+				&& ! in_array( $package_name, $this->excluded_packages, true ) ) {
 				continue;
 			}
 
