@@ -114,8 +114,7 @@ final class Release_Notes_Command {
 
 		// Identify all command dependencies and their release notes
 
-		// TODO: Bundle repo needs to be switched to `wp-cli/wp-cli-bundle` for next release.
-		$bundle = 'wp-cli/wp-cli';
+		$bundle = 'wp-cli/wp-cli-bundle';
 
 		$milestones = GitHub::get_project_milestones(
 			'wp-cli/wp-cli',
@@ -124,11 +123,6 @@ final class Release_Notes_Command {
 		// Cheap way to get the latest closed milestone
 		$milestone = array_shift( $milestones );
 		$tag       = is_object( $milestone ) ? "v{$milestone->title}" : 'master';
-
-		// TODO: Only needed for switch from v1 to v2.
-		if ( 'wp-cli/wp-cli' === $bundle ) {
-			$tag = 'v1.5.1';
-		}
 
 		$composer_lock_url = sprintf(
 			'https://raw.githubusercontent.com/%s/%s/composer.lock',
@@ -146,11 +140,6 @@ final class Release_Notes_Command {
 		}
 		$composer_json = json_decode( $response->body, true );
 
-		// TODO: Only need for initial v2.
-		$composer_json['packages'][] = [
-			'name'    => 'wp-cli/i18n-command',
-			'version' => 'v2',
-		];
 		usort(
 			$composer_json['packages'],
 			function ( $a, $b ) {
