@@ -7,6 +7,7 @@ final class Contrib_List_Command {
 
 	/**
 	 * Packages excluded from contributor list generation.
+	 *
 	 * @var array
 	 */
 	private $excluded_packages = [

@@ -6,7 +6,8 @@ use WP_CLI\Utils;
 final class Release_Notes_Command {
 
 	/**
-	 * Packages excluded from contributor list generation.
+	 * Packages excluded from release notes generation.
+	 *
 	 * @var array
 	 */
 	private $excluded_packages = [
