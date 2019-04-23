@@ -34,7 +34,7 @@ final class Replace_Label_Command {
 
 		$delete = WP_CLI\Utils\get_flag_value( $assoc_args, 'delete', false );
 
-		foreach( GitHub::get_issues_by_label( $repo, $old_label ) as $issue ) {
+		foreach ( GitHub::get_issues_by_label( $repo, $old_label ) as $issue ) {
 			GitHub::remove_label( $repo, $issue->number, $old_label );
 			GitHub::add_label( $repo, $issue->number, $new_label );
 		}

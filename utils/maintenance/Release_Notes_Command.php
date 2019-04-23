@@ -6,6 +6,33 @@ use WP_CLI\Utils;
 final class Release_Notes_Command {
 
 	/**
+	 * Packages excluded from release notes generation.
+	 *
+	 * @var array
+	 */
+	private $excluded_packages = [
+		'wp-cli/wp-cli-tests',
+		'wp-cli/regenerate-readme',
+		'wp-cli/autoload-splitter',
+		'wp-cli/wp-config-transformer',
+		'wp-cli/php-cli-tools',
+		'wp-cli/spyc',
+	];
+
+	/**
+	 * Higher-level packages that represent the principal project building
+	 * blocks.
+	 *
+	 * @var array
+	 */
+	private $higher_level_packages = [
+		'wp-cli/wp-cli-bundle',
+		'wp-cli/wp-cli',
+		'wp-cli/handbook',
+		'wp-cli/wp-cli.github.com',
+	];
+
+	/**
 	 * Gets the release notes for one or more milestones of a repository.
 	 *
 	 * ## OPTIONS
@@ -68,14 +95,7 @@ final class Release_Notes_Command {
 
 	private function get_bundle_release_notes( $source, $format ) {
 		// Get the release notes for the current open large project milestones.
-		foreach (
-			array(
-				'wp-cli/wp-cli-bundle',
-				'wp-cli/wp-cli',
-				'wp-cli/handbook',
-				'wp-cli/wp-cli.github.com',
-			) as $repo
-		) {
+		foreach ( $this->higher_level_packages as $repo ) {
 			$milestones = GitHub::get_project_milestones( $repo );
 			// Cheap way to get the latest milestone
 			$milestone = array_shift( $milestones );
@@ -95,52 +115,44 @@ final class Release_Notes_Command {
 
 		// Identify all command dependencies and their release notes
 
-		// TODO: Bundle repo needs to be switched to `wp-cli/wp-cli-bundle` for next release.
-		$bundle = 'wp-cli/wp-cli';
+		$bundle = 'wp-cli/wp-cli-bundle';
 
 		$milestones = GitHub::get_project_milestones(
 			'wp-cli/wp-cli',
-			array( 'state' => 'closed' )
+			[ 'state' => 'closed' ]
 		);
 		// Cheap way to get the latest closed milestone
 		$milestone = array_shift( $milestones );
 		$tag       = is_object( $milestone ) ? "v{$milestone->title}" : 'master';
 
-		// TODO: Only needed for switch from v1 to v2.
-		if ( 'wp-cli/wp-cli' === $bundle ) {
-			$tag = 'v1.5.1';
-		}
-
-		$composer_lock_url = sprintf( 'https://raw.githubusercontent.com/%s/%s/composer.lock',
-			$bundle, $tag );
+		$composer_lock_url = sprintf(
+			'https://raw.githubusercontent.com/%s/%s/composer.lock',
+			$bundle,
+			$tag
+		);
 		$response          = Utils\http_request( 'GET', $composer_lock_url );
 		if ( 200 !== $response->status_code ) {
-			WP_CLI::error( sprintf( 'Could not fetch composer.json (HTTP code %d)',
-				$response->status_code ) );
+			WP_CLI::error(
+				sprintf(
+					'Could not fetch composer.json (HTTP code %d)',
+					$response->status_code
+				)
+			);
 		}
 		$composer_json = json_decode( $response->body, true );
 
-		// TODO: Only need for initial v2.
-		$composer_json['packages'][] = array(
-			'name'    => 'wp-cli/i18n-command',
-			'version' => 'v2',
+		usort(
+			$composer_json['packages'],
+			function ( $a, $b ) {
+				return $a['name'] < $b['name'] ? - 1 : 1;
+			}
 		);
-		usort( $composer_json['packages'], function ( $a, $b ) {
-			return $a['name'] < $b['name'] ? - 1 : 1;
-		} );
 
 		foreach ( $composer_json['packages'] as $package ) {
 			$package_name       = $package['name'];
 			$version_constraint = str_replace( 'v', '', $package['version'] );
 			if ( ! preg_match( '#^wp-cli/.+-command$#', $package_name )
-			     && ! in_array( $package_name, array(
-					'wp-cli/wp-cli-tests',
-					'wp-cli/regenerate-readme',
-					'wp-cli/autoload-splitter',
-					'wp-cli/wp-config-transformer',
-					'wp-cli/php-cli-tools',
-					'wp-cli/spyc',
-				), true ) ) {
+				&& ! in_array( $package_name, $this->excluded_packages, true ) ) {
 				continue;
 			}
 
@@ -149,11 +161,14 @@ final class Release_Notes_Command {
 			// Closed milestones denote a tagged release
 			$milestones = GitHub::get_project_milestones(
 				$package_name,
-				array( 'state' => 'closed' )
+				[ 'state' => 'closed' ]
 			);
 			foreach ( $milestones as $milestone ) {
-				if ( ! version_compare( $milestone->title, $version_constraint,
-					'>' ) ) {
+				if ( ! version_compare(
+					$milestone->title,
+					$version_constraint,
+					'>'
+				) ) {
 					continue;
 				}
 
@@ -181,10 +196,10 @@ final class Release_Notes_Command {
 
 		$potential_milestones = GitHub::get_project_milestones(
 			$repo,
-			array( 'state' => 'all' )
+			[ 'state' => 'all' ]
 		);
 
-		$milestones = array();
+		$milestones = [];
 		foreach ( $potential_milestones as $potential_milestone ) {
 			if ( in_array(
 				$potential_milestone->title,
@@ -211,7 +226,7 @@ final class Release_Notes_Command {
 			);
 		}
 
-		$entries = array();
+		$entries = [];
 		foreach ( $milestones as $milestone ) {
 			switch ( $source ) {
 				case 'release':
@@ -222,7 +237,7 @@ final class Release_Notes_Command {
 					$release = GitHub::get_release_by_tag(
 						$repo,
 						$tag,
-						array( 'throw_errors' => false )
+						[ 'throw_errors' => false ]
 					);
 
 					if ( $release ) {
@@ -231,6 +246,7 @@ final class Release_Notes_Command {
 					}
 
 					WP_CLI::warning( "Release notes not found for {$repo}@{$tag}, falling back to pull-request source" );
+					// Fall-through is intentional here.
 				case 'pull-request':
 					$pull_requests = GitHub::get_project_milestone_pull_requests(
 						$repo,
@@ -249,7 +265,7 @@ final class Release_Notes_Command {
 			}
 		}
 
-		$template = $format === 'html' ? '<ul>%s</ul>' : '%s';
+		$template = 'html' === $format ? '<ul>%s</ul>' : '%s';
 
 		WP_CLI::log( sprintf( $template, implode( '', $entries ) ) );
 	}
@@ -258,7 +274,7 @@ final class Release_Notes_Command {
 		$pull_request,
 		$format
 	) {
-		$template = $format === 'html' ?
+		$template = 'html' === $format ?
 			'<li>%1$s [<a href="%3$s">#%2$d</a>]</li>' :
 			'- %1$s [[#%2$d](%3$s)]' . PHP_EOL;
 
