@@ -1463,16 +1463,16 @@
         },
         {
             "name": "wp-cli/cron-command",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cron-command.git",
-                "reference": "dfff746d6786854d847e68cd821cffbd0d3627bd"
+                "reference": "b6d0c8ff69cc56d5316a35a7a2fcc314c4069585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/dfff746d6786854d847e68cd821cffbd0d3627bd",
-                "reference": "dfff746d6786854d847e68cd821cffbd0d3627bd",
+                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/b6d0c8ff69cc56d5316a35a7a2fcc314c4069585",
+                "reference": "b6d0c8ff69cc56d5316a35a7a2fcc314c4069585",
                 "shasum": ""
             },
             "require": {
@@ -1521,7 +1521,7 @@
             ],
             "description": "Tests, runs, and deletes WP-Cron events; manages WP-Cron schedules.",
             "homepage": "https://github.com/wp-cli/cron-command",
-            "time": "2019-04-19T17:00:09+00:00"
+            "time": "2019-04-24T07:31:46+00:00"
         },
         {
             "name": "wp-cli/db-command",
@@ -1658,16 +1658,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "459fba68b2423eb34b2942431c969d274ad89501"
+                "reference": "95f2a07fdfa107aaa778711a4b5b53e962cd183a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/459fba68b2423eb34b2942431c969d274ad89501",
-                "reference": "459fba68b2423eb34b2942431c969d274ad89501",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/95f2a07fdfa107aaa778711a4b5b53e962cd183a",
+                "reference": "95f2a07fdfa107aaa778711a4b5b53e962cd183a",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1678,7 @@
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
                 "wp-cli/media-command": "^1.1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -1860,7 +1860,7 @@
             ],
             "description": "Manage WordPress comments, menus, options, posts, sites, terms, and users.",
             "homepage": "https://github.com/wp-cli/entity-command",
-            "time": "2018-12-12T17:04:32+00:00"
+            "time": "2019-04-23T10:51:55+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -2356,16 +2356,16 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "9cd0995fe59b2cbcf1cadb81f93c0f1191de9209"
+                "reference": "52fea16f3cec0577b9c417a19ebc0f328c38d853"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/9cd0995fe59b2cbcf1cadb81f93c0f1191de9209",
-                "reference": "9cd0995fe59b2cbcf1cadb81f93c0f1191de9209",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/52fea16f3cec0577b9c417a19ebc0f328c38d853",
+                "reference": "52fea16f3cec0577b9c417a19ebc0f328c38d853",
                 "shasum": ""
             },
             "require": {
@@ -2375,7 +2375,7 @@
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2413,7 +2413,7 @@
             ],
             "description": "Lists, installs, and removes WP-CLI packages.",
             "homepage": "https://github.com/wp-cli/package-command",
-            "time": "2018-12-18T17:19:48+00:00"
+            "time": "2019-04-24T09:34:35+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2467,16 +2467,16 @@
         },
         {
             "name": "wp-cli/rewrite-command",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/rewrite-command.git",
-                "reference": "6029d5f88cdc3b08beb6bd02b83fa653a4f46b4a"
+                "reference": "c326dbafcb1d2921f9dbbce03f2633406a75371e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/rewrite-command/zipball/6029d5f88cdc3b08beb6bd02b83fa653a4f46b4a",
-                "reference": "6029d5f88cdc3b08beb6bd02b83fa653a4f46b4a",
+                "url": "https://api.github.com/repos/wp-cli/rewrite-command/zipball/c326dbafcb1d2921f9dbbce03f2633406a75371e",
+                "reference": "c326dbafcb1d2921f9dbbce03f2633406a75371e",
                 "shasum": ""
             },
             "require": {
@@ -2484,7 +2484,7 @@
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.0.7"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2520,7 +2520,7 @@
             ],
             "description": "Lists or flushes the site's rewrite rules, updates the permalink structure.",
             "homepage": "https://github.com/wp-cli/rewrite-command",
-            "time": "2018-10-25T10:16:18+00:00"
+            "time": "2019-04-24T09:26:40+00:00"
         },
         {
             "name": "wp-cli/role-command",
@@ -2935,12 +2935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "2a607e74b0aa6666299ab2881fddf9e5866f9017"
+                "reference": "779bdd16025cb718260b35fd2b69ae47ca80cb91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/2a607e74b0aa6666299ab2881fddf9e5866f9017",
-                "reference": "2a607e74b0aa6666299ab2881fddf9e5866f9017",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/779bdd16025cb718260b35fd2b69ae47ca80cb91",
+                "reference": "779bdd16025cb718260b35fd2b69ae47ca80cb91",
                 "shasum": ""
             },
             "require": {
@@ -2958,7 +2958,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.0.8"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -2989,7 +2989,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2019-04-22T06:05:18+00:00"
+            "time": "2019-04-24T10:39:37+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -3964,12 +3964,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "7c567855e40e04d17e2b91f3fd1d8f6baf5bcca6"
+                "reference": "1b329f4f2d9a0a3981fd79dbfe37754bedd383e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/7c567855e40e04d17e2b91f3fd1d8f6baf5bcca6",
-                "reference": "7c567855e40e04d17e2b91f3fd1d8f6baf5bcca6",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1b329f4f2d9a0a3981fd79dbfe37754bedd383e2",
+                "reference": "1b329f4f2d9a0a3981fd79dbfe37754bedd383e2",
                 "shasum": ""
             },
             "conflict": {
@@ -3983,7 +3983,7 @@
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
-                "cakephp/cakephp": ">=1.3,<1.3.18|>=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=2.7,<2.7.6|>=3,<3.0.15|>=3.1,<3.1.4|>=3.4,<3.4.14|>=3.5,<3.5.17|>=3.6,<3.6.4",
+                "cakephp/cakephp": ">=1.3,<1.3.18|>=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=2.7,<2.7.6|>=3,<3.5.18|>=3.6,<3.6.15|>=3.7,<3.7.7",
                 "cart2quote/module-quotation": ">=4.1.6,<=4.4.5|>=5,<5.4.4",
                 "cartalyst/sentry": "<=2.1.6",
                 "codeigniter/framework": "<=3.0.6",
@@ -4079,30 +4079,33 @@
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "sylius/sylius": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
-                "symfony/dependency-injection": ">=2,<2.0.17",
+                "symfony/cache": ">=3.2,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
+                "symfony/dependency-injection": ">=2,<2.0.17|>=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
-                "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2",
-                "symfony/http-foundation": ">=2,<2.7.49|>=2.8,<2.8.44|>=3,<3.3.18|>=3.4,<3.4.14|>=4,<4.0.14|>=4.1,<4.1.3",
+                "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2|>=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
+                "symfony/http-foundation": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/http-kernel": ">=2,<2.3.29|>=2.4,<2.5.12|>=2.6,<2.6.8",
                 "symfony/intl": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
+                "symfony/phpunit-bridge": ">=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/polyfill": ">=1,<1.10",
                 "symfony/polyfill-php55": ">=1,<1.10",
+                "symfony/proxy-manager-bridge": ">=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/routing": ">=2,<2.0.19",
-                "symfony/security": ">=2,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.19|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
+                "symfony/security": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/security-bundle": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<2.8.37|>=3,<3.3.17|>=3.4,<3.4.7|>=4,<4.0.7",
                 "symfony/security-csrf": ">=2.4,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-guard": ">=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
+                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
+                "symfony/symfony": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "tecnickcom/tcpdf": "<6.2.22",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
+                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
                 "theonedemon/phpwhois": "<=4.2.5",
                 "titon/framework": ">=0,<9.9.99",
                 "truckersmp/phpwhois": "<=4.3.1",
@@ -4161,7 +4164,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-04-20T06:58:11+00:00"
+            "time": "2019-04-24T06:22:37+00:00"
         },
         {
             "name": "sebastian/comparator",
