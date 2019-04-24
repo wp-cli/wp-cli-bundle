@@ -1080,7 +1080,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -2935,12 +2935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "779bdd16025cb718260b35fd2b69ae47ca80cb91"
+                "reference": "1e587cef716da489684c182e539b9c0a7ce0bc88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/779bdd16025cb718260b35fd2b69ae47ca80cb91",
-                "reference": "779bdd16025cb718260b35fd2b69ae47ca80cb91",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/1e587cef716da489684c182e539b9c0a7ce0bc88",
+                "reference": "1e587cef716da489684c182e539b9c0a7ce0bc88",
                 "shasum": ""
             },
             "require": {
@@ -2989,7 +2989,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2019-04-24T10:39:37+00:00"
+            "time": "2019-04-24T22:17:46+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
