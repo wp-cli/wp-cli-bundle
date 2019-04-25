@@ -245,6 +245,12 @@ Feature: WP-CLI Commands
       wp widget <command>
       """
 
+    When I run `wp maintenance-mode --help`
+    Then STDOUT should contain:
+      """
+      wp maintenance-mode <command>
+      """
+
   Scenario: Invalid class is specified for a command
     Given an empty directory
     And a custom-cmd.php file:
