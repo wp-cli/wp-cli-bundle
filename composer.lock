@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f52321893d596e42df76bdef3e57f071",
+    "content-hash": "c4e1098f402b9ee810c75337ca637b63",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1396,21 +1396,21 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "0b5c60d76d34a7f3b8e488536526872e1573c82d"
+                "reference": "14634828e559f69e2525fa9489635f301783aee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/0b5c60d76d34a7f3b8e488536526872e1573c82d",
-                "reference": "0b5c60d76d34a7f3b8e488536526872e1573c82d",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/14634828e559f69e2525fa9489635f301783aee8",
+                "reference": "14634828e559f69e2525fa9489635f301783aee8",
                 "shasum": ""
             },
             "require": {
                 "composer/semver": "^1.4",
-                "wp-cli/wp-cli": "dev-master as v2.2.0"
+                "wp-cli/wp-cli": "^2.2"
             },
             "require-dev": {
                 "wp-cli/checksum-command": "^1 || ^2",
@@ -1459,7 +1459,7 @@
             ],
             "description": "Downloads, installs, updates, and manages a WordPress installation.",
             "homepage": "https://github.com/wp-cli/core-command",
-            "time": "2019-04-24T21:03:08+00:00"
+            "time": "2019-04-25T05:45:44+00:00"
         },
         {
             "name": "wp-cli/cron-command",
@@ -1658,16 +1658,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "81741bc989bdbee3b919e56bf3371c7ea77c8587"
+                "reference": "250ed0da61162819f601fa110251c7e4c5173f27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/81741bc989bdbee3b919e56bf3371c7ea77c8587",
-                "reference": "81741bc989bdbee3b919e56bf3371c7ea77c8587",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/250ed0da61162819f601fa110251c7e4c5173f27",
+                "reference": "250ed0da61162819f601fa110251c7e4c5173f27",
                 "shasum": ""
             },
             "require": {
@@ -1860,7 +1860,7 @@
             ],
             "description": "Manage WordPress comments, menus, options, posts, sites, terms, and users.",
             "homepage": "https://github.com/wp-cli/entity-command",
-            "time": "2019-04-25T00:29:08+00:00"
+            "time": "2019-04-25T04:51:40+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -2988,16 +2988,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-master",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "1ff06eb9c72a07d7924fc1a41cb4cd870b7fdcac"
+                "reference": "193f08f48585326bc1f1648349201531eeda2ee5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/1ff06eb9c72a07d7924fc1a41cb4cd870b7fdcac",
-                "reference": "1ff06eb9c72a07d7924fc1a41cb4cd870b7fdcac",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/193f08f48585326bc1f1648349201531eeda2ee5",
+                "reference": "193f08f48585326bc1f1648349201531eeda2ee5",
                 "shasum": ""
             },
             "require": {
@@ -3046,7 +3046,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2019-04-25T02:43:08+00:00"
+            "time": "2019-04-25T05:38:33+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5055,7 +5055,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
