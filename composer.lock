@@ -1525,16 +1525,16 @@
         },
         {
             "name": "wp-cli/db-command",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/db-command.git",
-                "reference": "dc0f8e4d5783d8a4ee01da1119b8fe8038fe1aa0"
+                "reference": "0cce781beb00c9dd4c4992464b324da7b96486a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/dc0f8e4d5783d8a4ee01da1119b8fe8038fe1aa0",
-                "reference": "dc0f8e4d5783d8a4ee01da1119b8fe8038fe1aa0",
+                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/0cce781beb00c9dd4c4992464b324da7b96486a9",
+                "reference": "0cce781beb00c9dd4c4992464b324da7b96486a9",
                 "shasum": ""
             },
             "require": {
@@ -1591,7 +1591,7 @@
             ],
             "description": "Performs basic database operations using credentials stored in wp-config.php.",
             "homepage": "https://github.com/wp-cli/db-command",
-            "time": "2019-04-25T00:28:40+00:00"
+            "time": "2019-09-25T14:14:43+00:00"
         },
         {
             "name": "wp-cli/embed-command",
