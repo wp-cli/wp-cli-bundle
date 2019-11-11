@@ -124,7 +124,7 @@ function get_composer_versions( $current_version ) {
 		return '';
 	}
 
-	$vendor_versions    = [ implode( ' ', [ 'wp-cli/wp-cli', $current_version, date( 'c' ) ] ) ];
+	$vendor_versions    = [ implode( ' ', [ 'wp-cli/wp-cli', $current_version, gmdate( 'c' ) ] ) ];
 	$missing_names      = 0;
 	$missing_versions   = 0;
 	$missing_references = 0;
