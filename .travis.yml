@@ -78,5 +78,6 @@ jobs:
       dist: precise
       env: WP_VERSION=5.1
     - stage: deploy
+      if: branch = master
       env: DEPLOY_BRANCH=master
       script: ./ci/deploy.sh
