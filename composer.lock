@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d216642652585001d9e059f1963f14d",
+    "content-hash": "37ecd5a36141ffd7cbf032bf92f48c21",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -608,6 +608,11 @@
                 "phpunit/phpunit": "~3.7|~4.0|~5.0"
             },
             "type": "library",
+            "extra": {
+                "patches_applied": {
+                    "Avoid notices on PHP 7.4+": "https://patch-diff.githubusercontent.com/raw/bobthecow/mustache.php/pull/349.patch"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Mustache": "src/"
@@ -630,12 +635,7 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2017-07-11T12:54:05+00:00",
-            "extra": {
-                "patches_applied": {
-                    "Avoid notices on PHP 7.4+": "https://patch-diff.githubusercontent.com/raw/bobthecow/mustache.php/pull/349.patch"
-                }
-            }
+            "time": "2017-07-11T12:54:05+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -3043,12 +3043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "111686100fc9cd91f39460d0dadd0cc7c15832b2"
+                "reference": "74c949c74708e3a88ad0add70f3236c8675dfd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/111686100fc9cd91f39460d0dadd0cc7c15832b2",
-                "reference": "111686100fc9cd91f39460d0dadd0cc7c15832b2",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/74c949c74708e3a88ad0add70f3236c8675dfd85",
+                "reference": "74c949c74708e3a88ad0add70f3236c8675dfd85",
                 "shasum": ""
             },
             "require": {
@@ -3103,7 +3103,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2019-11-12T02:38:26+00:00"
+            "time": "2019-11-12T15:26:05+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5122,7 +5122,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
