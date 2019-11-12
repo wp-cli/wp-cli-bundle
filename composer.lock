@@ -2225,16 +2225,16 @@
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "12197674eab3e1263fcadc9670cb57e916615c6c"
+                "reference": "a14a385efffba2060f947afa85f7ffd7e7cda5d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/12197674eab3e1263fcadc9670cb57e916615c6c",
-                "reference": "12197674eab3e1263fcadc9670cb57e916615c6c",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/a14a385efffba2060f947afa85f7ffd7e7cda5d7",
+                "reference": "a14a385efffba2060f947afa85f7ffd7e7cda5d7",
                 "shasum": ""
             },
             "require": {
@@ -2296,7 +2296,7 @@
             ],
             "description": "Installs, activates, and manages language packs.",
             "homepage": "https://github.com/wp-cli/language-command",
-            "time": "2019-04-25T00:31:43+00:00"
+            "time": "2019-11-12T01:33:31+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
