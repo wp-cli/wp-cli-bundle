@@ -608,11 +608,6 @@
                 "phpunit/phpunit": "~3.7|~4.0|~5.0"
             },
             "type": "library",
-            "extra": {
-                "patches_applied": {
-                    "Avoid notices on PHP 7.4+": "https://patch-diff.githubusercontent.com/raw/bobthecow/mustache.php/pull/349.patch"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Mustache": "src/"
@@ -635,7 +630,12 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2017-07-11T12:54:05+00:00"
+            "time": "2017-07-11T12:54:05+00:00",
+            "extra": {
+                "patches_applied": {
+                    "Avoid notices on PHP 7.4+": "https://patch-diff.githubusercontent.com/raw/bobthecow/mustache.php/pull/349.patch"
+                }
+            }
         },
         {
             "name": "nb/oxymel",
@@ -1644,16 +1644,16 @@
         },
         {
             "name": "wp-cli/embed-command",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/embed-command.git",
-                "reference": "ce0c86217d9c0500666bd986ab17cae0ae33a41b"
+                "reference": "f67fd41a056c6cb847e8601e058fa836b9e5d325"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/ce0c86217d9c0500666bd986ab17cae0ae33a41b",
-                "reference": "ce0c86217d9c0500666bd986ab17cae0ae33a41b",
+                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/f67fd41a056c6cb847e8601e058fa836b9e5d325",
+                "reference": "f67fd41a056c6cb847e8601e058fa836b9e5d325",
                 "shasum": ""
             },
             "require": {
@@ -1703,7 +1703,7 @@
             ],
             "description": "Inspects oEmbed providers, clears embed cache, and more.",
             "homepage": "https://github.com/wp-cli/embed-command",
-            "time": "2019-04-25T00:28:56+00:00"
+            "time": "2019-11-12T01:43:50+00:00"
         },
         {
             "name": "wp-cli/entity-command",
