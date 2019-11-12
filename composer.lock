@@ -608,11 +608,6 @@
                 "phpunit/phpunit": "~3.7|~4.0|~5.0"
             },
             "type": "library",
-            "extra": {
-                "patches_applied": {
-                    "Avoid notices on PHP 7.4+": "https://patch-diff.githubusercontent.com/raw/bobthecow/mustache.php/pull/349.patch"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Mustache": "src/"
@@ -635,7 +630,12 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2017-07-11T12:54:05+00:00"
+            "time": "2017-07-11T12:54:05+00:00",
+            "extra": {
+                "patches_applied": {
+                    "Avoid notices on PHP 7.4+": "https://patch-diff.githubusercontent.com/raw/bobthecow/mustache.php/pull/349.patch"
+                }
+            }
         },
         {
             "name": "nb/oxymel",
@@ -5009,16 +5009,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v2.1.8",
+            "version": "v2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "3d15e519046410c464ed20c1cfdb9d2c1ff0683a"
+                "reference": "003f1855c5059cd7fa8d816fbc04a1634cf60b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/3d15e519046410c464ed20c1cfdb9d2c1ff0683a",
-                "reference": "3d15e519046410c464ed20c1cfdb9d2c1ff0683a",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/003f1855c5059cd7fa8d816fbc04a1634cf60b97",
+                "reference": "003f1855c5059cd7fa8d816fbc04a1634cf60b97",
                 "shasum": ""
             },
             "require": {
@@ -5071,7 +5071,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2019-11-12T12:33:58+00:00"
+            "time": "2019-11-12T16:54:06+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
