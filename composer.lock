@@ -2975,20 +2975,20 @@
         },
         {
             "name": "wp-cli/widget-command",
-            "version": "v2.0.3",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/widget-command.git",
-                "reference": "ad69fa608a30d17f8a73c94fdd64e91c7de458d2"
+                "reference": "ddbc2c3e9966fae8de05a3200b04e0faf42fe06f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/ad69fa608a30d17f8a73c94fdd64e91c7de458d2",
-                "reference": "ad69fa608a30d17f8a73c94fdd64e91c7de458d2",
+                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/ddbc2c3e9966fae8de05a3200b04e0faf42fe06f",
+                "reference": "ddbc2c3e9966fae8de05a3200b04e0faf42fe06f",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "dev-master"
+                "wp-cli/wp-cli": "^2.4"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
@@ -3034,7 +3034,7 @@
             ],
             "description": "Adds, moves, and removes widgets; lists sidebars.",
             "homepage": "https://github.com/wp-cli/widget-command",
-            "time": "2019-10-01T08:37:32+00:00"
+            "time": "2020-01-18T02:17:30+00:00"
         },
         {
             "name": "wp-cli/wp-cli",
@@ -4079,12 +4079,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "20fe69963cab4697c5a5dfc8bc720c92a42c0b39"
+                "reference": "7d271200b041d3e4be5927fdb03122508b9f8ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/20fe69963cab4697c5a5dfc8bc720c92a42c0b39",
-                "reference": "20fe69963cab4697c5a5dfc8bc720c92a42c0b39",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/7d271200b041d3e4be5927fdb03122508b9f8ebb",
+                "reference": "7d271200b041d3e4be5927fdb03122508b9f8ebb",
                 "shasum": ""
             },
             "conflict": {
@@ -4123,7 +4123,11 @@
                 "drupal/drupal": ">=7,<7.69|>=8,<8.7.11|>=8.8,<8.8.1",
                 "endroid/qr-code-bundle": "<3.4.2",
                 "erusev/parsedown": "<1.7.2",
-                "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.4",
+                "ezsystems/ezfind-ls": ">=5.3,<5.3.6.1|>=5.4,<5.4.11.1|>=2017.12,<2017.12.0.1",
+                "ezsystems/ezplatform": ">=1.7,<1.7.9.1|>=1.13,<1.13.5.1|>=2.5,<2.5.4",
+                "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.6",
+                "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2",
+                "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": ">=5.3,<5.3.12.1|>=5.4,<5.4.13.1|>=6,<6.7.9.1|>=6.8,<6.13.5.1|>=7,<7.2.4.1|>=7.3,<7.3.2.1",
                 "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.6|>=5.4,<5.4.12.3|>=2011,<2017.12.4.3|>=2018.6,<2018.6.1.4|>=2018.9,<2018.9.1.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
@@ -4167,7 +4171,7 @@
                 "paypal/merchant-sdk-php": "<3.12",
                 "pear/archive_tar": "<1.4.4",
                 "phpmailer/phpmailer": ">=5,<5.2.27|>=6,<6.0.6",
-                "phpoffice/phpexcel": "<=1.8.2",
+                "phpoffice/phpexcel": "<1.8.2",
                 "phpoffice/phpspreadsheet": "<=1.5",
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
@@ -4304,7 +4308,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-02-05T06:28:40+00:00"
+            "time": "2020-02-06T16:34:55+00:00"
         },
         {
             "name": "sebastian/comparator",
