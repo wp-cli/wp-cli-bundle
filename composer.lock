@@ -1511,16 +1511,16 @@
         },
         {
             "name": "wp-cli/cron-command",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cron-command.git",
-                "reference": "b6d0c8ff69cc56d5316a35a7a2fcc314c4069585"
+                "reference": "184ce82dfd6e7284a73f039ae39cf51a5f73174e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/b6d0c8ff69cc56d5316a35a7a2fcc314c4069585",
-                "reference": "b6d0c8ff69cc56d5316a35a7a2fcc314c4069585",
+                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/184ce82dfd6e7284a73f039ae39cf51a5f73174e",
+                "reference": "184ce82dfd6e7284a73f039ae39cf51a5f73174e",
                 "shasum": ""
             },
             "require": {
@@ -1545,7 +1545,8 @@
                     "cron event run",
                     "cron event schedule",
                     "cron schedule",
-                    "cron schedule list"
+                    "cron schedule list",
+                    "cron event unschedule"
                 ]
             },
             "autoload": {
@@ -1569,7 +1570,7 @@
             ],
             "description": "Tests, runs, and deletes WP-Cron events; manages WP-Cron schedules.",
             "homepage": "https://github.com/wp-cli/cron-command",
-            "time": "2019-04-24T07:31:46+00:00"
+            "time": "2019-12-17T17:53:36+00:00"
         },
         {
             "name": "wp-cli/db-command",
