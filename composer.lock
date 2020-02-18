@@ -2756,16 +2756,16 @@
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "d53ae0715d3701ef22826d5c7b46973a1b24e472"
+                "reference": "f446ca1f90144b496dbacb373868118ba40df028"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/d53ae0715d3701ef22826d5c7b46973a1b24e472",
-                "reference": "d53ae0715d3701ef22826d5c7b46973a1b24e472",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/f446ca1f90144b496dbacb373868118ba40df028",
+                "reference": "f446ca1f90144b496dbacb373868118ba40df028",
                 "shasum": ""
             },
             "require": {
@@ -2808,7 +2808,7 @@
             ],
             "description": "Searches/replaces strings in the database.",
             "homepage": "https://github.com/wp-cli/search-replace-command",
-            "time": "2019-11-12T01:29:55+00:00"
+            "time": "2019-12-13T09:13:20+00:00"
         },
         {
             "name": "wp-cli/server-command",
