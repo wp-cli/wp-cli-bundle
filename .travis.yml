@@ -7,9 +7,6 @@ php: 7.4
 services:
   - mysql
 
-services:
-  - mysql
-
 notifications:
   email:
     on_success: never
