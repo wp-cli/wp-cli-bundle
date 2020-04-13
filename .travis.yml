@@ -53,7 +53,7 @@ jobs:
         - composer phpcs
       env: BUILD=sniff
     - stage: test
-      php: 7.4snapshot
+      php: 7.4
       env: WP_VERSION=latest
     - stage: test
       php: 7.3
@@ -83,7 +83,3 @@ jobs:
     - stage: deploy
       env: DEPLOY_BRANCH=master
       script: ./ci/deploy.sh
-  allow_failures:
-    - stage: test
-      php: 7.4snapshot
-      env: WP_VERSION=latest
