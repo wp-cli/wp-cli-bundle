@@ -1,8 +1,14 @@
 os: linux
-dist: trusty
+dist: xenial
 
 language: php
-php: 7.2
+php: 7.4
+
+services:
+  - mysql
+
+services:
+  - mysql
 
 notifications:
   email:
