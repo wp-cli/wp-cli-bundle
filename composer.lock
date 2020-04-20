@@ -2025,16 +2025,16 @@
         },
         {
             "name": "wp-cli/extension-command",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/extension-command.git",
-                "reference": "3f55805356ccc502f38a24f224b8943f181d4813"
+                "reference": "b6b042fbeb7b3765e28b92e2971739af3d4ee888"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/3f55805356ccc502f38a24f224b8943f181d4813",
-                "reference": "3f55805356ccc502f38a24f224b8943f181d4813",
+                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/b6b042fbeb7b3765e28b92e2971739af3d4ee888",
+                "reference": "b6b042fbeb7b3765e28b92e2971739af3d4ee888",
                 "shasum": ""
             },
             "require": {
@@ -2104,11 +2104,16 @@
                     "name": "Daniel Bachhuber",
                     "email": "daniel@runcommand.io",
                     "homepage": "https://runcommand.io"
+                },
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com",
+                    "homepage": "https://www.alainschlesser.com"
                 }
             ],
             "description": "Manages plugins and themes, including installs, activations, and updates.",
             "homepage": "https://github.com/wp-cli/extension-command",
-            "time": "2020-02-24T02:53:35+00:00"
+            "time": "2020-04-13T14:55:45+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
