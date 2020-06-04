@@ -8,7 +8,7 @@
     "homepage": "https://wp-cli.org",
     "license": "MIT",
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "cweagans/composer-patches": "^1.6",
         "wp-cli/cache-command": "^2",
         "wp-cli/checksum-command": "^2",
@@ -46,7 +46,7 @@
     },
     "config": {
         "platform": {
-            "php": "5.4"
+            "php": "5.6"
         },
         "process-timeout": 7200,
         "sort-packages": true
