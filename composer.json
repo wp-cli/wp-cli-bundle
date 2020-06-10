@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": ">=5.6",
-        "cweagans/composer-patches": "^1.6",
         "wp-cli/cache-command": "^2",
         "wp-cli/checksum-command": "^2",
         "wp-cli/config-command": "^2",
@@ -54,8 +53,7 @@
     "extra": {
         "branch-alias": {
             "dev-master": "2.5.x-dev"
-        },
-        "enable-patching": true
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -65,9 +63,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "post-install-cmd": [
-            "./utils/git-setup-pre-commit-hook"
-        ],
         "behat": "run-behat-tests",
         "behat-rerun": "rerun-behat-tests",
         "lint": "run-linter-tests",
