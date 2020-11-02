@@ -2869,16 +2869,16 @@
         },
         {
             "name": "wp-cli/shell-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/shell-command.git",
-                "reference": "f655611701ed331c336932091860e66839a535f3"
+                "reference": "d29fceda4c79b2e6e4295b563427f76e3b7bc1ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/f655611701ed331c336932091860e66839a535f3",
-                "reference": "f655611701ed331c336932091860e66839a535f3",
+                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/d29fceda4c79b2e6e4295b563427f76e3b7bc1ba",
+                "reference": "d29fceda4c79b2e6e4295b563427f76e3b7bc1ba",
                 "shasum": ""
             },
             "require": {
@@ -2919,7 +2919,7 @@
             ],
             "description": "Opens an interactive PHP console for running and testing PHP code.",
             "homepage": "https://github.com/wp-cli/shell-command",
-            "time": "2020-06-12T00:17:09+00:00"
+            "time": "2020-10-31T08:19:44+00:00"
         },
         {
             "name": "wp-cli/super-admin-command",
