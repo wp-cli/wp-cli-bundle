@@ -4250,12 +4250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "065a018d3b5c2c84a53db3347cca4e1b7fa362a6"
+                "reference": "e440567339d5fe93d9525e377c5e686b0b08bcca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/065a018d3b5c2c84a53db3347cca4e1b7fa362a6",
-                "reference": "065a018d3b5c2c84a53db3347cca4e1b7fa362a6",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e440567339d5fe93d9525e377c5e686b0b08bcca",
+                "reference": "e440567339d5fe93d9525e377c5e686b0b08bcca",
                 "shasum": ""
             },
             "conflict": {
@@ -4553,7 +4553,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-01T20:01:47+00:00"
+            "time": "2020-11-07T16:07:08+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5540,16 +5540,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v2.1.15",
+            "version": "v2.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "c97df8966ced70607093d618d25d2c6d3888a593"
+                "reference": "e47c8eda783b736e56e12a1a13698d420c90a538"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/c97df8966ced70607093d618d25d2c6d3888a593",
-                "reference": "c97df8966ced70607093d618d25d2c6d3888a593",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/e47c8eda783b736e56e12a1a13698d420c90a538",
+                "reference": "e47c8eda783b736e56e12a1a13698d420c90a538",
                 "shasum": ""
             },
             "require": {
@@ -5601,7 +5601,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2020-10-02T07:02:04+00:00"
+            "time": "2020-11-10T07:12:43+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
