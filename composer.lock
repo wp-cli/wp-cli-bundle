@@ -4250,12 +4250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e440567339d5fe93d9525e377c5e686b0b08bcca"
+                "reference": "739cebd6c58ef0ea1fc52e03fb3be4f3726be346"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e440567339d5fe93d9525e377c5e686b0b08bcca",
-                "reference": "e440567339d5fe93d9525e377c5e686b0b08bcca",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/739cebd6c58ef0ea1fc52e03fb3be4f3726be346",
+                "reference": "739cebd6c58ef0ea1fc52e03fb3be4f3726be346",
                 "shasum": ""
             },
             "conflict": {
@@ -4390,6 +4390,7 @@
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
                 "pimcore/pimcore": "<6.3",
+                "pocketmine/pocketmine-mp": "<3.15.4",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
                 "prestashop/contactform": ">1.0.1,<4.3",
                 "prestashop/gamification": "<2.3.2",
@@ -4553,7 +4554,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-07T16:07:08+00:00"
+            "time": "2020-11-11T22:01:54+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5540,22 +5541,22 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v2.1.16",
+            "version": "v2.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "e47c8eda783b736e56e12a1a13698d420c90a538"
+                "reference": "7879c6196cc22d4ea5bd8ed9ad56200eec17057c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/e47c8eda783b736e56e12a1a13698d420c90a538",
-                "reference": "e47c8eda783b736e56e12a1a13698d420c90a538",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/7879c6196cc22d4ea5bd8ed9ad56200eec17057c",
+                "reference": "7879c6196cc22d4ea5bd8ed9ad56200eec17057c",
                 "shasum": ""
             },
             "require": {
-                "behat/behat": "^2.5",
+                "behat/behat": "^2.5.5",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3 || ^0.5 || ^0.6.2 || ^0.7",
-                "php": ">=5.4",
+                "php": ">=5.6",
                 "php-parallel-lint/php-console-highlighter": "^0.5",
                 "php-parallel-lint/php-parallel-lint": "^1",
                 "phpcompatibility/php-compatibility": "^9",
@@ -5601,7 +5602,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2020-11-10T07:12:43+00:00"
+            "time": "2020-11-12T06:13:32+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
