@@ -26,7 +26,7 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '${{ matrix.php }}'
+          php-version: '7.4'
           extensions: mysql, zip, imagick
           coverage: none
           tools: composer
