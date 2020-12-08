@@ -181,7 +181,6 @@ $finder
 	->in( WP_CLI_VENDOR_DIR . '/mustache' )
 	->in( WP_CLI_VENDOR_DIR . '/rmccue/requests' )
 	->in( WP_CLI_VENDOR_DIR . '/composer' )
-	->in( WP_CLI_VENDOR_DIR . '/react' )
 	->in( WP_CLI_VENDOR_DIR . '/symfony/finder' )
 	->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-ctype' )
 	->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-mbstring' )
@@ -195,6 +194,10 @@ $finder
 	->exclude( 'tests' )
 	->exclude( 'Test' )
 	->exclude( 'Tests' );
+if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
+	$finder
+		->in( WP_CLI_VENDOR_DIR . '/react' );
+}
 if ( 'cli' === BUILD ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/mustangostang-spyc' )
