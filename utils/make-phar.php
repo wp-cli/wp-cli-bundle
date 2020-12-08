@@ -195,6 +195,10 @@ $finder
 	->exclude( 'tests' )
 	->exclude( 'Test' )
 	->exclude( 'Tests' );
+if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
+	$finder
+		->in( WP_CLI_VENDOR_DIR . '/react' );
+}
 if ( 'cli' === BUILD ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/mustangostang-spyc' )
