@@ -173,16 +173,58 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         env:
           WP_VERSION: '${{ matrix.wp }}'
-        run: 'composer behat || composer behat-rerun'
+        run: |
+          composer behat || composer behat-rerun
 
   deploy: #-----------------------------------------------------------------------
     name: Deployment
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'ref/head/master' }}
     needs: [build, test]
 
     steps:
+      - name: Clone builds repository
+        run: |
+          git clone git@github.com:wp-cli/builds.git
+          echo "$CLI_VERSION" > builds/phar/NIGHTLY_VERSION
+
       - name: Download built Phar file
         uses: actions/download-artifact@v2
         with:
           name: wp-cli-phar
+
+      - name: Set file name (release)
+        if: contains(github.ref, "release")
+        run: |
+          echo 'FILENAME=wp-cli-release.phar' > $GITHUB_ENV
+
+      - name: Set file name (release)
+        if: !contains(github.ref, "release")
+        run: |
+          echo 'FILENAME=wp-cli-nightly.phar' > $GITHUB_ENV
+
+      - name: Move built Phar file into correct location
+        run: |
+          mv wp-cli.phar > builds/phar/$FILENAME
+
+      - name: Make built Phar executable
+        run: |
+          chmod +x builds/phar/$FILENAME
+
+      - name : Create hashes
+        run: |
+          md5sum builds/phar/$FILENAME | cut -d ' ' -f 1 > builds/phar/$FILENAME.md5
+          sha512sum builds/phar/$FILENAME | cut -d ' ' -f 1 > builds/phar/$FILENAME.sha512
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add builds/phar/$FILENAME builds/phar/$FILENAME.md5 builds/phar/$FILENAME.sha512 phar/NIGHTLY_VERSION
+          git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACTION_BOT }}
+          branch: master
+          repository: wp-cli/builds
