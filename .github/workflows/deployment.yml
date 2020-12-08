@@ -186,11 +186,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: wp-cli/builds
+          branch: gh-pages
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Set new nightly version
         run: |
-          echo "$CLI_VERSION" > builds/phar/NIGHTLY_VERSION
+          echo "$CLI_VERSION" > phar/NIGHTLY_VERSION
 
       - name: Download built Phar file
         uses: actions/download-artifact@v2
@@ -209,22 +210,22 @@ jobs:
 
       - name: Move built Phar file into correct location
         run: |
-          mv wp-cli.phar > builds/phar/$FILENAME
+          mv wp-cli.phar > phar/$FILENAME
 
       - name: Make built Phar executable
         run: |
-          chmod +x builds/phar/$FILENAME
+          chmod +x phar/$FILENAME
 
       - name : Create hashes
         run: |
-          md5sum builds/phar/$FILENAME | cut -d ' ' -f 1 > builds/phar/$FILENAME.md5
-          sha512sum builds/phar/$FILENAME | cut -d ' ' -f 1 > builds/phar/$FILENAME.sha512
+          md5sum phar/$FILENAME | cut -d ' ' -f 1 > phar/$FILENAME.md5
+          sha512sum phar/$FILENAME | cut -d ' ' -f 1 > phar/$FILENAME.sha512
 
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add builds/phar/$FILENAME builds/phar/$FILENAME.md5 builds/phar/$FILENAME.sha512 phar/NIGHTLY_VERSION
+          git add phar/$FILENAME phar/$FILENAME.md5 phar/$FILENAME.sha512 phar/NIGHTLY_VERSION
           git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
