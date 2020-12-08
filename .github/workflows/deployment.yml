@@ -186,7 +186,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: wp-cli/builds
-          token: ${{ secrets.ACTION_BOT }}
+          token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Set new nightly version
         run: |
@@ -230,6 +230,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.ACTION_BOT }}
+          github_token: ${{ secrets.ACTIONS_BOT }}
           branch: master
           repository: wp-cli/builds
