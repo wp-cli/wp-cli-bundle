@@ -210,7 +210,7 @@ jobs:
 
       - name: Move built Phar file into correct location
         run: |
-          mv wp-cli.phar > phar/$FILENAME
+          mv wp-cli.phar phar/$FILENAME
 
       - name: Make built Phar executable
         run: |
@@ -232,5 +232,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
-          branch: master
+          branch: gh-pages
           repository: wp-cli/builds
