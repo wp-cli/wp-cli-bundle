@@ -69,7 +69,7 @@ function add_file( $phar, $path ) {
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?!finder|polyfill-mbstring|process)\'',
+					'\/symfony\/(?!finder|polyfill-mbstring|polyfill-php80|process)\'',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
@@ -77,7 +77,7 @@ function add_file( $phar, $path ) {
 				$strips = [
 					'\/(?:behat|gherkin)\/src\/',
 					'\/phpunit\/',
-					'\/symfony\/(?!console|filesystem|finder|polyfill-mbstring|process)\'',
+					'\/symfony\/(?!console|filesystem|finder|polyfill-mbstring|polyfill-php80|process)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
