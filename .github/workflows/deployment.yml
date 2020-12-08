@@ -182,9 +182,14 @@ jobs:
     needs: [build, test]
 
     steps:
-      - name: Clone builds repository
+      - name: Check out builds repository
+        uses: actions/checkout@v2
+        with:
+          repository: wp-cli/builds
+          token: ${{ secrets.ACTION_BOT }}
+
+      - name: Set new nightly version
         run: |
-          git clone git@github.com:wp-cli/builds.git
           echo "$CLI_VERSION" > builds/phar/NIGHTLY_VERSION
 
       - name: Download built Phar file
