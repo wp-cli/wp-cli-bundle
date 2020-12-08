@@ -177,7 +177,7 @@ jobs:
   deploy: #-----------------------------------------------------------------------
     name: Deployment
     runs-on: ubuntu-latest
-    if: {{ github.ref == 'ref/head/master' }}
+    if: ${{ github.ref == 'ref/head/master' }}
     needs: [build, test]
 
     steps:
