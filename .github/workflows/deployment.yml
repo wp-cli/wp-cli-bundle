@@ -186,7 +186,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: wp-cli/builds
-          branch: gh-pages
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Set new nightly version
