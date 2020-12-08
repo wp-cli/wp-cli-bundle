@@ -2295,16 +2295,16 @@
         },
         {
             "name": "wp-cli/import-command",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/import-command.git",
-                "reference": "5c5762401b570b95a61152411c4120cd69419001"
+                "reference": "c7438c1eeda5669531c52fc9223fcea5bda39cc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/5c5762401b570b95a61152411c4120cd69419001",
-                "reference": "5c5762401b570b95a61152411c4120cd69419001",
+                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/c7438c1eeda5669531c52fc9223fcea5bda39cc8",
+                "reference": "c7438c1eeda5669531c52fc9223fcea5bda39cc8",
                 "shasum": ""
             },
             "require": {
@@ -2347,7 +2347,7 @@
             ],
             "description": "Imports content from a given WXR file.",
             "homepage": "https://github.com/wp-cli/import-command",
-            "time": "2020-06-11T00:17:12+00:00"
+            "time": "2020-12-07T19:28:45+00:00"
         },
         {
             "name": "wp-cli/language-command",
