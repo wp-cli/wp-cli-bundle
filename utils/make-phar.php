@@ -177,7 +177,7 @@ $finder = new Finder();
 $finder
 	->files()
 	->ignoreVCS( true )
-	->name( '*.php' )
+	->name( '/\.*.php8?/' )
 	->in( WP_CLI_ROOT . '/php' )
 	->in( WP_CLI_BUNDLE_ROOT . '/php' )
 	->in( WP_CLI_VENDOR_DIR . '/mustache' )
