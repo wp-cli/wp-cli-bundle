@@ -143,11 +143,11 @@ jobs:
       - name: Prepare test database
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
-          export MYQSL_HOST=127.0.0.1
+          export MYSQL_HOST=127.0.0.1
           export MYSQL_TCP_PORT=${{ job.services.mysql.ports['3306'] }}
           mysql -e 'CREATE DATABASE IF NOT EXISTS wp_cli_test;' -uroot -proot
-          mysql -e 'GRANT ALL PRIVILEGES ON wp_cli_test.* TO "wp_cli_test"@"127.0.0.1" IDENTIFIED BY "password1"' -uroot -proot
-          mysql -e 'GRANT ALL PRIVILEGES ON wp_cli_test_scaffold.* TO "wp_cli_test"@"127.0.0.1" IDENTIFIED BY "password1"' -uroot -proot
+          mysql -e 'GRANT ALL PRIVILEGES ON wp_cli_test.* TO wp_cli_test@127.0.0.1 IDENTIFIED BY "password1"' -uroot -proot
+          mysql -e 'GRANT ALL PRIVILEGES ON wp_cli_test_scaffold.* TO wp_cli_test@127.0.0.1 IDENTIFIED BY "password1"' -uroot -proot
 
       - name: Run Behat
         if: steps.check_files.outputs.files_exists == 'true'
