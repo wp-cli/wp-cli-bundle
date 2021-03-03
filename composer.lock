@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e936032a7ab910a6b472ee1ad88f70bd",
+    "content-hash": "3d2ba102925d190bd88b0d91909ad409",
     "packages": [
         {
             "name": "behat/behat",
@@ -6018,7 +6018,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
