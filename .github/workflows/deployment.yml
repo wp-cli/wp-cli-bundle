@@ -50,7 +50,7 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: COMPOSER_ROOT_VERSION=dev-master composer install --prefer-source --no-progress --no-suggest --no-interaction
 
-      - name: Store WP_CLI version
+      - name: Store WP-CLI version
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
           CLI_VERSION=$(head -n 1 vendor/wp-cli/wp-cli/VERSION)
@@ -61,6 +61,13 @@ jobs:
           	CLI_VERSION="$CLI_VERSION-$GIT_SHORT_HASH"
           fi
           echo "CLI_VERSION=$CLI_VERSION" > $GITHUB_ENV
+          echo "$CLI_VERSION" > cli_version.txt
+
+      - name: Persist WP-CLI version as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cli_version
+          path: cli_version.txt
 
       - name: Build the Phar file
         if: steps.check_files.outputs.files_exists == 'true'
@@ -212,9 +219,15 @@ jobs:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
+      - name: Download WP-CLI version artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: cli_version
+          path: cli_version.txt
+
       - name: Set new nightly version
         run: |
-          echo "$CLI_VERSION" > phar/NIGHTLY_VERSION
+          echo "$(cat cli_version.txt)" > phar/NIGHTLY_VERSION
 
       - name: Download built Phar file
         uses: actions/download-artifact@v2
