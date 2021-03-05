@@ -219,9 +219,15 @@ jobs:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
+      - name: Download WP-CLI version artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: cli_version
+          path: cli_version.txt
+
       - name: Set new nightly version
         run: |
-          echo "$CLI_VERSION" > phar/NIGHTLY_VERSION
+          echo "$(cat cli_version.txt)" > phar/NIGHTLY_VERSION
 
       - name: Download built Phar file
         uses: actions/download-artifact@v2
