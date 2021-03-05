@@ -83,18 +83,6 @@ jobs:
             wp: 'trunk'
             mysql: '8.0'
             test: "composer behat || composer behat-rerun"
-          - php: '8.0'
-            wp: 'trunk'
-            mysql: '8.0'
-            test: "composer behat || composer behat-rerun"
-          - php: '8.0'
-            wp: 'trunk'
-            mysql: '5.7'
-            test: "composer behat || composer behat-rerun"
-          - php: '8.0'
-            wp: 'trunk'
-            mysql: '5.6'
-            test: "composer behat || composer behat-rerun"
           - php: '5.6'
             wp: '3.7'
             mysql: '5.6'
