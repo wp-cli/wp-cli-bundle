@@ -35,11 +35,11 @@
         "wp-cli/shell-command": "^2",
         "wp-cli/super-admin-command": "^2",
         "wp-cli/widget-command": "^2",
-        "wp-cli/wp-cli": "dev-master"
+        "wp-cli/wp-cli": "^2.5",
+        "wp-cli/wp-cli-tests": "^3.0.7"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master",
-        "wp-cli/wp-cli-tests": "^2.1"
+        "roave/security-advisories": "dev-master"
     },
     "suggest": {
         "psy/psysh": "Enhanced `wp shell` functionality"
