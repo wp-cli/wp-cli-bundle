@@ -36,7 +36,7 @@
         "wp-cli/super-admin-command": "^2",
         "wp-cli/widget-command": "^2",
         "wp-cli/wp-cli": "^2.5",
-        "wp-cli/wp-cli-tests": "^3.0.2"
+        "wp-cli/wp-cli-tests": "^3.0.7"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
