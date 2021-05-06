@@ -5075,23 +5075,23 @@
         },
         {
             "name": "wp-cli/role-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/role-command.git",
-                "reference": "50e563a81f7462c4c5374abf6a1c0e88dfb01c9c"
+                "reference": "2c1750d38d90d29526e2a85c944654ae9e72e1bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/50e563a81f7462c4c5374abf6a1c0e88dfb01c9c",
-                "reference": "50e563a81f7462c4c5374abf6a1c0e88dfb01c9c",
+                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/2c1750d38d90d29526e2a85c944654ae9e72e1bc",
+                "reference": "2c1750d38d90d29526e2a85c944654ae9e72e1bc",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -5133,7 +5133,7 @@
             ],
             "description": "Adds, removes, lists, and resets roles and capabilities.",
             "homepage": "https://github.com/wp-cli/role-command",
-            "time": "2020-12-07T19:27:04+00:00"
+            "time": "2021-05-05T06:45:46+00:00"
         },
         {
             "name": "wp-cli/scaffold-command",
