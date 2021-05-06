@@ -4083,24 +4083,24 @@
         },
         {
             "name": "wp-cli/embed-command",
-            "version": "v2.0.7",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/embed-command.git",
-                "reference": "93d5582a9b03e950d3a2fe0869ae2c12d55a6242"
+                "reference": "425d702cc8438e886116230420a89f6876b80d21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/93d5582a9b03e950d3a2fe0869ae2c12d55a6242",
-                "reference": "93d5582a9b03e950d3a2fe0869ae2c12d55a6242",
+                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/425d702cc8438e886116230420a89f6876b80d21",
+                "reference": "425d702cc8438e886116230420a89f6876b80d21",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4142,7 +4142,7 @@
             ],
             "description": "Inspects oEmbed providers, clears embed cache, and more.",
             "homepage": "https://github.com/wp-cli/embed-command",
-            "time": "2020-12-07T19:30:42+00:00"
+            "time": "2021-05-05T06:44:41+00:00"
         },
         {
             "name": "wp-cli/entity-command",
