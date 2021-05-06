@@ -5200,26 +5200,26 @@
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.0.10",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "cd03d7e1aa3291d4449bd6022fa2b823e612c820"
+                "reference": "ecd2c02a26cca5130c0313b53de1d84bda149a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/cd03d7e1aa3291d4449bd6022fa2b823e612c820",
-                "reference": "cd03d7e1aa3291d4449bd6022fa2b823e612c820",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/ecd2c02a26cca5130c0313b53de1d84bda149a06",
+                "reference": "ecd2c02a26cca5130c0313b53de1d84bda149a06",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "~2.5"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -5252,7 +5252,7 @@
             ],
             "description": "Searches/replaces strings in the database.",
             "homepage": "https://github.com/wp-cli/search-replace-command",
-            "time": "2021-01-14T12:26:15+00:00"
+            "time": "2021-05-05T06:45:52+00:00"
         },
         {
             "name": "wp-cli/server-command",
