@@ -5434,24 +5434,24 @@
         },
         {
             "name": "wp-cli/widget-command",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/widget-command.git",
-                "reference": "0c73470adbc73b45f4d371e4869672eacca104b3"
+                "reference": "1cf8f7c6c71432bfc0248fbf8d5a971fb2f219cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/0c73470adbc73b45f4d371e4869672eacca104b3",
-                "reference": "0c73470adbc73b45f4d371e4869672eacca104b3",
+                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/1cf8f7c6c71432bfc0248fbf8d5a971fb2f219cd",
+                "reference": "1cf8f7c6c71432bfc0248fbf8d5a971fb2f219cd",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.4"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -5493,7 +5493,7 @@
             ],
             "description": "Adds, moves, and removes widgets; lists sidebars.",
             "homepage": "https://github.com/wp-cli/widget-command",
-            "time": "2020-12-07T19:25:02+00:00"
+            "time": "2021-05-05T07:23:52+00:00"
         },
         {
             "name": "wp-cli/wp-cli",
