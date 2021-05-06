@@ -4627,26 +4627,26 @@
         },
         {
             "name": "wp-cli/import-command",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/import-command.git",
-                "reference": "c7438c1eeda5669531c52fc9223fcea5bda39cc8"
+                "reference": "df6892b70a7d927cad7b66c5da347a2e80e56530"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/c7438c1eeda5669531c52fc9223fcea5bda39cc8",
-                "reference": "c7438c1eeda5669531c52fc9223fcea5bda39cc8",
+                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/df6892b70a7d927cad7b66c5da347a2e80e56530",
+                "reference": "df6892b70a7d927cad7b66c5da347a2e80e56530",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/export-command": "^1 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4679,7 +4679,7 @@
             ],
             "description": "Imports content from a given WXR file.",
             "homepage": "https://github.com/wp-cli/import-command",
-            "time": "2020-12-07T19:28:45+00:00"
+            "time": "2021-05-05T06:45:09+00:00"
         },
         {
             "name": "wp-cli/language-command",
