@@ -3690,24 +3690,24 @@
         },
         {
             "name": "wp-cli/cache-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cache-command.git",
-                "reference": "c1a91b35f274e8aa5142eb4d82842421ed89049a"
+                "reference": "080830f1649e7d3668f6ab9434dbdc2ccfbf955d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/c1a91b35f274e8aa5142eb4d82842421ed89049a",
-                "reference": "c1a91b35f274e8aa5142eb4d82842421ed89049a",
+                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/080830f1649e7d3668f6ab9434dbdc2ccfbf955d",
+                "reference": "080830f1649e7d3668f6ab9434dbdc2ccfbf955d",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3755,7 +3755,7 @@
             ],
             "description": "Manages object and transient caches.",
             "homepage": "https://github.com/wp-cli/cache-command",
-            "time": "2020-12-07T19:32:47+00:00"
+            "time": "2021-05-04T19:08:41+00:00"
         },
         {
             "name": "wp-cli/checksum-command",
