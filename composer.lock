@@ -4352,23 +4352,23 @@
         },
         {
             "name": "wp-cli/eval-command",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/eval-command.git",
-                "reference": "8a5e0340e82e1fb2b48a5dedd88cef1fb8b410ce"
+                "reference": "234a14f95f8e8c1da0a3e3c2f956e72a62400f55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/8a5e0340e82e1fb2b48a5dedd88cef1fb8b410ce",
-                "reference": "8a5e0340e82e1fb2b48a5dedd88cef1fb8b410ce",
+                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/234a14f95f8e8c1da0a3e3c2f956e72a62400f55",
+                "reference": "234a14f95f8e8c1da0a3e3c2f956e72a62400f55",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4402,32 +4402,32 @@
             ],
             "description": "Executes arbitrary PHP code or files.",
             "homepage": "https://github.com/wp-cli/eval-command",
-            "time": "2020-12-07T19:30:26+00:00"
+            "time": "2021-05-05T06:44:48+00:00"
         },
         {
             "name": "wp-cli/export-command",
-            "version": "v2.0.6",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/export-command.git",
-                "reference": "df2e1ff4fb7e969c54c57febccdc9d2de1e5f499"
+                "reference": "49fc3a4950943ca72da0ed07362d3ad450d88cab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/df2e1ff4fb7e969c54c57febccdc9d2de1e5f499",
-                "reference": "df2e1ff4fb7e969c54c57febccdc9d2de1e5f499",
+                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/49fc3a4950943ca72da0ed07362d3ad450d88cab",
+                "reference": "49fc3a4950943ca72da0ed07362d3ad450d88cab",
                 "shasum": ""
             },
             "require": {
                 "nb/oxymel": "~0.1.0",
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
                 "wp-cli/import-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4460,7 +4460,7 @@
             ],
             "description": "Exports WordPress content to a WXR file.",
             "homepage": "https://github.com/wp-cli/export-command",
-            "time": "2021-01-14T12:16:33+00:00"
+            "time": "2021-05-05T06:44:55+00:00"
         },
         {
             "name": "wp-cli/extension-command",
@@ -5137,25 +5137,24 @@
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v2.0.12",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "9895c226d8dc3a69afaeafd4c870339973f9d5d3"
+                "reference": "45a6b7aa3661c6f102cffb7edc35c0c6b8f20420"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/9895c226d8dc3a69afaeafd4c870339973f9d5d3",
-                "reference": "9895c226d8dc3a69afaeafd4c870339973f9d5d3",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/45a6b7aa3661c6f102cffb7edc35c0c6b8f20420",
+                "reference": "45a6b7aa3661c6f102cffb7edc35c0c6b8f20420",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0",
-                "wp-cli/wp-cli": "dev-master"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -5196,7 +5195,7 @@
             ],
             "description": "Generates code for post types, taxonomies, blocks, plugins, child themes, etc.",
             "homepage": "https://github.com/wp-cli/scaffold-command",
-            "time": "2020-11-01T21:19:40+00:00"
+            "time": "2021-05-05T06:46:31+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
