@@ -4907,26 +4907,26 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "b67695a8e14f2f2d4714ec6d89be896e108ea035"
+                "reference": "3856896bc76987ad1f8d2e0c3a766a553e62b22d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/b67695a8e14f2f2d4714ec6d89be896e108ea035",
-                "reference": "b67695a8e14f2f2d4714ec6d89be896e108ea035",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/3856896bc76987ad1f8d2e0c3a766a553e62b22d",
+                "reference": "3856896bc76987ad1f8d2e0c3a766a553e62b22d",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": ">=1.2.0 <1.7.0 || ^1.7.1 || ^2.0.0",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "~2.5"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1.16"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4964,7 +4964,7 @@
             ],
             "description": "Lists, installs, and removes WP-CLI packages.",
             "homepage": "https://github.com/wp-cli/package-command",
-            "time": "2020-12-08T18:42:26+00:00"
+            "time": "2021-05-05T06:45:33+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
