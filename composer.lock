@@ -4744,23 +4744,23 @@
         },
         {
             "name": "wp-cli/maintenance-mode-command",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/maintenance-mode-command.git",
-                "reference": "1f4f09ad15696f65e713c4c73008f6550318b3bd"
+                "reference": "85b3e5ead1ed78376f1b4dcd1b49c19470591cb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/1f4f09ad15696f65e713c4c73008f6550318b3bd",
-                "reference": "1f4f09ad15696f65e713c4c73008f6550318b3bd",
+                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/85b3e5ead1ed78376f1b4dcd1b49c19470591cb9",
+                "reference": "85b3e5ead1ed78376f1b4dcd1b49c19470591cb9",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4797,7 +4797,7 @@
             ],
             "description": "Activates, deactivates or checks the status of the maintenance mode of a site.",
             "homepage": "https://github.com/wp-cli/maintenance-mode-command",
-            "time": "2020-12-07T19:29:39+00:00"
+            "time": "2021-05-05T06:45:25+00:00"
         },
         {
             "name": "wp-cli/media-command",
