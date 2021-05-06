@@ -3759,24 +3759,24 @@
         },
         {
             "name": "wp-cli/checksum-command",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/checksum-command.git",
-                "reference": "a03cb058fcb295b8a1b060cc90618e777b86ad49"
+                "reference": "623e798b580611413968dbc7b8d32c07e0956a72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/a03cb058fcb295b8a1b060cc90618e777b86ad49",
-                "reference": "a03cb058fcb295b8a1b060cc90618e777b86ad49",
+                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/623e798b580611413968dbc7b8d32c07e0956a72",
+                "reference": "623e798b580611413968dbc7b8d32c07e0956a72",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3810,7 +3810,7 @@
             ],
             "description": "Verifies file integrity by comparing to published checksums.",
             "homepage": "https://github.com/wp-cli/checksum-command",
-            "time": "2020-12-07T22:47:40+00:00"
+            "time": "2021-05-05T06:31:09+00:00"
         },
         {
             "name": "wp-cli/config-command",
