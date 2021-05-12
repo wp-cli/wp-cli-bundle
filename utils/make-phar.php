@@ -69,7 +69,7 @@ function add_file( $phar, $path ) {
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?!deprecation-contracts|finder|polyfill-mbstring|polyfill-php80|process)\'',
+					'\/symfony\/(?!deprecation-contracts|finder|polyfill-intl-normalizer|polyfill-mbstring|polyfill-php80|process)\'',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
@@ -77,7 +77,7 @@ function add_file( $phar, $path ) {
 				$strips = [
 					'\/(?:behat|gherkin)\/src\/',
 					'\/phpunit\/',
-					'\/symfony\/(?!console|deprecation-contracts|filesystem|finder|polyfill-mbstring|polyfill-php80|process)\'',
+					'\/symfony\/(?!console|deprecation-contracts|filesystem|finder|polyfill-intl-normalizer|polyfill-mbstring|polyfill-php80|process)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
@@ -203,6 +203,10 @@ if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
 if ( is_dir( WP_CLI_VENDOR_DIR . '/symfony/deprecation-contracts' ) ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/symfony/deprecation-contracts' );
+}
+if ( is_dir( WP_CLI_VENDOR_DIR . '/symfony/polyfill-intl-normalizer' ) ) {
+	$finder
+		->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-intl-normalizer' );
 }
 if ( is_dir( WP_CLI_VENDOR_DIR . '/symfony/polyfill-php80' ) ) {
 	$finder
