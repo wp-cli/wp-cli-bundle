@@ -69,7 +69,7 @@ function add_file( $phar, $path ) {
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?!deprecation-contracts|finder|polyfill-intl-normalizer|polyfill-mbstring|polyfill-php80|process)\'',
+					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)\'',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
@@ -77,7 +77,7 @@ function add_file( $phar, $path ) {
 				$strips = [
 					'\/(?:behat|gherkin)\/src\/',
 					'\/phpunit\/',
-					'\/symfony\/(?!console|deprecation-contracts|filesystem|finder|polyfill-intl-normalizer|polyfill-mbstring|polyfill-php80|process)\'',
+					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|squizlabs|wimg)\/',
@@ -190,6 +190,12 @@ $finder
 	->in( WP_CLI_VENDOR_DIR . '/myclabs/deep-copy' )
 	->notName( 'behat-tags.php' )
 	->notPath( '#(?:[^/]+-command|php-cli-tools)/vendor/#' ) // For running locally, in case have composer installed or symlinked them.
+	->exclude( 'symfony/config' )
+	->exclude( 'symfony/debug' )
+	->exclude( 'symfony/dependency-injection' )
+	->exclude( 'symfony/event-dispatcher' )
+	->exclude( 'symfony/translation' )
+	->exclude( 'symfony/yaml' )
 	->exclude( 'examples' )
 	->exclude( 'features' )
 	->exclude( 'test' )
@@ -200,23 +206,13 @@ if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/react' );
 }
-if ( is_dir( WP_CLI_VENDOR_DIR . '/symfony/deprecation-contracts' ) ) {
-	$finder
-		->in( WP_CLI_VENDOR_DIR . '/symfony/deprecation-contracts' );
-}
-if ( is_dir( WP_CLI_VENDOR_DIR . '/symfony/polyfill-intl-normalizer' ) ) {
-	$finder
-		->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-intl-normalizer' );
-}
-if ( is_dir( WP_CLI_VENDOR_DIR . '/symfony/polyfill-php80' ) ) {
-	$finder
-		->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-php80' );
-}
 if ( 'cli' === BUILD ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/mustangostang-spyc' )
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/php-cli-tools' )
 		->in( WP_CLI_VENDOR_DIR . '/seld/cli-prompt' )
+		->exclude( 'symfony/console' )
+		->exclude( 'symfony/filesystem' )
 		->exclude( 'composer/ca-bundle' )
 		->exclude( 'composer/semver' )
 		->exclude( 'composer/src' )
@@ -227,8 +223,6 @@ if ( 'cli' === BUILD ) {
 		->in( WP_CLI_VENDOR_DIR . '/nb/oxymel' )
 		->in( WP_CLI_VENDOR_DIR . '/psr' )
 		->in( WP_CLI_VENDOR_DIR . '/seld' )
-		->in( WP_CLI_VENDOR_DIR . '/symfony/console' )
-		->in( WP_CLI_VENDOR_DIR . '/symfony/filesystem' )
 		->in( WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema' )
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
