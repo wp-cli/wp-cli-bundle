@@ -183,10 +183,7 @@ $finder
 	->in( WP_CLI_VENDOR_DIR . '/mustache' )
 	->in( WP_CLI_VENDOR_DIR . '/rmccue/requests' )
 	->in( WP_CLI_VENDOR_DIR . '/composer' )
-	->in( WP_CLI_VENDOR_DIR . '/symfony/finder' )
-	->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-ctype' )
-	->in( WP_CLI_VENDOR_DIR . '/symfony/polyfill-mbstring' )
-	->in( WP_CLI_VENDOR_DIR . '/symfony/process' )
+	->in( WP_CLI_VENDOR_DIR . '/symfony' )
 	->in( WP_CLI_VENDOR_DIR . '/myclabs/deep-copy' )
 	->notName( 'behat-tags.php' )
 	->notPath( '#(?:[^/]+-command|php-cli-tools)/vendor/#' ) // For running locally, in case have composer installed or symlinked them.
