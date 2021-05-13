@@ -38,7 +38,7 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        run: COMPOSER_ROOT_VERSION=dev-master composer install --prefer-source --no-progress --no-suggest --no-interaction
+        run: composer install --no-dev --no-progress --no-interaction --optimize-autoloader
 
       - name: Store WP-CLI version
         run: |
