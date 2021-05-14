@@ -65,22 +65,30 @@ function add_file( $phar, $path ) {
 			if ( 'cli' === BUILD ) {
 				$strips = [
 					'\/(?:behat|composer|gherkin)\/src\/',
+					'\/behat\/',
 					'\/phpunit\/',
+					'\/phpspec\/',
+					'\/sebastian\/',
+					'\/php-parallel-lint\/',
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
 					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)\'',
-					'\/(?:dealerdirect|squizlabs|wimg)\/',
+					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
 			} else {
 				$strips = [
 					'\/(?:behat|gherkin)\/src\/',
+					'\/behat\/',
 					'\/phpunit\/',
+					'\/phpspec\/',
+					'\/sebastian\/',
+					'\/php-parallel-lint\/',
 					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
-					'\/(?:dealerdirect|squizlabs|wimg)\/',
+					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
 			}
@@ -186,12 +194,12 @@ $finder
 	->in( WP_CLI_VENDOR_DIR . '/symfony' )
 	->notName( 'behat-tags.php' )
 	->notPath( '#(?:[^/]+-command|php-cli-tools)/vendor/#' ) // For running locally, in case have composer installed or symlinked them.
-	->exclude( 'symfony/config' )
-	->exclude( 'symfony/debug' )
-	->exclude( 'symfony/dependency-injection' )
-	->exclude( 'symfony/event-dispatcher' )
-	->exclude( 'symfony/translation' )
-	->exclude( 'symfony/yaml' )
+	->exclude( 'config' )
+	->exclude( 'debug' )
+	->exclude( 'dependency-injection' )
+	->exclude( 'event-dispatcher' )
+	->exclude( 'translation' )
+	->exclude( 'yaml' )
 	->exclude( 'examples' )
 	->exclude( 'features' )
 	->exclude( 'test' )
