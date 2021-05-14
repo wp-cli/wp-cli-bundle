@@ -38,7 +38,7 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        run: composer install --no-dev --no-progress --no-interaction --optimize-autoloader
+        run: composer install --no-dev --no-progress --no-interaction
 
       - name: Store WP-CLI version
         run: |
@@ -59,7 +59,7 @@ jobs:
           path: cli_version.txt
 
       - name: Build the Phar file
-        run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --quiet --version=$CLI_VERSION
+        run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
         uses: actions/upload-artifact@v2
