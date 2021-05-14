@@ -73,7 +73,7 @@ function add_file( $phar, $path ) {
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)\'',
+					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)',
 					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
@@ -85,7 +85,7 @@ function add_file( $phar, $path ) {
 					'\/phpspec\/',
 					'\/sebastian\/',
 					'\/php-parallel-lint\/',
-					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)\'',
+					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
@@ -215,8 +215,8 @@ if ( 'cli' === BUILD ) {
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/mustangostang-spyc' )
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/php-cli-tools' )
 		->in( WP_CLI_VENDOR_DIR . '/seld/cli-prompt' )
-		->exclude( 'symfony/console' )
-		->exclude( 'symfony/filesystem' )
+		->exclude( 'console' )
+		->exclude( 'filesystem' )
 		->exclude( 'composer/ca-bundle' )
 		->exclude( 'composer/semver' )
 		->exclude( 'composer/src' )
