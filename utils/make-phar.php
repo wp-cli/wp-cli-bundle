@@ -65,22 +65,30 @@ function add_file( $phar, $path ) {
 			if ( 'cli' === BUILD ) {
 				$strips = [
 					'\/(?:behat|composer|gherkin)\/src\/',
+					'\/behat\/',
 					'\/phpunit\/',
+					'\/phpspec\/',
+					'\/sebastian\/',
+					'\/php-parallel-lint\/',
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
 					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)\'',
-					'\/(?:dealerdirect|squizlabs|wimg)\/',
+					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
 			} else {
 				$strips = [
 					'\/(?:behat|gherkin)\/src\/',
+					'\/behat\/',
 					'\/phpunit\/',
+					'\/phpspec\/',
+					'\/sebastian\/',
+					'\/php-parallel-lint\/',
 					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)\'',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
-					'\/(?:dealerdirect|squizlabs|wimg)\/',
+					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
 			}
