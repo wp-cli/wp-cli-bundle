@@ -1,5 +1,8 @@
 Feature: Check `utils/make-phar.php` output
 
+  @broken
+  # TODO: Composer v2 has added a new install-path which references dealerdirect:
+  # 'install_path' => __DIR__ . '/../dealerdirect/phpcodesniffer-composer-installer',
   Scenario: Check autoload stripping of phpcs development classes
     Given an empty directory
     And a new Phar with the same version
