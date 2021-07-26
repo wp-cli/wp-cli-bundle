@@ -43,7 +43,7 @@ pushd "$SOURCE_DIR" > /dev/null
 
 # Move files
 mv ../wp-cli.phar wp-cli.phar
-mv ../wp-cli-rpm.spec wp-cli.spec
+cp ../wp-cli-rpm.spec wp-cli.spec
 
 # Replace version placeholder
 WPCLI_VER="$(php wp-cli.phar cli version | cut -d " " -f 2)"
