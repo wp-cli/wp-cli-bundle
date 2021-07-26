@@ -30,7 +30,7 @@ if ! hash php rpm; then
 fi
 
 # Download the binary if needed
-if [ ! -f "$FILE" ]; then
+if [ ! -f "wp-cli.phar" ]; then
 	wget -nv -O wp-cli.phar "$PHAR_URL"
 	chmod +x wp-cli.phar
 fi
