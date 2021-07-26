@@ -248,7 +248,7 @@ jobs:
           repository: wp-cli/builds
 
   build-rpm: #-----------------------------------------------------------------------
-    name: Deployment
+    name: Build RPM package
     runs-on: ubuntu-latest
     if: ${{ contains(github.ref, 'release') }}
     needs: [deploy]
@@ -293,6 +293,59 @@ jobs:
           git config --local user.name "GitHub Action"
           git add rpm
           git commit -m "rpm build: $GITHUB_REPOSITORY@$GITHUB_SHA"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACTIONS_BOT }}
+          branch: gh-pages
+          repository: wp-cli/builds
+
+  build-deb: #-----------------------------------------------------------------------
+    name: Build DEB package
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.ref, 'release') }}
+    needs: [build-rpm]
+
+    steps:
+      - name: Check out builds repository
+        uses: actions/checkout@v2
+        with:
+          repository: wp-cli/builds
+          token: ${{ secrets.ACTIONS_BOT }}
+
+      - name: Download built Phar file
+        uses: actions/download-artifact@v2
+        with:
+          name: wp-cli-phar
+
+      - name: Install DEB build tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install fakeroot lintian -y
+
+      - name: Download DEB build configuration
+        run: |
+          wget -O wp-cli-updatedeb.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/master/utils/wp-cli-updatedeb.sh
+
+      - name: Build DEB package
+        run: |
+          bash wp-cli-updatedeb.sh
+
+      - name: Verify built DEB package contents
+        run: |
+          ls .
+
+      - name: Copy DEB package into builds folder
+        run: |
+          cp -n php-wpcli*all.deb deb
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add deb
+          git commit -m "deb build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
