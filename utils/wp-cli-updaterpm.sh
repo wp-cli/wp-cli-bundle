@@ -29,18 +29,21 @@ if ! hash php rpm; then
     die 1 "Missing RPM build tools"
 fi
 
+# Download the binary if needed
+if [ ! -f "$FILE" ]; then
+	wget -nv -O wp-cli.phar "$PHAR_URL"
+	chmod +x wp-cli.phar
+fi
+
 if ! [ -d "$SOURCE_DIR" ]; then
     mkdir "$SOURCE_DIR" || die 2 "Cannot create directory here: ${PWD}"
 fi
 
 pushd "$SOURCE_DIR" > /dev/null
 
-# Download the binary
-wget -nv -O wp-cli.phar "$PHAR_URL"
-chmod +x wp-cli.phar
-
-# Copy spec file
-cp ../wp-cli-rpm.spec wp-cli.spec
+# Move files
+mv ../wp-cli.phar wp-cli.phar
+mv ../wp-cli-rpm.spec wp-cli.spec
 
 # Replace version placeholder
 WPCLI_VER="$(php wp-cli.phar cli version | cut -d " " -f 2)"
