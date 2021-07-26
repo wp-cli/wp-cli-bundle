@@ -3580,7 +3580,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-07-20T21:21:37+00:00"
+            "time": "2021-07-26T06:55:16+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5812,6 +5812,7 @@
                 "issues": "https://github.com/sebastianbergmann/resource-operations/issues",
                 "source": "https://github.com/sebastianbergmann/resource-operations/tree/master"
             },
+            "abandoned": true,
             "time": "2015-07-28T20:34:47+00:00"
         },
         {
@@ -6360,16 +6361,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v3.0.15",
+            "version": "v3.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "17ff779d7678e4dc3fbd85017fb921e44b8639d4"
+                "reference": "71ea9114594abd598676a7f606bf4ed65366a53d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/17ff779d7678e4dc3fbd85017fb921e44b8639d4",
-                "reference": "17ff779d7678e4dc3fbd85017fb921e44b8639d4",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/71ea9114594abd598676a7f606bf4ed65366a53d",
+                "reference": "71ea9114594abd598676a7f606bf4ed65366a53d",
                 "shasum": ""
             },
             "require": {
@@ -6434,7 +6435,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2021-07-20T07:00:50+00:00"
+            "time": "2021-07-26T08:27:19+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
