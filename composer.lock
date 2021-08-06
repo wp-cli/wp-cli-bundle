@@ -1953,16 +1953,16 @@
         },
         {
             "name": "wp-cli/db-command",
-            "version": "v2.0.14",
+            "version": "v2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/db-command.git",
-                "reference": "6034921c7696865946ec0986f06b911c8a56ad3a"
+                "reference": "4a2c43bd75569a3961dd9af63949596227ca90ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/6034921c7696865946ec0986f06b911c8a56ad3a",
-                "reference": "6034921c7696865946ec0986f06b911c8a56ad3a",
+                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/4a2c43bd75569a3961dd9af63949596227ca90ce",
+                "reference": "4a2c43bd75569a3961dd9af63949596227ca90ce",
                 "shasum": ""
             },
             "require": {
@@ -2021,9 +2021,9 @@
             "homepage": "https://github.com/wp-cli/db-command",
             "support": {
                 "issues": "https://github.com/wp-cli/db-command/issues",
-                "source": "https://github.com/wp-cli/db-command/tree/v2.0.14"
+                "source": "https://github.com/wp-cli/db-command/tree/v2.0.15"
             },
-            "time": "2021-07-26T13:56:24+00:00"
+            "time": "2021-08-06T13:42:22+00:00"
         },
         {
             "name": "wp-cli/embed-command",
@@ -3581,7 +3581,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-07-26T16:34:21+00:00"
+            "time": "2021-08-06T13:54:16+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
