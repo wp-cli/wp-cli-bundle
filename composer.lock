@@ -2425,16 +2425,16 @@
         },
         {
             "name": "wp-cli/extension-command",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/extension-command.git",
-                "reference": "87c9e33154cf02da35a690d2b56b083125d71493"
+                "reference": "a0159174d1dfa4725ac7c1e8b7e0609ba39495d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/87c9e33154cf02da35a690d2b56b083125d71493",
-                "reference": "87c9e33154cf02da35a690d2b56b083125d71493",
+                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/a0159174d1dfa4725ac7c1e8b7e0609ba39495d8",
+                "reference": "a0159174d1dfa4725ac7c1e8b7e0609ba39495d8",
                 "shasum": ""
             },
             "require": {
@@ -2515,9 +2515,9 @@
             "homepage": "https://github.com/wp-cli/extension-command",
             "support": {
                 "issues": "https://github.com/wp-cli/extension-command/issues",
-                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.1"
+                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.2"
             },
-            "time": "2021-07-26T08:17:56+00:00"
+            "time": "2021-08-06T13:32:40+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
