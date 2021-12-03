@@ -3582,7 +3582,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-11-23T20:32:22+00:00"
+            "time": "2021-12-02T17:01:55+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -6410,16 +6410,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v3.0.19",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "bd8e26db4e0829613b05ec80387f0b74ff7a93e2"
+                "reference": "073cccace91ec487eb3b921f8aec21e8896f1d36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/bd8e26db4e0829613b05ec80387f0b74ff7a93e2",
-                "reference": "bd8e26db4e0829613b05ec80387f0b74ff7a93e2",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/073cccace91ec487eb3b921f8aec21e8896f1d36",
+                "reference": "073cccace91ec487eb3b921f8aec21e8896f1d36",
                 "shasum": ""
             },
             "require": {
@@ -6427,14 +6427,14 @@
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3 || ^0.5 || ^0.6.2 || ^0.7.1",
                 "php": ">=5.6",
                 "php-parallel-lint/php-console-highlighter": "^0.5",
-                "php-parallel-lint/php-parallel-lint": "^1.2",
-                "phpcompatibility/php-compatibility": "^9.3",
+                "php-parallel-lint/php-parallel-lint": "^1.3.1",
+                "phpcompatibility/php-compatibility": "^9.3.5",
                 "wp-cli/config-command": "^1 || ^2",
                 "wp-cli/core-command": "^1 || ^2",
                 "wp-cli/eval-command": "^1 || ^2",
-                "wp-cli/wp-cli": "^2",
-                "wp-coding-standards/wpcs": "^2.3",
-                "yoast/phpunit-polyfills": "^1.0"
+                "wp-cli/wp-cli": "dev-master as 2.5.1",
+                "wp-coding-standards/wpcs": "^2.3.0",
+                "yoast/phpunit-polyfills": "^1.0.3"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -6484,7 +6484,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2021-11-23T22:14:52+00:00"
+            "time": "2021-12-02T17:09:54+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
