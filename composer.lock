@@ -1954,16 +1954,16 @@
         },
         {
             "name": "wp-cli/db-command",
-            "version": "v2.0.16",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/db-command.git",
-                "reference": "17e3ce14d31410f8df73f69552a6308a733277bc"
+                "reference": "7cb7828e1619d03a9aa45df5cf82cb88b4029622"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/17e3ce14d31410f8df73f69552a6308a733277bc",
-                "reference": "17e3ce14d31410f8df73f69552a6308a733277bc",
+                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/7cb7828e1619d03a9aa45df5cf82cb88b4029622",
+                "reference": "7cb7828e1619d03a9aa45df5cf82cb88b4029622",
                 "shasum": ""
             },
             "require": {
@@ -1971,7 +1971,7 @@
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^3.0.17"
+                "wp-cli/wp-cli-tests": "^3.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2022,9 +2022,9 @@
             "homepage": "https://github.com/wp-cli/db-command",
             "support": {
                 "issues": "https://github.com/wp-cli/db-command/issues",
-                "source": "https://github.com/wp-cli/db-command/tree/v2.0.16"
+                "source": "https://github.com/wp-cli/db-command/tree/v2.0.17"
             },
-            "time": "2021-08-12T15:21:06+00:00"
+            "time": "2021-12-03T01:43:55+00:00"
         },
         {
             "name": "wp-cli/embed-command",
@@ -3582,7 +3582,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-11-23T20:32:22+00:00"
+            "time": "2021-12-02T17:01:55+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
