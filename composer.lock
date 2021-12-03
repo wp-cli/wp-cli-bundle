@@ -2725,23 +2725,23 @@
         },
         {
             "name": "wp-cli/maintenance-mode-command",
-            "version": "v2.0.6",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/maintenance-mode-command.git",
-                "reference": "26c1c0a79ed1194c863cb95fa364b4db7929d7cc"
+                "reference": "02f03b83c99721a0a61c478c13886222ea916737"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/26c1c0a79ed1194c863cb95fa364b4db7929d7cc",
-                "reference": "26c1c0a79ed1194c863cb95fa364b4db7929d7cc",
+                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/02f03b83c99721a0a61c478c13886222ea916737",
+                "reference": "02f03b83c99721a0a61c478c13886222ea916737",
                 "shasum": ""
             },
             "require": {
                 "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^3.0.11"
+                "wp-cli/wp-cli-tests": "^3.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2780,9 +2780,9 @@
             "homepage": "https://github.com/wp-cli/maintenance-mode-command",
             "support": {
                 "issues": "https://github.com/wp-cli/maintenance-mode-command/issues",
-                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.0.6"
+                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.0.7"
             },
-            "time": "2021-05-10T10:23:08+00:00"
+            "time": "2021-12-03T02:48:06+00:00"
         },
         {
             "name": "wp-cli/media-command",
@@ -3582,7 +3582,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-11-23T20:32:22+00:00"
+            "time": "2021-12-02T17:01:55+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
