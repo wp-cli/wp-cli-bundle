@@ -3271,23 +3271,23 @@
         },
         {
             "name": "wp-cli/server-command",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/server-command.git",
-                "reference": "29976aef5c2bdf159b8700eab26bafc943f0be0c"
+                "reference": "e971d4c19bb774526d0b57117f0e79c3a06289a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/29976aef5c2bdf159b8700eab26bafc943f0be0c",
-                "reference": "29976aef5c2bdf159b8700eab26bafc943f0be0c",
+                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/e971d4c19bb774526d0b57117f0e79c3a06289a6",
+                "reference": "e971d4c19bb774526d0b57117f0e79c3a06289a6",
                 "shasum": ""
             },
             "require": {
                 "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^3.0.11"
+                "wp-cli/wp-cli-tests": "^3.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3322,9 +3322,9 @@
             "homepage": "https://github.com/wp-cli/server-command",
             "support": {
                 "issues": "https://github.com/wp-cli/server-command/issues",
-                "source": "https://github.com/wp-cli/server-command/tree/v2.0.8"
+                "source": "https://github.com/wp-cli/server-command/tree/v2.0.9"
             },
-            "time": "2021-05-10T10:26:08+00:00"
+            "time": "2021-12-04T00:04:22+00:00"
         },
         {
             "name": "wp-cli/shell-command",
@@ -3541,7 +3541,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^3.0.7"
+                "wp-cli/wp-cli-tests": "^3.1"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -3582,7 +3582,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-11-23T20:32:22+00:00"
+            "time": "2021-12-06T23:48:15+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
