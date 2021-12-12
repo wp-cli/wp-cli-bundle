@@ -23,6 +23,8 @@ jobs:
           extensions: mysql, zip, imagick
           coverage: none
           tools: composer
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -128,6 +130,8 @@ jobs:
           extensions: imagick, mysql, zip
           coverage: none
           tools: composer
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get Composer cache Directory
         id: composer-cache
