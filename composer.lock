@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90e3875b162dd3e8adc28aae69533733",
+    "content-hash": "db36659e7e365846761cbf8f3b4d051e",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -823,16 +823,16 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "dev-fix/trim-php-8.1",
+            "version": "v2.13.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/schlessera/mustache.php.git",
-                "reference": "10a6c7ce52e9596e929fac08050b09f4d9b33596"
+                "url": "https://github.com/bobthecow/mustache.php.git",
+                "reference": "e95c5a008c23d3151d59ea72484d4f72049ab7f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schlessera/mustache.php/zipball/10a6c7ce52e9596e929fac08050b09f4d9b33596",
-                "reference": "10a6c7ce52e9596e929fac08050b09f4d9b33596",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/e95c5a008c23d3151d59ea72484d4f72049ab7f4",
+                "reference": "e95c5a008c23d3151d59ea72484d4f72049ab7f4",
                 "shasum": ""
             },
             "require": {
@@ -848,6 +848,7 @@
                     "Mustache": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -865,9 +866,10 @@
                 "templating"
             ],
             "support": {
-                "source": "https://github.com/schlessera/mustache.php/tree/fix/trim-php-8.1"
+                "issues": "https://github.com/bobthecow/mustache.php/issues",
+                "source": "https://github.com/bobthecow/mustache.php/tree/master"
             },
-            "time": "2021-12-12T13:51:15+00:00"
+            "time": "2019-11-23T21:40:31+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -3589,17 +3591,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "d9617d4af4610bfaabeb5116a6e3cd6f6d85510f"
+                "reference": "404dbb62de56b487c2b6904f9b3966ba2fa555f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/d9617d4af4610bfaabeb5116a6e3cd6f6d85510f",
-                "reference": "d9617d4af4610bfaabeb5116a6e3cd6f6d85510f",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/404dbb62de56b487c2b6904f9b3966ba2fa555f0",
+                "reference": "404dbb62de56b487c2b6904f9b3966ba2fa555f0",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "mustache/mustache": "dev-fix/trim-php-8.1 as 2.13.1",
+                "mustache/mustache": "^2.13",
                 "php": "^5.6 || ^7.0 || ^8.0",
                 "rmccue/requests": "^1.8",
                 "symfony/finder": ">2.7",
@@ -3653,7 +3655,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-12-09T22:04:31+00:00"
+            "time": "2021-12-12T16:59:23+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -6675,17 +6677,9 @@
             "time": "2021-11-23T01:37:03+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "mustache/mustache",
-            "version": "dev-fix/trim-php-8.1",
-            "alias": "2.13.1",
-            "alias_normalized": "2.13.1.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mustache/mustache": 20,
         "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
