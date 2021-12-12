@@ -765,6 +765,8 @@ Feature: WP-CLI Commands
       require:
         - custom-cmd.php
       """
+    And I run `echo ' '`
+    And save STDOUT as {SPACE}
 
     When I run `wp help foo`
     Then STDOUT should contain:
@@ -779,9 +781,9 @@ Feature: WP-CLI Commands
 
       SYNOPSIS
 
-        wp foo
+        wp foo{SPACE}
 
-      EXAMPLES
+      EXAMPLES{SPACE}
 
         # Run the custom foo command
 
