@@ -827,12 +827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schlessera/mustache.php.git",
-                "reference": "d5499fc8fcb953251b8477af02d0e113deb56e2e"
+                "reference": "10a6c7ce52e9596e929fac08050b09f4d9b33596"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schlessera/mustache.php/zipball/d5499fc8fcb953251b8477af02d0e113deb56e2e",
-                "reference": "d5499fc8fcb953251b8477af02d0e113deb56e2e",
+                "url": "https://api.github.com/repos/schlessera/mustache.php/zipball/10a6c7ce52e9596e929fac08050b09f4d9b33596",
+                "reference": "10a6c7ce52e9596e929fac08050b09f4d9b33596",
                 "shasum": ""
             },
             "require": {
@@ -867,7 +867,7 @@
             "support": {
                 "source": "https://github.com/schlessera/mustache.php/tree/fix/trim-php-8.1"
             },
-            "time": "2021-12-09T20:25:30+00:00"
+            "time": "2021-12-12T13:51:15+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -1139,16 +1139,16 @@
         },
         {
             "name": "seld/phar-utils",
-            "version": "1.1.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/phar-utils.git",
-                "reference": "749042a2315705d2dfbbc59234dd9ceb22bf3ff0"
+                "reference": "9f3452c93ff423469c0d56450431562ca423dcee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/749042a2315705d2dfbbc59234dd9ceb22bf3ff0",
-                "reference": "749042a2315705d2dfbbc59234dd9ceb22bf3ff0",
+                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/9f3452c93ff423469c0d56450431562ca423dcee",
+                "reference": "9f3452c93ff423469c0d56450431562ca423dcee",
                 "shasum": ""
             },
             "require": {
@@ -1181,9 +1181,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/phar-utils/issues",
-                "source": "https://github.com/Seldaek/phar-utils/tree/1.1.2"
+                "source": "https://github.com/Seldaek/phar-utils/tree/1.2.0"
             },
-            "time": "2021-08-19T21:01:38+00:00"
+            "time": "2021-12-10T11:20:11+00:00"
         },
         {
             "name": "symfony/console",
@@ -5004,12 +5004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "661f78bd557b2acb20e6da7745de77b1ddc69e59"
+                "reference": "aaf5d29aa54f39be4945b0ceeb1f3d9fdb7af8ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/661f78bd557b2acb20e6da7745de77b1ddc69e59",
-                "reference": "661f78bd557b2acb20e6da7745de77b1ddc69e59",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/aaf5d29aa54f39be4945b0ceeb1f3d9fdb7af8ee",
+                "reference": "aaf5d29aa54f39be4945b0ceeb1f3d9fdb7af8ee",
                 "shasum": ""
             },
             "conflict": {
@@ -5143,7 +5143,7 @@
                 "joomla/session": "<1.3.1",
                 "jsmitty12/phpwhois": "<5.1",
                 "kazist/phpwhois": "<=4.2.6",
-                "kevinpapst/kimai2": "<1.16.3",
+                "kevinpapst/kimai2": "<1.16.7",
                 "kitodo/presentation": "<3.1.2",
                 "klaviyo/magento2-extension": ">=1,<3",
                 "kreait/firebase-php": ">=3.2,<3.8.1",
@@ -5237,6 +5237,7 @@
                 "pusher/pusher-php-server": "<2.2.1",
                 "pwweb/laravel-core": "<=0.3.6-beta",
                 "rainlab/debugbar-plugin": "<3.1",
+                "remdex/livehelperchat": "<=2",
                 "rmccue/requests": ">=1.6,<1.8",
                 "robrichards/xmlseclibs": "<3.0.4",
                 "sabberworm/php-css-parser": ">=1,<1.0.1|>=2,<2.0.1|>=3,<3.0.1|>=4,<4.0.1|>=5,<5.0.9|>=5.1,<5.1.3|>=5.2,<5.2.1|>=6,<6.0.2|>=7,<7.0.4|>=8,<8.0.1|>=8.1,<8.1.1|>=8.2,<8.2.1|>=8.3,<8.3.1",
@@ -5268,7 +5269,7 @@
                 "simplito/elliptic-php": "<1.0.6",
                 "slim/slim": "<2.6",
                 "smarty/smarty": "<3.1.39",
-                "snipe/snipe-it": "<5.3.3",
+                "snipe/snipe-it": "<=5.3.3",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
                 "spoonity/tcpdf": "<6.2.22",
@@ -5325,6 +5326,7 @@
                 "theonedemon/phpwhois": "<=4.2.5",
                 "tinymce/tinymce": "<5.10",
                 "titon/framework": ">=0,<9.9.99",
+                "topthink/framework": "<6.0.9",
                 "topthink/think": "<=6.0.9",
                 "topthink/thinkphp": "<=3.2.3",
                 "tribalsystems/zenario": "<8.8.53370",
@@ -5424,7 +5426,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-08T20:16:08+00:00"
+            "time": "2021-12-10T21:12:50+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
