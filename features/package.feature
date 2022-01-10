@@ -44,7 +44,7 @@ Feature: Install WP-CLI packages
       """
     And STDOUT should contain:
       """
-      requires wp-cli/wp-cli >=0.24.0
+      require wp-cli/wp-cli >=0.24.0
       """
     And STDERR should contain:
       """
