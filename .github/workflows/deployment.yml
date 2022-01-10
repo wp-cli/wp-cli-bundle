@@ -3,7 +3,7 @@ name: Deployment
 on:
   push:
     branches:
-      - master
+      - main
       - release-**
 
 jobs:
@@ -151,7 +151,7 @@ jobs:
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
       - name: Install dependencies
-        run: COMPOSER_ROOT_VERSION=dev-master composer install --prefer-dist --no-progress --no-suggest
+        run: COMPOSER_ROOT_VERSION=dev-main composer install --prefer-dist --no-progress --no-suggest
 
       - name: Download built Phar file
         uses: actions/download-artifact@v2
@@ -219,8 +219,8 @@ jobs:
         run: |
           echo 'FILENAME=wp-cli-release.phar' > $GITHUB_ENV
 
-      - name: Set file name for master branch
-        if: ${{ contains(github.ref, 'master') }}
+      - name: Set file name for main branch
+        if: ${{ contains(github.ref, 'main') }}
         run: |
           echo 'FILENAME=wp-cli-nightly.phar' > $GITHUB_ENV
 
@@ -276,8 +276,8 @@ jobs:
 
       - name: Download RPM build configuration
         run: |
-          wget -O wp-cli-rpm.spec https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/master/utils/wp-cli-rpm.spec
-          wget -O wp-cli-updaterpm.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/master/utils/wp-cli-updaterpm.sh
+          wget -O wp-cli-rpm.spec https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/main/utils/wp-cli-rpm.spec
+          wget -O wp-cli-updaterpm.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/main/utils/wp-cli-updaterpm.sh
 
       - name: Build RPM package
         run: |
@@ -330,7 +330,7 @@ jobs:
 
       - name: Download DEB build configuration
         run: |
-          wget -O wp-cli-updatedeb.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/master/utils/wp-cli-updatedeb.sh
+          wget -O wp-cli-updatedeb.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/main/utils/wp-cli-updatedeb.sh
 
       - name: Build DEB package
         run: |
