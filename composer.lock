@@ -2976,16 +2976,16 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "ddf308b706173459b9410a5065db4f8db3e87f1f"
+                "reference": "5c25bacc9b3923d4b0a43e70916d214bca8a271e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/ddf308b706173459b9410a5065db4f8db3e87f1f",
-                "reference": "ddf308b706173459b9410a5065db4f8db3e87f1f",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/5c25bacc9b3923d4b0a43e70916d214bca8a271e",
+                "reference": "5c25bacc9b3923d4b0a43e70916d214bca8a271e",
                 "shasum": ""
             },
             "require": {
@@ -3035,9 +3035,9 @@
             "homepage": "https://github.com/wp-cli/package-command",
             "support": {
                 "issues": "https://github.com/wp-cli/package-command/issues",
-                "source": "https://github.com/wp-cli/package-command/tree/v2.2.0"
+                "source": "https://github.com/wp-cli/package-command/tree/v2.2.1"
             },
-            "time": "2022-01-10T21:27:02+00:00"
+            "time": "2022-01-10T23:30:42+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
