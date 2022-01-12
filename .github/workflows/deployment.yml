@@ -12,6 +12,7 @@ jobs:
     name: Build Phar
     runs-on: ubuntu-latest
 
+    if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
         uses: actions/checkout@v2
@@ -114,6 +115,7 @@ jobs:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=wp_cli_test --entrypoint sh mysql:${{ matrix.mysql }} -c "exec docker-entrypoint.sh mysqld --default-authentication-plugin=mysql_native_password"
 
+    if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
         uses: actions/checkout@v2
@@ -193,6 +195,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test]
 
+    if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out builds repository
         uses: actions/checkout@v2
@@ -254,7 +257,7 @@ jobs:
   build-rpm: #-----------------------------------------------------------------------
     name: Build RPM package
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'release') }}
+    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
     needs: [deploy]
 
     steps:
@@ -308,7 +311,7 @@ jobs:
   build-deb: #-----------------------------------------------------------------------
     name: Build DEB package
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'release') }}
+    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
     needs: [build-rpm]
 
     steps:
