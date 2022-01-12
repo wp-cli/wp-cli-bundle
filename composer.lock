@@ -775,16 +775,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.13.10",
+            "version": "v1.13.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "05ad3e6f66e6b35aa2247ef69b1a0c23c45a567b"
+                "reference": "78c57966f3da5f223636ea0417d71ac6ff61e47f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/05ad3e6f66e6b35aa2247ef69b1a0c23c45a567b",
-                "reference": "05ad3e6f66e6b35aa2247ef69b1a0c23c45a567b",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/78c57966f3da5f223636ea0417d71ac6ff61e47f",
+                "reference": "78c57966f3da5f223636ea0417d71ac6ff61e47f",
                 "shasum": ""
             },
             "require": {
@@ -797,7 +797,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13.10-dev"
+                    "dev-master": "1.13.11-dev"
                 }
             },
             "autoload": {
@@ -819,9 +819,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.13.10"
+                "source": "https://github.com/mck89/peast/tree/v1.13.11"
             },
-            "time": "2021-12-24T10:38:18+00:00"
+            "time": "2022-01-11T17:58:18+00:00"
         },
         {
             "name": "mustache/mustache",
@@ -2599,21 +2599,21 @@
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v2.2.11",
+            "version": "v2.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "2688b3626440d952eeb10b43a483e151d8faf51b"
+                "reference": "3ae767d59b938e6d21b50061cc339f90895ce4fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/2688b3626440d952eeb10b43a483e151d8faf51b",
-                "reference": "2688b3626440d952eeb10b43a483e151d8faf51b",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/3ae767d59b938e6d21b50061cc339f90895ce4fe",
+                "reference": "3ae767d59b938e6d21b50061cc339f90895ce4fe",
                 "shasum": ""
             },
             "require": {
                 "gettext/gettext": "^4.8",
-                "mck89/peast": "^1.13.9",
+                "mck89/peast": "^1.13.11",
                 "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
@@ -2657,9 +2657,9 @@
             "homepage": "https://github.com/wp-cli/i18n-command",
             "support": {
                 "issues": "https://github.com/wp-cli/i18n-command/issues",
-                "source": "https://github.com/wp-cli/i18n-command/tree/v2.2.11"
+                "source": "https://github.com/wp-cli/i18n-command/tree/v2.2.12"
             },
-            "time": "2022-01-06T00:01:01+00:00"
+            "time": "2022-01-12T00:13:51+00:00"
         },
         {
             "name": "wp-cli/import-command",
@@ -3595,12 +3595,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "aa686f0a7158d9eb3ee3760f6e4a569dad92a990"
+                "reference": "8fc016375b50bc255bc08d60dfa073df6bc13647"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/aa686f0a7158d9eb3ee3760f6e4a569dad92a990",
-                "reference": "aa686f0a7158d9eb3ee3760f6e4a569dad92a990",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/8fc016375b50bc255bc08d60dfa073df6bc13647",
+                "reference": "8fc016375b50bc255bc08d60dfa073df6bc13647",
                 "shasum": ""
             },
             "require": {
@@ -3659,7 +3659,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2022-01-10T14:06:16+00:00"
+            "time": "2022-01-11T13:43:00+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -6503,16 +6503,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v3.1.3",
+            "version": "v3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "83031c732efa4e5e75b4246e0293f4d37603c452"
+                "reference": "38d858d2da258b140f56e391f7dbf6f90b50a8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/83031c732efa4e5e75b4246e0293f4d37603c452",
-                "reference": "83031c732efa4e5e75b4246e0293f4d37603c452",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/38d858d2da258b140f56e391f7dbf6f90b50a8cd",
+                "reference": "38d858d2da258b140f56e391f7dbf6f90b50a8cd",
                 "shasum": ""
             },
             "require": {
@@ -6525,7 +6525,7 @@
                 "wp-cli/config-command": "^1 || ^2",
                 "wp-cli/core-command": "^1 || ^2",
                 "wp-cli/eval-command": "^1 || ^2",
-                "wp-cli/wp-cli": "dev-master as 2.5.1",
+                "wp-cli/wp-cli": "^2.5.1",
                 "wp-coding-standards/wpcs": "^2.3.0",
                 "yoast/phpunit-polyfills": "^1.0.3"
             },
@@ -6543,7 +6543,7 @@
             "type": "phpcodesniffer-standard",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-main": "3.0.x-dev"
                 },
                 "readme": {
                     "sections": [
@@ -6577,7 +6577,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2022-01-08T16:52:01+00:00"
+            "time": "2022-01-12T00:39:03+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
