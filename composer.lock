@@ -2723,16 +2723,16 @@
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v2.0.11",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "506ec26e5be6b697a5a0b77037e6dc8345229be0"
+                "reference": "bbdba69179fc8df597928587111500c8ade40a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/506ec26e5be6b697a5a0b77037e6dc8345229be0",
-                "reference": "506ec26e5be6b697a5a0b77037e6dc8345229be0",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/bbdba69179fc8df597928587111500c8ade40a38",
+                "reference": "bbdba69179fc8df597928587111500c8ade40a38",
                 "shasum": ""
             },
             "require": {
@@ -2747,7 +2747,7 @@
             "type": "wp-cli-package",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-main": "2.x-dev"
                 },
                 "bundled": true,
                 "commands": [
@@ -2796,9 +2796,9 @@
             "homepage": "https://github.com/wp-cli/language-command",
             "support": {
                 "issues": "https://github.com/wp-cli/language-command/issues",
-                "source": "https://github.com/wp-cli/language-command/tree/v2.0.11"
+                "source": "https://github.com/wp-cli/language-command/tree/v2.0.12"
             },
-            "time": "2021-12-03T14:48:31+00:00"
+            "time": "2022-01-13T01:28:25+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
@@ -3659,7 +3659,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2022-01-11T13:43:00+00:00"
+            "time": "2022-01-13T07:15:33+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
