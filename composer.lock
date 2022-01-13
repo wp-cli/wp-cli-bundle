@@ -1686,16 +1686,16 @@
         },
         {
             "name": "wp-cli/cache-command",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cache-command.git",
-                "reference": "add28035c8bf48854095d35359e91f2d66ef61f3"
+                "reference": "05378440d8c6d4d2a1a5e5cbc1ba92a5e4bf1c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/add28035c8bf48854095d35359e91f2d66ef61f3",
-                "reference": "add28035c8bf48854095d35359e91f2d66ef61f3",
+                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/05378440d8c6d4d2a1a5e5cbc1ba92a5e4bf1c40",
+                "reference": "05378440d8c6d4d2a1a5e5cbc1ba92a5e4bf1c40",
                 "shasum": ""
             },
             "require": {
@@ -1708,7 +1708,7 @@
             "type": "wp-cli-package",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-main": "2.x-dev"
                 },
                 "bundled": true,
                 "commands": [
@@ -1753,9 +1753,9 @@
             "homepage": "https://github.com/wp-cli/cache-command",
             "support": {
                 "issues": "https://github.com/wp-cli/cache-command/issues",
-                "source": "https://github.com/wp-cli/cache-command/tree/v2.0.8"
+                "source": "https://github.com/wp-cli/cache-command/tree/v2.0.9"
             },
-            "time": "2021-12-03T22:31:56+00:00"
+            "time": "2022-01-13T01:13:50+00:00"
         },
         {
             "name": "wp-cli/checksum-command",
@@ -3659,7 +3659,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2022-01-11T13:43:00+00:00"
+            "time": "2022-01-13T07:15:33+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
