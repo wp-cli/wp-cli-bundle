@@ -275,7 +275,7 @@ jobs:
       - name: Install RPM build tooling
         run: |
           sudo apt-get update
-          sudo apt-get install rpm rpm-lint -y
+          sudo apt-get install rpm rpmlint -y
 
       - name: Download RPM build configuration
         run: |
