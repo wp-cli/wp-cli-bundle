@@ -64,7 +64,7 @@ fi
 # copyright
 if ! [ -r usr/share/doc/php-wpcli/copyright ]; then
     mkdir -p usr/share/doc/php-wpcli &> /dev/null
-    wget -nv -O usr/share/doc/php-wpcli/copyright https://github.com/wp-cli/wp-cli/raw/main/LICENSE
+    wget -nv -O usr/share/doc/php-wpcli/copyright https://github.com/wp-cli/wp-cli/raw/master/LICENSE
 fi
 
 # changelog
