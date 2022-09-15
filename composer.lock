@@ -2815,16 +2815,16 @@
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v2.0.12",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "bbdba69179fc8df597928587111500c8ade40a38"
+                "reference": "80713ba168bf770ff26a23a6918d99a54d0cb819"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/bbdba69179fc8df597928587111500c8ade40a38",
-                "reference": "bbdba69179fc8df597928587111500c8ade40a38",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/80713ba168bf770ff26a23a6918d99a54d0cb819",
+                "reference": "80713ba168bf770ff26a23a6918d99a54d0cb819",
                 "shasum": ""
             },
             "require": {
@@ -2888,9 +2888,9 @@
             "homepage": "https://github.com/wp-cli/language-command",
             "support": {
                 "issues": "https://github.com/wp-cli/language-command/issues",
-                "source": "https://github.com/wp-cli/language-command/tree/v2.0.12"
+                "source": "https://github.com/wp-cli/language-command/tree/v2.0.13"
             },
-            "time": "2022-01-13T01:28:25+00:00"
+            "time": "2022-09-11T22:41:21+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
