@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f26b47136ab3ce45017e4e26a357ae6",
+    "content-hash": "48728b9097ee044e57dfd37f54c2af8a",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3684,16 +3684,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-master",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "0f3af4bb428eb5e5ddb6580a3d16f660d20383ab"
+                "reference": "dbf5f87cfa57c70549917f38322b9be0ee073966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0f3af4bb428eb5e5ddb6580a3d16f660d20383ab",
-                "reference": "0f3af4bb428eb5e5ddb6580a3d16f660d20383ab",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/dbf5f87cfa57c70549917f38322b9be0ee073966",
+                "reference": "dbf5f87cfa57c70549917f38322b9be0ee073966",
                 "shasum": ""
             },
             "require": {
@@ -3752,7 +3752,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2022-10-12T06:42:25+00:00"
+            "time": "2022-10-17T23:08:06+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
