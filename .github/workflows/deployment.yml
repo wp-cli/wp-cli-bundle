@@ -156,7 +156,7 @@ jobs:
         run: COMPOSER_ROOT_VERSION=dev-main composer install --prefer-dist --no-progress --no-suggest
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: wp-cli-phar
 
@@ -204,7 +204,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: cli_version
 
@@ -213,7 +213,7 @@ jobs:
           cat cli_version.txt > phar/NIGHTLY_VERSION
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: wp-cli-phar
 
@@ -268,7 +268,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: wp-cli-phar
 
@@ -322,7 +322,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: wp-cli-phar
 
