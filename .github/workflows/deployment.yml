@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up PHP environment
         uses: shivammathur/setup-php@v2
@@ -118,7 +118,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install Ghostscript
         run: |
@@ -198,7 +198,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
@@ -262,7 +262,7 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
@@ -316,7 +316,7 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
