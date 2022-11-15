@@ -27,21 +27,13 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: Use Composer cache
-        uses: actions/cache@master
+      - name: Install Composer dependencies & cache dependencies
+        uses: "ramsey/composer-install@v2"
+        env:
+          COMPOSER_ROOT_VERSION: 'dev-main'
         with:
-          path: ${{ steps['composer-cache'].outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-
-      - name: Install dependencies
-        run: composer install --no-dev --no-progress --no-interaction
+          # Bust the cache at least once a month - output format: YYYY-MM-DD.
+          custom-cache-suffix: $(date -u -d "-0 month -$(($(date +%d)-1)) days" "+%F")
 
       - name: Store WP-CLI version
         run: |
@@ -135,25 +127,17 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get Composer cache Directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: Use Composer cache
-        uses: actions/cache@master
+      - name: Install Composer dependencies & cache dependencies
+        uses: "ramsey/composer-install@v2"
+        env:
+          COMPOSER_ROOT_VERSION: 'dev-main'
         with:
-          path: ${{ steps['composer-cache'].outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+          # Bust the cache at least once a month - output format: YYYY-MM-DD.
+          custom-cache-suffix: $(date -u -d "-0 month -$(($(date +%d)-1)) days" "+%F")
 
       - name: Change ImageMagick policy to allow pdf->png conversion.
         run: |
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
-
-      - name: Install dependencies
-        run: COMPOSER_ROOT_VERSION=dev-main composer install --prefer-dist --no-progress --no-suggest
 
       - name: Download built Phar file
         uses: actions/download-artifact@v3
