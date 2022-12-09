@@ -1,11 +1,11 @@
 <?php
 
 if ( 'cli' !== PHP_SAPI ) {
-	echo "Only PHP-CLI access.\n";
-	echo "You're currently using the " . PHP_SAPI . " PHP SAPI.\n";
-	echo "If you're trying to run this file with a web browser, don't.\n";
-	echo "When running in command line, ensure that `php -v` has the\n";
-	echo "word \"cli\" in the first line of output.\n";
+	echo "WP-CLI only works correctly from the command line, using the 'cli' PHP SAPI.\n",
+		"You're currently executing the WP-CLI binary via the '" . PHP_SAPI . "' PHP SAPI.\n",
+		"In case you were trying to run this file with a web browser, know that this cannot technically work.\n",
+		"When running the WP-CLI binary on the command line, you can ensure you're using the right PHP SAPI",
+		"by checking that `php -v` has the word 'cli' in the first line of output.\n";
 	die( -1 );
 }
 
