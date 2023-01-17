@@ -117,7 +117,20 @@ jobs:
           sudo apt-get update
           sudo apt-get install ghostscript -y
 
-      - name: Set up PHP envirnoment
+      - name: Set up PHP environment (PHP 5.6 - 7.1)
+        if: ${{ matrix.php < '7.2' && steps.check_files.outputs.files_exists == 'true'}}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '${{ matrix.php }}'
+          extensions: imagick, mysql, zip
+          coverage: none
+          tools: composer:2.2
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up PHP environment (PHP 7.2+)
+        if: ${{ matrix.php >= '7.2' && steps.check_files.outputs.files_exists == 'true'}}
         uses: shivammathur/setup-php@v2
         with:
           php-version: '${{ matrix.php }}'
