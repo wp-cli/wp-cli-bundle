@@ -23,7 +23,7 @@ jobs:
           php-version: '7.4'
           extensions: mysql, zip, imagick
           coverage: none
-          tools: composer
+          tools: composer:2.2
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
