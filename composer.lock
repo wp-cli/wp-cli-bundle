@@ -84,16 +84,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.2.20",
+            "version": "2.2.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "b4850827d87688465fc3b775c71b2836187538ac"
+                "reference": "978198befc71de0b18fc1fc5a472c03b184b504a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/b4850827d87688465fc3b775c71b2836187538ac",
-                "reference": "b4850827d87688465fc3b775c71b2836187538ac",
+                "url": "https://api.github.com/repos/composer/composer/zipball/978198befc71de0b18fc1fc5a472c03b184b504a",
+                "reference": "978198befc71de0b18fc1fc5a472c03b184b504a",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +163,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.2.20"
+                "source": "https://github.com/composer/composer/tree/2.2.21"
             },
             "funding": [
                 {
@@ -179,7 +179,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-10T13:11:10+00:00"
+            "time": "2023-02-15T12:07:40+00:00"
         },
         {
             "name": "composer/metadata-minifier",
