@@ -6736,16 +6736,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v3.1.9",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "9b8cf32307755710080bf19a4f8df295ca906593"
+                "reference": "b58c56f56fcda1e25fabc29ae5ac8bfcd7765af6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/9b8cf32307755710080bf19a4f8df295ca906593",
-                "reference": "9b8cf32307755710080bf19a4f8df295ca906593",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/b58c56f56fcda1e25fabc29ae5ac8bfcd7765af6",
+                "reference": "b58c56f56fcda1e25fabc29ae5ac8bfcd7765af6",
                 "shasum": ""
             },
             "require": {
@@ -6771,7 +6771,8 @@
                 "bin/run-behat-tests",
                 "bin/run-linter-tests",
                 "bin/run-php-unit-tests",
-                "bin/run-phpcs-tests"
+                "bin/run-phpcs-tests",
+                "bin/run-phpcbf-cleanup"
             ],
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -6810,7 +6811,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2023-01-17T04:31:36+00:00"
+            "time": "2023-02-17T14:26:59+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
