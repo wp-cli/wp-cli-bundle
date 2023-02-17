@@ -3258,16 +3258,16 @@
         },
         {
             "name": "wp-cli/role-command",
-            "version": "v2.0.9",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/role-command.git",
-                "reference": "9abd93952565935084160bc3be49dfb2483bb0b6"
+                "reference": "e4eed74c467199849195b8b5e10cd674a3c4eaed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/9abd93952565935084160bc3be49dfb2483bb0b6",
-                "reference": "9abd93952565935084160bc3be49dfb2483bb0b6",
+                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/e4eed74c467199849195b8b5e10cd674a3c4eaed",
+                "reference": "e4eed74c467199849195b8b5e10cd674a3c4eaed",
                 "shasum": ""
             },
             "require": {
@@ -3299,9 +3299,9 @@
                 "files": [
                     "role-command.php"
                 ],
-                "psr-4": {
-                    "": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3318,9 +3318,9 @@
             "homepage": "https://github.com/wp-cli/role-command",
             "support": {
                 "issues": "https://github.com/wp-cli/role-command/issues",
-                "source": "https://github.com/wp-cli/role-command/tree/v2.0.9"
+                "source": "https://github.com/wp-cli/role-command/tree/v2.0.11"
             },
-            "time": "2022-01-13T01:31:23+00:00"
+            "time": "2023-02-17T15:08:21+00:00"
         },
         {
             "name": "wp-cli/scaffold-command",
@@ -3762,7 +3762,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-01-12T16:39:42+00:00"
+            "time": "2023-02-08T12:32:02+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
