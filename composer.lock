@@ -1977,16 +1977,16 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.1.8",
+            "version": "v2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "625f0611de96979812e5ccbbc1e2540a34643207"
+                "reference": "33b3ba0c03efa9f280bab59107532272ac2a4235"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/625f0611de96979812e5ccbbc1e2540a34643207",
-                "reference": "625f0611de96979812e5ccbbc1e2540a34643207",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/33b3ba0c03efa9f280bab59107532272ac2a4235",
+                "reference": "33b3ba0c03efa9f280bab59107532272ac2a4235",
                 "shasum": ""
             },
             "require": {
@@ -2023,9 +2023,9 @@
                 "files": [
                     "core-command.php"
                 ],
-                "psr-4": {
-                    "": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2042,9 +2042,9 @@
             "homepage": "https://github.com/wp-cli/core-command",
             "support": {
                 "issues": "https://github.com/wp-cli/core-command/issues",
-                "source": "https://github.com/wp-cli/core-command/tree/v2.1.8"
+                "source": "https://github.com/wp-cli/core-command/tree/v2.1.9"
             },
-            "time": "2023-01-12T04:02:25+00:00"
+            "time": "2023-02-17T16:33:19+00:00"
         },
         {
             "name": "wp-cli/cron-command",
