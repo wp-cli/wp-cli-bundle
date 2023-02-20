@@ -2894,16 +2894,16 @@
         },
         {
             "name": "wp-cli/maintenance-mode-command",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/maintenance-mode-command.git",
-                "reference": "e65505c973ea9349257a4f33ac9edc78db0b189a"
+                "reference": "c53fab1ca9fddb2ba00edc5660b081e2c80b336b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/e65505c973ea9349257a4f33ac9edc78db0b189a",
-                "reference": "e65505c973ea9349257a4f33ac9edc78db0b189a",
+                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/c53fab1ca9fddb2ba00edc5660b081e2c80b336b",
+                "reference": "c53fab1ca9fddb2ba00edc5660b081e2c80b336b",
                 "shasum": ""
             },
             "require": {
@@ -2949,9 +2949,9 @@
             "homepage": "https://github.com/wp-cli/maintenance-mode-command",
             "support": {
                 "issues": "https://github.com/wp-cli/maintenance-mode-command/issues",
-                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.0.8"
+                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.0.9"
             },
-            "time": "2022-01-13T01:25:44+00:00"
+            "time": "2023-02-17T17:58:55+00:00"
         },
         {
             "name": "wp-cli/media-command",
