@@ -2815,16 +2815,16 @@
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v2.0.14",
+            "version": "v2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "c7b214b532ab5a5d32f3fc368ac382b3a29494da"
+                "reference": "5d277b498e4fd3555637bb967c55fc00538ae086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/c7b214b532ab5a5d32f3fc368ac382b3a29494da",
-                "reference": "c7b214b532ab5a5d32f3fc368ac382b3a29494da",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/5d277b498e4fd3555637bb967c55fc00538ae086",
+                "reference": "5d277b498e4fd3555637bb967c55fc00538ae086",
                 "shasum": ""
             },
             "require": {
@@ -2869,9 +2869,9 @@
                 "files": [
                     "language-command.php"
                 ],
-                "psr-4": {
-                    "": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2888,9 +2888,9 @@
             "homepage": "https://github.com/wp-cli/language-command",
             "support": {
                 "issues": "https://github.com/wp-cli/language-command/issues",
-                "source": "https://github.com/wp-cli/language-command/tree/v2.0.14"
+                "source": "https://github.com/wp-cli/language-command/tree/v2.0.15"
             },
-            "time": "2023-01-12T01:18:21+00:00"
+            "time": "2023-02-17T16:43:41+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
