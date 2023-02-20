@@ -3323,16 +3323,16 @@
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "4c03c701f0e9fc3e73bfa7d1f8f89f7181203e41"
+                "reference": "eb8d71618de1e34264991109f91a8d8247601fb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/4c03c701f0e9fc3e73bfa7d1f8f89f7181203e41",
-                "reference": "4c03c701f0e9fc3e73bfa7d1f8f89f7181203e41",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/eb8d71618de1e34264991109f91a8d8247601fb2",
+                "reference": "eb8d71618de1e34264991109f91a8d8247601fb2",
                 "shasum": ""
             },
             "require": {
@@ -3364,9 +3364,9 @@
                 "files": [
                     "scaffold-command.php"
                 ],
-                "psr-4": {
-                    "": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3383,9 +3383,9 @@
             "homepage": "https://github.com/wp-cli/scaffold-command",
             "support": {
                 "issues": "https://github.com/wp-cli/scaffold-command/issues",
-                "source": "https://github.com/wp-cli/scaffold-command/tree/v2.1.0"
+                "source": "https://github.com/wp-cli/scaffold-command/tree/v2.1.1"
             },
-            "time": "2023-01-12T03:32:05+00:00"
+            "time": "2023-02-17T18:53:06+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
@@ -3760,7 +3760,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-02-08T12:32:02+00:00"
+            "time": "2023-02-17T17:58:45+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
