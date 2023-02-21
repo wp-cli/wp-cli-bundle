@@ -3564,16 +3564,16 @@
         },
         {
             "name": "wp-cli/super-admin-command",
-            "version": "v2.0.10",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/super-admin-command.git",
-                "reference": "e6707f3acfff089d19c5c55bba0fd66cd7d6c2fa"
+                "reference": "8e7202b28c80f9181ef12533d1e0cd3b5ace5b07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/super-admin-command/zipball/e6707f3acfff089d19c5c55bba0fd66cd7d6c2fa",
-                "reference": "e6707f3acfff089d19c5c55bba0fd66cd7d6c2fa",
+                "url": "https://api.github.com/repos/wp-cli/super-admin-command/zipball/8e7202b28c80f9181ef12533d1e0cd3b5ace5b07",
+                "reference": "8e7202b28c80f9181ef12533d1e0cd3b5ace5b07",
                 "shasum": ""
             },
             "require": {
@@ -3600,9 +3600,9 @@
                 "files": [
                     "super-admin-command.php"
                 ],
-                "psr-4": {
-                    "": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3619,9 +3619,9 @@
             "homepage": "https://github.com/wp-cli/super-admin-command",
             "support": {
                 "issues": "https://github.com/wp-cli/super-admin-command/issues",
-                "source": "https://github.com/wp-cli/super-admin-command/tree/v2.0.10"
+                "source": "https://github.com/wp-cli/super-admin-command/tree/v2.0.11"
             },
-            "time": "2022-01-13T01:40:54+00:00"
+            "time": "2023-02-17T17:03:30+00:00"
         },
         {
             "name": "wp-cli/widget-command",
