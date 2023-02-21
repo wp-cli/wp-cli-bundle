@@ -3390,16 +3390,16 @@
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.0.19",
+            "version": "v2.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "f1a8a1d246f917b66d219abcd7e087f5bf180b1c"
+                "reference": "6b195e3f39dd18270710b28343a8038f5927dd2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/f1a8a1d246f917b66d219abcd7e087f5bf180b1c",
-                "reference": "f1a8a1d246f917b66d219abcd7e087f5bf180b1c",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/6b195e3f39dd18270710b28343a8038f5927dd2c",
+                "reference": "6b195e3f39dd18270710b28343a8038f5927dd2c",
                 "shasum": ""
             },
             "require": {
@@ -3414,7 +3414,7 @@
             "type": "wp-cli-package",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-main": "2.x-dev"
                 },
                 "bundled": true,
                 "commands": [
@@ -3425,9 +3425,9 @@
                 "files": [
                     "search-replace-command.php"
                 ],
-                "psr-4": {
-                    "": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3444,9 +3444,9 @@
             "homepage": "https://github.com/wp-cli/search-replace-command",
             "support": {
                 "issues": "https://github.com/wp-cli/search-replace-command/issues",
-                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.0.19"
+                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.0.20"
             },
-            "time": "2022-10-17T22:18:26+00:00"
+            "time": "2023-02-17T16:23:58+00:00"
         },
         {
             "name": "wp-cli/server-command",
