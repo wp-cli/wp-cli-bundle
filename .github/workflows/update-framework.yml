@@ -49,8 +49,8 @@ jobs:
 
       - name: Configure git user
         run: |
-          git config --global user.email "alain.schlesser@gmail.com"
-          git config --global user.name "Alain Schlesser"
+          git config --global user.email "info@wp-cli.org"
+          git config --global user.name "wp-make-coffee"
 
       - name: Check if remote branch exists
         run: echo "REMOTE_BRANCH_EXISTS=$([[ -z $(git ls-remote --heads origin update-framework) ]] && echo "0" || echo "1")" >> $GITHUB_ENV
@@ -89,7 +89,7 @@ jobs:
         with:
           source_branch: update-framework
           destination_branch: ${{ github.event.repository.default_branch }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.REPO_GITHUB_TOKEN }}
           pr_title: Update wp-cli framework
           pr_body: "**This is an automated pull-request**\n\nUpdates the `wp-cli/wp-cli` framework to the latest changeset."
           pr_label: scope:framework
