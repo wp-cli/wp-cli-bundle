@@ -1,6 +1,7 @@
 name: Update wp-cli framework
 
 on:
+  push:
   workflow_call:
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
