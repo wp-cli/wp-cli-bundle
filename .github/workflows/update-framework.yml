@@ -2,6 +2,12 @@ name: Update wp-cli framework
 
 on:
   workflow_call:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron:  '17 4 * * *' # Run every day on a seemly random time.
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:
