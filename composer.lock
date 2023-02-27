@@ -3258,16 +3258,16 @@
         },
         {
             "name": "wp-cli/role-command",
-            "version": "v2.0.11",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/role-command.git",
-                "reference": "e4eed74c467199849195b8b5e10cd674a3c4eaed"
+                "reference": "80e23679bb3b78607c93f48b49fb71060c3a6576"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/e4eed74c467199849195b8b5e10cd674a3c4eaed",
-                "reference": "e4eed74c467199849195b8b5e10cd674a3c4eaed",
+                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/80e23679bb3b78607c93f48b49fb71060c3a6576",
+                "reference": "80e23679bb3b78607c93f48b49fb71060c3a6576",
                 "shasum": ""
             },
             "require": {
@@ -3318,9 +3318,9 @@
             "homepage": "https://github.com/wp-cli/role-command",
             "support": {
                 "issues": "https://github.com/wp-cli/role-command/issues",
-                "source": "https://github.com/wp-cli/role-command/tree/v2.0.11"
+                "source": "https://github.com/wp-cli/role-command/tree/v2.0.12"
             },
-            "time": "2023-02-17T15:08:21+00:00"
+            "time": "2023-02-27T12:40:56+00:00"
         },
         {
             "name": "wp-cli/scaffold-command",
