@@ -6238,16 +6238,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619"
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1359e176e9307e906dc3d890bcc9603ff6d90619",
-                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879",
                 "shasum": ""
             },
             "require": {
@@ -6283,14 +6283,15 @@
             "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
             "keywords": [
                 "phpcs",
-                "standards"
+                "standards",
+                "static analysis"
             ],
             "support": {
                 "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2022-06-18T07:21:10+00:00"
+            "time": "2023-02-22T23:07:41+00:00"
         },
         {
             "name": "symfony/config",
@@ -6735,16 +6736,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "b58c56f56fcda1e25fabc29ae5ac8bfcd7765af6"
+                "reference": "ff44534e2899cec53cd9fd6a238d73b0c930bca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/b58c56f56fcda1e25fabc29ae5ac8bfcd7765af6",
-                "reference": "b58c56f56fcda1e25fabc29ae5ac8bfcd7765af6",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/ff44534e2899cec53cd9fd6a238d73b0c930bca5",
+                "reference": "ff44534e2899cec53cd9fd6a238d73b0c930bca5",
                 "shasum": ""
             },
             "require": {
@@ -6810,7 +6811,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2023-02-17T14:26:59+00:00"
+            "time": "2023-02-17T16:04:00+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
