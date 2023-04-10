@@ -3697,12 +3697,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "22badb10cbe9e3aa699926ba9053ed2cf45e87af"
+                "reference": "8283bbe5a5987ed9ca6281f5b2df6fb01010b166"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/22badb10cbe9e3aa699926ba9053ed2cf45e87af",
-                "reference": "22badb10cbe9e3aa699926ba9053ed2cf45e87af",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/8283bbe5a5987ed9ca6281f5b2df6fb01010b166",
+                "reference": "8283bbe5a5987ed9ca6281f5b2df6fb01010b166",
                 "shasum": ""
             },
             "require": {
