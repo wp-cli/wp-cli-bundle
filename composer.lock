@@ -1772,16 +1772,16 @@
         },
         {
             "name": "wp-cli/cache-command",
-            "version": "v2.0.11",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cache-command.git",
-                "reference": "80aa8e1546ac278be035731d41ec6d28213fb7db"
+                "reference": "e646bd57d3a43614d08239c2a71ff4eda2b862a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/80aa8e1546ac278be035731d41ec6d28213fb7db",
-                "reference": "80aa8e1546ac278be035731d41ec6d28213fb7db",
+                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/e646bd57d3a43614d08239c2a71ff4eda2b862a0",
+                "reference": "e646bd57d3a43614d08239c2a71ff4eda2b862a0",
                 "shasum": ""
             },
             "require": {
@@ -1803,10 +1803,12 @@
                     "cache decr",
                     "cache delete",
                     "cache flush",
+                    "cache flush-group",
                     "cache get",
                     "cache incr",
                     "cache replace",
                     "cache set",
+                    "cache supports",
                     "cache type",
                     "transient",
                     "transient delete",
@@ -1839,9 +1841,9 @@
             "homepage": "https://github.com/wp-cli/cache-command",
             "support": {
                 "issues": "https://github.com/wp-cli/cache-command/issues",
-                "source": "https://github.com/wp-cli/cache-command/tree/v2.0.11"
+                "source": "https://github.com/wp-cli/cache-command/tree/v2.1.0"
             },
-            "time": "2023-02-27T12:17:33+00:00"
+            "time": "2023-04-26T19:05:07+00:00"
         },
         {
             "name": "wp-cli/checksum-command",
