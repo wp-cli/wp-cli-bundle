@@ -1028,23 +1028,23 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910"
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/234f8fd1023c9158e2314fa9d7d0e6a83db42910",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.36"
+                "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.36"
             },
             "type": "library",
             "autoload": {
@@ -1088,19 +1088,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/promise/issues",
-                "source": "https://github.com/reactphp/promise/tree/v2.9.0"
+                "source": "https://github.com/reactphp/promise/tree/v2.10.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-02-11T10:27:51+00:00"
+            "time": "2023-05-02T15:15:43+00:00"
         },
         {
             "name": "rmccue/requests",
@@ -3720,12 +3716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "4256c2e6f6361d29e07555763c7c3d6f670bf91f"
+                "reference": "2efbaad2d5def76c5fb78b758f98f3b9c734e694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/4256c2e6f6361d29e07555763c7c3d6f670bf91f",
-                "reference": "4256c2e6f6361d29e07555763c7c3d6f670bf91f",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/2efbaad2d5def76c5fb78b758f98f3b9c734e694",
+                "reference": "2efbaad2d5def76c5fb78b758f98f3b9c734e694",
                 "shasum": ""
             },
             "require": {
@@ -3784,7 +3780,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-05-02T21:20:31+00:00"
+            "time": "2023-05-03T08:21:01+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5155,12 +5151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5e3dfa62068e207fd3b00be0f6d4657185c1b262"
+                "reference": "a4fe21553eb3bbf33bbecf26cb0e2f0973f50c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5e3dfa62068e207fd3b00be0f6d4657185c1b262",
-                "reference": "5e3dfa62068e207fd3b00be0f6d4657185c1b262",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a4fe21553eb3bbf33bbecf26cb0e2f0973f50c83",
+                "reference": "a4fe21553eb3bbf33bbecf26cb0e2f0973f50c83",
                 "shasum": ""
             },
             "conflict": {
@@ -5423,7 +5419,7 @@
                 "modx/revolution": "<= 2.8.3-pl|<2.8",
                 "mojo42/jirafeau": "<4.4",
                 "monolog/monolog": ">=1.8,<1.12",
-                "moodle/moodle": "<4.0.7|>=4.1-beta,<4.1.2|= 3.11",
+                "moodle/moodle": "<4.2-rc.2|= 3.11",
                 "mustache/mustache": ">=2,<2.14.1",
                 "namshi/jose": "<2.2",
                 "neoan3-apps/template": "<1.1.1",
@@ -5753,7 +5749,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-01T23:04:11+00:00"
+            "time": "2023-05-03T00:13:26+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
