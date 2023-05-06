@@ -21,6 +21,7 @@ jobs:
   update-framework: #----------------------------------------------------------
     name: Update wp-cli framework
     runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
         uses: actions/checkout@v3
