@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8232a075c3cceec301d10f5b6c860aaa",
+    "content-hash": "130f1d131d18a8bd8e7383ab095a9314",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3088,22 +3088,22 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.3.1",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "5f9a8f9b70e4faa624cfffb602d37cdb5e6d2e93"
+                "reference": "7b01ba9f858917ac7d103aef83da07ad87944019"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/5f9a8f9b70e4faa624cfffb602d37cdb5e6d2e93",
-                "reference": "5f9a8f9b70e4faa624cfffb602d37cdb5e6d2e93",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/7b01ba9f858917ac7d103aef83da07ad87944019",
+                "reference": "7b01ba9f858917ac7d103aef83da07ad87944019",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "^1.10.23 || ~2.2.17",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "2.8"
+                "wp-cli/wp-cli": "dev-main as 2.8.x-dev"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
@@ -3147,9 +3147,9 @@
             "homepage": "https://github.com/wp-cli/package-command",
             "support": {
                 "issues": "https://github.com/wp-cli/package-command/issues",
-                "source": "https://github.com/wp-cli/package-command/tree/v2.3.1"
+                "source": "https://github.com/wp-cli/package-command/tree/v2.3.0"
             },
-            "time": "2023-05-31T16:36:56+00:00"
+            "time": "2023-05-12T14:57:18+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -3712,16 +3712,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v2.8.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "acfc0c6cd4fc6a14e034b06afc4a0b37ebf9dcf7"
+                "reference": "5274e68d439df060873bdc9fa3e486d4aeeddf6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/acfc0c6cd4fc6a14e034b06afc4a0b37ebf9dcf7",
-                "reference": "acfc0c6cd4fc6a14e034b06afc4a0b37ebf9dcf7",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/5274e68d439df060873bdc9fa3e486d4aeeddf6e",
+                "reference": "5274e68d439df060873bdc9fa3e486d4aeeddf6e",
                 "shasum": ""
             },
             "require": {
@@ -3745,6 +3745,7 @@
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
+            "default-branch": true,
             "bin": [
                 "bin/wp",
                 "bin/wp.bat"
@@ -3752,7 +3753,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.8.x-dev"
+                    "dev-main": "2.9.x-dev"
                 }
             },
             "autoload": {
@@ -3779,7 +3780,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-05-31T16:51:26+00:00"
+            "time": "2023-05-31T19:27:42+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -7003,6 +7004,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
