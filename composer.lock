@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "130f1d131d18a8bd8e7383ab095a9314",
+    "content-hash": "8232a075c3cceec301d10f5b6c860aaa",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3088,22 +3088,22 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "7b01ba9f858917ac7d103aef83da07ad87944019"
+                "reference": "5f9a8f9b70e4faa624cfffb602d37cdb5e6d2e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/7b01ba9f858917ac7d103aef83da07ad87944019",
-                "reference": "7b01ba9f858917ac7d103aef83da07ad87944019",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/5f9a8f9b70e4faa624cfffb602d37cdb5e6d2e93",
+                "reference": "5f9a8f9b70e4faa624cfffb602d37cdb5e6d2e93",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "^1.10.23 || ~2.2.17",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "dev-main as 2.8.x-dev"
+                "wp-cli/wp-cli": "2.8"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
@@ -3147,9 +3147,9 @@
             "homepage": "https://github.com/wp-cli/package-command",
             "support": {
                 "issues": "https://github.com/wp-cli/package-command/issues",
-                "source": "https://github.com/wp-cli/package-command/tree/v2.3.0"
+                "source": "https://github.com/wp-cli/package-command/tree/v2.3.1"
             },
-            "time": "2023-05-12T14:57:18+00:00"
+            "time": "2023-05-31T16:36:56+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -3712,16 +3712,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-main",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "51989856d324d772893b9d11a6e911cf4c623b5b"
+                "reference": "acfc0c6cd4fc6a14e034b06afc4a0b37ebf9dcf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/51989856d324d772893b9d11a6e911cf4c623b5b",
-                "reference": "51989856d324d772893b9d11a6e911cf4c623b5b",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/acfc0c6cd4fc6a14e034b06afc4a0b37ebf9dcf7",
+                "reference": "acfc0c6cd4fc6a14e034b06afc4a0b37ebf9dcf7",
                 "shasum": ""
             },
             "require": {
@@ -3745,7 +3745,6 @@
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
-            "default-branch": true,
             "bin": [
                 "bin/wp",
                 "bin/wp.bat"
@@ -3780,7 +3779,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-05-31T14:03:38+00:00"
+            "time": "2023-05-31T16:51:26+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5151,12 +5150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "d40baa1c4204055d04a5a9b5ad39c95b189ef889"
+                "reference": "e7a16840e9d12291c351fee9896838900f534d68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d40baa1c4204055d04a5a9b5ad39c95b189ef889",
-                "reference": "d40baa1c4204055d04a5a9b5ad39c95b189ef889",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e7a16840e9d12291c351fee9896838900f534d68",
+                "reference": "e7a16840e9d12291c351fee9896838900f534d68",
                 "shasum": ""
             },
             "conflict": {
@@ -5432,7 +5431,7 @@
                 "netgen/tagsbundle": ">=3.4,<3.4.11|>=4,<4.0.15",
                 "nette/application": ">=2,<2.0.19|>=2.1,<2.1.13|>=2.2,<2.2.10|>=2.3,<2.3.14|>=2.4,<2.4.16|>=3,<3.0.6",
                 "nette/nette": ">=2,<2.0.19|>=2.1,<2.1.13",
-                "nilsteampassnet/teampass": "<3.0.7",
+                "nilsteampassnet/teampass": "<3.0.9",
                 "notrinos/notrinos-erp": "<=0.7",
                 "noumo/easyii": "<=0.9",
                 "nukeviet/nukeviet": "<4.5.2",
@@ -5751,7 +5750,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-30T21:04:11+00:00"
+            "time": "2023-05-31T16:04:38+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -7004,7 +7003,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
