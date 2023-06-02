@@ -96,3 +96,121 @@ Feature: Requests integration with both v1 and v2
       """
       Success: Installed 1 of 1 plugins.
       """
+
+  Scenario: Composer stack with Requests v1 pulling wp-cli/wp-cli-bundle
+    Given an empty directory
+    And a composer.json file:
+      """
+      {
+        "name": "example/wordpress",
+        "type": "project",
+        "extra": {
+          "wordpress-install-dir": "wp",
+          "installer-paths": {
+            "content/plugins/{$name}/": [
+              "type:wordpress-plugin"
+            ],
+            "content/themes/{$name}/": [
+              "type:wordpress-theme"
+            ]
+          }
+        },
+        "repositories": [
+          {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+          }
+        ],
+        "require": {
+          "johnpbloch/wordpress": "6.1"
+        },
+        "require-dev": {
+          "wp-cli/wp-cli-bundle": "^2.8.0"
+        },
+        "config": {
+          "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+          }
+        }
+      }
+      """
+    # Note: Composer outputs messages to stderr.
+    And I run `composer install --no-interaction 2>&1`
+    And a wp-cli.yml file:
+      """
+      path: wp
+      """
+
+    When I run `vendor/bin/wp cli version`
+    Then STDOUT should contain:
+      """
+      WP-CLI 2.8
+      """
+
+    When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST}`
+    Then STDOUT should be:
+      """
+      Success: Generated 'wp-config.php' file.
+      """
+
+    When I run `vendor/bin/wp db create`
+    Then STDOUT should be:
+      """
+      Success: Database created.
+      """
+
+    When I run `vendor/bin/wp core install --url=localhost:8181 --title=Composer --admin_user=admin --admin_password=password --admin_email=admin@example.com`
+    Then STDOUT should contain:
+      """
+      Success: WordPress installed successfully.
+      """
+
+    When I run `vendor/bin/wp core version`
+    Then STDOUT should contain:
+      """
+      6.1
+      """
+
+    When I run `vendor/bin/wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
+    Then STDOUT should contain:
+      """
+      object(Requests_Response)
+      """
+    And STDOUT should contain:
+      """
+      HTTP/1.1 200 OK
+      """
+    And STDERR should be empty
+
+    When I run `vendor/bin/wp plugin install duplicate-post --activate`
+    Then STDOUT should contain:
+      """
+      Success: Installed 1 of 1 plugins.
+      """
+
+    And I launch in the background `wp server --host=localhost --port=8181`
+    And I run `wp option set blogdescription 'Just another Composer-based WordPress site'`
+
+    When I run `curl -sS localhost:8181`
+    Then STDOUT should contain:
+      """
+      Just another Composer-based WordPress site
+      """
+
+    When I run `vendor/bin/wp eval 'echo COOKIEHASH;'`
+    And save STDOUT as {COOKIEHASH}
+    Then STDOUT should not be empty
+
+    When I run `vendor/bin/wp eval 'echo wp_generate_auth_cookie( 1, 32503680000 );'`
+    And save STDOUT as {AUTH_COOKIE}
+    Then STDOUT should not be empty
+
+    When I run `curl -b 'wordpress_{COOKIEHASH}={AUTH_COOKIE}' -sS localhost:8181/wp-admin/plugins.php`
+    Then STDOUT should contain:
+      """
+      Plugins</h1>
+      """
+    And STDOUT should contain:
+      """
+      plugin=duplicate-post
+      """
