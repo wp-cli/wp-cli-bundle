@@ -140,6 +140,10 @@ Feature: Requests integration with both v1 and v2
       """
       path: wp
       """
+    And an extra-config.php file:
+      """
+      require __DIR__ . "/../vendor/autoload.php";
+      """
 
     When I run `vendor/bin/wp cli version`
     Then STDOUT should contain:
@@ -147,7 +151,7 @@ Feature: Requests integration with both v1 and v2
       WP-CLI 2.8
       """
 
-    When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST}`
+    When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
     Then STDOUT should be:
       """
       Success: Generated 'wp-config.php' file.
