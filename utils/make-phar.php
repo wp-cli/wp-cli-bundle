@@ -190,7 +190,7 @@ $finder
 	->in( WP_CLI_BUNDLE_ROOT . '/php' )
 	->in( WP_CLI_VENDOR_DIR . '/mustache' )
 	->in( WP_CLI_VENDOR_DIR . '/eftec/bladeone' )
-	->in( WP_CLI_VENDOR_DIR . '/rmccue/requests' )
+	->in( WP_CLI_ROOT . '/bundle/rmccue/requests' )
 	->in( WP_CLI_VENDOR_DIR . '/composer' )
 	->in( WP_CLI_VENDOR_DIR . '/symfony' )
 	->notName( 'behat-tags.php' )
@@ -290,7 +290,7 @@ if ( 'cli' !== BUILD ) {
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/LICENSE' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/res/composer-schema.json' );
 }
-add_file( $phar, WP_CLI_VENDOR_DIR . '/rmccue/requests/certificates/cacert.pem' );
+add_file( $phar, WP_CLI_ROOT . '/bundle/rmccue/requests/certificates/cacert.pem' );
 
 set_file_contents( $phar, WP_CLI_ROOT . '/COMPOSER_VERSIONS', get_composer_versions( $current_version ) );
 set_file_contents( $phar, WP_CLI_ROOT . '/VERSION', $current_version );
