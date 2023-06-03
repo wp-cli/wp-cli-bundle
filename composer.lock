@@ -1099,87 +1099,6 @@
             "time": "2023-05-02T15:15:43+00:00"
         },
         {
-            "name": "rmccue/requests",
-            "version": "v2.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WordPress/Requests.git",
-                "reference": "7d0f8394ea7846a7086978318c306123118445dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/Requests/zipball/7d0f8394ea7846a7086978318c306123118445dc",
-                "reference": "7d0f8394ea7846a7086978318c306123118445dc",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-                "php-parallel-lint/php-console-highlighter": "^0.5.0",
-                "php-parallel-lint/php-parallel-lint": "^1.3.1",
-                "phpcompatibility/php-compatibility": "^9.0",
-                "requests/test-server": "dev-main",
-                "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.6",
-                "wp-coding-standards/wpcs": "^2.0",
-                "yoast/phpunit-polyfills": "^1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "library/Deprecated.php"
-                ],
-                "psr-4": {
-                    "WpOrg\\Requests\\": "src/"
-                },
-                "classmap": [
-                    "library/Requests.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "ISC"
-            ],
-            "authors": [
-                {
-                    "name": "Ryan McCue",
-                    "homepage": "https://rmccue.io/"
-                },
-                {
-                    "name": "Alain Schlesser",
-                    "homepage": "https://github.com/schlessera"
-                },
-                {
-                    "name": "Juliette Reinders Folmer",
-                    "homepage": "https://github.com/jrfnl"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/WordPress/Requests/graphs/contributors"
-                }
-            ],
-            "description": "A HTTP library written in PHP, for human beings.",
-            "homepage": "https://requests.ryanmccue.info/",
-            "keywords": [
-                "curl",
-                "fsockopen",
-                "http",
-                "idna",
-                "ipv6",
-                "iri",
-                "sockets"
-            ],
-            "support": {
-                "docs": "https://requests.ryanmccue.info/",
-                "issues": "https://github.com/WordPress/Requests/issues",
-                "source": "https://github.com/WordPress/Requests"
-            },
-            "time": "2023-04-04T09:01:49+00:00"
-        },
-        {
             "name": "seld/jsonlint",
             "version": "1.10.0",
             "source": {
@@ -3088,22 +3007,22 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.3.0",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "7b01ba9f858917ac7d103aef83da07ad87944019"
+                "reference": "88b7728c81105be91f1e1aabbdf3b4037999b5bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/7b01ba9f858917ac7d103aef83da07ad87944019",
-                "reference": "7b01ba9f858917ac7d103aef83da07ad87944019",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/88b7728c81105be91f1e1aabbdf3b4037999b5bd",
+                "reference": "88b7728c81105be91f1e1aabbdf3b4037999b5bd",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "^1.10.23 || ~2.2.17",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "dev-main as 2.8.x-dev"
+                "wp-cli/wp-cli": "^2.8"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
@@ -3147,9 +3066,9 @@
             "homepage": "https://github.com/wp-cli/package-command",
             "support": {
                 "issues": "https://github.com/wp-cli/package-command/issues",
-                "source": "https://github.com/wp-cli/package-command/tree/v2.3.0"
+                "source": "https://github.com/wp-cli/package-command/tree/v2.3.2"
             },
-            "time": "2023-05-12T14:57:18+00:00"
+            "time": "2023-06-02T06:17:19+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -3409,16 +3328,16 @@
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "c23820436dcac45662e7a6833bbdfa542b0f21a0"
+                "reference": "1d5c77fbead033a7707915fa0c51306fb3c64d37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/c23820436dcac45662e7a6833bbdfa542b0f21a0",
-                "reference": "c23820436dcac45662e7a6833bbdfa542b0f21a0",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/1d5c77fbead033a7707915fa0c51306fb3c64d37",
+                "reference": "1d5c77fbead033a7707915fa0c51306fb3c64d37",
                 "shasum": ""
             },
             "require": {
@@ -3463,9 +3382,9 @@
             "homepage": "https://github.com/wp-cli/search-replace-command",
             "support": {
                 "issues": "https://github.com/wp-cli/search-replace-command/issues",
-                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.1.0"
+                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.1.1"
             },
-            "time": "2023-05-11T08:09:28+00:00"
+            "time": "2023-06-02T20:30:01+00:00"
         },
         {
             "name": "wp-cli/server-command",
@@ -3716,19 +3635,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "5274e68d439df060873bdc9fa3e486d4aeeddf6e"
+                "reference": "47d97e5bdc7b95533c182630c458cada7e615fda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/5274e68d439df060873bdc9fa3e486d4aeeddf6e",
-                "reference": "5274e68d439df060873bdc9fa3e486d4aeeddf6e",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/47d97e5bdc7b95533c182630c458cada7e615fda",
+                "reference": "47d97e5bdc7b95533c182630c458cada7e615fda",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "mustache/mustache": "^2.14.1",
                 "php": "^5.6 || ^7.0 || ^8.0",
-                "rmccue/requests": "^2",
                 "symfony/finder": ">2.7",
                 "wp-cli/mustangostang-spyc": "^0.6.3",
                 "wp-cli/php-cli-tools": "~0.11.2"
@@ -3780,7 +3698,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-05-31T19:27:42+00:00"
+            "time": "2023-06-03T04:08:28+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -5151,12 +5069,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e7a16840e9d12291c351fee9896838900f534d68"
+                "reference": "0feb297cb2162446e9d3334cd131d861d7d2d997"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e7a16840e9d12291c351fee9896838900f534d68",
-                "reference": "e7a16840e9d12291c351fee9896838900f534d68",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0feb297cb2162446e9d3334cd131d861d7d2d997",
+                "reference": "0feb297cb2162446e9d3334cd131d861d7d2d997",
                 "shasum": ""
             },
             "conflict": {
@@ -5232,7 +5150,7 @@
                 "contao/core-bundle": "<4.9.40|>=4.10,<4.11.7|>=4.13,<4.13.21|>=5.1,<5.1.4|= 4.10.0",
                 "contao/listing-bundle": ">=4,<4.4.8",
                 "contao/managed-edition": "<=1.5",
-                "craftcms/cms": ">= 4.0.0-RC1, <= 4.4.5|>= 4.0.0-RC1, <= 4.4.6|<=3.8.5|>=4,<4.4.6|>= 4.0.0-RC1, < 4.4.6|>= 4.0.0-RC1, < 4.3.7|>= 4.0.0-RC1, < 4.2.1",
+                "craftcms/cms": "<4.4.12|>= 4.0.0-RC1, <= 4.4.5|>= 4.0.0-RC1, <= 4.4.6|>= 4.0.0-RC1, < 4.4.6|>= 4.0.0-RC1, < 4.3.7|>= 4.0.0-RC1, < 4.2.1",
                 "croogo/croogo": "<3.0.7",
                 "cuyz/valinor": "<0.12",
                 "czproject/git-php": "<4.0.3",
@@ -5488,7 +5406,7 @@
                 "pimcore/pimcore": "<10.5.21",
                 "pixelfed/pixelfed": "<=0.11.4",
                 "pocketmine/bedrock-protocol": "<8.0.2",
-                "pocketmine/pocketmine-mp": "<4.12.5|>= 4.0.0-BETA5, < 4.4.2",
+                "pocketmine/pocketmine-mp": "< 4.18.0-ALPHA2|<4.12.5|>= 4.0.0-BETA5, < 4.4.2",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
                 "prestashop/blockwishlist": ">=2,<2.1.1",
@@ -5751,7 +5669,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-31T16:04:38+00:00"
+            "time": "2023-06-02T23:04:03+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
