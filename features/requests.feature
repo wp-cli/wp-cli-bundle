@@ -127,6 +127,7 @@ Feature: Requests integration with both v1 and v2
         "require-dev": {
           "wp-cli/wp-cli-bundle": "dev-main as 2.8.1"
         },
+        "minimum-stability": "dev",
         "config": {
           "allow-plugins": {
             "johnpbloch/wordpress-core-installer": true
