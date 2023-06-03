@@ -145,6 +145,8 @@ Feature: Requests integration with both v1 and v2
       """
       require __DIR__ . "/../vendor/autoload.php";
       """
+    And the {RUN_DIR}/vendor/wp-cli/wp-cli/bundle/rmccue/requests directory should exist
+    And the {RUN_DIR}/vendor/rmccue/requests directory should not exist
 
     When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
     Then STDOUT should be:
@@ -170,7 +172,8 @@ Feature: Requests integration with both v1 and v2
       Success: Database created.
       """
 
-    When I run `vendor/bin/wp core install --url=localhost:8181 --title=Composer --admin_user=admin --admin_password=password --admin_email=admin@example.com`
+    # This can throw deprecated warnings on PHP 8.1+.
+    When I try `vendor/bin/wp core install --url=localhost:8181 --title=Composer --admin_user=admin --admin_password=password --admin_email=admin@example.com`
     Then STDOUT should contain:
       """
       Success: WordPress installed successfully.
@@ -182,7 +185,8 @@ Feature: Requests integration with both v1 and v2
       6.1
       """
 
-    When I run `vendor/bin/wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
+    # This can throw deprecated warnings on PHP 8.1+.
+    When I try `vendor/bin/wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
     Then STDOUT should contain:
       """
       object(Requests_Response)
@@ -191,9 +195,9 @@ Feature: Requests integration with both v1 and v2
       """
       HTTP/1.1 200 OK
       """
-    And STDERR should be empty
 
-    When I run `vendor/bin/wp plugin install duplicate-post --activate`
+    # This can throw deprecated warnings on PHP 8.1+.
+    When I try `vendor/bin/wp plugin install duplicate-post --activate`
     Then STDOUT should contain:
       """
       Success: Installed 1 of 1 plugins.
