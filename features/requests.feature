@@ -125,7 +125,7 @@ Feature: Requests integration with both v1 and v2
           "johnpbloch/wordpress": "6.1"
         },
         "require-dev": {
-          "wp-cli/wp-cli-bundle": "^2.8.0"
+          "wp-cli/wp-cli-bundle": "dev-main as 2.8.1"
         },
         "config": {
           "allow-plugins": {
@@ -143,12 +143,6 @@ Feature: Requests integration with both v1 and v2
     And an extra-config.php file:
       """
       require __DIR__ . "/../vendor/autoload.php";
-      """
-
-    When I run `vendor/bin/wp cli version`
-    Then STDOUT should contain:
-      """
-      WP-CLI 2.8
       """
 
     When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
