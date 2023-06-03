@@ -157,6 +157,18 @@ Feature: Requests integration with both v1 and v2
       Success: Generated 'wp-config.php' file.
       """
 
+    When I run `vendor/bin/wp config set WP_DEBUG true --raw`
+    Then STDOUT should be:
+      """
+      Success: Updated the constant 'WP_DEBUG' in the 'wp-config.php' file with the raw value 'true'.
+      """
+
+    When I run `vendor/bin/wp config set WP_DEBUG_DISPLAY true --raw`
+    Then STDOUT should be:
+      """
+      Success: Added the constant 'WP_DEBUG_DISPLAY' to the 'wp-config.php' file with the raw value 'true'.
+      """
+
     When I run `vendor/bin/wp db create`
     Then STDOUT should be:
       """
