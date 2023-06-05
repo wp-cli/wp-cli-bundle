@@ -79,6 +79,7 @@ fi
 
 # move phar
 mv ../wp-cli.phar usr/bin/wp
+chmod +x usr/bin/wp
 
 # get version
 WPCLI_VER="$(usr/bin/wp cli version | cut -d " " -f 2)"
