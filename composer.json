@@ -35,7 +35,7 @@
         "wp-cli/shell-command": "^2",
         "wp-cli/super-admin-command": "^2",
         "wp-cli/widget-command": "^2",
-        "wp-cli/wp-cli": "dev-main"
+        "wp-cli/wp-cli": "^2.8.1"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
