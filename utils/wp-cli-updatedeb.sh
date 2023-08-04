@@ -7,7 +7,7 @@
 # DATE          :2023-07-22
 # AUTHOR        :Viktor Szépe <viktor@szepe.net>
 # LICENSE       :The MIT License (MIT)
-# URL           :https://github.com/wp-cli/wp-cli/tree/master/utils
+# URL           :https://github.com/wp-cli/wp-cli/tree/main/utils
 # BASH-VERSION  :4.2+
 
 # packages source path
