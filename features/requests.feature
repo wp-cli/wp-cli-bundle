@@ -1,5 +1,6 @@
 Feature: Requests integration with both v1 and v2
 
+  @require-php-7.0
   Scenario: Composer stack with Requests v1
     Given an empty directory
     And a composer.json file:
@@ -43,6 +44,7 @@ Feature: Requests integration with both v1 and v2
       """
     And STDERR should be empty
 
+  @require-php-7.0
   Scenario: Current version with WordPress-bundled Requests v1
     Given a WP installation
     And I run `wp core update --version=5.8 --force`
@@ -70,6 +72,7 @@ Feature: Requests integration with both v1 and v2
       Success: Installed 1 of 1 plugins.
       """
 
+  @require-php-7.0
     Scenario: Current version with WordPress-bundled Requests v2
     Given a WP installation
     And I run `wp core update --version=6.2 --force`

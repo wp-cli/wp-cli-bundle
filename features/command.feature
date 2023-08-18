@@ -1102,6 +1102,7 @@ Feature: WP-CLI Commands
       Success: after invoke
       """
 
+  @require-php-7.0
   Scenario: Default arguments should respect wp-cli.yml
     Given a WP installation
     And a wp-cli.yml file:
@@ -1144,6 +1145,7 @@ Feature: WP-CLI Commands
       """
     And STDERR should be empty
 
+  @require-php-7.0
   Scenario: WP-CLI suggests matching commands when user entry contains typos
     Given a WP installation
 
@@ -1260,6 +1262,7 @@ Feature: WP-CLI Commands
       sub-command
       """
 
+  @require-php-7.0
   Scenario: Command additions should work as plugins
     Given a WP installation
     And a wp-content/plugins/test-cli/command.php file:
@@ -1310,6 +1313,7 @@ Feature: WP-CLI Commands
       """
     And STDERR should be empty
 
+  @require-php-7.0
   Scenario: Command additions should work as must-use plugins
     Given a WP installation
     And a wp-content/mu-plugins/test-cli.php file:
@@ -1359,6 +1363,7 @@ Feature: WP-CLI Commands
       """
     And STDERR should be empty
 
+  @require-php-7.0
   Scenario: Command additions should work when registered on after_wp_load
     Given a WP installation
     And a wp-content/mu-plugins/test-cli.php file:
@@ -1410,6 +1415,7 @@ Feature: WP-CLI Commands
       """
     And STDERR should be empty
 
+  @require-php-7.0
   Scenario: The command should fire on `after_wp_load`
     Given a WP installation
     And a custom-cmd.php file:
@@ -1458,6 +1464,7 @@ Feature: WP-CLI Commands
       """
     And the return code should be 1
 
+  @require-php-7.0
   Scenario: The command should fire on `before_wp_load`
     Given a WP installation
     And a custom-cmd.php file:
@@ -1502,6 +1509,7 @@ Feature: WP-CLI Commands
       """
     And the return code should be 0
 
+  @require-php-7.0
   Scenario: Command hook should fires as expected on __invoke()
     Given a WP installation
     And a custom-cmd.php file:
@@ -1640,6 +1648,7 @@ Feature: WP-CLI Commands
       """
     And STDERR should be empty
 
+  @require-php-7.0
   Scenario: Late-registered command should appear in command usage
     Given a WP installation
     And a test-cmd.php file:

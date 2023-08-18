@@ -1,6 +1,7 @@
 Feature: wp-config.php tests
 
   # Regression test for https://github.com/wp-cli/extension-command/issues/247
+  @require-php-7.0
   Scenario: __FILE__ and __DIR__ in wp-config.php don't point into the PHAR filesystem
   Given a WP installation
   And a new Phar with the same version
