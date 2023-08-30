@@ -1,6 +1,6 @@
 <?php
 
-define( 'WP_CLI_BUNDLE_ROOT', rtrim( dirname( dirname( __FILE__ ) ), '/' ) );
+define( 'WP_CLI_BUNDLE_ROOT', rtrim( dirname( __DIR__ ), '/' ) );
 
 if ( file_exists( WP_CLI_BUNDLE_ROOT . '/vendor/autoload.php' ) ) {
 	define( 'WP_CLI_BASE_PATH', WP_CLI_BUNDLE_ROOT );
@@ -145,7 +145,7 @@ function get_composer_versions( $current_version ) {
 				$vendor_version[] = $package['version'];
 			} else {
 				$vendor_version[] = 'unknown_version';
-				$missing_versions++;
+				++$missing_versions;
 			}
 			if ( isset( $package['source'] ) && isset( $package['source']['reference'] ) ) {
 				$vendor_version[] = $package['source']['reference'];
@@ -153,12 +153,12 @@ function get_composer_versions( $current_version ) {
 				$vendor_version[] = $package['dist']['reference'];
 			} else {
 				$vendor_version[] = 'unknown_reference';
-				$missing_references++;
+				++$missing_references;
 			}
 			$vendor_versions[] = implode( ' ', $vendor_version );
 		} else {
 			$vendor_versions[] = implode( ' ', [ 'unknown_package', 'unknown_version', 'unknown_reference' ] );
-			$missing_names++;
+			++$missing_names;
 		}
 	}
 	if ( $missing_names ) {
