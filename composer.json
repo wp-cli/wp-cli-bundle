@@ -39,7 +39,7 @@
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
-        "wp-cli/wp-cli-tests": "^3.0.7"
+        "wp-cli/wp-cli-tests": "^4.0.0"
     },
     "suggest": {
         "psy/psysh": "Enhanced `wp shell` functionality"
