@@ -34,4 +34,3 @@ return [
 		'desc'    => 'Create a minimum test build "cli", that only supports cli commands',
 	],
 ];
-
