@@ -3634,12 +3634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "b6ab66710025d70e8975695a9f9ec2e51d69e6a1"
+                "reference": "db3d01f7e328ec3c349142b1f91113d8665c9a89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/b6ab66710025d70e8975695a9f9ec2e51d69e6a1",
-                "reference": "b6ab66710025d70e8975695a9f9ec2e51d69e6a1",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/db3d01f7e328ec3c349142b1f91113d8665c9a89",
+                "reference": "db3d01f7e328ec3c349142b1f91113d8665c9a89",
                 "shasum": ""
             },
             "require": {
@@ -3656,7 +3656,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^3.1.6"
+                "wp-cli/wp-cli-tests": "^4.0.1"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -3697,7 +3697,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-08-30T12:34:13+00:00"
+            "time": "2023-09-06T21:06:01+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
