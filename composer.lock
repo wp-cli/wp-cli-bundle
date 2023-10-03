@@ -6938,16 +6938,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v4.0.2",
+            "version": "v4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "e9ad6b2f0e13c6cf2e583e147d8b864533aff30f"
+                "reference": "c2d228bbfe6eecc0cab3cfe71ea0d04c4ae1e095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/e9ad6b2f0e13c6cf2e583e147d8b864533aff30f",
-                "reference": "e9ad6b2f0e13c6cf2e583e147d8b864533aff30f",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/c2d228bbfe6eecc0cab3cfe71ea0d04c4ae1e095",
+                "reference": "c2d228bbfe6eecc0cab3cfe71ea0d04c4ae1e095",
                 "shasum": ""
             },
             "require": {
@@ -7013,7 +7013,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2023-09-01T12:56:39+00:00"
+            "time": "2023-10-03T10:16:47+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
