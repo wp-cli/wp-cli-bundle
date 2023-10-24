@@ -103,6 +103,8 @@ Feature: Requests integration with both v1 and v2
       Success: Installed 1 of 1 plugins.
       """
 
+  # Uses `wp db create` which is not yet supported in SQLite.
+  @require-mysql
   Scenario: Composer stack with Requests v1 pulling wp-cli/wp-cli-bundle
     Given an empty directory
     And a composer.json file:
