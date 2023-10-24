@@ -1,5 +1,7 @@
 Feature: Requests integration with both v1 and v2
 
+  # This test downgrades to WordPress 5.8, but the SQLite plugin requires 6.0+
+  @require-mysql
   Scenario: Composer stack with Requests v1
     Given an empty directory
     And a composer.json file:
@@ -44,6 +46,8 @@ Feature: Requests integration with both v1 and v2
       """
     And STDERR should be empty
 
+  # This test downgrades to WordPress 5.8, but the SQLite plugin requires 6.0+
+  @require-mysql
   Scenario: Current version with WordPress-bundled Requests v1
     Given a WP installation
     And I run `wp core update --version=5.8 --force`
