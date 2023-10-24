@@ -154,7 +154,7 @@ Feature: Requests integration with both v1 and v2
     And the {RUN_DIR}/vendor/wp-cli/wp-cli/bundle/rmccue/requests directory should exist
     And the {RUN_DIR}/vendor/rmccue/requests directory should not exist
 
-    When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
+    When I run `vendor/bin/wp config create --skip-check --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
     Then STDOUT should be:
       """
       Success: Generated 'wp-config.php' file.
