@@ -108,7 +108,7 @@ popd
 
 # build package in the current diretory
 WPCLI_PKG="${PWD}/php-wpcli_${WPCLI_VER}_all.deb"
-fakeroot dpkg-deb --build "$DIR" "$WPCLI_PKG" || die 8 "Packaging failed"
+fakeroot dpkg-deb -Zxz --build "$DIR" "$WPCLI_PKG" || die 8 "Packaging failed"
 
 # check package - not critical
 lintian --display-info --display-experimental --pedantic --show-overrides php-wpcli_*_all.deb || true
