@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build: #---------------------------------------------------------------------
+  build: #----------------------------------------------------------------------
     name: Build Phar
     runs-on: ubuntu-latest
 
@@ -187,7 +187,7 @@ jobs:
           WP_VERSION: '${{ matrix.wp }}'
         run: composer behat || composer behat-rerun
 
-  deploy: #-----------------------------------------------------------------------
+  deploy: #---------------------------------------------------------------------
     name: Deployment
     runs-on: ubuntu-latest
     needs: [build, test]
@@ -251,7 +251,54 @@ jobs:
           branch: gh-pages
           repository: wp-cli/builds
 
-  build-rpm: #-----------------------------------------------------------------------
+  deploy-shim: #----------------------------------------------------------------
+    name: Deployment
+    runs-on: ubuntu-latest
+    needs: [build, test]
+
+    if: ${{ github.repository_owner == 'wp-cli' }}
+    steps:
+      - name: Check out phar repository
+        uses: actions/checkout@v4
+        with:
+          repository: wp-cli/phar
+          token: ${{ secrets.ACTIONS_BOT }}
+
+      - name: Download WP-CLI version
+        uses: actions/download-artifact@v3
+        with:
+          name: cli_version
+
+      - name: Download built Phar file
+        uses: actions/download-artifact@v3
+        with:
+          name: wp-cli-phar
+
+      - name: Make built Phar executable
+        run: |
+          chmod +x wp-cli.phar
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add wp-cli.phar
+          git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
+
+      - name: Tag stable release
+        if: ${{ contains(github.ref, 'release') }}
+        run: |
+          VERSION=$(cat cli_version.txt)
+          git tag "v$VERSION"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACTIONS_BOT }}
+          branch: gh-pages
+          repository: wp-cli/phar
+
+  build-rpm: #------------------------------------------------------------------
     name: Build RPM package
     runs-on: ubuntu-latest
     if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
@@ -305,7 +352,7 @@ jobs:
           branch: gh-pages
           repository: wp-cli/builds
 
-  build-deb: #-----------------------------------------------------------------------
+  build-deb: #------------------------------------------------------------------
     name: Build DEB package
     runs-on: ubuntu-latest
     if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
