@@ -1,6 +1,8 @@
 Feature: wp-config.php tests
 
   # Regression test for https://github.com/wp-cli/extension-command/issues/247
+  # Only testing on MySQL because the SQLite drop-in is not added to the custom directories in this test.
+  @require-mysql
   Scenario: __FILE__ and __DIR__ in wp-config.php don't point into the PHAR filesystem
   Given a WP installation
   And a new Phar with the same version
