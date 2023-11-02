@@ -1,5 +1,7 @@
 Feature: Requests integration with both v1 and v2
 
+  # This test downgrades to WordPress 5.8, but the SQLite plugin requires 6.0+
+  @require-mysql
   Scenario: Composer stack with Requests v1
     Given an empty directory
     And a composer.json file:
@@ -44,6 +46,8 @@ Feature: Requests integration with both v1 and v2
       """
     And STDERR should be empty
 
+  # This test downgrades to WordPress 5.8, but the SQLite plugin requires 6.0+
+  @require-mysql
   Scenario: Current version with WordPress-bundled Requests v1
     Given a WP installation
     And I run `wp core update --version=5.8 --force`
@@ -99,6 +103,8 @@ Feature: Requests integration with both v1 and v2
       Success: Installed 1 of 1 plugins.
       """
 
+  # Uses `wp db create` which is not yet supported in SQLite.
+  @require-mysql
   Scenario: Composer stack with Requests v1 pulling wp-cli/wp-cli-bundle
     Given an empty directory
     And a composer.json file:
@@ -150,7 +156,7 @@ Feature: Requests integration with both v1 and v2
     And the {RUN_DIR}/vendor/wp-cli/wp-cli/bundle/rmccue/requests directory should exist
     And the {RUN_DIR}/vendor/rmccue/requests directory should not exist
 
-    When I run `vendor/bin/wp config create --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
+    When I run `vendor/bin/wp config create --skip-check --dbname={DB_NAME} --dbuser={DB_USER} --dbpass={DB_PASSWORD} --dbhost={DB_HOST} --extra-php < extra-config.php`
     Then STDOUT should be:
       """
       Success: Generated 'wp-config.php' file.
