@@ -31,7 +31,7 @@ Architecture: all
 Maintainer: Alain Schlesser <alain.schlesser@gmail.com>
 Section: php
 Priority: optional
-Depends: php-cli, php-mysqlnd, default-mysql-client | virtual-mysql-client
+Depends: php-cli, php-mysql | php-mysqlnd, default-mysql-client | virtual-mysql-client
 Homepage: https://wp-cli.org/
 Description: wp-cli is a set of command-line tools for managing
  WordPress installations. You can update plugins, set up multisite
