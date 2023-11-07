@@ -4,7 +4,7 @@
 # Only the phar file is included.
 #
 # VERSION       :0.2.6
-# DATE          :2023-10-31
+# DATE          :2023-11-06
 # AUTHOR        :Viktor Szépe <viktor@szepe.net>
 # LICENSE       :The MIT License (MIT)
 # URL           :https://github.com/wp-cli/wp-cli/tree/main/utils
@@ -88,6 +88,17 @@ echo "Current version: ${WPCLI_VER}"
 
 # update version
 sed -i -e "s/^Version: .*$/Version: ${WPCLI_VER}/" DEBIAN/control || die 6 "Version update failure"
+
+# Lintian overrides (delete this stanza 2024-08-08)
+if [[ "$(date +%F)" < 2024-08-08 ]]; then
+    if ! [ -r usr/share/lintian/overrides/php-wpcli ]; then
+	mkdir -p usr/share/lintian/overrides
+	cat > usr/share/lintian/overrides/php-wpcli <<EOF
+# Support PHP 5.6 until 2024-08-08
+php-wpcli: php-script-but-no-php-cli-dep php (does not satisfy php-cli:any) [usr/bin/wp]
+EOF
+    fi
+fi
 
 # minimal man page
 if ! [ -r usr/share/man/man1/wp.1.gz ]; then
