@@ -287,9 +287,7 @@ jobs:
 
       - name: Tag stable release
         if: ${{ contains(github.ref, 'release') }}
-        run: |
-          VERSION=$(cat cli_version.txt)
-          git tag "v$VERSION"
+        run: git tag "v$(head -n 1 cli_version.txt)"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
