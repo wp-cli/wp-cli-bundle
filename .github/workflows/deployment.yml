@@ -261,7 +261,7 @@ jobs:
       - name: Check out phar repository
         uses: actions/checkout@v4
         with:
-          repository: wp-cli/phar
+          repository: wp-cli/wp-cli-shim
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
@@ -272,17 +272,17 @@ jobs:
       - name: Download built Phar file
         uses: actions/download-artifact@v3
         with:
-          name: wp-cli-phar
+          name: wp
 
       - name: Make built Phar executable
         run: |
-          chmod +x wp-cli.phar
+          chmod +x wp
 
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add wp-cli.phar
+          git add wp
           git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Tag stable release
@@ -294,7 +294,7 @@ jobs:
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages
-          repository: wp-cli/phar
+          repository: wp-cli/wp-cli-shim
 
   build-rpm: #------------------------------------------------------------------
     name: Build RPM package
