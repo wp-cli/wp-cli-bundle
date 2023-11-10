@@ -3698,7 +3698,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2023-11-01T23:22:34+00:00"
+            "time": "2023-11-10T13:58:10+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -6939,16 +6939,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v4.2.2",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b"
+                "reference": "0601666a81fcf3efcc6eb27ff35babfd82deb66e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b",
-                "reference": "560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/0601666a81fcf3efcc6eb27ff35babfd82deb66e",
+                "reference": "0601666a81fcf3efcc6eb27ff35babfd82deb66e",
                 "shasum": ""
             },
             "require": {
@@ -7014,7 +7014,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2023-10-24T07:49:22+00:00"
+            "time": "2023-11-10T12:08:30+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
