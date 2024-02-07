@@ -89,11 +89,11 @@ echo "Current version: ${WPCLI_VER}"
 # update version
 sed -i -e "s/^Version: .*$/Version: ${WPCLI_VER}/" DEBIAN/control || die 6 "Version update failure"
 
-# Lintian overrides (delete this stanza for WP-CLI Aug 2024 release)
+# Lintian overrides (delete this stanza for WP-CLI release that bumps PHP minimum)
 if ! [ -r usr/share/lintian/overrides/php-wpcli ]; then
     mkdir -p usr/share/lintian/overrides
     cat > usr/share/lintian/overrides/php-wpcli <<EOF
-# Support PHP 5.6 until WP-CLI Aug 2024 release
+# Support PHP 5.6 while WP-CLI does so
 php-wpcli: php-script-but-no-php-cli-dep php (does not satisfy php-cli:any) [usr/bin/wp]
 EOF
 fi
