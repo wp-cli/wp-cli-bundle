@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20b6ef48f73980588abfc984b166f01a",
+    "content-hash": "181eff2765e587788260faaf6704b61a",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3639,12 +3639,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "ccde53f436f68860fed636d210fb9bf767604b46"
+                "reference": "d1f69d8890fb1f09f49c94348315955ac1ae9dcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/ccde53f436f68860fed636d210fb9bf767604b46",
-                "reference": "ccde53f436f68860fed636d210fb9bf767604b46",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/d1f69d8890fb1f09f49c94348315955ac1ae9dcd",
+                "reference": "d1f69d8890fb1f09f49c94348315955ac1ae9dcd",
                 "shasum": ""
             },
             "require": {
@@ -3702,7 +3702,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2024-02-20T00:07:27+00:00"
+            "time": "2024-04-26T10:12:03+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -7258,7 +7258,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
@@ -7270,5 +7269,5 @@
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.2.0"
 }
