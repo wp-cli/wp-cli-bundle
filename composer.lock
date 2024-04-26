@@ -2531,16 +2531,16 @@
         },
         {
             "name": "wp-cli/extension-command",
-            "version": "v2.1.19",
+            "version": "v2.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/extension-command.git",
-                "reference": "80713703e090fbc74926af6f75bf963619f76fdb"
+                "reference": "fa8bfd96a2c587a38e9e99d3cfb9fb5b35ee25d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/80713703e090fbc74926af6f75bf963619f76fdb",
-                "reference": "80713703e090fbc74926af6f75bf963619f76fdb",
+                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/fa8bfd96a2c587a38e9e99d3cfb9fb5b35ee25d5",
+                "reference": "fa8bfd96a2c587a38e9e99d3cfb9fb5b35ee25d5",
                 "shasum": ""
             },
             "require": {
@@ -2623,9 +2623,9 @@
             "homepage": "https://github.com/wp-cli/extension-command",
             "support": {
                 "issues": "https://github.com/wp-cli/extension-command/issues",
-                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.19"
+                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.20"
             },
-            "time": "2024-02-05T14:53:09+00:00"
+            "time": "2024-04-26T21:12:41+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
@@ -3702,7 +3702,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2024-04-26T11:25:16+00:00"
+            "time": "2024-04-26T20:50:29+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
