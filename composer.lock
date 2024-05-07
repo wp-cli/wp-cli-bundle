@@ -3656,12 +3656,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "ccde53f436f68860fed636d210fb9bf767604b46"
+                "reference": "6d78633580dbec4856979210b597a1c9c687e163"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/ccde53f436f68860fed636d210fb9bf767604b46",
-                "reference": "ccde53f436f68860fed636d210fb9bf767604b46",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/6d78633580dbec4856979210b597a1c9c687e163",
+                "reference": "6d78633580dbec4856979210b597a1c9c687e163",
                 "shasum": ""
             },
             "require": {
