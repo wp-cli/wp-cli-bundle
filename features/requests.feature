@@ -104,7 +104,8 @@ Feature: Requests integration with both v1 and v2
       """
 
   # Uses `wp db create` which is not yet supported in SQLite.
-  @require-mysql
+  # Uses WP 6.1, which is not compatible with PHP 8.4 and causes warnings
+  @require-mysql @less-than-php-8.4
   Scenario: Composer stack with Requests v1 pulling wp-cli/wp-cli-bundle
     Given an empty directory
     And a composer.json file:
