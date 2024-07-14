@@ -1679,7 +1679,10 @@ Feature: WP-CLI Commands
 
   Scenario: Templates should still be found when WP CLI phar is renamed
     Given a WP installation
-    And these installed and active plugins: akismet
+    And these installed and active plugins:
+      """
+      akismet
+      """
     And a new Phar with the same version
 
     When I run `wp plugin status akismet`
