@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20b6ef48f73980588abfc984b166f01a",
+    "content-hash": "60a6803ee1aa3ccf4f304fb188193aaa",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3658,7 +3658,7 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-main",
+            "version": "v2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
@@ -3690,7 +3690,6 @@
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
-            "default-branch": true,
             "bin": [
                 "bin/wp",
                 "bin/wp.bat"
@@ -7367,7 +7366,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
