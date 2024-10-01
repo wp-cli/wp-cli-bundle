@@ -26,7 +26,7 @@ jobs:
       - name: Check out source code
         uses: actions/checkout@v4
 
-      - name: Set up PHP envirnoment
+      - name: Set up PHP environment
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
