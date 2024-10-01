@@ -90,7 +90,7 @@ jobs:
         with:
           source_branch: update-framework
           destination_branch: ${{ github.event.repository.default_branch }}
-          github_token: ${{ secrets.REPO_GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_BOT }}
           pr_title: Update wp-cli framework
           pr_body: "**This is an automated pull-request**\n\nUpdates the `wp-cli/wp-cli` framework to the latest changeset."
           pr_label: scope:framework
