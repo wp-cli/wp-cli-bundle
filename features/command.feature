@@ -383,6 +383,7 @@ Feature: WP-CLI Commands
       """
       <?php
       class Foo_Class extends WP_CLI_Command {
+        protected $prefix;
 
         public function __construct( $prefix ) {
           $this->prefix = $prefix;
@@ -478,6 +479,7 @@ Feature: WP-CLI Commands
       """
       <?php
       class Foo_Class {
+        protected $message;
 
         public function __construct( $message ) {
           $this->message = $message;
@@ -1119,6 +1121,7 @@ Feature: WP-CLI Commands
       """
       <?php
       class Foo_Class {
+        protected $message;
 
         public function __construct( $message ) {
           $this->message = $message;
