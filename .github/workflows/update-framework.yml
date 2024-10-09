@@ -1,7 +1,7 @@
 name: Update wp-cli framework
 
 on:
-  workflow_call:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -26,7 +26,7 @@ jobs:
       - name: Check out source code
         uses: actions/checkout@v4
 
-      - name: Set up PHP envirnoment
+      - name: Set up PHP environment
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
@@ -90,7 +90,7 @@ jobs:
         with:
           source_branch: update-framework
           destination_branch: ${{ github.event.repository.default_branch }}
-          github_token: ${{ secrets.REPO_GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_BOT }}
           pr_title: Update wp-cli framework
           pr_body: "**This is an automated pull-request**\n\nUpdates the `wp-cli/wp-cli` framework to the latest changeset."
           pr_label: scope:framework
