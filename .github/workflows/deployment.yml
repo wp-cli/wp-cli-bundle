@@ -1,6 +1,7 @@
 name: Deployment
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -100,13 +101,6 @@ jobs:
       WP_CLI_BIN_DIR: /tmp/wp-cli-phar
     needs: [build]
 
-    services:
-      mysql:
-        image: mysql:${{ matrix.mysql }}
-        ports:
-          - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=wp_cli_test --entrypoint sh mysql:${{ matrix.mysql }} -c "exec docker-entrypoint.sh mysqld --default-authentication-plugin=mysql_native_password"
-
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
@@ -163,18 +157,28 @@ jobs:
           mv wp-cli.phar $WP_CLI_BIN_DIR/wp
           chmod +x $WP_CLI_BIN_DIR/wp
 
-      - name: Start MySQL server
-        run: sudo systemctl start mysql
+      - name: Setup MySQL Server
+        id: setup-mysql
+        uses: shogo82148/actions-setup-mysql@v1
+        with:
+          mysql-version: ${{ matrix.mysql }}
+          auto-start: true
+          root-password: root
+          user: wp_cli_test
+          password: password1
+          my-cnf: |
+            default_authentication_plugin=mysql_native_password
 
       - name: Configure DB environment
         run: |
-          export MYSQL_HOST=127.0.0.1
-          export MYSQL_TCP_PORT=${{ job.services.mysql.ports['3306'] }}
+          echo "MYSQL_HOST=127.0.0.1" >> $GITHUB_ENV
+          echo "MYSQL_TCP_PORT=3306" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBROOTUSER=root" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBROOTPASS=root" >> $GITHUB_ENV
+          echo "WP_CLI_TEST_DBNAME=wp_cli_test" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBUSER=wp_cli_test" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBPASS=password1" >> $GITHUB_ENV
-          echo "WP_CLI_TEST_DBHOST=$MYSQL_HOST:$MYSQL_TCP_PORT" >> $GITHUB_ENV
+          echo "WP_CLI_TEST_DBHOST=127.0.0.1:3306" >> $GITHUB_ENV
 
       - name: Prepare test database
         run: composer prepare-tests
@@ -192,7 +196,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test]
 
-    if: ${{ github.repository_owner == 'wp-cli' }}
+    if: ${{ github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     steps:
       - name: Check out builds repository
         uses: actions/checkout@v4
@@ -254,7 +258,7 @@ jobs:
   build-rpm: #-----------------------------------------------------------------------
     name: Build RPM package
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
+    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     needs: [deploy]
 
     steps:
@@ -308,7 +312,7 @@ jobs:
   build-deb: #-----------------------------------------------------------------------
     name: Build DEB package
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
+    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     needs: [build-rpm]
 
     steps:
