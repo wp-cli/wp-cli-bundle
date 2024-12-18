@@ -3663,12 +3663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "349cf0c4ff3135a063184b49a9a6f85654b50c45"
+                "reference": "0187f2b4ce7e83f31bf4beecd5ad4f11ddf8b57b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/349cf0c4ff3135a063184b49a9a6f85654b50c45",
-                "reference": "349cf0c4ff3135a063184b49a9a6f85654b50c45",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0187f2b4ce7e83f31bf4beecd5ad4f11ddf8b57b",
+                "reference": "0187f2b4ce7e83f31bf4beecd5ad4f11ddf8b57b",
                 "shasum": ""
             },
             "require": {
@@ -3726,7 +3726,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2024-11-25T13:41:33+00:00"
+            "time": "2024-11-26T19:13:58+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -7208,16 +7208,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "a8de3f02e16d1133c3b9f3b865e4821250bb9f37"
+                "reference": "3c29e6ae528938781f775b56ab72cfe315b40d5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/a8de3f02e16d1133c3b9f3b865e4821250bb9f37",
-                "reference": "a8de3f02e16d1133c3b9f3b865e4821250bb9f37",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/3c29e6ae528938781f775b56ab72cfe315b40d5f",
+                "reference": "3c29e6ae528938781f775b56ab72cfe315b40d5f",
                 "shasum": ""
             },
             "require": {
@@ -7283,7 +7283,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2024-10-01T15:44:01+00:00"
+            "time": "2024-11-24T07:57:26+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
