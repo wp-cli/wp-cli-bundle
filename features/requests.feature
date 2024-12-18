@@ -211,7 +211,8 @@ Feature: Requests integration with both v1 and v2
       """
 
     # This can throw deprecated warnings on PHP 8.1+.
-    When I try `vendor/bin/wp plugin install duplicate-post --activate`
+    # Also, using a specific version to avoid minimum WordPress version requirement warning.
+    When I try `vendor/bin/wp plugin install duplicate-post --version=4.2 --activate`
     Then STDOUT should contain:
       """
       Success: Installed 1 of 1 plugins.
