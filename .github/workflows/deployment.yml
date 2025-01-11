@@ -96,7 +96,7 @@ jobs:
           - php: '5.6'
             wp: '3.7'
             mysql: '5.6'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       WP_CLI_BIN_DIR: /tmp/wp-cli-phar
     needs: [build]
