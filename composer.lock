@@ -1863,9 +1863,6 @@
             },
             "type": "wp-cli-package",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "2.x-dev"
-                },
                 "bundled": true,
                 "commands": [
                     "config",
@@ -1879,7 +1876,10 @@
                     "config path",
                     "config set",
                     "config shuffle-salts"
-                ]
+                ],
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
             },
             "autoload": {
                 "files": [
@@ -2453,14 +2453,14 @@
             },
             "type": "wp-cli-package",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "2.x-dev"
-                },
                 "bundled": true,
                 "commands": [
                     "eval",
                     "eval-file"
-                ]
+                ],
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
             },
             "autoload": {
                 "files": [
@@ -4343,12 +4343,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
-                "reference": "02835e45d27f5d0ed1642d5c8a5e8bfd2c7d7796"
+                "reference": "9013cd039fe5740953f9fdeebd19d901b80e26f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/02835e45d27f5d0ed1642d5c8a5e8bfd2c7d7796",
-                "reference": "02835e45d27f5d0ed1642d5c8a5e8bfd2c7d7796",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/9013cd039fe5740953f9fdeebd19d901b80e26f2",
+                "reference": "9013cd039fe5740953f9fdeebd19d901b80e26f2",
                 "shasum": ""
             },
             "require": {
@@ -4423,9 +4423,13 @@
                 {
                     "url": "https://opencollective.com/php_codesniffer",
                     "type": "open_collective"
+                },
+                {
+                    "url": "https://thanks.dev/phpcompatibility",
+                    "type": "thanks_dev"
                 }
             ],
-            "time": "2024-11-30T16:25:00+00:00"
+            "time": "2025-01-20T20:06:48+00:00"
         },
         {
             "name": "phpcsstandards/phpcsextra",
@@ -6687,16 +6691,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.11.2",
+            "version": "3.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "1368f4a58c3c52114b86b1abe8f4098869cb0079"
+                "reference": "ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/1368f4a58c3c52114b86b1abe8f4098869cb0079",
-                "reference": "1368f4a58c3c52114b86b1abe8f4098869cb0079",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10",
+                "reference": "ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10",
                 "shasum": ""
             },
             "require": {
@@ -6761,9 +6765,13 @@
                 {
                     "url": "https://opencollective.com/php_codesniffer",
                     "type": "open_collective"
+                },
+                {
+                    "url": "https://thanks.dev/phpcsstandards",
+                    "type": "thanks_dev"
                 }
             ],
-            "time": "2024-12-11T16:04:26+00:00"
+            "time": "2025-01-23T17:04:15+00:00"
         },
         {
             "name": "symfony/config",
@@ -7208,16 +7216,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v4.3.6",
+            "version": "v4.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "083a54e9204c9391958e9effbb886fbf4352c016"
+                "reference": "892c5d7c7f1a68fdc7a0ef48e408de0377f2f5e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/083a54e9204c9391958e9effbb886fbf4352c016",
-                "reference": "083a54e9204c9391958e9effbb886fbf4352c016",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/892c5d7c7f1a68fdc7a0ef48e408de0377f2f5e1",
+                "reference": "892c5d7c7f1a68fdc7a0ef48e408de0377f2f5e1",
                 "shasum": ""
             },
             "require": {
@@ -7283,7 +7291,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2024-12-18T16:07:19+00:00"
+            "time": "2025-02-13T15:25:33+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -7353,16 +7361,16 @@
         },
         {
             "name": "yoast/phpunit-polyfills",
-            "version": "2.0.2",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast/PHPUnit-Polyfills.git",
-                "reference": "562f449a2ec8ab92fe7b30d94da9622c7b1345fe"
+                "reference": "a0e3e9adecaa352697786cb29bb0f2fcc25f43f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/562f449a2ec8ab92fe7b30d94da9622c7b1345fe",
-                "reference": "562f449a2ec8ab92fe7b30d94da9622c7b1345fe",
+                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/a0e3e9adecaa352697786cb29bb0f2fcc25f43f5",
+                "reference": "a0e3e9adecaa352697786cb29bb0f2fcc25f43f5",
                 "shasum": ""
             },
             "require": {
@@ -7377,7 +7385,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "3.x-dev"
+                    "dev-main": "4.x-dev"
                 }
             },
             "autoload": {
@@ -7412,23 +7420,23 @@
                 "security": "https://github.com/Yoast/PHPUnit-Polyfills/security/policy",
                 "source": "https://github.com/Yoast/PHPUnit-Polyfills"
             },
-            "time": "2024-09-06T22:38:28+00:00"
+            "time": "2025-02-09T18:25:29+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
