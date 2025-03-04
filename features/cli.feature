@@ -45,7 +45,7 @@ Feature: `wp cli` tasks
     When I run `{PHAR_PATH} cli update --yes`
     Then STDOUT should contain:
       """
-      md5 hash verified:
+      sha512 hash verified:
       """
     And STDOUT should contain:
     """
@@ -84,7 +84,7 @@ Feature: `wp cli` tasks
     When I run `{PHAR_PATH} cli update --patch --yes`
     Then STDOUT should contain:
       """
-      md5 hash verified: a0cf91756fd46903c83c436ec1d462eb
+      sha512 hash verified: c1d40ee90b330ca1f8ddbed14b938b41ec5d9ff723c7c1cf3f41a2d9a1b271079a51a37ea3d1c9aa9c628fdd43449dba3995a8de150a68abbd505b06b91d9d2b
       """
     And STDOUT should contain:
       """
@@ -123,7 +123,7 @@ Feature: `wp cli` tasks
     When I run `{PHAR_PATH} cli update --nightly --yes`
     Then STDOUT should contain:
       """
-      md5 hash verified:
+      sha512 hash verified:
       """
     And STDOUT should contain:
       """
@@ -153,7 +153,7 @@ Feature: `wp cli` tasks
       """
     And STDOUT should contain:
       """
-      md5 hash verified:
+      sha512 hash verified:
       """
     And STDOUT should contain:
       """
