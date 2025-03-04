@@ -54,6 +54,12 @@ jobs:
           name: cli_version
           path: cli_version.txt
 
+      - name: Upload manifest file
+        uses: actions/upload-artifact@v4
+        with:
+          name: manifest
+          path: vendor/wp-cli/wp-cli/manifest.json
+
       - name: Build the Phar file
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
@@ -213,6 +219,11 @@ jobs:
         run: |
           cat cli_version.txt > phar/NIGHTLY_VERSION
 
+      - name: Download manifest file
+        uses: actions/download-artifact@v4
+        with:
+          name: manifest
+
       - name: Download built Phar file
         uses: actions/download-artifact@v4
         with:
@@ -222,11 +233,17 @@ jobs:
         if: ${{ contains(github.ref, 'release') }}
         run: |
           echo 'FILENAME=wp-cli-release.phar' > $GITHUB_ENV
+          echo 'MANIFEST_FILENAME=wp-cli-release.manifest.json' > $GITHUB_ENV
 
       - name: Set file name for main branch
         if: ${{ contains(github.ref, 'main') }}
         run: |
           echo 'FILENAME=wp-cli-nightly.phar' > $GITHUB_ENV
+          echo 'MANIFEST_FILENAME=wp-cli-nightly.manifest.json' > $GITHUB_ENV
+
+      - name: Move manifest file into correct location
+        run: |
+          mv manifest.json phar/$MANIFEST_FILENAME
 
       - name: Move built Phar file into correct location
         run: |
