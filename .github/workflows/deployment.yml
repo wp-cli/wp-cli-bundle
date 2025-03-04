@@ -232,14 +232,14 @@ jobs:
       - name: Set file name for release branch
         if: ${{ contains(github.ref, 'release') }}
         run: |
-          echo 'FILENAME=wp-cli-release.phar' > $GITHUB_ENV
-          echo 'MANIFEST_FILENAME=wp-cli-release.manifest.json' > $GITHUB_ENV
+          echo 'FILENAME=wp-cli-release.phar' >> $GITHUB_ENV
+          echo 'MANIFEST_FILENAME=wp-cli-release.manifest.json' >> $GITHUB_ENV
 
       - name: Set file name for main branch
         if: ${{ contains(github.ref, 'main') }}
         run: |
-          echo 'FILENAME=wp-cli-nightly.phar' > $GITHUB_ENV
-          echo 'MANIFEST_FILENAME=wp-cli-nightly.manifest.json' > $GITHUB_ENV
+          echo 'FILENAME=wp-cli-nightly.phar' >> $GITHUB_ENV
+          echo 'MANIFEST_FILENAME=wp-cli-nightly.manifest.json' >> $GITHUB_ENV
 
       - name: Move manifest file into correct location
         run: |
