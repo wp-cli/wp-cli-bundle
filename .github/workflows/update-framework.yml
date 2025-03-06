@@ -70,7 +70,7 @@ jobs:
 
       - name: Update wp-cli framework
         run: |
-          composer update wp-cli/wp-cli
+          composer update wp-cli/wp-cli --with-all-dependencies
 
       - name: Check if there are changes
         run: echo "CHANGES_DETECTED=$([[ -z $(git status --porcelain) ]] && echo "0" || echo "1")" >> $GITHUB_ENV
