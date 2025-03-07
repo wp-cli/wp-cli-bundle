@@ -4424,7 +4424,7 @@
                     "type": "open_collective"
                 },
                 {
-                    "url": "https://thanks.dev/phpcompatibility",
+                    "url": "https://thanks.dev/u/gh/phpcompatibility",
                     "type": "thanks_dev"
                 }
             ],
@@ -7215,16 +7215,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v4.3.8",
+            "version": "v4.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "ca36e3ba77d9ac2b807ecf5212ec2b63ab46068c"
+                "reference": "16ee1c9ad7443a1a3ba8a48341f13dc74efc1083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/ca36e3ba77d9ac2b807ecf5212ec2b63ab46068c",
-                "reference": "ca36e3ba77d9ac2b807ecf5212ec2b63ab46068c",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/16ee1c9ad7443a1a3ba8a48341f13dc74efc1083",
+                "reference": "16ee1c9ad7443a1a3ba8a48341f13dc74efc1083",
                 "shasum": ""
             },
             "require": {
@@ -7290,7 +7290,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2025-02-14T17:08:13+00:00"
+            "time": "2025-03-06T19:09:52+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -7425,17 +7425,17 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
