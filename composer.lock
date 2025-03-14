@@ -3663,12 +3663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "d323e5dee744444c8605f52303bdf37b5e65e717"
+                "reference": "a39513b720ff9f17da6339d2a0f1579035dda193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/d323e5dee744444c8605f52303bdf37b5e65e717",
-                "reference": "d323e5dee744444c8605f52303bdf37b5e65e717",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/a39513b720ff9f17da6339d2a0f1579035dda193",
+                "reference": "a39513b720ff9f17da6339d2a0f1579035dda193",
                 "shasum": ""
             },
             "require": {
@@ -3684,7 +3684,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^4.3.7"
+                "wp-cli/wp-cli-tests": "^4.3.10"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -3725,7 +3725,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2025-03-11T19:14:47+00:00"
+            "time": "2025-03-14T17:51:30+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -7425,17 +7425,17 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "wp-cli/wp-cli": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
