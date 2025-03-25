@@ -7215,16 +7215,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v4.3.11",
+            "version": "v4.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "50d470b3efdf166bdef1d4358c460ef80c229866"
+                "reference": "c42c5dbd821ff4bec4e27f5932026b34daa6457c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/50d470b3efdf166bdef1d4358c460ef80c229866",
-                "reference": "50d470b3efdf166bdef1d4358c460ef80c229866",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/c42c5dbd821ff4bec4e27f5932026b34daa6457c",
+                "reference": "c42c5dbd821ff4bec4e27f5932026b34daa6457c",
                 "shasum": ""
             },
             "require": {
@@ -7290,7 +7290,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2025-03-18T18:42:57+00:00"
+            "time": "2025-03-24T18:29:14+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -7425,17 +7425,17 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
