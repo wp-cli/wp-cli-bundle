@@ -262,7 +262,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add phar/$FILENAME phar/$FILENAME.md5 phar/$FILENAME.sha512 phar/NIGHTLY_VERSION
+          git add phar/$FILENAME phar/$FILENAME.md5 phar/$FILENAME.sha512 phar/NIGHTLY_VERSION phar/$MANIFEST_FILENAME
           git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
