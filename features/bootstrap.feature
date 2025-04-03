@@ -44,13 +44,13 @@ Feature: Bootstrap WP-CLI
     And I run `composer install --working-dir={RUN_DIR}/cli-override-command --no-interaction 2>&1`
 
     When I run `{PHAR_PATH} cli version`
-      Then STDOUT should contain:
-        """
-        WP-CLI
-        """
+    Then STDOUT should contain:
+      """
+      WP-CLI
+      """
 
     When I run `{PHAR_PATH} --require=cli-override-command/cli.php cli version`
-      Then STDOUT should contain:
-        """
-        WP-Override-CLI
-        """
+    Then STDOUT should contain:
+      """
+      WP-Override-CLI
+      """
