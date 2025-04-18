@@ -7,13 +7,13 @@ Feature: `wp cli` tasks
 
     When I run `{PHAR_PATH} cli version`
     Then STDOUT should be:
-    """
-    WP-CLI 1.2.3
-    """
+      """
+      WP-CLI 1.2.3
+      """
     And the {FRAMEWORK_ROOT}/VERSION file should be:
-    """
-    {TRUE_VERSION}
-    """
+      """
+      {TRUE_VERSION}
+      """
 
   @github-api
   Scenario: Check for updates
@@ -22,9 +22,9 @@ Feature: `wp cli` tasks
 
     When I run `{PHAR_PATH} cli check-update`
     Then STDOUT should contain:
-    """
-    package_url
-    """
+      """
+      package_url
+      """
     And STDERR should be empty
 
   @github-api
@@ -48,9 +48,9 @@ Feature: `wp cli` tasks
       sha512 hash verified:
       """
     And STDOUT should contain:
-    """
-    Success:
-    """
+      """
+      Success:
+      """
     And STDERR should be empty
     And the return code should be 0
 
@@ -106,13 +106,13 @@ Feature: `wp cli` tasks
 
     When I run `{PHAR_PATH} cli update --no-patch --yes`
     Then STDOUT should contain:
-    """
-    Success:
-    """
+      """
+      Success:
+      """
     And STDOUT should not contain:
-    """
-    2.8.1
-    """
+      """
+      2.8.1
+      """
     And STDERR should be empty
     And the return code should be 0
 
