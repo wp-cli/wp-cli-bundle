@@ -1915,16 +1915,16 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.1.19",
+            "version": "v2.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "ab65d194bbf00b018daca9d625b0297c5f813fca"
+                "reference": "83e4692784a815bb7f5df10b72204f237b5224b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/ab65d194bbf00b018daca9d625b0297c5f813fca",
-                "reference": "ab65d194bbf00b018daca9d625b0297c5f813fca",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/83e4692784a815bb7f5df10b72204f237b5224b9",
+                "reference": "83e4692784a815bb7f5df10b72204f237b5224b9",
                 "shasum": ""
             },
             "require": {
@@ -1980,9 +1980,9 @@
             "homepage": "https://github.com/wp-cli/core-command",
             "support": {
                 "issues": "https://github.com/wp-cli/core-command/issues",
-                "source": "https://github.com/wp-cli/core-command/tree/v2.1.19"
+                "source": "https://github.com/wp-cli/core-command/tree/v2.1.20"
             },
-            "time": "2024-12-20T15:13:02+00:00"
+            "time": "2025-04-16T11:23:00+00:00"
         },
         {
             "name": "wp-cli/cron-command",
@@ -7425,17 +7425,17 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
