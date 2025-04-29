@@ -2861,29 +2861,26 @@
         },
         {
             "name": "wp-cli/maintenance-mode-command",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/maintenance-mode-command.git",
-                "reference": "d560d7f42fb21e1fc182d69e0cdf06c69891791d"
+                "reference": "b947e094e00b7b68c6376ec9bd03303515864062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/d560d7f42fb21e1fc182d69e0cdf06c69891791d",
-                "reference": "d560d7f42fb21e1fc182d69e0cdf06c69891791d",
+                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/b947e094e00b7b68c6376ec9bd03303515864062",
+                "reference": "b947e094e00b7b68c6376ec9bd03303515864062",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.5"
+                "wp-cli/wp-cli": "^2.12"
             },
             "require-dev": {
                 "wp-cli/wp-cli-tests": "^4"
             },
             "type": "wp-cli-package",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "2.x-dev"
-                },
                 "bundled": true,
                 "commands": [
                     "maintenance-mode",
@@ -2891,7 +2888,10 @@
                     "maintenance-mode deactivate",
                     "maintenance-mode status",
                     "maintenance-mode is-active"
-                ]
+                ],
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
             },
             "autoload": {
                 "files": [
@@ -2916,9 +2916,9 @@
             "homepage": "https://github.com/wp-cli/maintenance-mode-command",
             "support": {
                 "issues": "https://github.com/wp-cli/maintenance-mode-command/issues",
-                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.1.2"
+                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.1.3"
             },
-            "time": "2024-10-01T10:45:18+00:00"
+            "time": "2024-11-24T17:26:30+00:00"
         },
         {
             "name": "wp-cli/media-command",
@@ -3100,16 +3100,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.12.4",
+            "version": "v0.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "fbb9c6eb83c04ee99b0c01454b47f47ab0e432bc"
+                "reference": "34b83b4f700df8a4ec3fd17bf7e7e7d8ca5f28da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/fbb9c6eb83c04ee99b0c01454b47f47ab0e432bc",
-                "reference": "fbb9c6eb83c04ee99b0c01454b47f47ab0e432bc",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/34b83b4f700df8a4ec3fd17bf7e7e7d8ca5f28da",
+                "reference": "34b83b4f700df8a4ec3fd17bf7e7e7d8ca5f28da",
                 "shasum": ""
             },
             "require": {
@@ -3157,9 +3157,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.4"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.5"
             },
-            "time": "2025-03-05T14:35:01+00:00"
+            "time": "2025-03-26T16:13:46+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -7425,17 +7425,17 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
