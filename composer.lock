@@ -3663,12 +3663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "43f1d7bee4ea217d6a7a89daaa204c0e9a287882"
+                "reference": "aadb77339f840dc1589ed50b2b860f7cbec09015"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/43f1d7bee4ea217d6a7a89daaa204c0e9a287882",
-                "reference": "43f1d7bee4ea217d6a7a89daaa204c0e9a287882",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/aadb77339f840dc1589ed50b2b860f7cbec09015",
+                "reference": "aadb77339f840dc1589ed50b2b860f7cbec09015",
                 "shasum": ""
             },
             "require": {
@@ -7425,17 +7425,17 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wp-cli/wp-cli": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "wp-cli/wp-cli": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
