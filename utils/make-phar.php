@@ -243,6 +243,11 @@ if ( 'cli' === BUILD ) {
 		->exclude( 'composer/composer/src/Composer/Question' )
 		->exclude( 'composer/composer/src/Composer/Repository/Pear' )
 		->exclude( 'composer/composer/src/Composer/SelfUpdate' );
+
+	// required by justinrainbow/json-schema v6+.
+	if ( is_dir( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' ) ) {
+		$finder->in( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' );
+	}
 }
 
 foreach ( $finder as $file ) {
