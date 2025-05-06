@@ -3113,12 +3113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/process.git",
-                "reference": "aec5503810e8090396247ef089ebafa0115c2947"
+                "reference": "f0aec5ca26a702d3157e3a19982b662521ac2b81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/process/zipball/aec5503810e8090396247ef089ebafa0115c2947",
-                "reference": "aec5503810e8090396247ef089ebafa0115c2947",
+                "url": "https://api.github.com/repos/wp-cli/process/zipball/f0aec5ca26a702d3157e3a19982b662521ac2b81",
+                "reference": "f0aec5ca26a702d3157e3a19982b662521ac2b81",
                 "shasum": ""
             },
             "require": {
@@ -3155,7 +3155,7 @@
             "support": {
                 "source": "https://github.com/wp-cli/process/tree/v5.9.99"
             },
-            "time": "2025-05-06T18:54:53+00:00"
+            "time": "2025-05-06T21:26:50+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
