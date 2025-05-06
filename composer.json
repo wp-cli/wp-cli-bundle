@@ -7,12 +7,6 @@
   ],
   "homepage": "https://wp-cli.org",
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/wp-cli/process"
-    }
-  ],
   "require": {
     "php": ">=5.6",
     "wp-cli/cache-command": "^2",
@@ -41,7 +35,7 @@
     "wp-cli/super-admin-command": "^2",
     "wp-cli/widget-command": "^2",
     "wp-cli/wp-cli": "dev-main",
-    "symfony/process": "5.9.99"
+    "wp-cli/process": "5.9.99"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

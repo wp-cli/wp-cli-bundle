@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a344fdf853f7c7e7043d84a17e425519",
+    "content-hash": "f612f478be618262f6d2e8e6197d8b98",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1646,52 +1646,6 @@
             "time": "2020-10-23T09:01:57+00:00"
         },
         {
-            "name": "symfony/process",
-            "version": "5.9.99",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-cli/process.git",
-                "reference": "92901cd5a3b13de446136e567e5bf6517367ec5b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/process/zipball/92901cd5a3b13de446136e567e5bf6517367ec5b",
-                "reference": "92901cd5a3b13de446136e567e5bf6517367ec5b",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9|>=7.0.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Process\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Process Component",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/wp-cli/process/tree/5.9.99"
-            },
-            "time": "2025-05-06T10:54:12+00:00"
-        },
-        {
             "name": "wp-cli/cache-command",
             "version": "v2.2.0",
             "source": {
@@ -2186,16 +2140,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.8.3",
+            "version": "v2.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "d7b61a298e866c895d3bdcc562c751254eb44bdf"
+                "reference": "213611f8ab619ca137d983e9b987f7fbf1ac21d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/d7b61a298e866c895d3bdcc562c751254eb44bdf",
-                "reference": "d7b61a298e866c895d3bdcc562c751254eb44bdf",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/213611f8ab619ca137d983e9b987f7fbf1ac21d4",
+                "reference": "213611f8ab619ca137d983e9b987f7fbf1ac21d4",
                 "shasum": ""
             },
             "require": {
@@ -2417,9 +2371,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.3"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.4"
             },
-            "time": "2025-04-11T09:37:19+00:00"
+            "time": "2025-05-06T16:12:49+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -3152,6 +3106,56 @@
             "time": "2025-03-26T16:13:46+00:00"
         },
         {
+            "name": "wp-cli/process",
+            "version": "v5.9.99",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/process.git",
+                "reference": "aec5503810e8090396247ef089ebafa0115c2947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/process/zipball/aec5503810e8090396247ef089ebafa0115c2947",
+                "reference": "aec5503810e8090396247ef089ebafa0115c2947",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "replace": {
+                "symfony/process": "^5.4.47"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/wp-cli/process/tree/v5.9.99"
+            },
+            "time": "2025-05-06T18:54:53+00:00"
+        },
+        {
             "name": "wp-cli/rewrite-command",
             "version": "v2.0.15",
             "source": {
@@ -3653,12 +3657,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "0175f131112052cc962310d93a990d9c78f07407"
+                "reference": "bdc2e5df74fcf77e76512d8c001cbbbe2f0afd4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0175f131112052cc962310d93a990d9c78f07407",
-                "reference": "0175f131112052cc962310d93a990d9c78f07407",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/bdc2e5df74fcf77e76512d8c001cbbbe2f0afd4d",
+                "reference": "bdc2e5df74fcf77e76512d8c001cbbbe2f0afd4d",
                 "shasum": ""
             },
             "require": {
@@ -3715,7 +3719,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2025-05-05T21:54:56+00:00"
+            "time": "2025-05-06T16:45:18+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
