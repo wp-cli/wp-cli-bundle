@@ -149,7 +149,7 @@ Feature: `wp cli` tasks
     When I run `{PHAR_PATH} cli update --stable < session`
     Then STDOUT should contain:
       """
-      You have version 2.8.0. Would you like to update to the latest stable release? [y/n]
+      You are currently using WP-CLI version 2.8.0. Would you like to update to the latest stable release? [y/n]
       """
     And STDOUT should contain:
       """

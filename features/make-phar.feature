@@ -29,3 +29,30 @@ Feature: Check `utils/make-phar.php` output
     Then the return code should be 1
     And STDOUT should be empty
     And STDERR should be empty
+
+  Scenario: Phar renaming affects template path resolution
+    Given an empty directory
+    And a new Phar with the same version
+    And a WP installation
+    And I run `wp plugin install https://github.com/wp-cli-test/generic-example-plugin/releases/download/v0.1.1/generic-example-plugin.0.1.1.zip --activate`
+    And I run `wp plugin deactivate generic-example-plugin`
+
+    When I run `php {PHAR_PATH} plugin status generic-example-plugin`
+    Then STDOUT should contain:
+      """
+      Plugin generic-example-plugin details:
+          Name: Example Plugin
+          Status: Inactive
+          Version: 0.1.0
+          Author: YOUR NAME HERE
+          Description: PLUGIN DESCRIPTION HERE
+      """
+    And STDERR should be empty
+
+    When I run `cp {PHAR_PATH} wp`
+    And I try `php wp plugin status generic-example-plugin`
+    Then STDERR should not contain:
+      """
+      Error: Couldn't find plugin-status.mustache
+      """
+    And the return code should be 0
