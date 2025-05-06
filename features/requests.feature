@@ -71,7 +71,7 @@ Feature: Requests integration with both v1 and v2
       """
     And STDERR should be empty
 
-    When I run `wp plugin install duplicate-post`
+    When I run `wp plugin install https://github.com/wp-cli-test/generic-example-plugin/releases/download/v0.1.1/generic-example-plugin.0.1.1.zip`
     Then STDOUT should contain:
       """
       Success: Installed 1 of 1 plugins.
@@ -102,7 +102,7 @@ Feature: Requests integration with both v1 and v2
       """
     And STDERR should be empty
 
-    When I run `wp plugin install duplicate-post`
+    When I run `wp plugin install https://github.com/wp-cli-test/generic-example-plugin/releases/download/v0.1.1/generic-example-plugin.0.1.1.zip`
     Then STDOUT should contain:
       """
       Success: Installed 1 of 1 plugins.
@@ -212,7 +212,7 @@ Feature: Requests integration with both v1 and v2
 
     # This can throw deprecated warnings on PHP 8.1+.
     # Also, using a specific version to avoid minimum WordPress version requirement warning.
-    When I try `vendor/bin/wp plugin install duplicate-post --version=4.2 --activate`
+    When I try `vendor/bin/wp plugin install https://github.com/wp-cli-test/generic-example-plugin/releases/download/v0.1.1/generic-example-plugin.0.1.1.zip --version=4.2 --activate`
     Then STDOUT should contain:
       """
       Success: Installed 1 of 1 plugins.
@@ -242,5 +242,5 @@ Feature: Requests integration with both v1 and v2
       """
     And STDOUT should contain:
       """
-      plugin=duplicate-post
+      plugin=generic-example-plugin
       """

@@ -54,3 +54,30 @@ Feature: Bootstrap WP-CLI
       """
       WP-Override-CLI
       """
+
+  Scenario: Template paths should be resolved correctly when PHAR is renamed
+
+    Given an empty directory
+    And a new Phar with the same version
+    And a WP installation
+    And I run `wp plugin install https://github.com/wp-cli-test/generic-example-plugin/releases/download/v0.1.1/generic-example-plugin.0.1.1.zip --activate`
+    And I run `wp plugin deactivate generic-example-plugin`
+
+    When I run `php {PHAR_PATH} plugin status generic-example-plugin`
+    Then STDOUT should contain:
+      """
+      Plugin generic-example-plugin details:
+          Name: Example Plugin
+          Status: Inactive
+      """
+    And STDERR should be empty
+
+    When I run `cp {PHAR_PATH} wp-renamed.phar`
+    And I try `php wp-renamed.phar plugin status generic-example-plugin`
+    Then STDOUT should contain:
+      """
+      Plugin generic-example-plugin details:
+          Name: Example Plugin
+          Status: Inactive
+      """
+    And STDERR should be empty
