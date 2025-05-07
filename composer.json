@@ -26,7 +26,6 @@
     "wp-cli/maintenance-mode-command": "^2",
     "wp-cli/media-command": "^2",
     "wp-cli/package-command": "^2.1",
-    "wp-cli/process": "5.9.99",
     "wp-cli/rewrite-command": "^2",
     "wp-cli/role-command": "^2",
     "wp-cli/scaffold-command": "^2",
