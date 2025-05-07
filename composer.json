@@ -26,6 +26,7 @@
     "wp-cli/maintenance-mode-command": "^2",
     "wp-cli/media-command": "^2",
     "wp-cli/package-command": "^2.1",
+    "wp-cli/process": "5.9.99",
     "wp-cli/rewrite-command": "^2",
     "wp-cli/role-command": "^2",
     "wp-cli/scaffold-command": "^2",
@@ -34,8 +35,7 @@
     "wp-cli/shell-command": "^2",
     "wp-cli/super-admin-command": "^2",
     "wp-cli/widget-command": "^2",
-    "wp-cli/wp-cli": "dev-main",
-    "wp-cli/process": "5.9.99"
+    "wp-cli/wp-cli": "dev-main"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
