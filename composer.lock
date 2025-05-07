@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fc01885a9620d195413addf5e6603f9",
+    "content-hash": "be1f1aecd788c2398ce53b5389e34409",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3655,16 +3655,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v2.12.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "03d30d4138d12b4bffd8b507b82e56e129e0523f"
+                "reference": "f436ebdfb8691e2152f88f5d2995b315bd7f9a46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/03d30d4138d12b4bffd8b507b82e56e129e0523f",
-                "reference": "03d30d4138d12b4bffd8b507b82e56e129e0523f",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/f436ebdfb8691e2152f88f5d2995b315bd7f9a46",
+                "reference": "f436ebdfb8691e2152f88f5d2995b315bd7f9a46",
                 "shasum": ""
             },
             "require": {
@@ -3686,6 +3686,7 @@
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
+            "default-branch": true,
             "bin": [
                 "bin/wp",
                 "bin/wp.bat"
@@ -3720,7 +3721,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2025-05-07T01:16:12+00:00"
+            "time": "2025-05-07T02:57:37+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -7522,7 +7523,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "wp-cli/wp-cli": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
