@@ -189,7 +189,6 @@ $finder
 	->in( WP_CLI_ROOT . '/php' )
 	->in( WP_CLI_BUNDLE_ROOT . '/php' )
 	->in( WP_CLI_VENDOR_DIR . '/wp-cli/mustache' )
-	->in( WP_CLI_VENDOR_DIR . '/wp-cli/process' )
 	->in( WP_CLI_VENDOR_DIR . '/eftec/bladeone' )
 	->in( WP_CLI_ROOT . '/bundle/rmccue/requests' )
 	->in( WP_CLI_VENDOR_DIR . '/composer' )
