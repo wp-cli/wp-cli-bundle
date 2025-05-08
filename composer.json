@@ -49,6 +49,7 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "johnpbloch/wordpress-core-installer": true
     },
+    "autoloader-suffix": "WpCliBundle",
     "platform": {
       "php": "5.6"
     },
