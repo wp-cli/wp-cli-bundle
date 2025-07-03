@@ -4537,12 +4537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "efc826a8553739fd005d06d17d665fbfe28b008a"
+                "reference": "cbb6a51cf182aec2aac386e0dc40ee77ac25dc2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/efc826a8553739fd005d06d17d665fbfe28b008a",
-                "reference": "efc826a8553739fd005d06d17d665fbfe28b008a",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/cbb6a51cf182aec2aac386e0dc40ee77ac25dc2e",
+                "reference": "cbb6a51cf182aec2aac386e0dc40ee77ac25dc2e",
                 "shasum": ""
             },
             "require": {
@@ -4559,7 +4559,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^4.3.10"
+                "wp-cli/wp-cli-tests": "dev-add/phpstan-enhancements"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -4600,7 +4600,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2025-06-30T12:59:08+00:00"
+            "time": "2025-07-03T12:07:54+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
