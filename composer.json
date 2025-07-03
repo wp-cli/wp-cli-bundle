@@ -73,7 +73,9 @@
     "behat-rerun": "rerun-behat-tests",
     "lint": "run-linter-tests",
     "phpcs": "run-phpcs-tests",
+    "phpstan": "run-phpstan-tests",
     "phpunit": "run-php-unit-tests",
+    "phpcbf": "run-phpcbf-cleanup",
     "placeholder": "value",
     "prepare-tests": "install-package-tests",
     "test": [
