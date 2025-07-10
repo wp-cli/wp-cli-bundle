@@ -1,0 +1,18 @@
+parameters:
+  level: 9
+  paths:
+    - php
+    - utils
+  scanDirectories:
+  	- vendor/wp-cli/wp-cli
+  scanFiles:
+    - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+    - php/boot-phar.php
+  treatPhpDocTypesAsCertain: false
+  dynamicConstantNames:
+  	- WP_DEBUG
+  	- WP_DEBUG_LOG
+  	- WP_DEBUG_DISPLAY
+  ignoreErrors:
+    - identifier: missingType.parameter
+    - identifier: missingType.return

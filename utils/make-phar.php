@@ -37,7 +37,7 @@ define( 'BE_QUIET', isset( $runtime_config['quiet'] ) && $runtime_config['quiet'
 
 define( 'BUILD', isset( $runtime_config['build'] ) ? $runtime_config['build'] : '' );
 
-$current_version = trim( file_get_contents( WP_CLI_ROOT . '/VERSION' ) );
+$current_version = trim( (string) file_get_contents( WP_CLI_ROOT . '/VERSION' ) );
 
 if ( isset( $runtime_config['version'] ) ) {
 	$new_version = $runtime_config['version'];
@@ -101,9 +101,9 @@ function add_file( $phar, $path ) {
 				$strips
 			);
 		}
-		$phar[ $key ] = preg_replace( $strip_res, '', file_get_contents( $path ) );
+		$phar[ $key ] = preg_replace( $strip_res, '', (string) file_get_contents( $path ) );
 	} else {
-		$phar[ $key ] = file_get_contents( $path );
+		$phar[ $key ] = (string) file_get_contents( $path );
 	}
 }
 
@@ -125,6 +125,9 @@ function get_composer_versions( $current_version ) {
 		return '';
 	}
 
+	/**
+	 * @var null|array{packages: array{name?: string, version?: string, source?: array{reference?: string}, dist?: array{reference?: string}}} $composer_lock
+	 */
 	$composer_lock = json_decode( $composer_lock_file, true );
 	if ( ! $composer_lock ) {
 		fwrite( STDERR, sprintf( "Warning: Could not decode '%s'." . PHP_EOL, $composer_lock_path ) );
@@ -286,8 +289,11 @@ if ( 'cli' !== BUILD ) {
 			add_file( $phar, $file );
 		}
 		// Any PHP files in the project root
-		foreach ( glob( WP_CLI_BASE_PATH . '/*.php' ) as $file ) {
-			add_file( $phar, $file );
+		$files = glob( WP_CLI_BASE_PATH . '/*.php' );
+		if ( $files ) {
+			foreach ( $files as $file ) {
+				add_file( $phar, $file );
+			}
 		}
 	}
 }
