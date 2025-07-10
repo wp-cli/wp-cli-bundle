@@ -6,7 +6,7 @@ if ( ! file_exists( $file ) ) {
 	exit( 1 );
 }
 
-$contents = file_get_contents( $file );
+$contents = (string) file_get_contents( $file );
 $composer = json_decode( $contents );
 
 if ( empty( $composer ) || ! is_object( $composer ) ) {
