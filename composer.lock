@@ -3659,16 +3659,16 @@
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v2.0.24",
+            "version": "v2.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "1f1ca0ce3ee6cc46edfe06ee093cf3a57a131a18"
+                "reference": "ad1bbfbf2699eff415436a00bb4195900fa1cfe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/1f1ca0ce3ee6cc46edfe06ee093cf3a57a131a18",
-                "reference": "1f1ca0ce3ee6cc46edfe06ee093cf3a57a131a18",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/ad1bbfbf2699eff415436a00bb4195900fa1cfe5",
+                "reference": "ad1bbfbf2699eff415436a00bb4195900fa1cfe5",
                 "shasum": ""
             },
             "require": {
@@ -3733,9 +3733,9 @@
             "homepage": "https://github.com/wp-cli/language-command",
             "support": {
                 "issues": "https://github.com/wp-cli/language-command/issues",
-                "source": "https://github.com/wp-cli/language-command/tree/v2.0.24"
+                "source": "https://github.com/wp-cli/language-command/tree/v2.0.25"
             },
-            "time": "2025-07-08T17:50:14+00:00"
+            "time": "2025-09-04T10:30:12+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
