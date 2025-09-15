@@ -3082,20 +3082,20 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.8.4",
+            "version": "v2.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "213611f8ab619ca137d983e9b987f7fbf1ac21d4"
+                "reference": "896b7fb5ed51fe556017b2c71126947db5cd2b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/213611f8ab619ca137d983e9b987f7fbf1ac21d4",
-                "reference": "213611f8ab619ca137d983e9b987f7fbf1ac21d4",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/896b7fb5ed51fe556017b2c71126947db5cd2b68",
+                "reference": "896b7fb5ed51fe556017b2c71126947db5cd2b68",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wp-cli/cache-command": "^1 || ^2",
@@ -3103,7 +3103,7 @@
                 "wp-cli/extension-command": "^1.2 || ^2",
                 "wp-cli/media-command": "^1.1 || ^2",
                 "wp-cli/super-admin-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^4"
+                "wp-cli/wp-cli-tests": "^5"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3313,9 +3313,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.4"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.5"
             },
-            "time": "2025-05-06T16:12:49+00:00"
+            "time": "2025-09-12T10:52:53+00:00"
         },
         {
             "name": "wp-cli/eval-command",
