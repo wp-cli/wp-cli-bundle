@@ -4549,12 +4549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "04f9932abfa2ed71dd16e88964f6ac6cd64c37dd"
+                "reference": "faf9497b6a676e87659704812fc02e5fb430dc74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/04f9932abfa2ed71dd16e88964f6ac6cd64c37dd",
-                "reference": "04f9932abfa2ed71dd16e88964f6ac6cd64c37dd",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/faf9497b6a676e87659704812fc02e5fb430dc74",
+                "reference": "faf9497b6a676e87659704812fc02e5fb430dc74",
                 "shasum": ""
             },
             "require": {
@@ -4568,11 +4568,11 @@
             "require-dev": {
                 "justinrainbow/json-schema": "^6.3",
                 "roave/security-advisories": "dev-latest",
-                "wp-cli/db-command": "^1.3 || ^2",
-                "wp-cli/entity-command": "^1.2 || ^2",
-                "wp-cli/extension-command": "^1.1 || ^2",
-                "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^4"
+                "wp-cli/db-command": "^2",
+                "wp-cli/entity-command": "^2",
+                "wp-cli/extension-command": "^2",
+                "wp-cli/package-command": "^2",
+                "wp-cli/wp-cli-tests": "^5"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -4613,7 +4613,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2025-10-01T15:55:36+00:00"
+            "time": "2025-10-22T19:19:18+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
