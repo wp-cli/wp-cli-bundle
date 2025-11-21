@@ -1,6 +1,6 @@
 <?php
 
-$file = $argv[1];
+$file = $GLOBALS['argv'][1];
 if ( ! file_exists( $file ) ) {
 	echo 'File does not exist.';
 	exit( 1 );

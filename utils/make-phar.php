@@ -27,7 +27,8 @@ $configurator = new Configurator( WP_CLI_BUNDLE_ROOT . '/utils/make-phar-spec.ph
 list( $args, $assoc_args, $runtime_config ) = $configurator->parse_args( array_slice( $GLOBALS['argv'], 1 ) );
 
 if ( ! isset( $args[0] ) || empty( $args[0] ) ) {
-	fwrite( STDERR, "usage: php -dphar.readonly=0 $argv[0] <path> [--quiet] [--version=same|patch|minor|major|x.y.z] [--store-version] [--build=cli]" . PHP_EOL );
+	$arg = $GLOBALS['argv'][0];
+	fwrite( STDERR, "usage: php -dphar.readonly=0 $arg <path> [--quiet] [--version=same|patch|minor|major|x.y.z] [--store-version] [--build=cli]" . PHP_EOL );
 	exit( 1 );
 }
 
