@@ -4632,19 +4632,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "03b60120b45b552315625ac8a853cf8a5dde6174"
+                "reference": "5aa340095820b5a07d7ae397789825e06b5f4e28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/03b60120b45b552315625ac8a853cf8a5dde6174",
-                "reference": "03b60120b45b552315625ac8a853cf8a5dde6174",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/5aa340095820b5a07d7ae397789825e06b5f4e28",
+                "reference": "5aa340095820b5a07d7ae397789825e06b5f4e28",
                 "shasum": ""
             },
             "require": {
-                "ext-curl": "*",
                 "mustache/mustache": "^3.0.0",
                 "php": ">=7.2.24 || ^8.0",
-                "symfony/finder": ">2.7",
                 "wp-cli/mustangostang-spyc": "^0.6.3",
                 "wp-cli/php-cli-tools": "~0.12.4"
             },
@@ -4658,6 +4656,7 @@
                 "wp-cli/wp-cli-tests": "^5"
             },
             "suggest": {
+                "ext-curl": "For better performance when making HTTP requests",
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
@@ -4696,7 +4695,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2025-12-02T10:18:04+00:00"
+            "time": "2025-12-09T16:19:24+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
