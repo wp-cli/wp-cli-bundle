@@ -4633,12 +4633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "5aa340095820b5a07d7ae397789825e06b5f4e28"
+                "reference": "9d02076a8c8aaa6723b05a4d9897ba59b173d1dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/5aa340095820b5a07d7ae397789825e06b5f4e28",
-                "reference": "5aa340095820b5a07d7ae397789825e06b5f4e28",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/9d02076a8c8aaa6723b05a4d9897ba59b173d1dc",
+                "reference": "9d02076a8c8aaa6723b05a4d9897ba59b173d1dc",
                 "shasum": ""
             },
             "require": {
@@ -9313,5 +9313,5 @@
     "platform-overrides": {
         "php": "7.2.24"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
