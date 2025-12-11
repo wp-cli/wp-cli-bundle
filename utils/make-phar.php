@@ -237,6 +237,7 @@ if ( 'cli' === BUILD ) {
 		->in( WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema' )
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
+		->exclude( 'wp-cli-tests' )
 		->exclude( 'demo' )
 		->exclude( 'nb/oxymel/OxymelTest.php' )
 		->exclude( 'composer/spdx-licenses' )
