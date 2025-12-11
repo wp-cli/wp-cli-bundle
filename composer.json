@@ -9,6 +9,8 @@
   "license": "MIT",
   "require": {
     "php": ">=7.2.24",
+    "wp-cli/ability-command": "^1",
+    "wp-cli/block-command": "^1",
     "wp-cli/cache-command": "^2",
     "wp-cli/checksum-command": "^2.1",
     "wp-cli/config-command": "^2.1",
