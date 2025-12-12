@@ -238,6 +238,7 @@ if ( 'cli' === BUILD ) {
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
 		->exclude( 'demo' )
+		->exclude( 'wp-cli-tests' )
 		->exclude( 'nb/oxymel/OxymelTest.php' )
 		->exclude( 'composer/spdx-licenses' )
 		->exclude( 'composer/composer/src/Composer/Command' )
