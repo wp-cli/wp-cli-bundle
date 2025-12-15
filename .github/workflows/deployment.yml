@@ -49,13 +49,13 @@ jobs:
           echo "$CLI_VERSION" > cli_version.txt
 
       - name: Upload WP-CLI version
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: cli_version
           path: cli_version.txt
 
       - name: Upload manifest file
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: manifest
           path: vendor/wp-cli/wp-cli/manifest.json
@@ -64,7 +64,7 @@ jobs:
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: wp-cli-phar
           path: wp-cli.phar
