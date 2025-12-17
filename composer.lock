@@ -9215,16 +9215,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.0.5",
+            "version": "v5.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "ca81720aec0e93fde5ec6e3ca4d5ede65108b718"
+                "reference": "72aae3e9f67b54a01d1ecc72e78bc6181bed0711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/ca81720aec0e93fde5ec6e3ca4d5ede65108b718",
-                "reference": "ca81720aec0e93fde5ec6e3ca4d5ede65108b718",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/72aae3e9f67b54a01d1ecc72e78bc6181bed0711",
+                "reference": "72aae3e9f67b54a01d1ecc72e78bc6181bed0711",
                 "shasum": ""
             },
             "require": {
@@ -9303,7 +9303,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2025-12-10T09:05:39+00:00"
+            "time": "2025-12-17T15:48:07+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9311,12 +9311,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "fd0493c436f9dd27c578279c6a8927a83dc3d3ab"
+                "reference": "f48a1815c16e71be30271ce225629a028b02dbf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/fd0493c436f9dd27c578279c6a8927a83dc3d3ab",
-                "reference": "fd0493c436f9dd27c578279c6a8927a83dc3d3ab",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/f48a1815c16e71be30271ce225629a028b02dbf2",
+                "reference": "f48a1815c16e71be30271ce225629a028b02dbf2",
                 "shasum": ""
             },
             "require": {
@@ -9370,7 +9370,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-12-08T14:18:30+00:00"
+            "time": "2025-12-17T09:59:48+00:00"
         },
         {
             "name": "yoast/phpunit-polyfills",
@@ -9451,5 +9451,5 @@
     "platform-overrides": {
         "php": "7.2.24"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
