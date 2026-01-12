@@ -270,12 +270,12 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v7
         with:
           name: cli_version
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v7
         with:
           name: wp
 
