@@ -293,7 +293,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
-          branch: gh-pages
           repository: wp-cli/wp-cli-shim
 
   build-rpm: #------------------------------------------------------------------
