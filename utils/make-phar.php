@@ -27,7 +27,8 @@ $configurator = new Configurator( WP_CLI_BUNDLE_ROOT . '/utils/make-phar-spec.ph
 list( $args, $assoc_args, $runtime_config ) = $configurator->parse_args( array_slice( $GLOBALS['argv'], 1 ) );
 
 if ( ! isset( $args[0] ) || empty( $args[0] ) ) {
-	fwrite( STDERR, "usage: php -dphar.readonly=0 $argv[0] <path> [--quiet] [--version=same|patch|minor|major|x.y.z] [--store-version] [--build=cli]" . PHP_EOL );
+	$arg = $GLOBALS['argv'][0];
+	fwrite( STDERR, "usage: php -dphar.readonly=0 $arg <path> [--quiet] [--version=same|patch|minor|major|x.y.z] [--store-version] [--build=cli]" . PHP_EOL );
 	exit( 1 );
 }
 
@@ -37,7 +38,7 @@ define( 'BE_QUIET', isset( $runtime_config['quiet'] ) && $runtime_config['quiet'
 
 define( 'BUILD', isset( $runtime_config['build'] ) ? $runtime_config['build'] : '' );
 
-$current_version = trim( file_get_contents( WP_CLI_ROOT . '/VERSION' ) );
+$current_version = trim( (string) file_get_contents( WP_CLI_ROOT . '/VERSION' ) );
 
 if ( isset( $runtime_config['version'] ) ) {
 	$new_version = $runtime_config['version'];
@@ -67,6 +68,7 @@ function add_file( $phar, $path ) {
 					'\/(?:behat|composer|gherkin)\/src\/',
 					'\/behat\/',
 					'\/phpunit\/',
+					'\/phpstan\/',
 					'\/phpspec\/',
 					'\/sebastian\/',
 					'\/php-parallel-lint\/',
@@ -82,6 +84,7 @@ function add_file( $phar, $path ) {
 					'\/(?:behat|gherkin)\/src\/',
 					'\/behat\/',
 					'\/phpunit\/',
+					'\/phpstan\/',
 					'\/phpspec\/',
 					'\/sebastian\/',
 					'\/php-parallel-lint\/',
@@ -99,9 +102,9 @@ function add_file( $phar, $path ) {
 				$strips
 			);
 		}
-		$phar[ $key ] = preg_replace( $strip_res, '', file_get_contents( $path ) );
+		$phar[ $key ] = preg_replace( $strip_res, '', (string) file_get_contents( $path ) );
 	} else {
-		$phar[ $key ] = file_get_contents( $path );
+		$phar[ $key ] = (string) file_get_contents( $path );
 	}
 }
 
@@ -123,6 +126,9 @@ function get_composer_versions( $current_version ) {
 		return '';
 	}
 
+	/**
+	 * @var null|array{packages: array{name?: string, version?: string, source?: array{reference?: string}, dist?: array{reference?: string}}} $composer_lock
+	 */
 	$composer_lock = json_decode( $composer_lock_file, true );
 	if ( ! $composer_lock ) {
 		fwrite( STDERR, sprintf( "Warning: Could not decode '%s'." . PHP_EOL, $composer_lock_path ) );
@@ -188,7 +194,7 @@ $finder
 	->name( '/\.*.php8?/' )
 	->in( WP_CLI_ROOT . '/php' )
 	->in( WP_CLI_BUNDLE_ROOT . '/php' )
-	->in( WP_CLI_VENDOR_DIR . '/mustache' )
+	->in( WP_CLI_VENDOR_DIR . '/mustache/mustache' )
 	->in( WP_CLI_VENDOR_DIR . '/eftec/bladeone' )
 	->in( WP_CLI_ROOT . '/bundle/rmccue/requests' )
 	->in( WP_CLI_VENDOR_DIR . '/composer' )
@@ -232,6 +238,7 @@ if ( 'cli' === BUILD ) {
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
 		->exclude( 'demo' )
+		->exclude( 'wp-cli-tests' )
 		->exclude( 'nb/oxymel/OxymelTest.php' )
 		->exclude( 'composer/spdx-licenses' )
 		->exclude( 'composer/composer/src/Composer/Command' )
@@ -243,6 +250,11 @@ if ( 'cli' === BUILD ) {
 		->exclude( 'composer/composer/src/Composer/Question' )
 		->exclude( 'composer/composer/src/Composer/Repository/Pear' )
 		->exclude( 'composer/composer/src/Composer/SelfUpdate' );
+
+	// required by justinrainbow/json-schema v6+.
+	if ( is_dir( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' ) ) {
+		$finder->in( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' );
+	}
 }
 
 foreach ( $finder as $file ) {
@@ -279,8 +291,11 @@ if ( 'cli' !== BUILD ) {
 			add_file( $phar, $file );
 		}
 		// Any PHP files in the project root
-		foreach ( glob( WP_CLI_BASE_PATH . '/*.php' ) as $file ) {
-			add_file( $phar, $file );
+		$files = glob( WP_CLI_BASE_PATH . '/*.php' );
+		if ( $files ) {
+			foreach ( $files as $file ) {
+				add_file( $phar, $file );
+			}
 		}
 	}
 }

@@ -6,7 +6,7 @@ Feature: Install WP-CLI packages
 
   Scenario: Install a package requiring a WP-CLI version that doesn't match
     Given an empty directory
-    And a new Phar with version "0.23.0"
+    And a new Phar with version "2.10.0"
     And a path-command/command.php file:
       """
       <?php
@@ -25,7 +25,7 @@ Feature: Install WP-CLI packages
           "files": [ "command.php" ]
         },
         "require": {
-          "wp-cli/wp-cli": ">=0.24.0"
+          "wp-cli/wp-cli": ">=2.11.0"
         },
         "require-dev": {
           "behat/behat": "~2.5"
@@ -44,7 +44,7 @@ Feature: Install WP-CLI packages
       """
     And STDOUT should contain:
       """
-      wp-cli/wp-cli >=0.24.0 -> satisfiable by
+      wp-cli/wp-cli >=2.11.0 -> satisfiable by
       """
     And STDERR should contain:
       """
@@ -55,12 +55,12 @@ Feature: Install WP-CLI packages
     When I run `cat {PACKAGE_PATH}composer.json`
     Then STDOUT should contain:
       """
-      "version": "0.23.0",
+      "version": "2.10.0",
       """
 
   Scenario: Install a package requiring a WP-CLI version that does match
     Given an empty directory
-    And a new Phar with version "0.23.0"
+    And a new Phar with version "2.11.0"
     And a path-command/command.php file:
       """
       <?php
@@ -79,7 +79,7 @@ Feature: Install WP-CLI packages
           "files": [ "command.php" ]
         },
         "require": {
-          "wp-cli/wp-cli": ">=0.22.0"
+          "wp-cli/wp-cli": ">=2.10.0"
         },
         "require-dev": {
           "behat/behat": "~2.5"
@@ -98,12 +98,12 @@ Feature: Install WP-CLI packages
     When I run `cat {PACKAGE_PATH}composer.json`
     Then STDOUT should contain:
       """
-      "version": "0.23.0",
+      "version": "2.11.0",
       """
 
   Scenario: Install a package requiring a WP-CLI alpha version that does match
     Given an empty directory
-    And a new Phar with version "0.23.0-alpha-90ecad6"
+    And a new Phar with version "2.12.0-alpha-90ecad6"
     And a path-command/command.php file:
       """
       <?php
@@ -122,7 +122,7 @@ Feature: Install WP-CLI packages
           "files": [ "command.php" ]
         },
         "require": {
-          "wp-cli/wp-cli": ">=0.22.0"
+          "wp-cli/wp-cli": ">=2.11.0"
         },
         "require-dev": {
           "behat/behat": "~2.5"
@@ -141,5 +141,5 @@ Feature: Install WP-CLI packages
     When I run `cat {PACKAGE_PATH}composer.json`
     Then STDOUT should contain:
       """
-      "version": "0.23.0-alpha",
+      "version": "2.12.0-alpha",
       """

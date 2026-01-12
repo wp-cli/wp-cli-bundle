@@ -1,6 +1,7 @@
 name: Deployment
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -15,7 +16,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up PHP environment
         uses: shivammathur/setup-php@v2
@@ -28,7 +29,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Composer dependencies & cache dependencies
-        uses: "ramsey/composer-install@v2"
+        uses: "ramsey/composer-install@v3"
         env:
           COMPOSER_ROOT_VERSION: 'dev-main'
         with:
@@ -48,16 +49,22 @@ jobs:
           echo "$CLI_VERSION" > cli_version.txt
 
       - name: Upload WP-CLI version
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: cli_version
           path: cli_version.txt
+
+      - name: Upload manifest file
+        uses: actions/upload-artifact@v6
+        with:
+          name: manifest
+          path: vendor/wp-cli/wp-cli/manifest.json
 
       - name: Build the Phar file
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: wp-cli-phar
           path: wp-cli.phar
@@ -67,70 +74,47 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
+        php: ['7.2', '7.3', '7.4', '8.5']
         wp: ['latest']
         mysql: ['8.0']
         include:
-          - php: '7.0'
-            wp: 'trunk'
-            mysql: '8.0'
-          - php: '7.0'
-            wp: 'trunk'
-            mysql: '5.7'
-          - php: '7.0'
+          - php: '7.4'
             wp: 'trunk'
             mysql: '5.6'
           - php: '7.4'
             wp: 'trunk'
-            mysql: '8.0'
-          - php: '8.0'
+            mysql: '5.7'
+          - php: '7.4'
             wp: 'trunk'
             mysql: '8.0'
-          - php: '8.0'
+          - php: '8.5'
+            wp: 'trunk'
+            mysql: '8.0'
+          - php: '8.5'
             wp: 'trunk'
             mysql: '5.7'
-          - php: '8.0'
+          - php: '8.5'
             wp: 'trunk'
             mysql: '5.6'
-          - php: '5.6'
-            wp: '3.7'
+          - php: '7.2'
+            wp: '4.9'
             mysql: '5.6'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       WP_CLI_BIN_DIR: /tmp/wp-cli-phar
     needs: [build]
 
-    services:
-      mysql:
-        image: mysql:${{ matrix.mysql }}
-        ports:
-          - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=wp_cli_test --entrypoint sh mysql:${{ matrix.mysql }} -c "exec docker-entrypoint.sh mysqld --default-authentication-plugin=mysql_native_password"
-
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Ghostscript
         run: |
           sudo apt-get update
           sudo apt-get install ghostscript -y
 
-      - name: Set up PHP environment (PHP 5.6 - 7.1)
-        if: ${{ matrix.php < '7.2' }}
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '${{ matrix.php }}'
-          extensions: imagick, mysql, zip
-          coverage: none
-          tools: composer:2.2
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set up PHP environment (PHP 7.2+)
-        if: ${{ matrix.php >= '7.2' }}
+      - name: Set up PHP environment
         uses: shivammathur/setup-php@v2
         with:
           php-version: '${{ matrix.php }}'
@@ -141,7 +125,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Composer dependencies & cache dependencies
-        uses: "ramsey/composer-install@v2"
+        uses: "ramsey/composer-install@v3"
         env:
           COMPOSER_ROOT_VERSION: 'dev-main'
         with:
@@ -153,7 +137,7 @@ jobs:
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wp-cli-phar
 
@@ -163,18 +147,28 @@ jobs:
           mv wp-cli.phar $WP_CLI_BIN_DIR/wp
           chmod +x $WP_CLI_BIN_DIR/wp
 
-      - name: Start MySQL server
-        run: sudo systemctl start mysql
+      - name: Setup MySQL Server
+        id: setup-mysql
+        uses: shogo82148/actions-setup-mysql@v1
+        with:
+          mysql-version: ${{ matrix.mysql }}
+          auto-start: true
+          root-password: root
+          user: wp_cli_test
+          password: password1
+          my-cnf: |
+            default_authentication_plugin=mysql_native_password
 
       - name: Configure DB environment
         run: |
-          export MYSQL_HOST=127.0.0.1
-          export MYSQL_TCP_PORT=${{ job.services.mysql.ports['3306'] }}
+          echo "MYSQL_HOST=127.0.0.1" >> $GITHUB_ENV
+          echo "MYSQL_TCP_PORT=3306" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBROOTUSER=root" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBROOTPASS=root" >> $GITHUB_ENV
+          echo "WP_CLI_TEST_DBNAME=wp_cli_test" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBUSER=wp_cli_test" >> $GITHUB_ENV
           echo "WP_CLI_TEST_DBPASS=password1" >> $GITHUB_ENV
-          echo "WP_CLI_TEST_DBHOST=$MYSQL_HOST:$MYSQL_TCP_PORT" >> $GITHUB_ENV
+          echo "WP_CLI_TEST_DBHOST=127.0.0.1:3306" >> $GITHUB_ENV
 
       - name: Prepare test database
         run: composer prepare-tests
@@ -192,16 +186,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test]
 
-    if: ${{ github.repository_owner == 'wp-cli' }}
+    if: ${{ github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: cli_version
 
@@ -209,20 +203,31 @@ jobs:
         run: |
           cat cli_version.txt > phar/NIGHTLY_VERSION
 
+      - name: Download manifest file
+        uses: actions/download-artifact@v7
+        with:
+          name: manifest
+
       - name: Download built Phar file
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wp-cli-phar
 
       - name: Set file name for release branch
         if: ${{ contains(github.ref, 'release') }}
         run: |
-          echo 'FILENAME=wp-cli-release.phar' > $GITHUB_ENV
+          echo 'FILENAME=wp-cli-release.phar' >> $GITHUB_ENV
+          echo 'MANIFEST_FILENAME=wp-cli-release.manifest.json' >> $GITHUB_ENV
 
       - name: Set file name for main branch
         if: ${{ contains(github.ref, 'main') }}
         run: |
-          echo 'FILENAME=wp-cli-nightly.phar' > $GITHUB_ENV
+          echo 'FILENAME=wp-cli-nightly.phar' >> $GITHUB_ENV
+          echo 'MANIFEST_FILENAME=wp-cli-nightly.manifest.json' >> $GITHUB_ENV
+
+      - name: Move manifest file into correct location
+        run: |
+          mv manifest.json phar/$MANIFEST_FILENAME
 
       - name: Move built Phar file into correct location
         run: |
@@ -241,7 +246,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add phar/$FILENAME phar/$FILENAME.md5 phar/$FILENAME.sha512 phar/NIGHTLY_VERSION
+          git add phar/$FILENAME phar/$FILENAME.md5 phar/$FILENAME.sha512 phar/NIGHTLY_VERSION phar/$MANIFEST_FILENAME
           git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
@@ -298,18 +303,18 @@ jobs:
   build-rpm: #------------------------------------------------------------------
     name: Build RPM package
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
+    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     needs: [deploy]
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wp-cli-phar
 
@@ -352,18 +357,18 @@ jobs:
   build-deb: #------------------------------------------------------------------
     name: Build DEB package
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' }}
+    if: ${{ contains(github.ref, 'release') && github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     needs: [build-rpm]
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wp-cli-phar
 

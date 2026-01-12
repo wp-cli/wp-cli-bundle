@@ -8,7 +8,9 @@
   "homepage": "https://wp-cli.org",
   "license": "MIT",
   "require": {
-    "php": ">=5.6",
+    "php": ">=7.2.24",
+    "wp-cli/ability-command": "^1",
+    "wp-cli/block-command": "^1",
     "wp-cli/cache-command": "^2",
     "wp-cli/checksum-command": "^2.1",
     "wp-cli/config-command": "^2.1",
@@ -38,7 +40,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "wp-cli/wp-cli-tests": "^4"
+    "wp-cli/wp-cli-tests": "^5"
   },
   "suggest": {
     "psy/psysh": "Enhanced `wp shell` functionality"
@@ -46,17 +48,19 @@
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "johnpbloch/wordpress-core-installer": true
+      "johnpbloch/wordpress-core-installer": true,
+      "phpstan/extension-installer": true
     },
+    "autoloader-suffix": "WpCliBundle",
     "platform": {
-      "php": "5.6"
+      "php": "7.2.24"
     },
     "process-timeout": 7200,
     "sort-packages": true
   },
   "extra": {
     "branch-alias": {
-      "dev-main": "2.9.x-dev"
+      "dev-main": "2.12.x-dev"
     }
   },
   "autoload-dev": {
@@ -71,12 +75,15 @@
     "behat-rerun": "rerun-behat-tests",
     "lint": "run-linter-tests",
     "phpcs": "run-phpcs-tests",
+    "phpstan": "run-phpstan-tests",
     "phpunit": "run-php-unit-tests",
+    "phpcbf": "run-phpcbf-cleanup",
     "placeholder": "value",
     "prepare-tests": "install-package-tests",
     "test": [
       "@lint",
       "@phpcs",
+      "@phpstan",
       "@phpunit",
       "@behat"
     ]
