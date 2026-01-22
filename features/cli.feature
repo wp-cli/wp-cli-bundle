@@ -181,12 +181,13 @@ Feature: `wp cli` tasks
 
     # Create a directory with spaces and a PHP wrapper
     When I run `mkdir -p "php with spaces/bin"`
-    And I run `printf '#!/bin/bash\nexec php "$@"' > "php with spaces/bin/php"`
+    And I run `cp "$(which php)" "php with spaces/bin/php"`
     And I run `chmod +x "php with spaces/bin/php"`
     Then the return code should be 0
 
-    # Test that the update command works when PHP_BINARY has spaces
-    When I run `PHP_BINARY="$PWD/php with spaces/bin/php" "$PWD/php with spaces/bin/php" {PHAR_PATH} cli update --yes`
+    # Test that the update command works when WP_CLI_PHP_USED has spaces
+    # This simulates the scenario where PHP binary path contains spaces
+    When I run `WP_CLI_PHP_USED="$PWD/php with spaces/bin/php" {PHAR_PATH} cli update --yes`
     Then STDOUT should contain:
       """
       sha512 hash verified:
