@@ -173,3 +173,27 @@ Feature: `wp cli` tasks
       """
       WP-CLI {UPDATE_VERSION}
       """
+
+  @github-api
+  Scenario: Update command works with PHP binary path containing spaces
+    Given an empty directory
+    And a new Phar with version "0.0.0"
+
+    # Create a directory with spaces and a PHP wrapper
+    When I run `mkdir -p "php with spaces/bin"`
+    And I run `printf '#!/bin/bash\nexec php "$@"' > "php with spaces/bin/php"`
+    And I run `chmod +x "php with spaces/bin/php"`
+    Then the return code should be 0
+
+    # Test that the update command works when PHP_BINARY has spaces
+    When I run `PHP_BINARY="$PWD/php with spaces/bin/php" "$PWD/php with spaces/bin/php" {PHAR_PATH} cli update --yes`
+    Then STDOUT should contain:
+      """
+      sha512 hash verified:
+      """
+    And STDOUT should contain:
+      """
+      Success:
+      """
+    And STDERR should be empty
+    And the return code should be 0
