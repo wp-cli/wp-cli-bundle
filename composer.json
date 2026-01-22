@@ -36,8 +36,14 @@
     "wp-cli/shell-command": "^2",
     "wp-cli/super-admin-command": "^2",
     "wp-cli/widget-command": "^2",
-    "wp-cli/wp-cli": "dev-main"
+    "wp-cli/wp-cli": "dev-testing/cli-update as 2.13"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/bgturner/wp-cli"
+    }
+  ],
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "wp-cli/wp-cli-tests": "^5"
