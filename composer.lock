@@ -4771,21 +4771,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bgturner/wp-cli.git",
-                "reference": "50e07d85406a74fa6faf0298fbc16ef247683313"
+                "reference": "2f040b1abb2cf9fb0b08e55a51dc0a2b64f0e556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bgturner/wp-cli/zipball/50e07d85406a74fa6faf0298fbc16ef247683313",
-                "reference": "50e07d85406a74fa6faf0298fbc16ef247683313",
+                "url": "https://api.github.com/repos/bgturner/wp-cli/zipball/2f040b1abb2cf9fb0b08e55a51dc0a2b64f0e556",
+                "reference": "2f040b1abb2cf9fb0b08e55a51dc0a2b64f0e556",
                 "shasum": ""
             },
             "require": {
-                "ext-curl": "*",
                 "mustache/mustache": "^3.0.0",
                 "php": ">=7.2.24 || ^8.0",
-                "symfony/finder": ">2.7",
                 "wp-cli/mustangostang-spyc": "^0.6.3",
-                "wp-cli/php-cli-tools": "~0.12.4"
+                "wp-cli/php-cli-tools": "~0.12.7"
             },
             "require-dev": {
                 "justinrainbow/json-schema": "^6.3",
@@ -4797,6 +4795,7 @@
                 "wp-cli/wp-cli-tests": "^5"
             },
             "suggest": {
+                "ext-curl": "For better performance when making HTTP requests",
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
@@ -4808,7 +4807,20 @@
             "extra": {
                 "branch-alias": {
                     "dev-main": "2.13.x-dev"
-                }
+                },
+                "commands": [
+                    "cli",
+                    "cli alias",
+                    "cli cache",
+                    "cli check-update",
+                    "cli cmd-dump",
+                    "cli completions",
+                    "cli has-command",
+                    "cli info",
+                    "cli param-dump",
+                    "cli update",
+                    "cli version"
+                ]
             },
             "autoload": {
                 "psr-0": {
@@ -4866,7 +4878,7 @@
                 "source": "https://github.com/wp-cli/wp-cli",
                 "docs": "https://make.wordpress.org/cli/handbook/"
             },
-            "time": "2025-12-02T20:12:16+00:00"
+            "time": "2026-01-22T16:29:49+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
