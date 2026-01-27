@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e80cc2bb1e43fd4585938fac48b65be7",
+    "content-hash": "6ac842e11c9398e4b41f36175341fcf2",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -4636,6 +4636,59 @@
                 "source": "https://github.com/wp-cli/shell-command/tree/v2.0.16"
             },
             "time": "2025-04-11T09:39:33+00:00"
+        },
+        {
+            "name": "wp-cli/site-health-command",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/site-health-command.git",
+                "reference": "cf1f878fef6ce4f42ea2350cd64e0e58ad84ecef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/site-health-command/zipball/cf1f878fef6ce4f42ea2350cd64e0e58ad84ecef",
+                "reference": "cf1f878fef6ce4f42ea2350cd64e0e58ad84ecef",
+                "shasum": ""
+            },
+            "require": {
+                "wp-cli/wp-cli": "^2.11"
+            },
+            "require-dev": {
+                "wp-cli/wp-cli-tests": "^5"
+            },
+            "default-branch": true,
+            "type": "wp-cli-package",
+            "extra": {
+                "bundled": true,
+                "commands": [
+                    "site-health check",
+                    "site-health info",
+                    "site-health list-info-sections",
+                    "site-health status"
+                ],
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "site-health-command.php"
+                ],
+                "psr-4": {
+                    "WP_CLI\\SiteHealth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "https://github.com/wp-cli/site-health-command",
+            "support": {
+                "issues": "https://github.com/wp-cli/site-health-command/issues",
+                "source": "https://github.com/wp-cli/site-health-command/tree/main"
+            },
+            "time": "2026-01-26T12:17:31+00:00"
         },
         {
             "name": "wp-cli/super-admin-command",
