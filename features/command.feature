@@ -269,6 +269,10 @@ Feature: WP-CLI Commands
 
   Scenario: Invalid subcommand of valid command
     Given an empty directory
+    And a session_no file:
+      """
+      n
+      """
     And a custom-cmd.php file:
       """
       <?php
@@ -285,10 +289,10 @@ Feature: WP-CLI Commands
       WP_CLI::add_command( 'command', 'Custom_Command_Class' );
       """
 
-    When I try `wp --require=custom-cmd.php command invalid`
+    When I try `wp --require=custom-cmd.php command invalid < session_no`
     Then STDERR should contain:
       """
-      Error: 'invalid' is not a registered subcommand of 'command'. See 'wp help command' for available subcommands.
+      Warning: 'invalid' is not a registered subcommand of 'command'. See 'wp help command' for available subcommands.
       """
 
   Scenario: Use a closure as a command
@@ -383,6 +387,7 @@ Feature: WP-CLI Commands
       """
       <?php
       class Foo_Class extends WP_CLI_Command {
+        protected $prefix;
 
         public function __construct( $prefix ) {
           $this->prefix = $prefix;
@@ -478,6 +483,7 @@ Feature: WP-CLI Commands
       """
       <?php
       class Foo_Class {
+        protected $message;
 
         public function __construct( $message ) {
           $this->message = $message;
@@ -1119,6 +1125,7 @@ Feature: WP-CLI Commands
       """
       <?php
       class Foo_Class {
+        protected $message;
 
         public function __construct( $message ) {
           $this->message = $message;
@@ -1146,21 +1153,25 @@ Feature: WP-CLI Commands
 
   Scenario: WP-CLI suggests matching commands when user entry contains typos
     Given a WP installation
+    And a session_no file:
+      """
+      n
+      """
 
-    When I try `wp clu`
-    Then STDERR should contain:
+    When I try `wp clu < session_no`
+    Then STDOUT should contain:
       """
       Did you mean 'cli'?
       """
 
-    When I try `wp cli nfo`
-    Then STDERR should contain:
+    When I try `wp cli nfo < session_no`
+    Then STDOUT should contain:
       """
       Did you mean 'info'?
       """
 
     When I try `wp cli beyondlevenshteinthreshold`
-    Then STDERR should not contain:
+    Then STDOUT should not contain:
       """
       Did you mean
       """

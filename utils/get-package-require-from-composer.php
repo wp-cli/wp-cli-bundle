@@ -1,12 +1,12 @@
 <?php
 
-$file = $argv[1];
+$file = $GLOBALS['argv'][1];
 if ( ! file_exists( $file ) ) {
 	echo 'File does not exist.';
 	exit( 1 );
 }
 
-$contents = file_get_contents( $file );
+$contents = (string) file_get_contents( $file );
 $composer = json_decode( $contents );
 
 if ( empty( $composer ) || ! is_object( $composer ) ) {

@@ -115,7 +115,7 @@ find usr -type f -exec md5sum "{}" ";" > DEBIAN/md5sums || die 7 "md5sum creatio
 
 popd
 
-# build package in the current diretory
+# build package in the current directory
 WPCLI_PKG="${PWD}/php-wpcli_${WPCLI_VER}_all.deb"
 fakeroot dpkg-deb -Zxz --build "$DIR" "$WPCLI_PKG" || die 8 "Packaging failed"
 

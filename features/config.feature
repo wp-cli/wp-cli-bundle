@@ -4,10 +4,10 @@ Feature: wp-config.php tests
   # Only testing on MySQL because the SQLite drop-in is not added to the custom directories in this test.
   @require-mysql
   Scenario: __FILE__ and __DIR__ in wp-config.php don't point into the PHAR filesystem
-  Given a WP installation
-  And a new Phar with the same version
-  And a wp-config.php file:
-  """
+    Given a WP installation
+    And a new Phar with the same version
+    And a wp-config.php file:
+      """
       <?php
       define( 'DB_NAME', 'wp_cli_test' );
       define( 'DB_USER', '{DB_USER}' );
@@ -24,14 +24,14 @@ Feature: wp-config.php tests
       require_once( ABSPATH . 'wp-settings.php' );
       """
 
-  When I run `{PHAR_PATH} eval "echo 'WP_CONTENT_DIR => ' . WP_CONTENT_DIR;"`
-  Then STDOUT should not contain:
-  """
+    When I run `{PHAR_PATH} eval "echo 'WP_CONTENT_DIR => ' . WP_CONTENT_DIR;"`
+    Then STDOUT should not contain:
+      """
       WP_CONTENT_DIR => phar://
       """
 
-  When I run `{PHAR_PATH} eval "echo 'WP_PLUGIN_DIR => ' . WP_PLUGIN_DIR;"`
-  Then STDOUT should not contain:
-  """
+    When I run `{PHAR_PATH} eval "echo 'WP_PLUGIN_DIR => ' . WP_PLUGIN_DIR;"`
+    Then STDOUT should not contain:
+      """
       WP_PLUGIN_DIR => phar://
       """

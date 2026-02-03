@@ -12,6 +12,8 @@ Want to suggest a feature? Check out the roadmap for how feature development hap
 
 Oh! It's worth noting WP-CLI represents a collection of sub-projects, each with their own issue tracker. One of these may be a better destination:
 
+* `wp ability *` https://github.com/wp-cli/ability-command
+* `wp block *` https://github.com/wp-cli/block-command
 * `wp (cache|transient) *` https://github.com/wp-cli/cache-command
 * `wp checksum` https://github.com/wp-cli/checksum-command
 * `wp config *` https://github.com/wp-cli/config-command
@@ -22,8 +24,10 @@ Oh! It's worth noting WP-CLI represents a collection of sub-projects, each with 
 * `wp (eval|eval-file)` https://github.com/wp-cli/eval-command
 * `wp export` https://github.com/wp-cli/export-command
 * `wp (option|post|comment|user|term|site) *` https://github.com/wp-cli/entity-command
+* `wp i18n *` https://github.com/wp-cli/i18n-command
 * `wp import` https://github.com/wp-cli/import-command
 * `wp language` https://github.com/wp-cli/language-command
+* `wp maintenance-mode *` https://github.com/wp-cli/maintenance-mode-command
 * `wp media *` https://github.com/wp-cli/media-command
 * `wp package *` https://github.com/wp-cli/package-command
 * `wp (plugin|theme) *` https://github.com/wp-cli/extension-command
