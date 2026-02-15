@@ -9,18 +9,22 @@ if ( 'cli' !== PHP_SAPI ) {
 	die( -1 );
 }
 
-// Store the path to the Phar early on for `Utils\phar-safe-path()` function.
-define( 'WP_CLI_PHAR_PATH', Phar::running( true ) );
+// Store the phar stream path for use in determining WP_CLI_ROOT.
+// Using Phar::running(true) returns the phar:// stream wrapper path (e.g., phar:///path/to/file.phar)
+// which ensures consistent path resolution when the phar is renamed.
+$wp_cli_phar_path = Phar::running( true );
 
-// Determine WP_CLI_ROOT dynamically based on the actual phar path
+// Store the filesystem path for `Utils\phar_safe_path()` function.
+// Using Phar::running(false) returns just the filesystem path without phar:// protocol.
+define( 'WP_CLI_PHAR_PATH', Phar::running( false ) );
+
+// Determine WP_CLI_ROOT dynamically based on the actual phar stream path
 // instead of hardcoding 'phar://wp-cli.phar' to handle renamed phars.
-// Use Phar::running(false) to get the phar stream path (e.g., phar:///path/to/file.phar)
-// instead of the filesystem path, ensuring consistency when the phar is renamed.
-if ( file_exists( Phar::running( false ) . '/php/wp-cli.php' ) ) {
-	define( 'WP_CLI_ROOT', Phar::running( false ) );
+if ( file_exists( $wp_cli_phar_path . '/php/wp-cli.php' ) ) {
+	define( 'WP_CLI_ROOT', $wp_cli_phar_path );
 	include WP_CLI_ROOT . '/php/wp-cli.php';
-} elseif ( file_exists( Phar::running( false ) . '/vendor/wp-cli/wp-cli/php/wp-cli.php' ) ) {
-	define( 'WP_CLI_ROOT', Phar::running( false ) . '/vendor/wp-cli/wp-cli' );
+} elseif ( file_exists( $wp_cli_phar_path . '/vendor/wp-cli/wp-cli/php/wp-cli.php' ) ) {
+	define( 'WP_CLI_ROOT', $wp_cli_phar_path . '/vendor/wp-cli/wp-cli' );
 	include WP_CLI_ROOT . '/php/wp-cli.php';
 } else {
 	echo "Couldn't find 'php/wp-cli.php'. Was this Phar built correctly?";
