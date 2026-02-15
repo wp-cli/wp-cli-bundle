@@ -3240,20 +3240,20 @@
         },
         {
             "name": "wp-cli/embed-command",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/embed-command.git",
-                "reference": "c95faa486bda28883fd9f0b4702ded2b064061b6"
+                "reference": "cc10e67d84e0158a96fbc5f48b7652f085cca389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/c95faa486bda28883fd9f0b4702ded2b064061b6",
-                "reference": "c95faa486bda28883fd9f0b4702ded2b064061b6",
+                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/cc10e67d84e0158a96fbc5f48b7652f085cca389",
+                "reference": "cc10e67d84e0158a96fbc5f48b7652f085cca389",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
@@ -3301,9 +3301,9 @@
             "homepage": "https://github.com/wp-cli/embed-command",
             "support": {
                 "issues": "https://github.com/wp-cli/embed-command/issues",
-                "source": "https://github.com/wp-cli/embed-command/tree/v2.1.0"
+                "source": "https://github.com/wp-cli/embed-command/tree/v2.1.1"
             },
-            "time": "2025-11-11T13:30:46+00:00"
+            "time": "2026-02-12T12:26:05+00:00"
         },
         {
             "name": "wp-cli/entity-command",
