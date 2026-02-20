@@ -18,13 +18,9 @@ define( 'WP_CLI_PHAR_PATH', Phar::running( false ) );
 if ( file_exists( 'phar://wp-cli.phar/php/wp-cli.php' ) ) {
 	define( 'WP_CLI_ROOT', 'phar://wp-cli.phar' );
 	include WP_CLI_ROOT . '/php/wp-cli.php';
-	// Override phar_safe_path() to fix template resolution (temporary until wp-cli/wp-cli#6242 is merged)
-	include __DIR__ . '/utils-override.php';
 } elseif ( file_exists( 'phar://wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php' ) ) {
 	define( 'WP_CLI_ROOT', 'phar://wp-cli.phar/vendor/wp-cli/wp-cli' );
 	include WP_CLI_ROOT . '/php/wp-cli.php';
-	// Override phar_safe_path() to fix template resolution (temporary until wp-cli/wp-cli#6242 is merged)
-	include __DIR__ . '/utils-override.php';
 } else {
 	echo "Couldn't find 'php/wp-cli.php'. Was this Phar built correctly?";
 	exit( 1 );
