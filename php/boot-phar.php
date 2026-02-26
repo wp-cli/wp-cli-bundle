@@ -9,12 +9,9 @@ if ( 'cli' !== PHP_SAPI ) {
 	die( -1 );
 }
 
-// Store the filesystem path for `Utils\phar_safe_path()` function.
-// Using Phar::running(false) returns just the filesystem path without phar:// protocol.
-define( 'WP_CLI_PHAR_PATH', Phar::running( false ) );
+// Store the path to the Phar early on for `Utils\phar-safe-path()` function.
+define( 'WP_CLI_PHAR_PATH', Phar::running( true ) );
 
-// Use the phar alias 'wp-cli.phar' which is set during phar creation and works
-// regardless of the actual filename. This ensures template paths resolve correctly.
 if ( file_exists( 'phar://wp-cli.phar/php/wp-cli.php' ) ) {
 	define( 'WP_CLI_ROOT', 'phar://wp-cli.phar' );
 	include WP_CLI_ROOT . '/php/wp-cli.php';

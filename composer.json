@@ -41,8 +41,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "wp-cli/wp-cli-tests": "^5",
-    "cweagans/composer-patches": "^1.7"
+    "wp-cli/wp-cli-tests": "^5"
   },
   "suggest": {
     "psy/psysh": "Enhanced `wp shell` functionality"
@@ -51,8 +50,7 @@
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "johnpbloch/wordpress-core-installer": true,
-      "phpstan/extension-installer": true,
-      "cweagans/composer-patches": true
+      "phpstan/extension-installer": true
     },
     "autoloader-suffix": "WpCliBundle",
     "platform": {
@@ -64,11 +62,6 @@
   "extra": {
     "branch-alias": {
       "dev-main": "2.12.x-dev"
-    },
-    "patches": {
-      "wp-cli/wp-cli": {
-        "Fix phar_safe_path to use alias path": "patches/wp-cli-phar-safe-path.patch"
-      }
     }
   },
   "autoload-dev": {
