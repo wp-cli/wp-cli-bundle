@@ -4830,12 +4830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "505476fc68bae72df382ea2f9f7632e79d80a12f"
+                "reference": "4c37bfa716f917e4d2f8bd562b3fa6255c4cf9bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/505476fc68bae72df382ea2f9f7632e79d80a12f",
-                "reference": "505476fc68bae72df382ea2f9f7632e79d80a12f",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/4c37bfa716f917e4d2f8bd562b3fa6255c4cf9bd",
+                "reference": "4c37bfa716f917e4d2f8bd562b3fa6255c4cf9bd",
                 "shasum": ""
             },
             "require": {
