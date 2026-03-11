@@ -34,6 +34,7 @@
     "wp-cli/search-replace-command": "^2",
     "wp-cli/server-command": "^2",
     "wp-cli/shell-command": "^2",
+    "wp-cli/site-health-command": "^1",
     "wp-cli/super-admin-command": "^2",
     "wp-cli/widget-command": "^2",
     "wp-cli/wp-cli": "dev-main"
