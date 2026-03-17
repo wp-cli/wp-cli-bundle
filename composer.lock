@@ -4488,16 +4488,16 @@
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.1.9",
+            "version": "v2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "14aea81eca68effbc651d5fca4891a89c0667b2e"
+                "reference": "7adffe34203b6d37215202a98f602ab97994c941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/14aea81eca68effbc651d5fca4891a89c0667b2e",
-                "reference": "14aea81eca68effbc651d5fca4891a89c0667b2e",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/7adffe34203b6d37215202a98f602ab97994c941",
+                "reference": "7adffe34203b6d37215202a98f602ab97994c941",
                 "shasum": ""
             },
             "require": {
@@ -4542,9 +4542,9 @@
             "homepage": "https://github.com/wp-cli/search-replace-command",
             "support": {
                 "issues": "https://github.com/wp-cli/search-replace-command/issues",
-                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.1.9"
+                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.1.10"
             },
-            "time": "2025-11-11T13:31:01+00:00"
+            "time": "2026-03-16T15:19:32+00:00"
         },
         {
             "name": "wp-cli/server-command",
