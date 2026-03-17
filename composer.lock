@@ -4545,16 +4545,16 @@
         },
         {
             "name": "wp-cli/server-command",
-            "version": "v2.0.16",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/server-command.git",
-                "reference": "e0adf1e35f424bed5abfeecef13795ddd8700c98"
+                "reference": "8bf8b43b1626982a72ddbb529d116ea60560aa1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/e0adf1e35f424bed5abfeecef13795ddd8700c98",
-                "reference": "e0adf1e35f424bed5abfeecef13795ddd8700c98",
+                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/8bf8b43b1626982a72ddbb529d116ea60560aa1d",
+                "reference": "8bf8b43b1626982a72ddbb529d116ea60560aa1d",
                 "shasum": ""
             },
             "require": {
@@ -4562,6 +4562,7 @@
             },
             "require-dev": {
                 "wp-cli/entity-command": "^2",
+                "wp-cli/rewrite-command": "^2",
                 "wp-cli/wp-cli-tests": "^5"
             },
             "type": "wp-cli-package",
@@ -4597,9 +4598,9 @@
             "homepage": "https://github.com/wp-cli/server-command",
             "support": {
                 "issues": "https://github.com/wp-cli/server-command/issues",
-                "source": "https://github.com/wp-cli/server-command/tree/v2.0.16"
+                "source": "https://github.com/wp-cli/server-command/tree/v2.0.17"
             },
-            "time": "2025-11-11T13:31:02+00:00"
+            "time": "2026-03-16T15:20:25+00:00"
         },
         {
             "name": "wp-cli/shell-command",
