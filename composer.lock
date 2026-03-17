@@ -2953,20 +2953,20 @@
         },
         {
             "name": "wp-cli/config-command",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/config-command.git",
-                "reference": "a17b0459c3564903ee2b7cd05df2ee372a13ae82"
+                "reference": "71aaf21f67053e345f9c1e831b44407f7f356877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/a17b0459c3564903ee2b7cd05df2ee372a13ae82",
-                "reference": "a17b0459c3564903ee2b7cd05df2ee372a13ae82",
+                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/71aaf21f67053e345f9c1e831b44407f7f356877",
+                "reference": "71aaf21f67053e345f9c1e831b44407f7f356877",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12",
+                "wp-cli/wp-cli": "^2.13",
                 "wp-cli/wp-config-transformer": "^1.4.0"
             },
             "require-dev": {
@@ -2978,6 +2978,7 @@
                 "bundled": true,
                 "commands": [
                     "config",
+                    "config add",
                     "config edit",
                     "config delete",
                     "config create",
@@ -2987,7 +2988,8 @@
                     "config list",
                     "config path",
                     "config set",
-                    "config shuffle-salts"
+                    "config shuffle-salts",
+                    "config update"
                 ],
                 "branch-alias": {
                     "dev-main": "2.x-dev"
@@ -3021,9 +3023,9 @@
             "homepage": "https://github.com/wp-cli/config-command",
             "support": {
                 "issues": "https://github.com/wp-cli/config-command/issues",
-                "source": "https://github.com/wp-cli/config-command/tree/v2.4.0"
+                "source": "https://github.com/wp-cli/config-command/tree/v2.5.0"
             },
-            "time": "2025-11-11T13:30:41+00:00"
+            "time": "2026-03-16T15:14:08+00:00"
         },
         {
             "name": "wp-cli/core-command",
@@ -4232,16 +4234,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.12.7",
+            "version": "v0.12.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "5cc6ef2e93cfcd939813eb420ae23bc116d9be2a"
+                "reference": "9cbf9946ebe3462005b642de69ccd65753981517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/5cc6ef2e93cfcd939813eb420ae23bc116d9be2a",
-                "reference": "5cc6ef2e93cfcd939813eb420ae23bc116d9be2a",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/9cbf9946ebe3462005b642de69ccd65753981517",
+                "reference": "9cbf9946ebe3462005b642de69ccd65753981517",
                 "shasum": ""
             },
             "require": {
@@ -4289,9 +4291,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.7"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.8"
             },
-            "time": "2026-01-20T20:31:49+00:00"
+            "time": "2026-03-16T15:18:29+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
