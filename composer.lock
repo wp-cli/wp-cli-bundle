@@ -4163,22 +4163,22 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.6.1",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "17ede348446844c20da199683e96f7a3e70c5559"
+                "reference": "42d80d2e7f4c06078cf30c766e3b10002b6d0947"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/17ede348446844c20da199683e96f7a3e70c5559",
-                "reference": "17ede348446844c20da199683e96f7a3e70c5559",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/42d80d2e7f4c06078cf30c766e3b10002b6d0947",
+                "reference": "42d80d2e7f4c06078cf30c766e3b10002b6d0947",
                 "shasum": ""
             },
             "require": {
-                "composer/composer": "^2.2.25",
+                "composer/composer": "^2.9.5",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
@@ -4190,8 +4190,11 @@
                 "commands": [
                     "package",
                     "package browse",
+                    "package get",
                     "package install",
+                    "package is-installed",
                     "package list",
+                    "package path",
                     "package update",
                     "package uninstall"
                 ],
@@ -4222,9 +4225,9 @@
             "homepage": "https://github.com/wp-cli/package-command",
             "support": {
                 "issues": "https://github.com/wp-cli/package-command/issues",
-                "source": "https://github.com/wp-cli/package-command/tree/v2.6.1"
+                "source": "https://github.com/wp-cli/package-command/tree/v2.7.0"
             },
-            "time": "2025-08-25T13:32:31+00:00"
+            "time": "2026-03-16T15:18:14+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -4921,7 +4924,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-03-16T20:25:41+00:00"
+            "time": "2026-03-17T17:47:15+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
