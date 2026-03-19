@@ -49,13 +49,13 @@ jobs:
           echo "$CLI_VERSION" > cli_version.txt
 
       - name: Upload WP-CLI version
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: cli_version
           path: cli_version.txt
 
       - name: Upload manifest file
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: manifest
           path: vendor/wp-cli/wp-cli/manifest.json
@@ -64,7 +64,7 @@ jobs:
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: wp-cli-phar
           path: wp-cli.phar
@@ -137,7 +137,7 @@ jobs:
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: wp-cli-phar
 
@@ -195,7 +195,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: cli_version
 
@@ -204,12 +204,12 @@ jobs:
           cat cli_version.txt > phar/NIGHTLY_VERSION
 
       - name: Download manifest file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: manifest
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: wp-cli-phar
 
@@ -270,7 +270,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: wp-cli-phar
 
@@ -324,7 +324,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: wp-cli-phar
 
