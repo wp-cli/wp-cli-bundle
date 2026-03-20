@@ -4902,12 +4902,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "c5e537fe3ce9907f3397c43e05957090cdce00b4"
+                "reference": "c5b19214e5aedd2861a28c282fe703284b5f1ed4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/c5e537fe3ce9907f3397c43e05957090cdce00b4",
-                "reference": "c5e537fe3ce9907f3397c43e05957090cdce00b4",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/c5b19214e5aedd2861a28c282fe703284b5f1ed4",
+                "reference": "c5b19214e5aedd2861a28c282fe703284b5f1ed4",
                 "shasum": ""
             },
             "require": {
