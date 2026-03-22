@@ -176,7 +176,7 @@ Feature: WP-CLI Commands
     When I run `wp search-replace --help`
     Then STDOUT should contain:
       """
-      wp search-replace <old> <new>
+      wp search-replace [<old>] [<new>]
       """
 
     When I run `wp server --help`
