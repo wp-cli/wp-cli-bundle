@@ -3898,20 +3898,20 @@
         },
         {
             "name": "wp-cli/import-command",
-            "version": "v2.0.16",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/import-command.git",
-                "reference": "64033264b9f4b9c9a32d14e33b365a58de6f3bf6"
+                "reference": "fd71e9f326582e25e8d22a4b39d2e7734a66fe45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/64033264b9f4b9c9a32d14e33b365a58de6f3bf6",
-                "reference": "64033264b9f4b9c9a32d14e33b365a58de6f3bf6",
+                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/fd71e9f326582e25e8d22a4b39d2e7734a66fe45",
+                "reference": "fd71e9f326582e25e8d22a4b39d2e7734a66fe45",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wordpress/wordpress-importer": "^0.9",
@@ -3953,9 +3953,9 @@
             "homepage": "https://github.com/wp-cli/import-command",
             "support": {
                 "issues": "https://github.com/wp-cli/import-command/issues",
-                "source": "https://github.com/wp-cli/import-command/tree/v2.0.16"
+                "source": "https://github.com/wp-cli/import-command/tree/v2.0.17"
             },
-            "time": "2026-03-16T15:17:43+00:00"
+            "time": "2026-03-21T11:16:40+00:00"
         },
         {
             "name": "wp-cli/language-command",
