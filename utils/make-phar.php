@@ -41,6 +41,9 @@ define( 'BUILD', isset( $runtime_config['build'] ) ? $runtime_config['build'] : 
 $current_version = trim( (string) file_get_contents( WP_CLI_ROOT . '/VERSION' ) );
 
 if ( isset( $runtime_config['version'] ) ) {
+	/**
+	 * @var string $new_version
+	 */
 	$new_version = $runtime_config['version'];
 	$new_version = Utils\increment_version( $current_version, $new_version );
 

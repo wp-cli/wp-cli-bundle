@@ -35,9 +35,7 @@ jobs:
 
       - name: Check existence of composer.json file
         id: check_composer_file
-        uses: andstor/file-existence-action@v3
-        with:
-          files: "composer.json"
+        run: echo "files_exists=$(test -f composer.json && echo true || echo false)" >> "$GITHUB_OUTPUT"
 
       - name: Install Composer dependencies & cache dependencies
         if: steps.check_composer_file.outputs.files_exists == 'true'
