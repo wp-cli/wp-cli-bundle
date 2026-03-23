@@ -2680,7 +2680,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-03-21T06:59:18+00:00"
+            "time": "2026-03-23T13:04:16+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -9508,16 +9508,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.1.1",
+            "version": "v5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "9c1aa9bcf24a811832565e89cbca6e6e8b002d2a"
+                "reference": "df637ac061f82478b0d736e400ba218a560ae3d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/9c1aa9bcf24a811832565e89cbca6e6e8b002d2a",
-                "reference": "9c1aa9bcf24a811832565e89cbca6e6e8b002d2a",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/df637ac061f82478b0d736e400ba218a560ae3d3",
+                "reference": "df637ac061f82478b0d736e400ba218a560ae3d3",
                 "shasum": ""
             },
             "require": {
@@ -9597,7 +9597,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-03-20T07:33:50+00:00"
+            "time": "2026-03-23T13:36:25+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9605,12 +9605,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "e0ebae2dba5fedac3460704a370122cb80051c61"
+                "reference": "12b5637ff685a8556f4b70fead3556905bd13242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/e0ebae2dba5fedac3460704a370122cb80051c61",
-                "reference": "e0ebae2dba5fedac3460704a370122cb80051c61",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/12b5637ff685a8556f4b70fead3556905bd13242",
+                "reference": "12b5637ff685a8556f4b70fead3556905bd13242",
                 "shasum": ""
             },
             "require": {
@@ -9664,7 +9664,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-03-19T13:51:22+00:00"
+            "time": "2026-03-21T00:13:40+00:00"
         },
         {
             "name": "yoast/phpunit-polyfills",
