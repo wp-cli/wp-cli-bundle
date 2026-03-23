@@ -27,7 +27,6 @@
     "wp-cli/language-command": "^2",
     "wp-cli/maintenance-mode-command": "^2",
     "wp-cli/media-command": "^2",
-    "wp-cli/package-command": "^2.1",
     "wp-cli/rewrite-command": "^2",
     "wp-cli/role-command": "^2",
     "wp-cli/scaffold-command": "^2",
@@ -41,10 +40,12 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
+    "wp-cli/package-command": "^2.1",
     "wp-cli/wp-cli-tests": "^5"
   },
   "suggest": {
-    "psy/psysh": "Enhanced `wp shell` functionality"
+    "psy/psysh": "Enhanced `wp shell` functionality",
+    "wp-cli/package-command": "Manage WP-CLI packages (included in Phar builds, needed for package management when using Composer-based installation)"
   },
   "config": {
     "allow-plugins": {
