@@ -3,8 +3,8 @@
 # Package wp-cli to be installed in Debian-compatible systems.
 # Only the phar file is included.
 #
-# VERSION       :0.2.5
-# DATE          :2023-07-22
+# VERSION       :0.2.6
+# DATE          :2023-11-10
 # AUTHOR        :Viktor Szépe <viktor@szepe.net>
 # LICENSE       :The MIT License (MIT)
 # URL           :https://github.com/wp-cli/wp-cli/tree/main/utils
@@ -31,8 +31,8 @@ Architecture: all
 Maintainer: Alain Schlesser <alain.schlesser@gmail.com>
 Section: php
 Priority: optional
-Depends: php5-cli (>= 5.6) | php-cli | php7-cli, php5-mysql | php5-mysqlnd | php7.0-mysql | php7.1-mysql | php7.2-mysql | php7.3-mysql | php7.4-mysql | php8.0-mysql | php8.1-mysql | php8.2-mysql | php-mysql, mysql-client | mariadb-client
-Homepage: http://wp-cli.org/
+Depends: php-cli | php5-cli (>= 5.6), php-mysql | php-mysqlnd | php5-mysql, default-mysql-client | virtual-mysql-client
+Homepage: https://wp-cli.org/
 Description: wp-cli is a set of command-line tools for managing
  WordPress installations. You can update plugins, set up multisite
  installations and much more, without using a web browser.
@@ -89,6 +89,15 @@ echo "Current version: ${WPCLI_VER}"
 # update version
 sed -i -e "s/^Version: .*$/Version: ${WPCLI_VER}/" DEBIAN/control || die 6 "Version update failure"
 
+# Lintian overrides (delete this stanza for WP-CLI release that bumps PHP minimum)
+if ! [ -r usr/share/lintian/overrides/php-wpcli ]; then
+    mkdir -p usr/share/lintian/overrides
+    cat > usr/share/lintian/overrides/php-wpcli <<EOF
+# Support PHP 5.6 while WP-CLI does so
+php-wpcli: php-script-but-no-php-cli-dep php (does not satisfy php-cli:any) [usr/bin/wp]
+EOF
+fi
+
 # minimal man page
 if ! [ -r usr/share/man/man1/wp.1.gz ]; then
     mkdir -p usr/share/man/man1 &> /dev/null
@@ -116,4 +125,4 @@ lintian --display-info --display-experimental --pedantic --show-overrides php-wp
 # optional steps
 echo "sign it:               dpkg-sig -k SIGNING-KEY -s builder \"${WPCLI_PKG}\""
 echo "include in your repo:  pushd /var/www/REPO-DIR"
-echo "                       reprepro includedeb jessie \"${WPCLI_PKG}\" && popd"
+echo "                       reprepro includedeb bookworm \"${WPCLI_PKG}\" && popd"
