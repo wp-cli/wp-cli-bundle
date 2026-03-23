@@ -21,10 +21,10 @@ jobs:
       - name: Set up PHP environment
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: 'latest'
           extensions: mysql, zip, imagick
           coverage: none
-          tools: composer:2.2
+          tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
