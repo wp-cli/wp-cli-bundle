@@ -510,12 +510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/ai-command.git",
-                "reference": "4c852eb89e78a815c4e2ac13ac09d71b27e012e9"
+                "reference": "46c0ed1e238cf0aa90966a92f6f4fe153172cc36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/ai-command/zipball/4c852eb89e78a815c4e2ac13ac09d71b27e012e9",
-                "reference": "4c852eb89e78a815c4e2ac13ac09d71b27e012e9",
+                "url": "https://api.github.com/repos/wp-cli/ai-command/zipball/46c0ed1e238cf0aa90966a92f6f4fe153172cc36",
+                "reference": "46c0ed1e238cf0aa90966a92f6f4fe153172cc36",
                 "shasum": ""
             },
             "require": {
@@ -529,7 +529,7 @@
             "default-branch": true,
             "type": "wp-cli-package",
             "extra": {
-                "bundled": false,
+                "bundled": true,
                 "commands": [
                     "ai",
                     "ai check",
@@ -561,7 +561,7 @@
                 "issues": "https://github.com/wp-cli/ai-command/issues",
                 "source": "https://github.com/wp-cli/ai-command/tree/main"
             },
-            "time": "2026-03-26T15:42:29+00:00"
+            "time": "2026-03-26T15:55:52+00:00"
         },
         {
             "name": "wp-cli/block-command",
