@@ -2167,23 +2167,23 @@
         },
         {
             "name": "wp-cli/role-command",
-            "version": "v2.0.16",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/role-command.git",
-                "reference": "ed57fb5436b4d47954b07e56c734d19deb4fc491"
+                "reference": "b9b3a9191899d423608d5e7274290aca220f646a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/ed57fb5436b4d47954b07e56c734d19deb4fc491",
-                "reference": "ed57fb5436b4d47954b07e56c734d19deb4fc491",
+                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/b9b3a9191899d423608d5e7274290aca220f646a",
+                "reference": "b9b3a9191899d423608d5e7274290aca220f646a",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^4"
+                "wp-cli/wp-cli-tests": "^5"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2227,9 +2227,9 @@
             "homepage": "https://github.com/wp-cli/role-command",
             "support": {
                 "issues": "https://github.com/wp-cli/role-command/issues",
-                "source": "https://github.com/wp-cli/role-command/tree/v2.0.16"
+                "source": "https://github.com/wp-cli/role-command/tree/v2.0.17"
             },
-            "time": "2025-04-02T12:24:15+00:00"
+            "time": "2026-03-25T10:03:06+00:00"
         },
         {
             "name": "wp-cli/scaffold-command",
