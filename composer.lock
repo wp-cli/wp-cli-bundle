@@ -2589,20 +2589,20 @@
         },
         {
             "name": "wp-cli/widget-command",
-            "version": "v2.2.1",
+            "version": "v2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/widget-command.git",
-                "reference": "d5faa8f5b47828b2c103e9411fb52d4a63b53b99"
+                "reference": "8aa9d83b95f626306fa15e570f8852066f17d881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/d5faa8f5b47828b2c103e9411fb52d4a63b53b99",
-                "reference": "d5faa8f5b47828b2c103e9411fb52d4a63b53b99",
+                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/8aa9d83b95f626306fa15e570f8852066f17d881",
+                "reference": "8aa9d83b95f626306fa15e570f8852066f17d881",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
@@ -2653,9 +2653,9 @@
             "homepage": "https://github.com/wp-cli/widget-command",
             "support": {
                 "issues": "https://github.com/wp-cli/widget-command/issues",
-                "source": "https://github.com/wp-cli/widget-command/tree/v2.2.1"
+                "source": "https://github.com/wp-cli/widget-command/tree/v2.2.2"
             },
-            "time": "2026-03-17T12:28:44+00:00"
+            "time": "2026-03-25T10:38:31+00:00"
         },
         {
             "name": "wp-cli/wp-cli",
@@ -2739,7 +2739,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-03-26T19:53:38+00:00"
+            "time": "2026-03-26T20:07:13+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
