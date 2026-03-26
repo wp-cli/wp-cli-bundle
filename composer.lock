@@ -2663,12 +2663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "1045989fb0af8178a0a2b08208397a15e50bee61"
+                "reference": "ffb83f53073eb6f4fe784384dc04cf0b97eee5de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/1045989fb0af8178a0a2b08208397a15e50bee61",
-                "reference": "1045989fb0af8178a0a2b08208397a15e50bee61",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/ffb83f53073eb6f4fe784384dc04cf0b97eee5de",
+                "reference": "ffb83f53073eb6f4fe784384dc04cf0b97eee5de",
                 "shasum": ""
             },
             "require": {
