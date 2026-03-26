@@ -16,10 +16,10 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Set up PHP environment
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
         with:
           php-version: 'latest'
           extensions: mysql, zip, imagick
@@ -107,7 +107,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Install Ghostscript
         run: |
@@ -115,7 +115,7 @@ jobs:
           sudo apt-get install ghostscript -y
 
       - name: Set up PHP environment
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
         with:
           php-version: '${{ matrix.php }}'
           extensions: imagick, mysql, zip
@@ -189,7 +189,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
@@ -264,7 +264,7 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
@@ -318,7 +318,7 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
