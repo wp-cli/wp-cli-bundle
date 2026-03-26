@@ -46,49 +46,17 @@ jobs:
           # Bust the cache at least once a month - output format: YYYY-MM.
           custom-cache-suffix: $(date -u "+%Y-%m")
 
-      - name: Configure git user
-        run: |
-          git config --global user.email "info@wp-cli.org"
-          git config --global user.name "wp-make-coffee"
-
-      - name: Check if remote branch exists
-        run: echo "REMOTE_BRANCH_EXISTS=$([[ -z $(git ls-remote --heads origin update-framework) ]] && echo "0" || echo "1")" >> $GITHUB_ENV
-
-      - name: Create branch to base pull request on
-        if: env.REMOTE_BRANCH_EXISTS == 0
-        run: |
-          git checkout -b update-framework
-
-      - name: Fetch existing branch to add commits to
-        if: env.REMOTE_BRANCH_EXISTS == 1
-        run: |
-          git fetch --all --prune
-          git checkout update-framework
-          git pull --no-rebase
-
       - name: Update wp-cli framework
         run: |
           composer update wp-cli/wp-cli --with-all-dependencies
 
-      - name: Check if there are changes
-        run: echo "CHANGES_DETECTED=$([[ -z $(git status --porcelain) ]] && echo "0" || echo "1")" >> $GITHUB_ENV
-
-      - name: Commit changes
-        if: env.CHANGES_DETECTED == 1
-        run: |
-          git add composer.lock
-          git commit -m "Update wp-cli framework - $(date +'%Y-%m-%d')"
-          git push origin update-framework
-
       - name: Create pull request
-        if: |
-          env.CHANGES_DETECTED == 1 &&
-          env.REMOTE_BRANCH_EXISTS == 0
-        uses: repo-sync/pull-request@v2
+        uses: peter-evans/create-pull-request@v7
         with:
-          source_branch: update-framework
-          destination_branch: ${{ github.event.repository.default_branch }}
-          github_token: ${{ secrets.ACTIONS_BOT }}
-          pr_title: Update wp-cli framework
-          pr_body: "**This is an automated pull-request**\n\nUpdates the `wp-cli/wp-cli` framework to the latest changeset."
-          pr_label: scope:framework
+          branch: update-framework
+          base: ${{ github.event.repository.default_branch }}
+          token: ${{ secrets.ACTIONS_BOT }}
+          title: Update wp-cli framework
+          body: "**This is an automated pull-request**\n\nUpdates the `wp-cli/wp-cli` framework to the latest changeset."
+          labels: scope:framework
+          commit-message: "Update wp-cli framework"
