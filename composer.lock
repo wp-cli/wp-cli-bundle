@@ -1138,16 +1138,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.8.7",
+            "version": "v2.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "0dea7320703d64f78a1b83541ad02124351c9c91"
+                "reference": "2b1e37a1505bceaf656314be8095bfce56047426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/0dea7320703d64f78a1b83541ad02124351c9c91",
-                "reference": "0dea7320703d64f78a1b83541ad02124351c9c91",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/2b1e37a1505bceaf656314be8095bfce56047426",
+                "reference": "2b1e37a1505bceaf656314be8095bfce56047426",
                 "shasum": ""
             },
             "require": {
@@ -1419,9 +1419,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.7"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.8"
             },
-            "time": "2026-03-21T14:16:41+00:00"
+            "time": "2026-03-26T19:53:09+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -2739,7 +2739,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-03-26T19:53:38+00:00"
+            "time": "2026-03-26T20:07:13+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
