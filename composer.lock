@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3332b40c92fac5145a168cb2f033b685",
+    "content-hash": "c2c06eaebfeb4c1884f044c795b98d19",
     "packages": [
         {
             "name": "composer/semver",
@@ -503,6 +503,65 @@
                 "source": "https://github.com/wp-cli/ability-command/tree/v1.0.0"
             },
             "time": "2026-03-16T15:12:42+00:00"
+        },
+        {
+            "name": "wp-cli/ai-command",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/ai-command.git",
+                "reference": "628b38fc8a70cdae712da4e0a0dac9a936c240ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/ai-command/zipball/628b38fc8a70cdae712da4e0a0dac9a936c240ae",
+                "reference": "628b38fc8a70cdae712da4e0a0dac9a936c240ae",
+                "shasum": ""
+            },
+            "require": {
+                "wp-cli/wp-cli": "^2.13"
+            },
+            "require-dev": {
+                "wp-cli/entity-command": "^2",
+                "wp-cli/extension-command": "^2",
+                "wp-cli/wp-cli-tests": "^5"
+            },
+            "default-branch": true,
+            "type": "wp-cli-package",
+            "extra": {
+                "bundled": true,
+                "commands": [
+                    "ai",
+                    "ai check",
+                    "ai generate",
+                    "ai status",
+                    "connectors",
+                    "connectors get",
+                    "connectors list"
+                ],
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "ai-command.php"
+                ],
+                "psr-4": {
+                    "WP_CLI\\AI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Interacts with the WordPress AI Client",
+            "homepage": "https://github.com/wp-cli/ai-command",
+            "support": {
+                "issues": "https://github.com/wp-cli/ai-command/issues",
+                "source": "https://github.com/wp-cli/ai-command/tree/main"
+            },
+            "time": "2026-03-26T16:48:05+00:00"
         },
         {
             "name": "wp-cli/block-command",
