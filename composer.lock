@@ -1868,23 +1868,23 @@
         },
         {
             "name": "wp-cli/maintenance-mode-command",
-            "version": "v2.1.3",
+            "version": "v2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/maintenance-mode-command.git",
-                "reference": "b947e094e00b7b68c6376ec9bd03303515864062"
+                "reference": "d769c19ecbfe4e731649876105f8a11c90294aa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/b947e094e00b7b68c6376ec9bd03303515864062",
-                "reference": "b947e094e00b7b68c6376ec9bd03303515864062",
+                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/d769c19ecbfe4e731649876105f8a11c90294aa3",
+                "reference": "d769c19ecbfe4e731649876105f8a11c90294aa3",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^4"
+                "wp-cli/wp-cli-tests": "^5"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -1923,9 +1923,9 @@
             "homepage": "https://github.com/wp-cli/maintenance-mode-command",
             "support": {
                 "issues": "https://github.com/wp-cli/maintenance-mode-command/issues",
-                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.1.3"
+                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.1.4"
             },
-            "time": "2024-11-24T17:26:30+00:00"
+            "time": "2026-03-28T12:03:12+00:00"
         },
         {
             "name": "wp-cli/media-command",
