@@ -2106,16 +2106,16 @@
         },
         {
             "name": "wp-cli/rewrite-command",
-            "version": "v2.0.17",
+            "version": "v2.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/rewrite-command.git",
-                "reference": "74c8f12fccce7f2bac04fa363ebcf452494c7afc"
+                "reference": "d473ebff594913b9b4866d3545a475d9e41edb44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/rewrite-command/zipball/74c8f12fccce7f2bac04fa363ebcf452494c7afc",
-                "reference": "74c8f12fccce7f2bac04fa363ebcf452494c7afc",
+                "url": "https://api.github.com/repos/wp-cli/rewrite-command/zipball/d473ebff594913b9b4866d3545a475d9e41edb44",
+                "reference": "d473ebff594913b9b4866d3545a475d9e41edb44",
                 "shasum": ""
             },
             "require": {
@@ -2161,9 +2161,9 @@
             "homepage": "https://github.com/wp-cli/rewrite-command",
             "support": {
                 "issues": "https://github.com/wp-cli/rewrite-command/issues",
-                "source": "https://github.com/wp-cli/rewrite-command/tree/v2.0.17"
+                "source": "https://github.com/wp-cli/rewrite-command/tree/v2.0.18"
             },
-            "time": "2026-02-15T11:56:30+00:00"
+            "time": "2026-03-28T15:28:03+00:00"
         },
         {
             "name": "wp-cli/role-command",
