@@ -1425,20 +1425,20 @@
         },
         {
             "name": "wp-cli/eval-command",
-            "version": "v2.2.9",
+            "version": "v2.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/eval-command.git",
-                "reference": "827c7208c74ebd6ab81c6051f515381d4f276e32"
+                "reference": "b542cd39289f466efd95ef863476198e992e3686"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/827c7208c74ebd6ab81c6051f515381d4f276e32",
-                "reference": "827c7208c74ebd6ab81c6051f515381d4f276e32",
+                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/b542cd39289f466efd95ef863476198e992e3686",
+                "reference": "b542cd39289f466efd95ef863476198e992e3686",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wp-cli/wp-cli-tests": "^5"
@@ -1477,9 +1477,9 @@
             "homepage": "https://github.com/wp-cli/eval-command",
             "support": {
                 "issues": "https://github.com/wp-cli/eval-command/issues",
-                "source": "https://github.com/wp-cli/eval-command/tree/v2.2.9"
+                "source": "https://github.com/wp-cli/eval-command/tree/v2.2.10"
             },
-            "time": "2026-03-18T09:03:46+00:00"
+            "time": "2026-03-28T12:10:22+00:00"
         },
         {
             "name": "wp-cli/export-command",
