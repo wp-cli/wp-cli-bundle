@@ -565,16 +565,16 @@
         },
         {
             "name": "wp-cli/block-command",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/block-command.git",
-                "reference": "d24c43eb8dda8b7797c9abf7feef6c8992e80e62"
+                "reference": "259b8da86f84a386e262189be3f4b912183f563d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/block-command/zipball/d24c43eb8dda8b7797c9abf7feef6c8992e80e62",
-                "reference": "d24c43eb8dda8b7797c9abf7feef6c8992e80e62",
+                "url": "https://api.github.com/repos/wp-cli/block-command/zipball/259b8da86f84a386e262189be3f4b912183f563d",
+                "reference": "259b8da86f84a386e262189be3f4b912183f563d",
                 "shasum": ""
             },
             "require": {
@@ -636,9 +636,9 @@
             "homepage": "https://github.com/wp-cli/block-command",
             "support": {
                 "issues": "https://github.com/wp-cli/block-command/issues",
-                "source": "https://github.com/wp-cli/block-command/tree/v1.0.0"
+                "source": "https://github.com/wp-cli/block-command/tree/v1.0.1"
             },
-            "time": "2026-03-16T15:13:33+00:00"
+            "time": "2026-03-28T12:09:20+00:00"
         },
         {
             "name": "wp-cli/cache-command",
