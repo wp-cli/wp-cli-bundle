@@ -2043,16 +2043,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.12.8",
+            "version": "v0.12.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "9cbf9946ebe3462005b642de69ccd65753981517"
+                "reference": "c3d25138ce46a66647ec0dc9b17bf300338494aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/9cbf9946ebe3462005b642de69ccd65753981517",
-                "reference": "9cbf9946ebe3462005b642de69ccd65753981517",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/c3d25138ce46a66647ec0dc9b17bf300338494aa",
+                "reference": "c3d25138ce46a66647ec0dc9b17bf300338494aa",
                 "shasum": ""
             },
             "require": {
@@ -2100,9 +2100,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.8"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.9"
             },
-            "time": "2026-03-16T15:18:29+00:00"
+            "time": "2026-03-29T11:12:54+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2359,16 +2359,16 @@
         },
         {
             "name": "wp-cli/server-command",
-            "version": "v2.0.17",
+            "version": "v2.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/server-command.git",
-                "reference": "8bf8b43b1626982a72ddbb529d116ea60560aa1d"
+                "reference": "4e1cce5783c49b1410f97b0d1daa3c7429cc68a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/8bf8b43b1626982a72ddbb529d116ea60560aa1d",
-                "reference": "8bf8b43b1626982a72ddbb529d116ea60560aa1d",
+                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/4e1cce5783c49b1410f97b0d1daa3c7429cc68a4",
+                "reference": "4e1cce5783c49b1410f97b0d1daa3c7429cc68a4",
                 "shasum": ""
             },
             "require": {
@@ -2412,9 +2412,9 @@
             "homepage": "https://github.com/wp-cli/server-command",
             "support": {
                 "issues": "https://github.com/wp-cli/server-command/issues",
-                "source": "https://github.com/wp-cli/server-command/tree/v2.0.17"
+                "source": "https://github.com/wp-cli/server-command/tree/v2.0.18"
             },
-            "time": "2026-03-16T15:20:25+00:00"
+            "time": "2026-03-28T11:47:39+00:00"
         },
         {
             "name": "wp-cli/shell-command",
