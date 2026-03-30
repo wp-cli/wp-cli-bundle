@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2c06eaebfeb4c1884f044c795b98d19",
+    "content-hash": "728ec5abdbb5bb5359e5c224d46a80c1",
     "packages": [
         {
             "name": "composer/semver",
@@ -9567,16 +9567,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.1.6",
+            "version": "dev-try/windows-logging",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "af27f7a8e7627ebbad4a42555138ac2b98ac5d4e"
+                "reference": "4da0cd2c9a0f3c40afc7533c756c114198fdbd97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/af27f7a8e7627ebbad4a42555138ac2b98ac5d4e",
-                "reference": "af27f7a8e7627ebbad4a42555138ac2b98ac5d4e",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/4da0cd2c9a0f3c40afc7533c756c114198fdbd97",
+                "reference": "4da0cd2c9a0f3c40afc7533c756c114198fdbd97",
                 "shasum": ""
             },
             "require": {
@@ -9656,7 +9656,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-03-25T20:11:12+00:00"
+            "time": "2026-03-30T14:57:51+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9793,7 +9793,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "wp-cli/wp-cli-tests": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

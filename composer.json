@@ -42,7 +42,7 @@
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "wp-cli/package-command": "^2.1",
-    "wp-cli/wp-cli-tests": "^5"
+    "wp-cli/wp-cli-tests": "dev-try/windows-logging#4da0cd2c9a0f3c40afc7533c756c114198fdbd97"
   },
   "suggest": {
     "psy/psysh": "Enhanced `wp shell` functionality",
