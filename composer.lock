@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f7cfbfd23bec2b9f02ec2c4b2f8e28d",
+    "content-hash": "c2c06eaebfeb4c1884f044c795b98d19",
     "packages": [
         {
             "name": "composer/semver",
@@ -2659,16 +2659,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-try/os",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "575fa2140ca2b0d0222a70c69df7c90ef5077e0e"
+                "reference": "71de10fbf84c88cfe550f9f4c0664bad3f03796c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/575fa2140ca2b0d0222a70c69df7c90ef5077e0e",
-                "reference": "575fa2140ca2b0d0222a70c69df7c90ef5077e0e",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/71de10fbf84c88cfe550f9f4c0664bad3f03796c",
+                "reference": "71de10fbf84c88cfe550f9f4c0664bad3f03796c",
                 "shasum": ""
             },
             "require": {
@@ -2684,13 +2684,14 @@
                 "wp-cli/entity-command": "^2",
                 "wp-cli/extension-command": "^2",
                 "wp-cli/package-command": "^2",
-                "wp-cli/wp-cli-tests": "dev-try/windows-logging"
+                "wp-cli/wp-cli-tests": "^5"
             },
             "suggest": {
                 "ext-curl": "For better performance when making HTTP requests",
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
+            "default-branch": true,
             "bin": [
                 "bin/wp",
                 "bin/wp.bat"
@@ -2738,7 +2739,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-03-31T11:51:59+00:00"
+            "time": "2026-03-27T12:10:55+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -9566,16 +9567,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "dev-try/windows-logging",
+            "version": "v5.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "149885daf2e4d0169d6e50151786f5b72afa1c29"
+                "reference": "af27f7a8e7627ebbad4a42555138ac2b98ac5d4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/149885daf2e4d0169d6e50151786f5b72afa1c29",
-                "reference": "149885daf2e4d0169d6e50151786f5b72afa1c29",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/af27f7a8e7627ebbad4a42555138ac2b98ac5d4e",
+                "reference": "af27f7a8e7627ebbad4a42555138ac2b98ac5d4e",
                 "shasum": ""
             },
             "require": {
@@ -9655,7 +9656,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-03-31T10:29:36+00:00"
+            "time": "2026-03-25T20:11:12+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9788,19 +9789,11 @@
             "time": "2025-02-09T18:58:54+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "wp-cli/wp-cli",
-            "version": "dev-try/os",
-            "alias": "2.13",
-            "alias_normalized": "2.13.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20,
-        "wp-cli/wp-cli-tests": 20
+        "wp-cli/wp-cli": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
