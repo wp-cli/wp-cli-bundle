@@ -928,16 +928,16 @@
         },
         {
             "name": "wp-cli/cron-command",
-            "version": "v2.3.7",
+            "version": "v2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cron-command.git",
-                "reference": "d0075facebcfe0aefa8d6d3092201965b078594d"
+                "reference": "16e84a3f7d41ddab1e881d14014e655aa305b00c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/d0075facebcfe0aefa8d6d3092201965b078594d",
-                "reference": "d0075facebcfe0aefa8d6d3092201965b078594d",
+                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/16e84a3f7d41ddab1e881d14014e655aa305b00c",
+                "reference": "16e84a3f7d41ddab1e881d14014e655aa305b00c",
                 "shasum": ""
             },
             "require": {
@@ -991,9 +991,9 @@
             "homepage": "https://github.com/wp-cli/cron-command",
             "support": {
                 "issues": "https://github.com/wp-cli/cron-command/issues",
-                "source": "https://github.com/wp-cli/cron-command/tree/v2.3.7"
+                "source": "https://github.com/wp-cli/cron-command/tree/v2.3.8"
             },
-            "time": "2026-03-28T11:39:08+00:00"
+            "time": "2026-04-01T14:55:37+00:00"
         },
         {
             "name": "wp-cli/db-command",
