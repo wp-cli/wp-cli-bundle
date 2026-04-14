@@ -752,6 +752,8 @@ Feature: WP-CLI Commands
       honked
       """
 
+  # No trailing spaces on Windows.
+  @skip-windows
   Scenario: Register a longdesc for a given command
     Given an empty directory
     And a custom-cmd.php file:

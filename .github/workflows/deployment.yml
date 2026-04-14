@@ -16,20 +16,20 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Set up PHP environment
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
         with:
-          php-version: '7.4'
+          php-version: 'latest'
           extensions: mysql, zip, imagick
           coverage: none
-          tools: composer:2.2
+          tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Composer dependencies & cache dependencies
-        uses: "ramsey/composer-install@v3"
+        uses: ramsey/composer-install@65e4f84970763564f46a70b8a54b90d033b3bdda # v4
         env:
           COMPOSER_ROOT_VERSION: 'dev-main'
         with:
@@ -49,13 +49,13 @@ jobs:
           echo "$CLI_VERSION" > cli_version.txt
 
       - name: Upload WP-CLI version
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: cli_version
           path: cli_version.txt
 
       - name: Upload manifest file
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: manifest
           path: vendor/wp-cli/wp-cli/manifest.json
@@ -64,7 +64,7 @@ jobs:
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: wp-cli-phar
           path: wp-cli.phar
@@ -107,7 +107,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Install Ghostscript
         run: |
@@ -115,7 +115,7 @@ jobs:
           sudo apt-get install ghostscript -y
 
       - name: Set up PHP environment
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
         with:
           php-version: '${{ matrix.php }}'
           extensions: imagick, mysql, zip
@@ -125,7 +125,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Composer dependencies & cache dependencies
-        uses: "ramsey/composer-install@v3"
+        uses: ramsey/composer-install@65e4f84970763564f46a70b8a54b90d033b3bdda # v4
         env:
           COMPOSER_ROOT_VERSION: 'dev-main'
         with:
@@ -149,7 +149,7 @@ jobs:
 
       - name: Setup MySQL Server
         id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@v1
+        uses: shogo82148/actions-setup-mysql@840178c12b07a58353c6312be784c23b63756eea # v1
         with:
           mysql-version: ${{ matrix.mysql }}
           auto-start: true
@@ -189,7 +189,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
@@ -264,7 +264,7 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
@@ -318,7 +318,7 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
