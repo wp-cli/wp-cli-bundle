@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2c06eaebfeb4c1884f044c795b98d19",
+    "content-hash": "93b1c074cda6e66d95df0980c27025c0",
     "packages": [
         {
             "name": "composer/semver",
@@ -2661,16 +2661,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "dev-main",
+            "version": "dev-fix/harden-update",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "13ae7ab75f4baa2f593a4a029dc3979646495430"
+                "reference": "0fe2e0ec14f94aba9409d7d3d7a3e8a185c10742"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/13ae7ab75f4baa2f593a4a029dc3979646495430",
-                "reference": "13ae7ab75f4baa2f593a4a029dc3979646495430",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0fe2e0ec14f94aba9409d7d3d7a3e8a185c10742",
+                "reference": "0fe2e0ec14f94aba9409d7d3d7a3e8a185c10742",
                 "shasum": ""
             },
             "require": {
@@ -2693,7 +2693,6 @@
                 "ext-readline": "Include for a better --prompt implementation",
                 "ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
             },
-            "default-branch": true,
             "bin": [
                 "bin/wp",
                 "bin/wp.bat"
@@ -2741,7 +2740,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-04-14T18:25:32+00:00"
+            "time": "2026-04-15T12:33:46+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -9787,7 +9786,14 @@
             "time": "2025-02-09T18:58:54+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "wp-cli/wp-cli",
+            "version": "dev-fix/harden-update",
+            "alias": "2.13.0",
+            "alias_normalized": "2.13.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,

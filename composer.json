@@ -37,7 +37,7 @@
     "wp-cli/site-health-command": "^1",
     "wp-cli/super-admin-command": "^2",
     "wp-cli/widget-command": "^2",
-    "wp-cli/wp-cli": "dev-main"
+    "wp-cli/wp-cli": "dev-fix/harden-update as 2.13.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
