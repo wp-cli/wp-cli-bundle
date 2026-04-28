@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Check out source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Set up PHP environment
         uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
@@ -68,13 +70,8 @@ jobs:
             git add composer.json composer.lock
             git commit -m "Update wp-cli framework"
 
-            
-            # Configure git to use the GH_TOKEN for authentication
-            git config --local credential.helper ""
-            git config --local credential.https://github.com/.helper "!f() { echo username=x-access-token; echo password=\${GH_TOKEN}; }; f"
-            
             git push -f origin update-framework
-            
+
             PR_NUMBER=$(gh pr list --head update-framework --json number --jq '.[0].number // empty')
             if [ -z "$PR_NUMBER" ]; then
               gh pr create \
