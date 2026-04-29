@@ -15,6 +15,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
 
@@ -25,6 +28,8 @@ jobs:
     steps:
       - name: Check out source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Set up PHP environment
         uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
@@ -50,13 +55,36 @@ jobs:
         run: |
           composer update wp-cli/wp-cli --with-all-dependencies
 
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
-        with:
-          branch: update-framework
-          base: ${{ github.event.repository.default_branch }}
-          token: ${{ secrets.ACTIONS_BOT }}
-          title: Update wp-cli framework
-          body: "**This is an automated pull-request**\n\nUpdates the `wp-cli/wp-cli` framework to the latest changeset."
-          labels: scope:framework
-          commit-message: "Update wp-cli framework"
+      - name: Commit and Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_BOT }}
+          PR_BODY: |
+            **This is an automated pull-request**
+
+            Updates the `wp-cli/wp-cli` framework to the latest changeset.
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git checkout -b update-framework
+            git add composer.json composer.lock
+            git commit -m "Update wp-cli framework"
+
+            git push -f origin update-framework
+
+            PR_NUMBER=$(gh pr list --head update-framework --json number --jq '.[0].number // empty')
+            if [ -z "$PR_NUMBER" ]; then
+              gh pr create \
+                --title "Update wp-cli framework" \
+                --body "$PR_BODY" \
+                --label "scope:framework" \
+                --base "${{ github.event.repository.default_branch }}" \
+                --head "update-framework"
+            else
+              gh pr edit "$PR_NUMBER" \
+                --title "Update wp-cli framework" \
+                --body "$PR_BODY" \
+                --add-label "scope:framework" \
+                --base "${{ github.event.repository.default_branch }}"
+            fi
+          fi
