@@ -348,16 +348,16 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "176b6b21d68516dd5107a63ab71b0050e518b7a4"
+                "reference": "f1853266937492dce75e63fb071cd844aa7d4089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/176b6b21d68516dd5107a63ab71b0050e518b7a4",
-                "reference": "176b6b21d68516dd5107a63ab71b0050e518b7a4",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/f1853266937492dce75e63fb071cd844aa7d4089",
+                "reference": "f1853266937492dce75e63fb071cd844aa7d4089",
                 "shasum": ""
             },
             "require": {
@@ -395,9 +395,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
-                "source": "https://github.com/bobthecow/mustache.php/tree/v3.0.0"
+                "source": "https://github.com/bobthecow/mustache.php/tree/v3.1.0"
             },
-            "time": "2025-06-28T18:28:20+00:00"
+            "time": "2026-04-30T18:25:37+00:00"
         },
         {
             "name": "nb/oxymel",
