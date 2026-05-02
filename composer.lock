@@ -2420,16 +2420,16 @@
         },
         {
             "name": "wp-cli/shell-command",
-            "version": "v2.0.17",
+            "version": "v2.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/shell-command.git",
-                "reference": "35a3715fb723276f62606266d6141c4fc878206c"
+                "reference": "ebe2608705ea1a3d6dc726b5e91cd847c93f91ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/35a3715fb723276f62606266d6141c4fc878206c",
-                "reference": "35a3715fb723276f62606266d6141c4fc878206c",
+                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/ebe2608705ea1a3d6dc726b5e91cd847c93f91ea",
+                "reference": "ebe2608705ea1a3d6dc726b5e91cd847c93f91ea",
                 "shasum": ""
             },
             "require": {
@@ -2471,9 +2471,9 @@
             "homepage": "https://github.com/wp-cli/shell-command",
             "support": {
                 "issues": "https://github.com/wp-cli/shell-command/issues",
-                "source": "https://github.com/wp-cli/shell-command/tree/v2.0.17"
+                "source": "https://github.com/wp-cli/shell-command/tree/v2.0.18"
             },
-            "time": "2026-03-17T11:28:48+00:00"
+            "time": "2026-05-02T18:21:20+00:00"
         },
         {
             "name": "wp-cli/site-health-command",
