@@ -1483,21 +1483,21 @@
         },
         {
             "name": "wp-cli/export-command",
-            "version": "v2.1.16",
+            "version": "v2.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/export-command.git",
-                "reference": "cf85ae0105617c106a0c8d6b9f77bc4983140707"
+                "reference": "fb7d72739e066d1fda3a21bc60cd82f57f619305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/cf85ae0105617c106a0c8d6b9f77bc4983140707",
-                "reference": "cf85ae0105617c106a0c8d6b9f77bc4983140707",
+                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/fb7d72739e066d1fda3a21bc60cd82f57f619305",
+                "reference": "fb7d72739e066d1fda3a21bc60cd82f57f619305",
                 "shasum": ""
             },
             "require": {
                 "nb/oxymel": "~0.1.0",
-                "wp-cli/wp-cli": "^2.12"
+                "wp-cli/wp-cli": "^2.13"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
@@ -1540,9 +1540,9 @@
             "homepage": "https://github.com/wp-cli/export-command",
             "support": {
                 "issues": "https://github.com/wp-cli/export-command/issues",
-                "source": "https://github.com/wp-cli/export-command/tree/v2.1.16"
+                "source": "https://github.com/wp-cli/export-command/tree/v2.1.17"
             },
-            "time": "2026-03-17T08:25:40+00:00"
+            "time": "2026-04-30T07:30:34+00:00"
         },
         {
             "name": "wp-cli/extension-command",
