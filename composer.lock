@@ -1138,16 +1138,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.8.10",
+            "version": "v2.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "4792ac24c3a0505adcbd28f5d9a653dad0893773"
+                "reference": "19fa93b2f26dc8183cad2b050b36b3318b7d6ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/4792ac24c3a0505adcbd28f5d9a653dad0893773",
-                "reference": "4792ac24c3a0505adcbd28f5d9a653dad0893773",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/19fa93b2f26dc8183cad2b050b36b3318b7d6ab3",
+                "reference": "19fa93b2f26dc8183cad2b050b36b3318b7d6ab3",
                 "shasum": ""
             },
             "require": {
@@ -1366,6 +1366,13 @@
                     "user meta patch",
                     "user meta pluck",
                     "user meta update",
+                    "user privacy-request",
+                    "user privacy-request complete",
+                    "user privacy-request create",
+                    "user privacy-request delete",
+                    "user privacy-request erase",
+                    "user privacy-request export",
+                    "user privacy-request list",
                     "user remove-cap",
                     "user remove-role",
                     "user reset-password",
@@ -1419,9 +1426,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.10"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.8.11"
             },
-            "time": "2026-04-02T11:08:41+00:00"
+            "time": "2026-05-04T13:06:32+00:00"
         },
         {
             "name": "wp-cli/eval-command",
