@@ -1936,16 +1936,16 @@
         },
         {
             "name": "wp-cli/media-command",
-            "version": "v2.2.7",
+            "version": "v2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/media-command.git",
-                "reference": "f5524dc6478a4e31cc0222ce573a1d3b2d7dd9be"
+                "reference": "99bb14490651388b44b78df1b8ba5fae8b00521a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/f5524dc6478a4e31cc0222ce573a1d3b2d7dd9be",
-                "reference": "f5524dc6478a4e31cc0222ce573a1d3b2d7dd9be",
+                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/99bb14490651388b44b78df1b8ba5fae8b00521a",
+                "reference": "99bb14490651388b44b78df1b8ba5fae8b00521a",
                 "shasum": ""
             },
             "require": {
@@ -1995,9 +1995,9 @@
             "homepage": "https://github.com/wp-cli/media-command",
             "support": {
                 "issues": "https://github.com/wp-cli/media-command/issues",
-                "source": "https://github.com/wp-cli/media-command/tree/v2.2.7"
+                "source": "https://github.com/wp-cli/media-command/tree/v2.2.8"
             },
-            "time": "2026-04-10T12:18:20+00:00"
+            "time": "2026-05-05T08:37:58+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
