@@ -2242,16 +2242,16 @@
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "7dc29762f6a2ff55ef95990a08d4f3eaa6b54a98"
+                "reference": "fcd1b7d8a0b26de379c1028a6bbe39926d6fca2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/7dc29762f6a2ff55ef95990a08d4f3eaa6b54a98",
-                "reference": "7dc29762f6a2ff55ef95990a08d4f3eaa6b54a98",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/fcd1b7d8a0b26de379c1028a6bbe39926d6fca2e",
+                "reference": "fcd1b7d8a0b26de379c1028a6bbe39926d6fca2e",
                 "shasum": ""
             },
             "require": {
@@ -2302,9 +2302,9 @@
             "homepage": "https://github.com/wp-cli/scaffold-command",
             "support": {
                 "issues": "https://github.com/wp-cli/scaffold-command/issues",
-                "source": "https://github.com/wp-cli/scaffold-command/tree/v2.5.6"
+                "source": "https://github.com/wp-cli/scaffold-command/tree/v2.5.7"
             },
-            "time": "2026-04-22T08:46:17+00:00"
+            "time": "2026-05-21T14:09:10+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
