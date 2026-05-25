@@ -81,3 +81,17 @@ Feature: Bootstrap WP-CLI
           Status: Inactive
       """
     And STDERR should be empty
+
+  Scenario: Mustache templates should be resolved correctly when PHAR is renamed without extension
+
+    Given an empty directory
+    And a new Phar with the same version
+    And I run `php {PHAR_PATH} core download`
+
+    When I run `cp {PHAR_PATH} wp-renamed`
+    And I run `php wp-renamed config create --dbname=wordpress --dbuser=user --dbpass=pass --skip-check`
+    Then STDOUT should contain:
+      """
+      Success: Generated 'wp-config.php' file.
+      """
+    And STDERR should be empty
