@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Set up PHP environment
-        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # v2
         with:
           php-version: 'latest'
           extensions: mysql, zip, imagick
@@ -49,13 +49,13 @@ jobs:
           echo "$CLI_VERSION" > cli_version.txt
 
       - name: Upload WP-CLI version
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: cli_version
           path: cli_version.txt
 
       - name: Upload manifest file
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: manifest
           path: vendor/wp-cli/wp-cli/manifest.json
@@ -64,7 +64,7 @@ jobs:
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: wp-cli-phar
           path: wp-cli.phar
@@ -74,7 +74,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.2', '7.3', '7.4', '8.5']
+        php: ['8.5', '7.4']
         wp: ['latest']
         mysql: ['8.0']
         include:
@@ -99,6 +99,9 @@ jobs:
           - php: '7.2'
             wp: '4.9'
             mysql: '5.6'
+          - php: '7.2'
+            wp: '6.9'
+            mysql: '8.0'
     runs-on: ubuntu-22.04
     env:
       WP_CLI_BIN_DIR: /tmp/wp-cli-phar
@@ -115,7 +118,7 @@ jobs:
           sudo apt-get install ghostscript -y
 
       - name: Set up PHP environment
-        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # v2
         with:
           php-version: '${{ matrix.php }}'
           extensions: imagick, mysql, zip
@@ -149,7 +152,7 @@ jobs:
 
       - name: Setup MySQL Server
         id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@840178c12b07a58353c6312be784c23b63756eea # v1
+        uses: shogo82148/actions-setup-mysql@9c42ca180d5f1dd4dceb54c23c5eda0384f4d265 # v1
         with:
           mysql-version: ${{ matrix.mysql }}
           auto-start: true

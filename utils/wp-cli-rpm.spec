@@ -9,7 +9,7 @@ Source1:    wp.1
 BuildArch:  noarch
 
 %post
-echo "PHP 5.4 or above must be installed."
+echo "PHP 7.2 or above must be installed."
 
 %description
 WP-CLI is the command-line interface for WordPress.
