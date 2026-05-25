@@ -152,7 +152,7 @@ jobs:
 
       - name: Setup MySQL Server
         id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@9c42ca180d5f1dd4dceb54c23c5eda0384f4d265 # v1
+        uses: shogo82148/actions-setup-mysql@c80f44ab210a360ef966c5b9f48a2ae21123b533 # v1
         with:
           mysql-version: ${{ matrix.mysql }}
           auto-start: true
