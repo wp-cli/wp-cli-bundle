@@ -506,16 +506,16 @@
         },
         {
             "name": "wp-cli/ai-command",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/ai-command.git",
-                "reference": "628b38fc8a70cdae712da4e0a0dac9a936c240ae"
+                "reference": "992f894f4d170c37c4e1a30e2bc4b4f100d5cc6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/ai-command/zipball/628b38fc8a70cdae712da4e0a0dac9a936c240ae",
-                "reference": "628b38fc8a70cdae712da4e0a0dac9a936c240ae",
+                "url": "https://api.github.com/repos/wp-cli/ai-command/zipball/992f894f4d170c37c4e1a30e2bc4b4f100d5cc6d",
+                "reference": "992f894f4d170c37c4e1a30e2bc4b4f100d5cc6d",
                 "shasum": ""
             },
             "require": {
@@ -526,7 +526,6 @@
                 "wp-cli/extension-command": "^2",
                 "wp-cli/wp-cli-tests": "^5"
             },
-            "default-branch": true,
             "type": "wp-cli-package",
             "extra": {
                 "bundled": true,
@@ -534,6 +533,7 @@
                     "ai",
                     "ai check",
                     "ai generate",
+                    "ai is-supported",
                     "ai status",
                     "connectors",
                     "connectors get",
@@ -559,9 +559,9 @@
             "homepage": "https://github.com/wp-cli/ai-command",
             "support": {
                 "issues": "https://github.com/wp-cli/ai-command/issues",
-                "source": "https://github.com/wp-cli/ai-command/tree/main"
+                "source": "https://github.com/wp-cli/ai-command/tree/v1.0.0"
             },
-            "time": "2026-03-26T16:48:05+00:00"
+            "time": "2026-05-14T09:14:02+00:00"
         },
         {
             "name": "wp-cli/block-command",
