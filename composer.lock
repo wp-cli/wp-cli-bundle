@@ -1553,16 +1553,16 @@
         },
         {
             "name": "wp-cli/extension-command",
-            "version": "v2.3.5",
+            "version": "v2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/extension-command.git",
-                "reference": "36098c55b0760709699662596da109752dd1eb82"
+                "reference": "edbfb7b0801b1767031948062c0ca33f11ba9e0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/36098c55b0760709699662596da109752dd1eb82",
-                "reference": "36098c55b0760709699662596da109752dd1eb82",
+                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/edbfb7b0801b1767031948062c0ca33f11ba9e0f",
+                "reference": "edbfb7b0801b1767031948062c0ca33f11ba9e0f",
                 "shasum": ""
             },
             "require": {
@@ -1594,6 +1594,7 @@
                     "plugin search",
                     "plugin status",
                     "plugin check-update",
+                    "plugin download",
                     "plugin toggle",
                     "plugin uninstall",
                     "plugin update",
@@ -1619,6 +1620,7 @@
                     "theme search",
                     "theme status",
                     "theme check-update",
+                    "theme download",
                     "theme update",
                     "theme mod list",
                     "theme auto-updates",
@@ -1658,9 +1660,9 @@
             "homepage": "https://github.com/wp-cli/extension-command",
             "support": {
                 "issues": "https://github.com/wp-cli/extension-command/issues",
-                "source": "https://github.com/wp-cli/extension-command/tree/v2.3.5"
+                "source": "https://github.com/wp-cli/extension-command/tree/v2.3.6"
             },
-            "time": "2026-05-18T13:32:54+00:00"
+            "time": "2026-06-10T17:07:52+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
