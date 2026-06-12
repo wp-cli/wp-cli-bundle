@@ -856,16 +856,16 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.1.31",
+            "version": "v2.1.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "0ab6195380b0cc4532e6c5ea14b55c9aaa9bb2da"
+                "reference": "7c63cee9fd53b333fea46764f6d38ddd9a41f8d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/0ab6195380b0cc4532e6c5ea14b55c9aaa9bb2da",
-                "reference": "0ab6195380b0cc4532e6c5ea14b55c9aaa9bb2da",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/7c63cee9fd53b333fea46764f6d38ddd9a41f8d6",
+                "reference": "7c63cee9fd53b333fea46764f6d38ddd9a41f8d6",
                 "shasum": ""
             },
             "require": {
@@ -922,9 +922,9 @@
             "homepage": "https://github.com/wp-cli/core-command",
             "support": {
                 "issues": "https://github.com/wp-cli/core-command/issues",
-                "source": "https://github.com/wp-cli/core-command/tree/v2.1.31"
+                "source": "https://github.com/wp-cli/core-command/tree/v2.1.32"
             },
-            "time": "2026-05-25T07:49:16+00:00"
+            "time": "2026-06-08T16:57:22+00:00"
         },
         {
             "name": "wp-cli/cron-command",
@@ -5107,7 +5107,6 @@
                     "type": "github"
                 }
             ],
-            "abandoned": true,
             "time": "2021-07-26T12:15:06+00:00"
         },
         {
@@ -6528,7 +6527,6 @@
                     "type": "github"
                 }
             ],
-            "abandoned": true,
             "time": "2024-03-01T13:45:45+00:00"
         },
         {
@@ -8333,16 +8331,16 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.37.0",
+            "version": "v1.38.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "4864388bfbd3001ce88e234fab652acd91fdc57e"
+                "reference": "e9247d281d694a5120554d9afaf54e070e88a603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/4864388bfbd3001ce88e234fab652acd91fdc57e",
-                "reference": "4864388bfbd3001ce88e234fab652acd91fdc57e",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/e9247d281d694a5120554d9afaf54e070e88a603",
+                "reference": "e9247d281d694a5120554d9afaf54e070e88a603",
                 "shasum": ""
             },
             "require": {
@@ -8391,7 +8389,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.37.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.38.1"
             },
             "funding": [
                 {
@@ -8411,20 +8409,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-26T13:13:48+00:00"
+            "time": "2026-05-26T05:58:03+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.37.0",
+            "version": "v1.38.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "3833d7255cc303546435cb650316bff708a1c75c"
+                "reference": "2d446c214bdbe5b71bde5011b060a05fece3ae6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/3833d7255cc303546435cb650316bff708a1c75c",
-                "reference": "3833d7255cc303546435cb650316bff708a1c75c",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/2d446c214bdbe5b71bde5011b060a05fece3ae6b",
+                "reference": "2d446c214bdbe5b71bde5011b060a05fece3ae6b",
                 "shasum": ""
             },
             "require": {
@@ -8476,7 +8474,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.37.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.38.0"
             },
             "funding": [
                 {
@@ -8496,20 +8494,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-05-25T13:48:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.37.0",
+            "version": "v1.38.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "6a21eb99c6973357967f6ce3708cd55a6bec6315"
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6a21eb99c6973357967f6ce3708cd55a6bec6315",
-                "reference": "6a21eb99c6973357967f6ce3708cd55a6bec6315",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
                 "shasum": ""
             },
             "require": {
@@ -8561,7 +8559,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.37.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.38.2"
             },
             "funding": [
                 {
@@ -8581,7 +8579,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T17:25:58+00:00"
+            "time": "2026-05-27T06:59:30+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -8749,16 +8747,16 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.37.0",
+            "version": "v1.38.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
-                "reference": "4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c"
+                "reference": "6bfb9c766cacffbc8e118cb87217d08ed84e5cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c",
-                "reference": "4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c",
+                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/6bfb9c766cacffbc8e118cb87217d08ed84e5cd7",
+                "reference": "6bfb9c766cacffbc8e118cb87217d08ed84e5cd7",
                 "shasum": ""
             },
             "require": {
@@ -8805,7 +8803,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.37.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.38.1"
             },
             "funding": [
                 {
@@ -8825,7 +8823,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-05-26T12:45:58+00:00"
         },
         {
             "name": "symfony/polyfill-php84",
@@ -9319,16 +9317,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.4.52",
+            "version": "v5.4.53",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "b0b27055f055f0d314c5c68ed0c10f0bbd90aee0"
+                "reference": "ae0bbb46f77ff56591d0a0259c7f458f4b3e1f77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/b0b27055f055f0d314c5c68ed0c10f0bbd90aee0",
-                "reference": "b0b27055f055f0d314c5c68ed0c10f0bbd90aee0",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/ae0bbb46f77ff56591d0a0259c7f458f4b3e1f77",
+                "reference": "ae0bbb46f77ff56591d0a0259c7f458f4b3e1f77",
                 "shasum": ""
             },
             "require": {
@@ -9374,7 +9372,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.4.52"
+                "source": "https://github.com/symfony/yaml/tree/v5.4.53"
             },
             "funding": [
                 {
@@ -9394,7 +9392,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-15T06:40:16+00:00"
+            "time": "2026-05-20T17:13:41+00:00"
         },
         {
             "name": "szepeviktor/phpstan-wordpress",
@@ -9579,16 +9577,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.1.10",
+            "version": "v5.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "97ee70c304b5062b51a11f8820614ba3187ded20"
+                "reference": "4730c6df0d4479d1c83e3c5287633acdb0ab3a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/97ee70c304b5062b51a11f8820614ba3187ded20",
-                "reference": "97ee70c304b5062b51a11f8820614ba3187ded20",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/4730c6df0d4479d1c83e3c5287633acdb0ab3a0d",
+                "reference": "4730c6df0d4479d1c83e3c5287633acdb0ab3a0d",
                 "shasum": ""
             },
             "require": {
@@ -9668,7 +9666,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-05-24T09:54:49+00:00"
+            "time": "2026-06-10T22:52:20+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9676,12 +9674,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "3b329e802f4f07674fc1126adf09f61d4b863ef2"
+                "reference": "4d11dbc7f68caa89c9367b91c3fd07b7f7f4370f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/3b329e802f4f07674fc1126adf09f61d4b863ef2",
-                "reference": "3b329e802f4f07674fc1126adf09f61d4b863ef2",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/4d11dbc7f68caa89c9367b91c3fd07b7f7f4370f",
+                "reference": "4d11dbc7f68caa89c9367b91c3fd07b7f7f4370f",
                 "shasum": ""
             },
             "require": {
@@ -9735,7 +9733,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-05-21T14:35:24+00:00"
+            "time": "2026-06-06T13:19:49+00:00"
         },
         {
             "name": "yoast/phpunit-polyfills",
