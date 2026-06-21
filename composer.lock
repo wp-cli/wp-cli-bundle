@@ -446,16 +446,16 @@
         },
         {
             "name": "wp-cli/ability-command",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/ability-command.git",
-                "reference": "07ce47bf92e662a63b5f0902dcd29d71ada79e90"
+                "reference": "e7f8f9ab62d8b32b9375dc01b29073a73d3bb9a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/ability-command/zipball/07ce47bf92e662a63b5f0902dcd29d71ada79e90",
-                "reference": "07ce47bf92e662a63b5f0902dcd29d71ada79e90",
+                "url": "https://api.github.com/repos/wp-cli/ability-command/zipball/e7f8f9ab62d8b32b9375dc01b29073a73d3bb9a3",
+                "reference": "e7f8f9ab62d8b32b9375dc01b29073a73d3bb9a3",
                 "shasum": ""
             },
             "require": {
@@ -500,9 +500,9 @@
             "homepage": "https://github.com/wp-cli/ability-command",
             "support": {
                 "issues": "https://github.com/wp-cli/ability-command/issues",
-                "source": "https://github.com/wp-cli/ability-command/tree/v1.0.0"
+                "source": "https://github.com/wp-cli/ability-command/tree/v1.0.1"
             },
-            "time": "2026-03-16T15:12:42+00:00"
+            "time": "2026-06-18T14:38:09+00:00"
         },
         {
             "name": "wp-cli/ai-command",
