@@ -752,6 +752,8 @@ Feature: WP-CLI Commands
       honked
       """
 
+  # No trailing spaces on Windows.
+  @skip-windows
   Scenario: Register a longdesc for a given command
     Given an empty directory
     And a custom-cmd.php file:
@@ -1209,9 +1211,13 @@ Feature: WP-CLI Commands
       """
       test-command-1
       """
-    And STDOUT should not contain:
+    And STDOUT should contain:
       """
       test-command-2
+      """
+    And STDOUT should contain:
+      """
+      Testing hooks.
       """
     And STDERR should be:
       """

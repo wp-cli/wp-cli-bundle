@@ -36,7 +36,12 @@ Feature: Requests integration with both v1 and v2
       5.8
       """
 
-    When I run `vendor/bin/wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
+    Given a check-request-v1-phar.php file:
+      """
+      <?php
+      var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );
+      """
+    When I run `vendor/bin/wp eval-file check-request-v1-phar.php`
     Then STDOUT should contain:
       """
       object(Requests_Response)
@@ -60,7 +65,12 @@ Feature: Requests integration with both v1 and v2
       5.8
       """
 
-    When I run `wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
+    Given a check-request-v1.php file:
+      """
+      <?php
+      var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );
+      """
+    When I run `wp eval-file check-request-v1.php`
     Then STDOUT should contain:
       """
       object(Requests_Response)
@@ -77,6 +87,9 @@ Feature: Requests integration with both v1 and v2
       Success: Installed 1 of 1 plugins.
       """
 
+  # Skip on Windows due to cURL error 60: SSL certificate problem: unable to get local issuer certificate
+  # TODO: Investigate.
+  @skip-windows
   Scenario: Current version with WordPress-bundled Requests v2
     Given a WP installation
     # Switch themes because twentytwentyfive requires a version newer than 6.2
@@ -91,7 +104,12 @@ Feature: Requests integration with both v1 and v2
       6.2
       """
 
-    When I run `wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
+    Given a check-request-v2.php file:
+      """
+      <?php
+      var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );
+      """
+    When I run `wp eval-file check-request-v2.php`
     Then STDOUT should contain:
       """
       object(WpOrg\Requests\Response)
@@ -200,7 +218,12 @@ Feature: Requests integration with both v1 and v2
       """
 
     # This can throw deprecated warnings on PHP 8.1+.
-    When I try `vendor/bin/wp eval 'var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );'`
+    Given a check-request-v2-phar.php file:
+      """
+      <?php
+      var_dump( \WP_CLI\Utils\http_request( 'GET', 'https://example.com/' ) );
+      """
+    When I try `vendor/bin/wp eval-file check-request-v2-phar.php`
     Then STDOUT should contain:
       """
       object(Requests_Response)
@@ -227,11 +250,11 @@ Feature: Requests integration with both v1 and v2
       Just another Composer-based WordPress site
       """
 
-    When I run `vendor/bin/wp eval 'echo COOKIEHASH;'`
+    When I run `vendor/bin/wp eval "echo COOKIEHASH;"`
     And save STDOUT as {COOKIEHASH}
     Then STDOUT should not be empty
 
-    When I run `vendor/bin/wp eval 'echo wp_generate_auth_cookie( 1, 32503680000 );'`
+    When I run `vendor/bin/wp eval "echo wp_generate_auth_cookie( 1, 32503680000 );"`
     And save STDOUT as {AUTH_COOKIE}
     Then STDOUT should not be empty
 
