@@ -73,7 +73,7 @@ jobs:
 
             git push -f origin update-framework
 
-            PR_NUMBER=$(gh pr list --head "update-framework" --state open --json number --template '{{range .}}{{ .number }}{{end}}')
+            PR_NUMBER=$(gh pr list --head "update-framework" --base "${{ github.event.repository.default_branch }}" --state open --json number --jq '.[0].number // empty')
             if [ -z "$PR_NUMBER" ]; then
               gh pr create \
                 --title "Update wp-cli framework" \
