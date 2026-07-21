@@ -17,6 +17,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: read
   pull-requests: write
 
 jobs:
@@ -72,7 +73,7 @@ jobs:
 
             git push -f origin update-framework
 
-            PR_NUMBER=$(gh pr list --head update-framework --json number --jq '.[0].number // empty')
+            PR_NUMBER=$(gh pr list --head "update-framework" --state open --template '{{range .}}{{ .number }}{{end}}')
             if [ -z "$PR_NUMBER" ]; then
               gh pr create \
                 --title "Update wp-cli framework" \
