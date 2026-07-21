@@ -81,3 +81,20 @@ Feature: Bootstrap WP-CLI
           Status: Inactive
       """
     And STDERR should be empty
+
+  Scenario: Config template resolves when the PHAR is renamed and run against another path
+
+    # Reproduces the reported failure: a Phar renamed away from `wp-cli.phar`
+    # (here without an extension) generating a wp-config.php for an install in a
+    # different directory via --path. See https://github.com/wp-cli/config-command/issues/141
+    Given an empty directory
+    And a new Phar with the same version
+
+    When I run `cp {PHAR_PATH} wp-renamed`
+    And I run `php wp-renamed core download --path=subfolder`
+    And I run `php wp-renamed config create --path=subfolder --dbname=wordpress --dbuser=root --dbpass=password --skip-check`
+    Then STDOUT should contain:
+      """
+      Success: Generated 'wp-config.php' file.
+      """
+    And STDERR should be empty
