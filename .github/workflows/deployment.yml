@@ -293,7 +293,34 @@ jobs:
 
       - name: Verify built RPM package contents
         run: |
-          ls rpm-src/noarch
+          set -euxo pipefail
+          rpm_file="$(ls rpm-src/noarch/wp-cli-*.noarch.rpm)"
+          # The package must ship a launcher in the bin dir and the Phar in the data dir.
+          rpm -qlp "$rpm_file" | tee /tmp/rpm-files.txt
+          grep -qx '/usr/bin/wp' /tmp/rpm-files.txt
+          grep -qx '/usr/share/wp-cli/wp-cli.phar' /tmp/rpm-files.txt
+          # /usr/bin/wp must be the shell launcher that honors WP_CLI_PHP / WP_CLI_PHP_ARGS,
+          # not the Phar itself.
+          mkdir -p rpm-verify
+          ( cd rpm-verify && rpm2cpio "../$rpm_file" | cpio -idm )
+          test -x rpm-verify/usr/bin/wp
+          head -n1 rpm-verify/usr/bin/wp | grep -q '^#!/bin/sh'
+          grep -q '/usr/share/wp-cli/wp-cli.phar' rpm-verify/usr/bin/wp
+          test -s rpm-verify/usr/share/wp-cli/wp-cli.phar
+          # Run the extracted launcher through a probe standing in for PHP: it must
+          # forward WP_CLI_PHP_ARGS before the Phar and export WP_CLI_PHP_USED. The
+          # probe asserts and exits without needing the Phar at its installed path.
+          printf '%s\n' \
+            '#!/bin/sh' \
+            'case " $* " in' \
+            '  *" -d memory_limit=256M "*) : ;;' \
+            '  *) echo "WP_CLI_PHP_ARGS not forwarded: $*" >&2; exit 3 ;;' \
+            'esac' \
+            '[ -n "$WP_CLI_PHP_USED" ] || { echo "WP_CLI_PHP_USED not exported" >&2; exit 4; }' \
+            'exit 0' \
+            > /tmp/wp-cli-php-probe
+          chmod +x /tmp/wp-cli-php-probe
+          WP_CLI_PHP=/tmp/wp-cli-php-probe WP_CLI_PHP_ARGS="-d memory_limit=256M" rpm-verify/usr/bin/wp cli version
 
       - name: Copy RPM package into builds folder
         run: |
@@ -346,7 +373,40 @@ jobs:
 
       - name: Verify built DEB package contents
         run: |
-          ls .
+          set -euxo pipefail
+          deb_file="$(ls php-wpcli*all.deb)"
+          # The package must ship a launcher in the bin dir and the Phar in the data dir.
+          dpkg-deb -c "$deb_file" | tee /tmp/deb-files.txt
+          grep -Eq ' \./usr/bin/wp$' /tmp/deb-files.txt
+          grep -Eq ' \./usr/share/wp-cli/wp-cli.phar$' /tmp/deb-files.txt
+          # Install the package and exercise the launcher (php ships on the runner).
+          sudo dpkg -i "$deb_file" || sudo apt-get install -f -y
+          test -x /usr/bin/wp
+          head -n1 /usr/bin/wp | grep -q '^#!/bin/sh'
+          test -s /usr/share/wp-cli/wp-cli.phar
+          # Default interpreter works.
+          wp --info
+          wp cli version
+          # A probe that stands in for PHP and asserts what the launcher forwarded:
+          # it must receive WP_CLI_PHP_ARGS before the Phar and inherit WP_CLI_PHP_USED.
+          printf '%s\n' \
+            '#!/bin/sh' \
+            'case " $* " in' \
+            '  *" -d memory_limit=256M "*) : ;;' \
+            '  *) echo "WP_CLI_PHP_ARGS not forwarded: $*" >&2; exit 3 ;;' \
+            'esac' \
+            '[ -n "$WP_CLI_PHP_USED" ] || { echo "WP_CLI_PHP_USED not exported" >&2; exit 4; }' \
+            'exit 0' \
+            > /tmp/wp-cli-php-probe
+          chmod +x /tmp/wp-cli-php-probe
+          # Proves WP_CLI_PHP selects the interpreter AND WP_CLI_PHP_ARGS reaches it.
+          WP_CLI_PHP=/tmp/wp-cli-php-probe WP_CLI_PHP_ARGS="-d memory_limit=256M" wp cli version
+          # A deliberately broken WP_CLI_PHP must actually be used: if it were ignored,
+          # this would still succeed. This is the regression guard for the whole fix.
+          if WP_CLI_PHP=/bin/false wp cli version 2>/dev/null; then
+            echo "WP_CLI_PHP was ignored by the launcher" >&2
+            exit 1
+          fi
 
       - name: Copy DEB package into builds folder
         run: |
