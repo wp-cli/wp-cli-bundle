@@ -2674,12 +2674,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "f8a81d1eeee06b712b1e7a2d1578e22030f556dc"
+                "reference": "aa9adcca16bf352d60519ff8b74905f4971cb7e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/f8a81d1eeee06b712b1e7a2d1578e22030f556dc",
-                "reference": "f8a81d1eeee06b712b1e7a2d1578e22030f556dc",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/aa9adcca16bf352d60519ff8b74905f4971cb7e3",
+                "reference": "aa9adcca16bf352d60519ff8b74905f4971cb7e3",
                 "shasum": ""
             },
             "require": {
@@ -2751,7 +2751,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-07-29T14:30:02+00:00"
+            "time": "2026-07-30T07:41:21+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
