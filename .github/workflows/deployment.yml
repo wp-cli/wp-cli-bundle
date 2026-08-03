@@ -140,7 +140,7 @@ jobs:
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -152,7 +152,7 @@ jobs:
 
       - name: Setup MySQL Server
         id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@076e636c45996ec8cb1a455c65f9f5364aeebd8a # v1
+        uses: shogo82148/actions-setup-mysql@3dcedf762c5e82d781a9e414462785b30208e79c # v1
         with:
           mysql-version: ${{ matrix.mysql }}
           auto-start: true
@@ -198,7 +198,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: cli_version
 
@@ -207,12 +207,12 @@ jobs:
           cat cli_version.txt > phar/NIGHTLY_VERSION
 
       - name: Download manifest file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: manifest
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -253,7 +253,7 @@ jobs:
           git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages
@@ -273,7 +273,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -334,7 +334,7 @@ jobs:
           git commit -m "rpm build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages
@@ -354,7 +354,7 @@ jobs:
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -420,7 +420,7 @@ jobs:
           git commit -m "deb build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages
