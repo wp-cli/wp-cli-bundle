@@ -173,3 +173,44 @@ Feature: `wp cli` tasks
       """
       WP-CLI {UPDATE_VERSION}
       """
+
+  Scenario: Prevent stable update when PHP version requirement is not met
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.manifest.json will respond with:
+      """
+      HTTP/1.1 200
+      Content-Type: application/json
+
+      {
+        "requires_php": "99.0.0"
+      }
+      """
+
+    When I try `{PHAR_PATH} cli update --stable --yes`
+    Then STDERR should contain:
+      """
+      The requested update requires PHP 99.0.0 or higher.
+      """
+    And the return code should be 1
+
+  Scenario: Prevent nightly update when PHP version requirement is not met
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.manifest.json will respond with:
+      """
+      HTTP/1.1 200
+      Content-Type: application/json
+
+      {
+        "requires_php": "99.0.0"
+      }
+      """
+
+    When I try `{PHAR_PATH} cli update --nightly --yes`
+    Then STDERR should contain:
+      """
+      The requested update requires PHP 99.0.0 or higher.
+      """
+    And the return code should be 1
+
