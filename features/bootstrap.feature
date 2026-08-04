@@ -63,22 +63,20 @@ Feature: Bootstrap WP-CLI
     And I run `wp plugin install https://github.com/wp-cli-test/generic-example-plugin/releases/download/v0.1.1/generic-example-plugin.0.1.1.zip --activate`
     And I run `wp plugin deactivate generic-example-plugin`
 
-    When I run `php {PHAR_PATH} plugin status generic-example-plugin`
+    When I run `php {PHAR_PATH} plugin get generic-example-plugin --fields=title,status --format=csv`
     Then STDOUT should contain:
       """
-      Plugin generic-example-plugin details:
-          Name: Example Plugin
-          Status: Inactive
+      title,"Example Plugin"
+      status,inactive
       """
     And STDERR should be empty
 
     When I run `cp {PHAR_PATH} wp-renamed.phar`
-    And I try `php wp-renamed.phar plugin status generic-example-plugin`
+    And I try `php wp-renamed.phar plugin get generic-example-plugin --fields=title,status --format=csv`
     Then STDOUT should contain:
       """
-      Plugin generic-example-plugin details:
-          Name: Example Plugin
-          Status: Inactive
+      title,"Example Plugin"
+      status,inactive
       """
     And STDERR should be empty
 
