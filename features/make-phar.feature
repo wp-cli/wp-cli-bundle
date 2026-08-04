@@ -40,7 +40,11 @@ Feature: Check `utils/make-phar.php` output
     When I run `php {PHAR_PATH} plugin get generic-example-plugin --fields=title,status,version,author,description --format=csv`
     Then STDOUT should contain:
       """
-      Example Plugin,inactive,0.1.0,YOUR NAME HERE,PLUGIN DESCRIPTION HERE
+      title,"Example Plugin"
+      status,inactive
+      version,0.1.0
+      author,"YOUR NAME HERE"
+      description,"PLUGIN DESCRIPTION HERE"
       """
     And STDERR should be empty
 

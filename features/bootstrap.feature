@@ -66,17 +66,17 @@ Feature: Bootstrap WP-CLI
     When I run `php {PHAR_PATH} plugin get generic-example-plugin --fields=title,status --format=csv`
     Then STDOUT should contain:
       """
-      Example Plugin,inactive
+      title,"Example Plugin"
+      status,inactive
       """
     And STDERR should be empty
 
     When I run `cp {PHAR_PATH} wp-renamed.phar`
-    And I try `php wp-renamed.phar plugin status generic-example-plugin`
+    And I try `php wp-renamed.phar plugin get generic-example-plugin --fields=title,status --format=csv`
     Then STDOUT should contain:
       """
-      Plugin generic-example-plugin details:
-          Name: Example Plugin
-          Status: Inactive
+      title,"Example Plugin"
+      status,inactive
       """
     And STDERR should be empty
 
