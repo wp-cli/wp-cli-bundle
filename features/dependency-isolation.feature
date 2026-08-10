@@ -11,7 +11,6 @@ Feature: Bundled dependencies do not conflict with the site's own
   #
   # See https://github.com/wp-cli/wp-cli/issues/5920
 
-  @require-mysql
   Scenario: A site providing its own psr/log is not broken by the bundled one
     Given a WP installation
     # Stands in for a site that ships psr/log v3 through its own vendor
@@ -55,7 +54,6 @@ Feature: Bundled dependencies do not conflict with the site's own
       """
     And the return code should be 0
 
-  @require-mysql
   Scenario: A site providing its own Symfony Console is not broken by the bundled one
     Given a WP installation
     And a wp-content/mu-plugins/site-console.php file:
