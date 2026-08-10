@@ -60,6 +60,12 @@ jobs:
           name: manifest
           path: vendor/wp-cli/wp-cli/manifest.json
 
+      # Prefixes the composer/composer dependency tree so the Phar stops
+      # imposing its own psr/log, Symfony and React versions on the site it
+      # runs against. See https://github.com/wp-cli/wp-cli/issues/5920
+      - name: Prefix bundled dependencies
+        run: php utils/scope-dependencies.php
+
       - name: Build the Phar file
         run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
