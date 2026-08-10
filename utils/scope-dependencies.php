@@ -286,7 +286,10 @@ if ( $leaked ) {
 
 $classmap = $vendor_dir . '/composer/autoload_classmap.php';
 
-if ( file_exists( $classmap ) && ! str_contains( (string) file_get_contents( $classmap ), 'WP_CLI\\\\Vendor\\\\' ) ) {
+// strpos() rather than str_contains() so the file still parses under the 7.2
+// baseline phpcs checks this repository against, even though the script itself
+// refuses to run on anything below PHP 8.2.
+if ( file_exists( $classmap ) && false === strpos( (string) file_get_contents( $classmap ), 'WP_CLI\\\\Vendor\\\\' ) ) {
 	fail( 'The regenerated classmap contains no prefixed classes at all; the prefixing step did not take effect.' );
 }
 
