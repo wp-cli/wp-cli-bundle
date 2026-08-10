@@ -173,3 +173,132 @@ Feature: `wp cli` tasks
       """
       WP-CLI {UPDATE_VERSION}
       """
+
+  Scenario: Fail update when sha512 hash cannot be accessed
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar.sha512 will respond with:
+      """
+      HTTP/1.1 404 Not Found
+      Content-Type: text/plain
+
+      Not Found
+      """
+
+    When I try `{PHAR_PATH} cli update --nightly --yes`
+    Then STDERR should contain:
+      """
+      Error: Couldn't access sha512 hash for release (HTTP code 404).
+      """
+    And the return code should be 1
+
+  Scenario: Fail update when sha512 hash mismatches
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar.sha512 will respond with:
+      """
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+
+      invalidsha512hash
+      """
+
+    When I try `{PHAR_PATH} cli update --nightly --yes`
+    Then STDERR should contain:
+      """
+      Error: sha512 hash for download
+      """
+    And STDERR should contain:
+      """
+      is different than the release hash (invalidsha512hash).
+      """
+    And the return code should be 1
+
+  Scenario: Update succeeds when sha512 matches even if md5 cannot be accessed
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar.md5 will respond with:
+      """
+      HTTP/1.1 404 Not Found
+      Content-Type: text/plain
+
+      Not Found
+      """
+
+    When I run `{PHAR_PATH} cli update --nightly --yes`
+    Then STDOUT should contain:
+      """
+      sha512 hash verified:
+      """
+    And STDOUT should contain:
+      """
+      Couldn't access md5 hash for release (HTTP code 404).
+      """
+    And STDOUT should contain:
+      """
+      Success: Updated WP-CLI to the latest nightly release.
+      """
+    And STDERR should be empty
+    And the return code should be 0
+
+  Scenario: Fail update when md5 hash mismatches
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar.md5 will respond with:
+      """
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+
+      invalidmd5hash
+      """
+
+    When I try `{PHAR_PATH} cli update --nightly --yes`
+    Then STDERR should contain:
+      """
+      Error: md5 hash for download
+      """
+    And STDERR should contain:
+      """
+      is different than the release hash (invalidmd5hash).
+      """
+    And the return code should be 1
+
+  Scenario: Prevent stable update when PHP version requirement is not met
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.manifest.json will respond with:
+      """
+      HTTP/1.1 200
+      Content-Type: application/json
+
+      {
+        "requires_php": "99.0.0"
+      }
+      """
+
+    When I try `{PHAR_PATH} cli update --stable --yes`
+    Then STDERR should contain:
+      """
+      The requested update requires PHP 99.0.0 or higher.
+      """
+    And the return code should be 1
+
+  Scenario: Prevent nightly update when PHP version requirement is not met
+    Given an empty directory
+    And a new Phar with version "2.8.0"
+    And that HTTP requests to https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.manifest.json will respond with:
+      """
+      HTTP/1.1 200
+      Content-Type: application/json
+
+      {
+        "requires_php": "99.0.0"
+      }
+      """
+
+    When I try `{PHAR_PATH} cli update --nightly --yes`
+    Then STDERR should contain:
+      """
+      The requested update requires PHP 99.0.0 or higher.
+      """
+    And the return code should be 1
