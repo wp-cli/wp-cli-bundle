@@ -221,8 +221,8 @@ foreach ( $packages as $index => $package ) {
 		continue;
 	}
 
-	$package['autoload']  = [ 'classmap' => array_values( array_unique( $roots ) ) ];
-	$packages[ $index ]   = $package;
+	$package['autoload'] = [ 'classmap' => array_values( array_unique( $roots ) ) ];
+	$packages[ $index ]  = $package;
 	++$patched;
 }
 
