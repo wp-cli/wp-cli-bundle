@@ -59,7 +59,7 @@ $scoped_paths = array_values(
 			[
 				'composer',
 				'justinrainbow',
-				'marc-mabe',
+				'marc-mabe', // spellchecker:disable-line
 				'psr',
 				'react',
 				'seld',
@@ -70,8 +70,8 @@ $scoped_paths = array_values(
 );
 
 return [
-	'prefix'  => 'WP_CLI\\Vendor',
-	'finders' => [
+	'prefix'             => 'WP_CLI\\Vendor',
+	'finders'            => [
 		/*
 		 * Deliberately without exclusions. The prefixed output is merged back
 		 * over `vendor/` rather than replacing it, because php-scoper only
@@ -99,11 +99,11 @@ return [
 		'Composer',
 	],
 
-	'exclude-classes'   => [],
-	'exclude-functions' => [],
-	'exclude-constants' => [],
+	'exclude-classes'    => [],
+	'exclude-functions'  => [],
+	'exclude-constants'  => [],
 
-	'patchers' => [
+	'patchers'           => [
 		/*
 		 * Excluding a namespace stops php-scoper prefixing its declarations,
 		 * but not string literals that name classes inside it. Composer passes

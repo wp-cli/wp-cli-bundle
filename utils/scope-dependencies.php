@@ -28,7 +28,7 @@ define( 'WP_CLI_BUNDLE_ROOT', rtrim( dirname( __DIR__ ), '/' ) );
 const SCOPED_VENDOR_DIRS = [
 	'composer',
 	'justinrainbow',
-	'marc-mabe',
+	'marc-mabe', // spellchecker:disable-line
 	'psr',
 	'react',
 	'seld',
@@ -160,22 +160,25 @@ if ( ! file_exists( $installed_json ) ) {
 	fail( sprintf( "Could not find '%s'.", $installed_json ) );
 }
 
-$installed = json_decode( (string) file_get_contents( $installed_json ), true );
+$decoded = json_decode( (string) file_get_contents( $installed_json ), true );
 
-if ( ! is_array( $installed ) || ! isset( $installed['packages'] ) ) {
+if ( ! is_array( $decoded ) || ! isset( $decoded['packages'] ) || ! is_array( $decoded['packages'] ) ) {
 	fail( sprintf( "Could not decode '%s'.", $installed_json ) );
 }
 
-$patched = 0;
+/**
+ * @var array<string, mixed> $decoded
+ * @var array<int|string, mixed> $packages
+ */
+$packages = $decoded['packages'];
+$patched  = 0;
 
-foreach ( $installed['packages'] as $index => $package ) {
-	$name = $package['name'] ?? '';
-
-	if ( '' === $name ) {
+foreach ( $packages as $index => $package ) {
+	if ( ! is_array( $package ) || ! isset( $package['name'] ) || ! is_string( $package['name'] ) ) {
 		continue;
 	}
 
-	$vendor_name = explode( '/', $name )[0];
+	$vendor_name = explode( '/', $package['name'] )[0];
 
 	if ( ! in_array( $vendor_name, SCOPED_VENDOR_DIRS, true ) ) {
 		continue;
@@ -185,31 +188,49 @@ foreach ( $installed['packages'] as $index => $package ) {
 		continue;
 	}
 
-	$roots = [];
+	$autoload = $package['autoload'];
+	$roots    = [];
 
 	foreach ( [ 'psr-4', 'psr-0' ] as $standard ) {
-		foreach ( (array) ( $package['autoload'][ $standard ] ?? [] ) as $paths ) {
+		$rules = $autoload[ $standard ] ?? [];
+
+		if ( ! is_array( $rules ) ) {
+			continue;
+		}
+
+		foreach ( $rules as $paths ) {
 			foreach ( (array) $paths as $path ) {
-				$roots[] = '' === $path ? '.' : $path;
+				if ( is_string( $path ) ) {
+					$roots[] = '' === $path ? '.' : $path;
+				}
 			}
 		}
 	}
 
-	foreach ( (array) ( $package['autoload']['classmap'] ?? [] ) as $path ) {
-		$roots[] = $path;
+	$classmap_rules = $autoload['classmap'] ?? [];
+
+	if ( is_array( $classmap_rules ) ) {
+		foreach ( $classmap_rules as $path ) {
+			if ( is_string( $path ) ) {
+				$roots[] = $path;
+			}
+		}
 	}
 
 	if ( ! $roots ) {
 		continue;
 	}
 
-	$installed['packages'][ $index ]['autoload'] = [ 'classmap' => array_values( array_unique( $roots ) ) ];
+	$package['autoload']  = [ 'classmap' => array_values( array_unique( $roots ) ) ];
+	$packages[ $index ]   = $package;
 	++$patched;
 }
 
+$decoded['packages'] = $packages;
+
 report( sprintf( 'Rewrote autoload rules for %d prefixed package(s).', $patched ) );
 
-$encoded = json_encode( $installed, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+$encoded = json_encode( $decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 
 if ( false === $encoded || false === file_put_contents( $installed_json, $encoded ) ) {
 	fail( sprintf( "Failed to write '%s'.", $installed_json ) );
