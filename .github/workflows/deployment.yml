@@ -16,7 +16,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up PHP environment
         uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
@@ -110,7 +110,7 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' }}
     steps:
       - name: Check out source code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install Ghostscript
         run: |
@@ -140,7 +140,7 @@ jobs:
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -152,7 +152,7 @@ jobs:
 
       - name: Setup MySQL Server
         id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@076e636c45996ec8cb1a455c65f9f5364aeebd8a # v1
+        uses: shogo82148/actions-setup-mysql@3dcedf762c5e82d781a9e414462785b30208e79c # v1
         with:
           mysql-version: ${{ matrix.mysql }}
           auto-start: true
@@ -192,13 +192,13 @@ jobs:
     if: ${{ github.repository_owner == 'wp-cli' && github.event_name != 'workflow_dispatch' }}
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
       - name: Download WP-CLI version
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: cli_version
 
@@ -207,12 +207,12 @@ jobs:
           cat cli_version.txt > phar/NIGHTLY_VERSION
 
       - name: Download manifest file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: manifest
 
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -253,7 +253,7 @@ jobs:
           git commit -m "phar build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages
@@ -311,13 +311,21 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
+      - name: Check out bundle repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.sha }}
+          path: bundle
+          persist-credentials: false
+
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -326,10 +334,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install rpm rpmlint -y
 
-      - name: Download RPM build configuration
+      - name: Copy RPM build configuration
         run: |
-          wget -O wp-cli-rpm.spec https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/main/utils/wp-cli-rpm.spec
-          wget -O wp-cli-updaterpm.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/main/utils/wp-cli-updaterpm.sh
+          cp bundle/utils/wp-cli-rpm.spec .
+          cp bundle/utils/wp-cli-updaterpm.sh .
 
       - name: Build RPM package
         run: |
@@ -337,7 +345,34 @@ jobs:
 
       - name: Verify built RPM package contents
         run: |
-          ls rpm-src/noarch
+          set -euxo pipefail
+          rpm_file="$(ls rpm-src/noarch/wp-cli-*.noarch.rpm)"
+          # The package must ship a launcher in the bin dir and the Phar in the data dir.
+          rpm -qlp "$rpm_file" | tee /tmp/rpm-files.txt
+          grep -qx '/usr/bin/wp' /tmp/rpm-files.txt
+          grep -qx '/usr/share/wp-cli/wp-cli.phar' /tmp/rpm-files.txt
+          # /usr/bin/wp must be the shell launcher that honors WP_CLI_PHP / WP_CLI_PHP_ARGS,
+          # not the Phar itself.
+          mkdir -p rpm-verify
+          ( cd rpm-verify && rpm2cpio "../$rpm_file" | cpio -idm )
+          test -x rpm-verify/usr/bin/wp
+          head -n1 rpm-verify/usr/bin/wp | grep -q '^#!/bin/sh'
+          grep -q '/usr/share/wp-cli/wp-cli.phar' rpm-verify/usr/bin/wp
+          test -s rpm-verify/usr/share/wp-cli/wp-cli.phar
+          # Run the extracted launcher through a probe standing in for PHP: it must
+          # forward WP_CLI_PHP_ARGS before the Phar and export WP_CLI_PHP_USED. The
+          # probe asserts and exits without needing the Phar at its installed path.
+          printf '%s\n' \
+            '#!/bin/sh' \
+            'case " $* " in' \
+            '  *" -d memory_limit=256M "*) : ;;' \
+            '  *) echo "WP_CLI_PHP_ARGS not forwarded: $*" >&2; exit 3 ;;' \
+            'esac' \
+            '[ -n "$WP_CLI_PHP_USED" ] || { echo "WP_CLI_PHP_USED not exported" >&2; exit 4; }' \
+            'exit 0' \
+            > /tmp/wp-cli-php-probe
+          chmod +x /tmp/wp-cli-php-probe
+          WP_CLI_PHP=/tmp/wp-cli-php-probe WP_CLI_PHP_ARGS="-d memory_limit=256M" rpm-verify/usr/bin/wp cli version
 
       - name: Copy RPM package into builds folder
         run: |
@@ -351,7 +386,7 @@ jobs:
           git commit -m "rpm build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages
@@ -365,13 +400,21 @@ jobs:
 
     steps:
       - name: Check out builds repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
+      - name: Check out bundle repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.sha }}
+          path: bundle
+          persist-credentials: false
+
       - name: Download built Phar file
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: wp-cli-phar
 
@@ -380,9 +423,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install fakeroot lintian -y
 
-      - name: Download DEB build configuration
+      - name: Copy DEB build configuration
         run: |
-          wget -O wp-cli-updatedeb.sh https://raw.githubusercontent.com/wp-cli/wp-cli-bundle/main/utils/wp-cli-updatedeb.sh
+          cp bundle/utils/wp-cli-updatedeb.sh .
 
       - name: Build DEB package
         run: |
@@ -390,7 +433,40 @@ jobs:
 
       - name: Verify built DEB package contents
         run: |
-          ls .
+          set -euxo pipefail
+          deb_file="$(ls php-wpcli*all.deb)"
+          # The package must ship a launcher in the bin dir and the Phar in the data dir.
+          dpkg-deb -c "$deb_file" | tee /tmp/deb-files.txt
+          grep -Eq ' \./usr/bin/wp$' /tmp/deb-files.txt
+          grep -Eq ' \./usr/share/wp-cli/wp-cli.phar$' /tmp/deb-files.txt
+          # Install the package and exercise the launcher (php ships on the runner).
+          sudo dpkg -i "$deb_file" || sudo apt-get install -f -y
+          test -x /usr/bin/wp
+          head -n1 /usr/bin/wp | grep -q '^#!/bin/sh'
+          test -s /usr/share/wp-cli/wp-cli.phar
+          # Default interpreter works.
+          wp --info
+          wp cli version
+          # A probe that stands in for PHP and asserts what the launcher forwarded:
+          # it must receive WP_CLI_PHP_ARGS before the Phar and inherit WP_CLI_PHP_USED.
+          printf '%s\n' \
+            '#!/bin/sh' \
+            'case " $* " in' \
+            '  *" -d memory_limit=256M "*) : ;;' \
+            '  *) echo "WP_CLI_PHP_ARGS not forwarded: $*" >&2; exit 3 ;;' \
+            'esac' \
+            '[ -n "$WP_CLI_PHP_USED" ] || { echo "WP_CLI_PHP_USED not exported" >&2; exit 4; }' \
+            'exit 0' \
+            > /tmp/wp-cli-php-probe
+          chmod +x /tmp/wp-cli-php-probe
+          # Proves WP_CLI_PHP selects the interpreter AND WP_CLI_PHP_ARGS reaches it.
+          WP_CLI_PHP=/tmp/wp-cli-php-probe WP_CLI_PHP_ARGS="-d memory_limit=256M" wp cli version
+          # A deliberately broken WP_CLI_PHP must actually be used: if it were ignored,
+          # this would still succeed. This is the regression guard for the whole fix.
+          if WP_CLI_PHP=/bin/false wp cli version 2>/dev/null; then
+            echo "WP_CLI_PHP was ignored by the launcher" >&2
+            exit 1
+          fi
 
       - name: Copy DEB package into builds folder
         run: |
@@ -404,7 +480,7 @@ jobs:
           git commit -m "deb build: $GITHUB_REPOSITORY@$GITHUB_SHA"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1
         with:
           github_token: ${{ secrets.ACTIONS_BOT }}
           branch: gh-pages

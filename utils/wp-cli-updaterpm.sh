@@ -45,6 +45,30 @@ pushd "$SOURCE_DIR" > /dev/null
 mv ../wp-cli.phar wp-cli.phar
 cp ../wp-cli-rpm.spec wp-cli.spec
 
+# Write the launcher script that selects the PHP interpreter (honoring
+# WP_CLI_PHP and WP_CLI_PHP_ARGS) and runs the bundled Phar.
+# Quoted heredoc delimiter keeps the variables literal.
+cat > wp <<'LAUNCHER'
+#!/bin/sh
+#
+# WP-CLI launcher for the RPM package.
+# Selects the PHP interpreter, honoring the WP_CLI_PHP and WP_CLI_PHP_ARGS
+# environment variables, then runs the bundled Phar.
+# See https://github.com/wp-cli/wp-cli-bundle/issues/1078
+
+if [ -n "$WP_CLI_PHP" ]; then
+	php="$WP_CLI_PHP"
+else
+	php="$(command -v php)"
+fi
+
+export WP_CLI_PHP_USED="$php"
+
+# WP_CLI_PHP_ARGS is intentionally unquoted so multiple arguments are split.
+# shellcheck disable=SC2086
+exec "$php" $WP_CLI_PHP_ARGS /usr/share/wp-cli/wp-cli.phar "$@"
+LAUNCHER
+
 # Replace version placeholder
 WPCLI_VER="$(php wp-cli.phar cli version | cut -d " " -f 2)"
 if [ -z "$WPCLI_VER" ]; then
@@ -52,7 +76,9 @@ if [ -z "$WPCLI_VER" ]; then
 fi
 echo "Current version: ${WPCLI_VER}"
 sed -i -e "s/^Version: .*\$/Version:    ${WPCLI_VER}/" wp-cli.spec || die 4 "Version update failed"
-sed -i -e "s/^\(\* .*\) 0\.0\.0-1\$/\1 ${WPCLI_VER}-1/" wp-cli.spec || die 5 "Changleog update failed"
+# Rewrite the placeholder version in every changelog entry (0.0.0-N -> ${WPCLI_VER}-N)
+# so the top entry stays coherent with the package version for rpmlint.
+sed -i -e "s/^\(\* .*\) 0\.0\.0-\([0-9]\+\)\$/\1 ${WPCLI_VER}-\2/" wp-cli.spec || die 5 "Changelog update failed"
 
 # Create man page
 {

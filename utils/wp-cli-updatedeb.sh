@@ -40,6 +40,32 @@ Description: wp-cli is a set of command-line tools for managing
 EOF
 }
 
+dump_launcher() {
+    # Write the launcher script that selects the PHP interpreter (honoring
+    # WP_CLI_PHP and WP_CLI_PHP_ARGS) and runs the bundled Phar.
+    # Quoted heredoc delimiter keeps the variables literal.
+    cat > "$1" <<'LAUNCHER'
+#!/bin/sh
+#
+# WP-CLI launcher for the Debian package.
+# Selects the PHP interpreter, honoring the WP_CLI_PHP and WP_CLI_PHP_ARGS
+# environment variables, then runs the bundled Phar.
+# See https://github.com/wp-cli/wp-cli-bundle/issues/1078
+
+if [ -n "$WP_CLI_PHP" ]; then
+	php="$WP_CLI_PHP"
+else
+	php="$(command -v php)"
+fi
+
+export WP_CLI_PHP_USED="$php"
+
+# WP_CLI_PHP_ARGS is intentionally unquoted so multiple arguments are split.
+# shellcheck disable=SC2086
+exec "$php" $WP_CLI_PHP_ARGS /usr/share/wp-cli/wp-cli.phar "$@"
+LAUNCHER
+}
+
 set -e
 
 # Download the binary if needed
@@ -76,13 +102,18 @@ fi
 
 # content dirs
 [ -d usr/bin ] || mkdir -p usr/bin
+[ -d usr/share/wp-cli ] || mkdir -p usr/share/wp-cli
 
-# move phar
-mv ../wp-cli.phar usr/bin/wp
-chmod +x usr/bin/wp
+# install the Phar to a shared location and a launcher to the bin dir
+mv ../wp-cli.phar usr/share/wp-cli/wp-cli.phar
+chmod 0755 usr/share/wp-cli/wp-cli.phar
+dump_launcher usr/bin/wp
+chmod 0755 usr/bin/wp
 
 # get version
-WPCLI_VER="$(usr/bin/wp cli version | cut -d " " -f 2)"
+# The launcher hard-codes the installed /usr/share path, which does not exist
+# inside the staging dir yet, so invoke PHP against the staged Phar directly.
+WPCLI_VER="$(php usr/share/wp-cli/wp-cli.phar cli version | cut -d " " -f 2)"
 [ -z "$WPCLI_VER" ] && die 5 "Cannot get wp-cli version"
 echo "Current version: ${WPCLI_VER}"
 
@@ -94,7 +125,7 @@ if ! [ -r usr/share/man/man1/wp.1.gz ]; then
     mkdir -p usr/share/man/man1 &> /dev/null
     {
         echo '.TH "WP" "1"'
-        usr/bin/wp --help
+        php usr/share/wp-cli/wp-cli.phar --help
     } \
         | sed 's/^\([A-Z ]\+\)$/.SH "\1"/' \
         | sed 's/^  wp$/wp \\- A command line interface for WordPress/' \
