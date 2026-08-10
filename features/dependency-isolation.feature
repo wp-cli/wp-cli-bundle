@@ -31,14 +31,14 @@ Feature: Bundled dependencies do not conflict with the site's own
       		eval(
       			'namespace Psr\Log;
       			interface LoggerInterface {
-      				public function emergency( \Stringable|string $message, array $context = [] ): void;
+      				public function emergency( string $message, array $context = [] ): void;
       			}'
       		);
       	}
       );
 
       final class Site_Logger implements \Psr\Log\LoggerInterface {
-      	public function emergency( \Stringable|string $message, array $context = [] ): void {
+      	public function emergency( string $message, array $context = [] ): void {
       	}
       }
       """
@@ -69,14 +69,14 @@ Feature: Bundled dependencies do not conflict with the site's own
       		eval(
       			'namespace Symfony\Component\Console\Output;
       			interface OutputInterface {
-      				public function writeln( \Stringable|string $messages, int $options = 0 ): void;
+      				public function writeln( string $messages, int $options = 0 ): void;
       			}'
       		);
       	}
       );
 
       final class Site_Output implements \Symfony\Component\Console\Output\OutputInterface {
-      	public function writeln( \Stringable|string $messages, int $options = 0 ): void {
+      	public function writeln( string $messages, int $options = 0 ): void {
       	}
       }
       """
@@ -93,6 +93,6 @@ Feature: Bundled dependencies do not conflict with the site's own
     # strings, which prefixing of static `use` statements does not cover.
     Given an empty directory
 
-    When I run `wp package list --format=count`
+    When I run `wp package list`
     Then STDERR should be empty
     And the return code should be 0
