@@ -14,6 +14,34 @@ jobs:
   test:
     uses: wp-cli/.github/.github/workflows/reusable-testing.yml@main
 
+  package-command-guidance:
+    name: Guidance for `wp package` without dev dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up PHP environment
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
+        with:
+          php-version: 'latest'
+          coverage: none
+
+      - name: Install without dev dependencies
+        run: composer install --no-dev --no-interaction --prefer-dist
+
+      - name: Check that `wp package` points at package-command
+        run: |
+          if vendor/bin/wp package > stdout.txt 2> stderr.txt; then
+            echo 'Expected `wp package` to fail without wp-cli/package-command.'
+            exit 1
+          fi
+
+          cat stderr.txt
+          grep -qF 'composer require wp-cli/package-command' stderr.txt
+
   minimum-php-guard:
     name: Minimum PHP guard - PHP ${{ matrix.php }}
     runs-on: ubuntu-22.04
