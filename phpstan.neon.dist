@@ -3,6 +3,11 @@ parameters:
   paths:
     - php
     - utils
+  excludePaths:
+    analyse:
+      # Isolated toolchain with its own composer.json; its dependencies are not
+      # installed in this project's vendor directory.
+      - utils/scoper/scoper.inc.php
   scanDirectories:
   	- vendor/wp-cli/wp-cli
   scanFiles:

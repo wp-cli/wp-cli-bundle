@@ -18,7 +18,6 @@ define( 'WP_CLI_ROOT', rtrim( WP_CLI_VENDOR_DIR, '/' ) . '/wp-cli/wp-cli' );
 require WP_CLI_VENDOR_DIR . '/autoload.php';
 require WP_CLI_ROOT . '/php/utils.php';
 
-use Symfony\Component\Finder\Finder;
 use WP_CLI\Utils;
 use WP_CLI\Configurator;
 
@@ -190,7 +189,21 @@ $phar = new Phar( DEST_PATH, 0, 'wp-cli.phar' );
 $phar->startBuffering();
 
 // PHP files
-$finder = new Finder();
+/*
+ * `utils/scope-dependencies.php` prefixes symfony/finder along with the rest
+ * of the Composer tree, so the class this build script itself relies on moves
+ * depending on whether prefixing has already run.
+ */
+$finder_class = class_exists( 'Symfony\\Component\\Finder\\Finder' )
+	? 'Symfony\\Component\\Finder\\Finder'
+	: 'WP_CLI\\Vendor\\Symfony\\Component\\Finder\\Finder';
+
+if ( ! class_exists( $finder_class ) ) {
+	fwrite( STDERR, 'Missing Symfony Finder; run `composer install` first.' . PHP_EOL );
+	exit( 1 );
+}
+
+$finder = new $finder_class();
 $finder
 	->files()
 	->ignoreVCS( true )
@@ -265,7 +278,7 @@ foreach ( $finder as $file ) {
 }
 
 // other files
-$finder = new Finder();
+$finder = new $finder_class();
 $finder
 	->files()
 	->ignoreVCS( true )
@@ -280,7 +293,7 @@ foreach ( $finder as $file ) {
 if ( 'cli' !== BUILD ) {
 	// Include base project files, because the autoloader will load them
 	if ( WP_CLI_BASE_PATH !== WP_CLI_BUNDLE_ROOT && is_dir( WP_CLI_BASE_PATH . '/src' ) ) {
-		$finder = new Finder();
+		$finder = new $finder_class();
 		$finder
 			->files()
 			->ignoreVCS( true )

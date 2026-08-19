@@ -52,10 +52,14 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<exclude-pattern>*/utils/get-package-require-from-composer\.php$</exclude-pattern>
 		<exclude-pattern>*/utils/make-phar\.php$</exclude-pattern>
+		<exclude-pattern>*/utils/scope-dependencies\.php$</exclude-pattern>
+		<exclude-pattern>*/utils/scoper/scoper\.inc\.php$</exclude-pattern>
 	</rule>
 	<rule ref="WordPress.WP.GlobalVariablesOverride">
 		<exclude-pattern>*/utils/get-package-require-from-composer\.php$</exclude-pattern>
 		<exclude-pattern>*/utils/make-phar\.php$</exclude-pattern>
+		<exclude-pattern>*/utils/scope-dependencies\.php$</exclude-pattern>
+		<exclude-pattern>*/utils/scoper/scoper\.inc\.php$</exclude-pattern>
 	</rule>
 
 </ruleset>
