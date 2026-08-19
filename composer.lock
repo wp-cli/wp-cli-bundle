@@ -997,16 +997,16 @@
         },
         {
             "name": "wp-cli/db-command",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/db-command.git",
-                "reference": "f90225572ca59bc865ab56d7460fc70e093320bf"
+                "reference": "d1f779e23484006432c9749eecfc642dd52c3515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/f90225572ca59bc865ab56d7460fc70e093320bf",
-                "reference": "f90225572ca59bc865ab56d7460fc70e093320bf",
+                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/d1f779e23484006432c9749eecfc642dd52c3515",
+                "reference": "d1f779e23484006432c9749eecfc642dd52c3515",
                 "shasum": ""
             },
             "require": {
@@ -1039,7 +1039,7 @@
                     "db columns"
                 ],
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1065,9 +1065,9 @@
             "homepage": "https://github.com/wp-cli/db-command",
             "support": {
                 "issues": "https://github.com/wp-cli/db-command/issues",
-                "source": "https://github.com/wp-cli/db-command/tree/v3.0.0"
+                "source": "https://github.com/wp-cli/db-command/tree/v3.0.1"
             },
-            "time": "2026-08-04T12:26:44+00:00"
+            "time": "2026-08-14T12:22:09+00:00"
         },
         {
             "name": "wp-cli/embed-command",
