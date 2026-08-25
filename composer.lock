@@ -299,16 +299,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.17.7",
+            "version": "v1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "89ee39f81e82cb7ed36cc5abaf2edd43cef71770"
+                "reference": "9c211ef67a0cf7511f864b6d390fe5939a837d05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/89ee39f81e82cb7ed36cc5abaf2edd43cef71770",
-                "reference": "89ee39f81e82cb7ed36cc5abaf2edd43cef71770",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/9c211ef67a0cf7511f864b6d390fe5939a837d05",
+                "reference": "9c211ef67a0cf7511f864b6d390fe5939a837d05",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +321,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.17.7-dev"
+                    "dev-master": "1.18.0-dev"
                 }
             },
             "autoload": {
@@ -342,9 +342,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.17.7"
+                "source": "https://github.com/mck89/peast/tree/v1.18.0"
             },
-            "time": "2026-07-21T11:56:06+00:00"
+            "time": "2026-08-19T09:36:10+00:00"
         },
         {
             "name": "mustache/mustache",
@@ -1666,16 +1666,16 @@
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "170a75093c0f780b5c6590f79e5cf06cb8962eb7"
+                "reference": "08a69eb8a8ba3cf23449fe8a64a06aeb2dbd8949"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/170a75093c0f780b5c6590f79e5cf06cb8962eb7",
-                "reference": "170a75093c0f780b5c6590f79e5cf06cb8962eb7",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/08a69eb8a8ba3cf23449fe8a64a06aeb2dbd8949",
+                "reference": "08a69eb8a8ba3cf23449fe8a64a06aeb2dbd8949",
                 "shasum": ""
             },
             "require": {
@@ -1705,7 +1705,7 @@
                     "i18n update-po"
                 ],
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1730,9 +1730,9 @@
             "homepage": "https://github.com/wp-cli/i18n-command",
             "support": {
                 "issues": "https://github.com/wp-cli/i18n-command/issues",
-                "source": "https://github.com/wp-cli/i18n-command/tree/v3.0.0"
+                "source": "https://github.com/wp-cli/i18n-command/tree/v3.0.1"
             },
-            "time": "2026-08-04T12:46:11+00:00"
+            "time": "2026-08-17T12:44:00+00:00"
         },
         {
             "name": "wp-cli/import-command",
