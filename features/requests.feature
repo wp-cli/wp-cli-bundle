@@ -39,7 +39,7 @@ Feature: Requests integration with both v1 and v2
     Given a check-request-v1-phar.php file:
       """
       <?php
-      var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );
+      var_dump( \WP_CLI\Utils\http_request( 'GET', 'https://example.com/' ) );
       """
     When I run `vendor/bin/wp eval-file check-request-v1-phar.php`
     Then STDOUT should contain:
@@ -68,7 +68,7 @@ Feature: Requests integration with both v1 and v2
     Given a check-request-v1.php file:
       """
       <?php
-      var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );
+      var_dump( \WP_CLI\Utils\http_request( 'GET', 'https://example.com/' ) );
       """
     When I run `wp eval-file check-request-v1.php`
     Then STDOUT should contain:
@@ -107,7 +107,7 @@ Feature: Requests integration with both v1 and v2
     Given a check-request-v2.php file:
       """
       <?php
-      var_dump( \WP_CLI\Utils\http_request( "GET", "https://example.com/" ) );
+      var_dump( \WP_CLI\Utils\http_request( 'GET', 'https://example.com/' ) );
       """
     When I run `wp eval-file check-request-v2.php`
     Then STDOUT should contain:
@@ -175,7 +175,7 @@ Feature: Requests integration with both v1 and v2
       """
     And an extra-config.php file:
       """
-      require __DIR__ . "/../vendor/autoload.php";
+      require __DIR__ . '/../vendor/autoload.php';
       """
     And the {RUN_DIR}/vendor/wp-cli/wp-cli/bundle/rmccue/requests directory should exist
     And the {RUN_DIR}/vendor/rmccue/requests directory should not exist
