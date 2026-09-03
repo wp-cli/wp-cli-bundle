@@ -2,17 +2,21 @@ Feature: Bundled dependencies do not conflict with the site's own
 
   # WP-CLI's autoloader is registered before WordPress boots, so for any class
   # shipped both by the Phar and by the site, the Phar's copy wins and is
-  # imposed on the site. Prefixing the `composer/composer` dependency tree stops
-  # the Phar from claiming those names at all.
+  # imposed on the site. The Phar therefore ships Composer's dependency tree
+  # under the `WP_CLI\Vendor` prefix instead, see utils/prefix-dependencies.php.
   #
-  # These scenarios run against the built Phar, which is the only artifact the
-  # prefixing applies to; a Composer-based installation resolves its own
-  # dependency versions and has no conflict to avoid.
+  # Prefixing happens on `composer install` and needs PHP 8.2+, which is why
+  # these scenarios build their own Phar from the checkout and only run where
+  # that tree exists. A Composer-based installation resolves its own dependency
+  # versions and has no conflict to avoid.
   #
   # See https://github.com/wp-cli/wp-cli/issues/5920
 
+  @require-php-8.2
   Scenario: A site providing its own psr/log is not broken by the bundled one
-    Given a WP installation
+    Given an empty directory
+    And a new Phar with the same version
+    And a WP installation
     # Stands in for a site that ships psr/log v3 through its own vendor
     # directory, as anything depending on monolog/monolog does. The typed
     # signatures are incompatible with the psr/log v1 that composer/composer
@@ -43,19 +47,15 @@ Feature: Bundled dependencies do not conflict with the site's own
       }
       """
 
-    When I try `wp option get siteurl`
-    Then STDERR should not contain:
-      """
-      must be compatible with
-      """
-    And STDERR should not contain:
-      """
-      critical error
-      """
-    And the return code should be 0
+    When I run `php {PHAR_PATH} option get siteurl`
+    Then STDOUT should not be empty
+    And STDERR should be empty
 
+  @require-php-8.2
   Scenario: A site providing its own Symfony Console is not broken by the bundled one
-    Given a WP installation
+    Given an empty directory
+    And a new Phar with the same version
+    And a WP installation
     And a wp-content/mu-plugins/site-console.php file:
       """
       <?php
@@ -81,18 +81,18 @@ Feature: Bundled dependencies do not conflict with the site's own
       }
       """
 
-    When I try `wp option get siteurl`
-    Then STDERR should not contain:
-      """
-      must be compatible with
-      """
-    And the return code should be 0
+    When I run `php {PHAR_PATH} option get siteurl`
+    Then STDOUT should not be empty
+    And STDERR should be empty
 
+  @require-php-8.2
   Scenario: Package management still works against the prefixed tree
-    # Exercises the paths where Composer resolves classes dynamically from
-    # strings, which prefixing of static `use` statements does not cover.
+    # Composer itself keeps its namespace and resolves plenty of classes from
+    # strings at runtime, which the prefixing of static `use` statements does
+    # not cover.
     Given an empty directory
+    And a new Phar with the same version
 
-    When I run `wp package list`
+    When I run `php {PHAR_PATH} package list`
     Then STDERR should be empty
     And the return code should be 0

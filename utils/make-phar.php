@@ -18,6 +18,7 @@ define( 'WP_CLI_ROOT', rtrim( WP_CLI_VENDOR_DIR, '/' ) . '/wp-cli/wp-cli' );
 require WP_CLI_VENDOR_DIR . '/autoload.php';
 require WP_CLI_ROOT . '/php/utils.php';
 
+use Symfony\Component\Finder\Finder;
 use WP_CLI\Utils;
 use WP_CLI\Configurator;
 
@@ -37,6 +38,19 @@ define( 'BE_QUIET', isset( $runtime_config['quiet'] ) && $runtime_config['quiet'
 
 define( 'BUILD', isset( $runtime_config['build'] ) ? $runtime_config['build'] : '' );
 
+/*
+ * `composer install` rewrites Composer's dependency tree under the
+ * `WP_CLI\Vendor` namespace into third_party/ (see utils/prefix-dependencies.php).
+ * When that tree exists, it replaces the original packages in the Phar. The
+ * minimal "cli" build has no use for it.
+ */
+define( 'WP_CLI_THIRD_PARTY_DIR', WP_CLI_BUNDLE_ROOT . '/third_party' );
+define( 'BUNDLE_PREFIXED_DEPENDENCIES', 'cli' !== BUILD && file_exists( WP_CLI_THIRD_PARTY_DIR . '/vendor/autoload.php' ) );
+
+if ( 'cli' !== BUILD && ! BUNDLE_PREFIXED_DEPENDENCIES && ! BE_QUIET ) {
+	echo 'Warning: third_party/ is missing, bundling unprefixed third-party dependencies. Run `composer prefix-dependencies` (PHP 8.2+) first.' . PHP_EOL;
+}
+
 $current_version = trim( (string) file_get_contents( WP_CLI_ROOT . '/VERSION' ) );
 
 if ( isset( $runtime_config['version'] ) ) {
@@ -53,6 +67,76 @@ if ( isset( $runtime_config['version'] ) ) {
 	$current_version = $new_version;
 }
 
+/**
+ * Patterns matching the lines to drop from vendor/composer/autoload_*.php.
+ *
+ * @return string[]
+ */
+function get_autoload_strip_patterns() {
+	static $strip_res = null;
+
+	if ( null !== $strip_res ) {
+		return $strip_res;
+	}
+
+	if ( 'cli' === BUILD ) {
+		$strips = [
+			'\/(?:behat|composer|gherkin)\/src\/',
+			'\/behat\/',
+			'\/phpunit\/',
+			'\/phpstan\/',
+			'\/phpspec\/',
+			'\/sebastian\/',
+			'\/php-parallel-lint\/',
+			'\/nb\/oxymel\/',
+			'-command\/src\/',
+			'\/wp-cli\/[^\n]+?-command\/',
+			'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)',
+			'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
+			'\/yoast\/',
+		];
+	} else {
+		$strips = [
+			'\/(?:behat|gherkin)\/src\/',
+			'\/behat\/',
+			'\/phpunit\/',
+			'\/phpstan\/',
+			'\/phpspec\/',
+			'\/sebastian\/',
+			'\/php-parallel-lint\/',
+			'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)',
+			'\/composer\/spdx-licenses\/',
+			'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
+			'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
+			'\/yoast\/',
+		];
+
+		if ( BUNDLE_PREFIXED_DEPENDENCIES ) {
+			// The prefixed tree brings its own autoloader. Dropping the original
+			// packages from this one is what stops the Phar from advertising
+			// their unprefixed names.
+			foreach ( (array) glob( WP_CLI_THIRD_PARTY_DIR . '/*/*', GLOB_ONLYDIR ) as $package_dir ) {
+				$package = substr( (string) $package_dir, strlen( WP_CLI_THIRD_PARTY_DIR ) + 1 );
+
+				if ( 0 === strpos( $package, 'vendor/' ) ) {
+					continue;
+				}
+
+				$strips[] = '\/' . preg_quote( $package, '/' ) . "(?=[\/'])";
+			}
+		}
+	}
+
+	$strip_res = array_map(
+		static function ( $v ) {
+				return '/^[^,\n]+?' . $v . '[^,\n]+?, *\n/m';
+		},
+		$strips
+	);
+
+	return $strip_res;
+}
+
 function add_file( $phar, $path ) {
 	$key = str_replace( WP_CLI_BASE_PATH, '', $path );
 
@@ -61,50 +145,9 @@ function add_file( $phar, $path ) {
 	}
 
 	$basename = basename( $path );
-	if ( 0 === strpos( $basename, 'autoload_' ) && preg_match( '/(?:classmap|files|namespaces|psr4|static)\.php$/', $basename ) ) {
+	if ( dirname( (string) $path ) === WP_CLI_VENDOR_DIR . '/composer' && 0 === strpos( $basename, 'autoload_' ) && preg_match( '/(?:classmap|files|namespaces|psr4|static)\.php$/', $basename ) ) {
 		// Strip autoload maps of unused stuff.
-		static $strip_res = null;
-		if ( null === $strip_res ) {
-			if ( 'cli' === BUILD ) {
-				$strips = [
-					'\/(?:behat|composer|gherkin)\/src\/',
-					'\/behat\/',
-					'\/phpunit\/',
-					'\/phpstan\/',
-					'\/phpspec\/',
-					'\/sebastian\/',
-					'\/php-parallel-lint\/',
-					'\/nb\/oxymel\/',
-					'-command\/src\/',
-					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)',
-					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
-					'\/yoast\/',
-				];
-			} else {
-				$strips = [
-					'\/(?:behat|gherkin)\/src\/',
-					'\/behat\/',
-					'\/phpunit\/',
-					'\/phpstan\/',
-					'\/phpspec\/',
-					'\/sebastian\/',
-					'\/php-parallel-lint\/',
-					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)',
-					'\/composer\/spdx-licenses\/',
-					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
-					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
-					'\/yoast\/',
-				];
-			}
-			$strip_res = array_map(
-				static function ( $v ) {
-						return '/^[^,\n]+?' . $v . '[^,\n]+?, *\n/m';
-				},
-				$strips
-			);
-		}
-		$phar[ $key ] = preg_replace( $strip_res, '', (string) file_get_contents( $path ) );
+		$phar[ $key ] = preg_replace( get_autoload_strip_patterns(), '', (string) file_get_contents( $path ) );
 	} else {
 		$phar[ $key ] = (string) file_get_contents( $path );
 	}
@@ -189,21 +232,7 @@ $phar = new Phar( DEST_PATH, 0, 'wp-cli.phar' );
 $phar->startBuffering();
 
 // PHP files
-/*
- * `utils/scope-dependencies.php` prefixes symfony/finder along with the rest
- * of the Composer tree, so the class this build script itself relies on moves
- * depending on whether prefixing has already run.
- */
-$finder_class = class_exists( 'Symfony\\Component\\Finder\\Finder' )
-	? 'Symfony\\Component\\Finder\\Finder'
-	: 'WP_CLI\\Vendor\\Symfony\\Component\\Finder\\Finder';
-
-if ( ! class_exists( $finder_class ) ) {
-	fwrite( STDERR, 'Missing Symfony Finder; run `composer install` first.' . PHP_EOL );
-	exit( 1 );
-}
-
-$finder = new $finder_class();
+$finder = new Finder();
 $finder
 	->files()
 	->ignoreVCS( true )
@@ -213,8 +242,6 @@ $finder
 	->in( WP_CLI_VENDOR_DIR . '/mustache/mustache' )
 	->in( WP_CLI_VENDOR_DIR . '/eftec/bladeone' )
 	->in( WP_CLI_ROOT . '/bundle/rmccue/requests' )
-	->in( WP_CLI_VENDOR_DIR . '/composer' )
-	->in( WP_CLI_VENDOR_DIR . '/symfony' )
 	->notName( 'behat-tags.php' )
 	->notPath( '#(?:[^/]+-command|php-cli-tools)/vendor/#' ) // For running locally, in case have composer installed or symlinked them.
 	->exclude( 'config' )
@@ -229,9 +256,14 @@ $finder
 	->exclude( 'tests' )
 	->exclude( 'Test' )
 	->exclude( 'Tests' );
-if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
+if ( ! BUNDLE_PREFIXED_DEPENDENCIES ) {
 	$finder
-		->in( WP_CLI_VENDOR_DIR . '/react' );
+		->in( WP_CLI_VENDOR_DIR . '/composer' )
+		->in( WP_CLI_VENDOR_DIR . '/symfony' );
+	if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
+		$finder
+			->in( WP_CLI_VENDOR_DIR . '/react' );
+	}
 }
 if ( 'cli' === BUILD ) {
 	$finder
@@ -248,28 +280,32 @@ if ( 'cli' === BUILD ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli' )
 		->in( WP_CLI_VENDOR_DIR . '/nb/oxymel' )
-		->in( WP_CLI_VENDOR_DIR . '/psr' )
-		->in( WP_CLI_VENDOR_DIR . '/seld' )
-		->in( WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema' )
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
 		->exclude( 'demo' )
 		->exclude( 'wp-cli-tests' )
-		->exclude( 'nb/oxymel/OxymelTest.php' )
-		->exclude( 'composer/spdx-licenses' )
-		->exclude( 'composer/composer/src/Composer/Command' )
-		->exclude( 'composer/composer/src/Composer/Compiler.php' )
-		->exclude( 'composer/composer/src/Composer/Console' )
-		->exclude( 'composer/composer/src/Composer/Downloader/PearPackageExtractor.php' ) // Assuming Pear installation isn't supported by wp-cli.
-		->exclude( 'composer/composer/src/Composer/Installer/PearBinaryInstaller.php' )
-		->exclude( 'composer/composer/src/Composer/Installer/PearInstaller.php' )
-		->exclude( 'composer/composer/src/Composer/Question' )
-		->exclude( 'composer/composer/src/Composer/Repository/Pear' )
-		->exclude( 'composer/composer/src/Composer/SelfUpdate' );
+		->exclude( 'nb/oxymel/OxymelTest.php' );
 
-	// required by justinrainbow/json-schema v6+.
-	if ( is_dir( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' ) ) {
-		$finder->in( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' );
+	if ( ! BUNDLE_PREFIXED_DEPENDENCIES ) {
+		$finder
+			->in( WP_CLI_VENDOR_DIR . '/psr' )
+			->in( WP_CLI_VENDOR_DIR . '/seld' )
+			->in( WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema' )
+			->exclude( 'composer/spdx-licenses' )
+			->exclude( 'composer/composer/src/Composer/Command' )
+			->exclude( 'composer/composer/src/Composer/Compiler.php' )
+			->exclude( 'composer/composer/src/Composer/Console' )
+			->exclude( 'composer/composer/src/Composer/Downloader/PearPackageExtractor.php' ) // Assuming Pear installation isn't supported by wp-cli.
+			->exclude( 'composer/composer/src/Composer/Installer/PearBinaryInstaller.php' )
+			->exclude( 'composer/composer/src/Composer/Installer/PearInstaller.php' )
+			->exclude( 'composer/composer/src/Composer/Question' )
+			->exclude( 'composer/composer/src/Composer/Repository/Pear' )
+			->exclude( 'composer/composer/src/Composer/SelfUpdate' );
+
+		// required by justinrainbow/json-schema v6+.
+		if ( is_dir( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' ) ) {
+			$finder->in( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' );
+		}
 	}
 }
 
@@ -277,8 +313,34 @@ foreach ( $finder as $file ) {
 	add_file( $phar, $file );
 }
 
+if ( BUNDLE_PREFIXED_DEPENDENCIES ) {
+	// Composer's autoloader machinery, minus the packages now in third_party/.
+	$finder = new Finder();
+	$finder
+		->files()
+		->name( '*.php' )
+		->depth( '== 0' )
+		->in( WP_CLI_VENDOR_DIR . '/composer' );
+
+	foreach ( $finder as $file ) {
+		add_file( $phar, $file );
+	}
+
+	// The prefixed dependency tree, including its own autoloader.
+	$finder = new Finder();
+	$finder
+		->files()
+		->ignoreVCS( true )
+		->notName( [ 'composer.json', 'composer.lock', 'installed.json' ] )
+		->in( WP_CLI_THIRD_PARTY_DIR );
+
+	foreach ( $finder as $file ) {
+		add_file( $phar, $file );
+	}
+}
+
 // other files
-$finder = new $finder_class();
+$finder = new Finder();
 $finder
 	->files()
 	->ignoreVCS( true )
@@ -293,7 +355,7 @@ foreach ( $finder as $file ) {
 if ( 'cli' !== BUILD ) {
 	// Include base project files, because the autoloader will load them
 	if ( WP_CLI_BASE_PATH !== WP_CLI_BUNDLE_ROOT && is_dir( WP_CLI_BASE_PATH . '/src' ) ) {
-		$finder = new $finder_class();
+		$finder = new Finder();
 		$finder
 			->files()
 			->ignoreVCS( true )
@@ -317,7 +379,8 @@ if ( 'cli' !== BUILD ) {
 }
 
 add_file( $phar, WP_CLI_VENDOR_DIR . '/autoload.php' );
-if ( 'cli' !== BUILD ) {
+if ( 'cli' !== BUILD && ! BUNDLE_PREFIXED_DEPENDENCIES ) {
+	// With prefixed dependencies, both come from third_party/.
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/LICENSE' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/res/composer-schema.json' );
 }

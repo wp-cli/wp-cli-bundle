@@ -1,133 +1,110 @@
 <?php
 /**
- * php-scoper configuration for the WP-CLI Phar build.
+ * php-scoper configuration for the Phar build.
  *
- * WP-CLI executes inside the WordPress process, so every unprefixed class the
- * Phar ships is imposed on the site: WP-CLI's autoloader is registered before
- * WordPress boots, so for any class present both in the Phar and in the site's
- * `vendor/`, the Phar's copy wins. That is how a site running `monolog/monolog`
- * against `psr/log` v3 ends up loading the Phar's `psr/log` 1.1.4 and fataling
- * on the incompatible `LoggerInterface` signature.
+ * WP-CLI executes inside the WordPress process and registers its autoloader
+ * before WordPress boots, so for any class shipped both by the Phar and by the
+ * site's own `vendor/`, the Phar's copy wins and is imposed on the site. That
+ * is how a site running against psr/log v3 ends up loading the Phar's psr/log
+ * v1 and fataling on the incompatible `LoggerInterface` signature.
  *
- * Only the `composer/composer` dependency tree is prefixed here. Two rules
- * shape the configuration:
+ * Composer's dependency tree (resolved in `prefixed-packages.php`) is
+ * therefore rewritten under the `WP_CLI\Vendor` namespace into `third_party/`.
+ * Anything reachable from WP-CLI's public API stays out of it and unprefixed:
+ * the `wp-cli/*` packages, `wp-cli/php-cli-tools`, Mustache, Requests.
  *
- * 1. The `Composer\` namespace itself stays UNPREFIXED. Third-party Composer
- *    plugins (`johnpbloch/wordpress-core-installer` and friends) are compiled
- *    against the real `Composer\Plugin\PluginInterface`; prefixing it would
- *    break `wp package install` for any package shipping a Composer plugin.
- *    References from inside `Composer\` to the prefixed vendors are still
- *    rewritten, so Composer keeps using its own `psr/log` v1.
- *
- * 2. Anything reachable from WP-CLI's public API stays unprefixed, and is
- *    simply never handed to the finders below: `wp-cli/php-cli-tools`
- *    (`Utils\make_progress_bar()` returns `cli\progress\Bar`), Requests
- *    (`Utils\http_request()` returns `WpOrg\Requests\Response`, and
- *    `RequestsLibrary` deliberately shares the library with WordPress Core),
- *    and every `wp-cli/*` package.
+ * Driven by `composer prefix-dependencies` (`utils/prefix-dependencies.php`);
+ * do not run php-scoper by hand.
  *
  * @see https://github.com/wp-cli/wp-cli/issues/5920
+ * @see https://github.com/humbug/php-scoper/blob/main/docs/configuration.md
  */
 
-declare( strict_types=1 );
+use Isolated\Symfony\Component\Finder\Finder;
 
-$finder_class = class_exists( \Isolated\Symfony\Component\Finder\Finder::class )
-	? \Isolated\Symfony\Component\Finder\Finder::class
-	: \Symfony\Component\Finder\Finder::class;
+require_once __DIR__ . '/prefixed-packages.php';
 
-$vendor_dir = getenv( 'WP_CLI_SCOPER_VENDOR_DIR' );
+$vendor_dir = dirname( __DIR__, 2 ) . '/vendor';
+$packages   = wp_cli_prefixed_packages( $vendor_dir );
 
-if ( ! $vendor_dir || ! is_dir( $vendor_dir ) ) {
-	fwrite( STDERR, "Error: WP_CLI_SCOPER_VENDOR_DIR is not set to an existing directory.\n" );
+if ( ! $packages ) {
+	fwrite( STDERR, 'Error: ' . WP_CLI_PREFIXED_ROOT_PACKAGE . " is not installed in '{$vendor_dir}'; nothing to prefix." . PHP_EOL );
 	exit( 1 );
 }
 
-/**
- * Vendor directories making up the `composer/composer` dependency tree.
- *
- * `vendor/composer` holds both Composer's own autoloader machinery and the
- * `composer/*` packages; the former declares classes under `Composer\` and is
- * therefore left unprefixed by the exclusion below.
+/*
+ * The polyfills declare global functions and classes behind `function_exists()`
+ * and `class_exists()` guards. They only work under their original names and
+ * cannot conflict with a site's copy, so they are copied verbatim.
  */
-$scoped_paths = array_values(
-	array_filter(
-		array_map(
-			static function ( $relative ) use ( $vendor_dir ) {
-				$path = $vendor_dir . '/' . $relative;
-				return is_dir( $path ) ? $path : null;
-			},
-			[
-				'composer',
-				'justinrainbow',
-				'marc-mabe', // spellchecker:disable-line
-				'psr',
-				'react',
-				'seld',
-				'symfony',
-			]
-		)
-	)
+$verbatim_files = array_merge(
+	(array) glob( $vendor_dir . '/symfony/polyfill-*/bootstrap*.php' ),
+	(array) glob( $vendor_dir . '/symfony/polyfill-*/Resources/stubs/*.php' ),
+	[ $vendor_dir . '/symfony/deprecation-contracts/function.php' ]
 );
 
 return [
-	'prefix'             => 'WP_CLI\\Vendor',
-	'finders'            => [
-		/*
-		 * Deliberately without exclusions. The prefixed output is merged back
-		 * over `vendor/` rather than replacing it, because php-scoper only
-		 * emits the PHP files it processed and the directories also hold
-		 * assets the Phar needs (certificate bundles, templates, stubs).
-		 * Any PHP file skipped here would therefore survive the merge with its
-		 * original namespace intact and be picked up by the regenerated
-		 * classmap -- which is exactly the unprefixed name the Phar is not
-		 * supposed to advertise any more. Test fixtures are the usual culprit:
-		 * `Psr\Log\Test\TestLogger` implements the very interface at issue.
-		 */
-		$finder_class::create()
+	'prefix'                  => WP_CLI_VENDOR_PREFIX,
+
+	'finders'                 => [
+		Finder::create()
 			->files()
 			->ignoreVCS( true )
 			->name( '*.php' )
-			->in( $scoped_paths ),
+			->exclude( [ 'test', 'tests', 'Test', 'Tests' ] )
+			// Parts of Composer the Phar never needed. Whatever is left out here
+			// also stays out of the generated classmap.
+			->notPath( '#^src/Composer/(?:Command|Console|Question|SelfUpdate|Installer/Pear|Repository/Pear)/#' )
+			->notPath( '#^src/Composer/(?:Compiler|Downloader/PearPackageExtractor|Installer/PearBinaryInstaller|Installer/PearInstaller)\.php$#' )
+			->in( array_column( $packages, 'path' ) ),
+
+		// Non-PHP files Composer reads at runtime; copied unchanged.
+		Finder::create()
+			->append(
+				[
+					$vendor_dir . '/composer/composer/res/composer-schema.json',
+					$vendor_dir . '/composer/composer/LICENSE',
+				]
+			),
 	],
 
-	/*
-	 * Left unprefixed so third-party Composer plugins keep implementing the
-	 * real interfaces. References from these files to the prefixed vendors are
-	 * still rewritten by php-scoper.
-	 */
-	'exclude-namespaces' => [
-		'Composer',
-	],
+	// See WP_CLI_UNPREFIXED_NAMESPACES for why these keep their names.
+	'exclude-namespaces'      => WP_CLI_UNPREFIXED_NAMESPACES,
+	'exclude-files'           => array_filter( $verbatim_files, 'is_string' ),
+	'exclude-functions'       => [ 'trigger_deprecation' ],
+	'exclude-constants'       => [ '/^SYMFONY_[\p{L}_]+$/' ],
 
-	'exclude-classes'    => [],
-	'exclude-functions'  => [],
-	'exclude-constants'  => [],
+	// Nothing in the tree is meant to be reachable under a global name; the
+	// polyfills above are the one exception and are handled explicitly.
+	'expose-global-constants' => false,
+	'expose-global-classes'   => false,
+	'expose-global-functions' => false,
 
-	'patchers'           => [
+	'patchers'                => [
 		/*
-		 * Excluding a namespace stops php-scoper prefixing its declarations,
-		 * but not string literals that name classes inside it. Composer passes
-		 * plenty of class names around as strings -- `ArrayLoader::load()`
-		 * defaults `$class` to 'Composer\Package\CompletePackage' and compares
-		 * against it -- and prefixing those strings points them at classes
-		 * that do not exist, because `Composer\` itself was left alone.
-		 *
-		 * Left unpatched this is quiet rather than fatal: Composer emits a
-		 * spurious "The $class arg is deprecated" notice and carries on, while
-		 * the same mismatch in a `new $class` path would be a hard failure.
+		 * Excluding a namespace keeps php-scoper away from its declarations
+		 * and references, but not reliably from string literals naming its
+		 * classes: `ArrayLoader::load()` defaults its $class parameter to
+		 * 'Composer\Package\CompletePackage' and that string does get
+		 * prefixed, pointing at a class that does not exist because
+		 * `Composer\` itself was left alone.
 		 */
-		static function ( string $file_path, string $prefix, string $contents ): string {
-			return str_replace(
-				[
-					$prefix . '\\Composer\\',
-					$prefix . '\\\\Composer\\\\',
-				],
-				[
-					'Composer\\',
-					'Composer\\\\',
-				],
-				$contents
-			);
+		static function ( $file_path, $prefix, $contents ) {
+			foreach ( WP_CLI_UNPREFIXED_NAMESPACES as $namespace ) {
+				$contents = str_replace(
+					[
+						$prefix . '\\' . $namespace . '\\',
+						str_replace( '\\', '\\\\', $prefix . '\\' . $namespace . '\\' ),
+					],
+					[
+						$namespace . '\\',
+						str_replace( '\\', '\\\\', $namespace . '\\' ),
+					],
+					$contents
+				);
+			}
+
+			return $contents;
 		},
 	],
 ];

@@ -1,13 +1,13 @@
 {
-    "name": "wp-cli/phar-scoper-toolchain",
-    "description": "Isolated toolchain used to prefix the Phar's third-party dependencies. Kept out of the bundle's own composer.json because php-scoper requires PHP 8.2+, while WP-CLI still targets PHP 7.2.24.",
+    "name": "wp-cli/php-scoper-toolchain",
+    "description": "Isolated php-scoper toolchain driven by utils/prefix-dependencies.php. Kept out of the bundle's own composer.json because php-scoper needs PHP 8.2+, while the bundle still targets PHP 7.2.",
     "license": "MIT",
     "type": "project",
     "require": {
-        "humbug/php-scoper": "^0.18"
+        "php": ">=8.2",
+        "humbug/php-scoper": "^0.18.18"
     },
     "config": {
-        "sort-packages": true,
-        "lock": false
+        "sort-packages": true
     }
 }

@@ -5,9 +5,11 @@ parameters:
     - utils
   excludePaths:
     analyse:
-      # Isolated toolchain with its own composer.json; its dependencies are not
-      # installed in this project's vendor directory.
+      # php-scoper configuration; its classes only exist in the isolated toolchain.
       - utils/scoper/scoper.inc.php
+    analyseAndScan:
+      # The isolated php-scoper toolchain.
+      - utils/scoper/vendor
   scanDirectories:
   	- vendor/wp-cli/wp-cli
   scanFiles:

@@ -55,3 +55,17 @@ Feature: Check `utils/make-phar.php` output
       Error: Couldn't find plugin-status.mustache
       """
     And the return code should be 0
+
+  # Prefixing runs on `composer install` and needs PHP 8.2+, so the tree only
+  # exists on such a checkout. See utils/prefix-dependencies.php.
+  @require-php-8.2
+  Scenario: Third-party dependencies are bundled under the WP_CLI\Vendor prefix
+    Given an empty directory
+    And a new Phar with the same version
+
+    When I run `php {PHAR_PATH} eval --skip-wordpress 'echo json_encode( [ interface_exists( "Psr\\Log\\LoggerInterface" ), class_exists( "Symfony\\Component\\Console\\Application" ), interface_exists( "WP_CLI\\Vendor\\Psr\\Log\\LoggerInterface" ), class_exists( "WP_CLI\\Vendor\\Symfony\\Component\\Console\\Application" ), class_exists( "Composer\\Semver\\Comparator" ) ] );'`
+    Then STDOUT should be:
+      """
+      [false,false,true,true,true]
+      """
+    And STDERR should be empty
