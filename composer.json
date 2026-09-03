@@ -64,6 +64,9 @@
   "extra": {
     "branch-alias": {
       "dev-main": "2.12.x-dev"
+    },
+    "command-hints": {
+      "package": "The 'package' command is bundled with the WP-CLI Phar, but is an optional dependency of Composer-based installations. Run `composer require wp-cli/package-command` to add it, or manage WP-CLI packages as regular Composer dependencies of your project instead."
     }
   },
   "autoload-dev": {
