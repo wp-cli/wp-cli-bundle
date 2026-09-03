@@ -278,9 +278,17 @@ if ( is_dir( WP_CLI_THIRD_PARTY_DIR ) ) {
 
 report( sprintf( 'Prefixing %d packages into third_party/...', count( $packages ) ) );
 
+/*
+ * A deprecation that a newer PHP raises inside the toolchain is noise at best
+ * and, up to php-scoper 0.18.18, fatal: it turned every diagnostic into an
+ * exception (PHP 8.5, "Using null as an array offset"). The prefixed output
+ * is unaffected either way, so keep deprecations out of the run.
+ */
 $scoper_exit = run(
 	[
 		$scoper_php,
+		'-d',
+		'error_reporting=' . ( E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED ),
 		WP_CLI_SCOPER_DIR . '/vendor/bin/php-scoper',
 		'add-prefix',
 		'--config=' . WP_CLI_SCOPER_DIR . '/scoper.inc.php',
