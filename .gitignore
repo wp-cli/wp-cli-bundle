@@ -5,6 +5,7 @@ PHAR_BUILD_VERSION
 /cache
 /packages
 /vendor
+/third_party
 /*.phar
 .*.swp
 *.log

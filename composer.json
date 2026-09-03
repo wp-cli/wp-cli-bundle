@@ -74,9 +74,12 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
+    "post-install-cmd": "@prefix-dependencies",
+    "post-update-cmd": "@prefix-dependencies",
+    "prefix-dependencies": "php utils/prefix-dependencies.php",
     "behat": "run-behat-tests",
     "behat-rerun": "rerun-behat-tests",
-    "lint": "run-linter-tests",
+    "lint": "run-linter-tests --exclude third_party --exclude utils/scoper/vendor",
     "lint-gherkin": "run-gherkin-lint-tests",
     "phpcs": "run-phpcs-tests",
     "phpstan": "run-phpstan-tests",
@@ -92,6 +95,9 @@
       "@phpunit",
       "@behat"
     ]
+  },
+  "scripts-descriptions": {
+    "prefix-dependencies": "Prefix the namespaces of the Phar's third-party dependencies into third_party/ (needs PHP 8.2+; runs on install and update)."
   },
   "support": {
     "issues": "https://github.com/wp-cli/wp-cli-bundle/issues",

@@ -1,0 +1,18 @@
+{
+    "name": "wp-cli/php-scoper-toolchain",
+    "description": "Isolated php-scoper toolchain driven by utils/prefix-dependencies.php. Kept out of the bundle's own composer.json because php-scoper needs PHP 8.2+, while the bundle still targets PHP 7.2.",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "humbug/php-scoper": "^0.18.19"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "8.2.0"
+        },
+        "sort-packages": true
+    }
+}

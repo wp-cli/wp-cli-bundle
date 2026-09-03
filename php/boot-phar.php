@@ -22,6 +22,14 @@ if ( version_compare( PHP_VERSION, '7.2.24', '<' ) ) {
 // Store the path to the Phar early on for `Utils\phar-safe-path()` function.
 define( 'WP_CLI_PHAR_PATH', Phar::running( true ) );
 
+// The bundled third-party dependencies are namespace-prefixed and ship with
+// their own autoloader. See utils/prefix-dependencies.php.
+$wp_cli_third_party_autoload = dirname( __DIR__ ) . '/third_party/vendor/autoload.php';
+if ( file_exists( $wp_cli_third_party_autoload ) ) {
+	require $wp_cli_third_party_autoload;
+}
+unset( $wp_cli_third_party_autoload );
+
 if ( file_exists( 'phar://wp-cli.phar/php/wp-cli.php' ) ) {
 	define( 'WP_CLI_ROOT', 'phar://wp-cli.phar' );
 	include WP_CLI_ROOT . '/php/wp-cli.php';
