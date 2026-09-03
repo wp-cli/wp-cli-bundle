@@ -119,6 +119,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install Ghostscript
+        timeout-minutes: 10
         run: |
           sudo apt-get update
           sudo apt-get install ghostscript -y
@@ -158,7 +159,7 @@ jobs:
 
       - name: Setup MySQL Server
         id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@3dcedf762c5e82d781a9e414462785b30208e79c # v1
+        uses: shogo82148/actions-setup-mysql@62da9377d83991fce27b6ed2a397d3306121e41d # v1
         with:
           mysql-version: ${{ matrix.mysql }}
           auto-start: true
