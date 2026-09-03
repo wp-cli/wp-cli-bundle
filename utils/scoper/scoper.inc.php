@@ -52,10 +52,6 @@ return [
 			->ignoreVCS( true )
 			->name( '*.php' )
 			->exclude( [ 'test', 'tests', 'Test', 'Tests' ] )
-			// Parts of Composer the Phar never needed. Whatever is left out here
-			// also stays out of the generated classmap.
-			->notPath( '#^src/Composer/(?:Command|Console|Question|SelfUpdate|Installer/Pear|Repository/Pear)/#' )
-			->notPath( '#^src/Composer/(?:Compiler|Downloader/PearPackageExtractor|Installer/PearBinaryInstaller|Installer/PearInstaller)\.php$#' )
 			->in( array_column( $packages, 'path' ) ),
 
 		// Non-PHP files Composer reads at runtime; copied unchanged.
