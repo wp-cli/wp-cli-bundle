@@ -15,6 +15,8 @@ jobs:
     uses: wp-cli/.github/.github/workflows/reusable-testing.yml@main
 
   package-command-guidance:
+    permissions:
+      contents: read
     name: Guidance for `wp package` without dev dependencies
     runs-on: ubuntu-latest
     steps:
