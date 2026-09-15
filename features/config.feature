@@ -19,9 +19,10 @@ Feature: wp-config.php tests
       // Provide defines that make use of __FILE__ and __DIR__.
       define( 'WP_CONTENT_DIR', __FILE__ . '/my-content/' );
       define( 'WP_PLUGIN_DIR', __DIR__ . '/my-plugins/' );
-      if ( ! defined( 'ABSPATH' ) )
-        define( 'ABSPATH', dirname( __FILE__ ) . '/' );
-      require_once( ABSPATH . 'wp-settings.php' );
+      if ( ! defined( 'ABSPATH' ) ) {
+          define( 'ABSPATH', __DIR__ . '/' );
+      }
+      require_once ABSPATH . 'wp-settings.php';
       """
 
     When I run `{PHAR_PATH} eval "echo 'WP_CONTENT_DIR => ' . WP_CONTENT_DIR;"`
