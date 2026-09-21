@@ -9719,16 +9719,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.3.1",
+            "version": "v5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "902de26e34e8ba5e98a40f3132b7087af38ae638"
+                "reference": "16f77f8642125a0fbc8d608feca0c57ed733c8ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/902de26e34e8ba5e98a40f3132b7087af38ae638",
-                "reference": "902de26e34e8ba5e98a40f3132b7087af38ae638",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/16f77f8642125a0fbc8d608feca0c57ed733c8ac",
+                "reference": "16f77f8642125a0fbc8d608feca0c57ed733c8ac",
                 "shasum": ""
             },
             "require": {
@@ -9811,7 +9811,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-09-01T10:28:35+00:00"
+            "time": "2026-09-14T09:23:09+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9819,12 +9819,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "f72bcdfc4da28526a6e753bcecfaeff8a80a6d00"
+                "reference": "8c038cfcc4fca8ca50e3deff8c7c53befcb0aaa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/f72bcdfc4da28526a6e753bcecfaeff8a80a6d00",
-                "reference": "f72bcdfc4da28526a6e753bcecfaeff8a80a6d00",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/8c038cfcc4fca8ca50e3deff8c7c53befcb0aaa7",
+                "reference": "8c038cfcc4fca8ca50e3deff8c7c53befcb0aaa7",
                 "shasum": ""
             },
             "require": {
@@ -9878,7 +9878,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-08-20T23:19:15+00:00"
+            "time": "2026-09-21T00:35:30+00:00"
         },
         {
             "name": "wp-hooks/wordpress-core",
