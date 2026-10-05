@@ -55,3 +55,14 @@ Feature: Check `utils/make-phar.php` output
       Error: Couldn't find plugin-status.mustache
       """
     And the return code should be 0
+
+  Scenario: Phar is signed with SHA-512
+    Given an empty directory
+    And a new Phar with the same version
+
+    When I run `cp {PHAR_PATH} signed.phar`
+    And I run `php -r 'echo (new Phar( "signed.phar" ))->getSignature()["hash_type"];'`
+    Then STDOUT should be:
+      """
+      SHA-512
+      """
