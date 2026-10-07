@@ -1797,16 +1797,16 @@
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "a6b999e64971f78352aa0614601061794e96c86e"
+                "reference": "cd62a8a8b9f982afc5ccdc800bfa9822cfc84fc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/a6b999e64971f78352aa0614601061794e96c86e",
-                "reference": "a6b999e64971f78352aa0614601061794e96c86e",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/cd62a8a8b9f982afc5ccdc800bfa9822cfc84fc8",
+                "reference": "cd62a8a8b9f982afc5ccdc800bfa9822cfc84fc8",
                 "shasum": ""
             },
             "require": {
@@ -1845,7 +1845,7 @@
                     "site switch-language"
                 ],
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1871,9 +1871,9 @@
             "homepage": "https://github.com/wp-cli/language-command",
             "support": {
                 "issues": "https://github.com/wp-cli/language-command/issues",
-                "source": "https://github.com/wp-cli/language-command/tree/v3.0.0"
+                "source": "https://github.com/wp-cli/language-command/tree/v3.0.1"
             },
-            "time": "2026-08-04T12:25:07+00:00"
+            "time": "2026-10-06T06:17:54+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
