@@ -721,16 +721,16 @@
         },
         {
             "name": "wp-cli/checksum-command",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/checksum-command.git",
-                "reference": "dc1dc576f054962eb68dfea3cbfa4d9c8c8249b6"
+                "reference": "a70aa796eca4e59f68548415d1a2075d275d42f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/dc1dc576f054962eb68dfea3cbfa4d9c8c8249b6",
-                "reference": "dc1dc576f054962eb68dfea3cbfa4d9c8c8249b6",
+                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/a70aa796eca4e59f68548415d1a2075d275d42f1",
+                "reference": "a70aa796eca4e59f68548415d1a2075d275d42f1",
                 "shasum": ""
             },
             "require": {
@@ -748,7 +748,7 @@
                     "plugin verify-checksums"
                 ],
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -774,9 +774,9 @@
             "homepage": "https://github.com/wp-cli/checksum-command",
             "support": {
                 "issues": "https://github.com/wp-cli/checksum-command/issues",
-                "source": "https://github.com/wp-cli/checksum-command/tree/v3.0.0"
+                "source": "https://github.com/wp-cli/checksum-command/tree/v3.0.1"
             },
-            "time": "2026-08-04T11:53:37+00:00"
+            "time": "2026-10-06T16:50:56+00:00"
         },
         {
             "name": "wp-cli/config-command",
