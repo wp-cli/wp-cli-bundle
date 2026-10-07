@@ -1938,16 +1938,16 @@
         },
         {
             "name": "wp-cli/media-command",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/media-command.git",
-                "reference": "25dc57685212edd26b60137392aecbce11610d3a"
+                "reference": "fae3504360f84a1e043e019c2d220bb689b744b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/25dc57685212edd26b60137392aecbce11610d3a",
-                "reference": "25dc57685212edd26b60137392aecbce11610d3a",
+                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/fae3504360f84a1e043e019c2d220bb689b744b4",
+                "reference": "fae3504360f84a1e043e019c2d220bb689b744b4",
                 "shasum": ""
             },
             "require": {
@@ -1971,7 +1971,7 @@
                     "media image-size"
                 ],
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1997,9 +1997,9 @@
             "homepage": "https://github.com/wp-cli/media-command",
             "support": {
                 "issues": "https://github.com/wp-cli/media-command/issues",
-                "source": "https://github.com/wp-cli/media-command/tree/v3.0.0"
+                "source": "https://github.com/wp-cli/media-command/tree/v3.1.0"
             },
-            "time": "2026-08-04T12:46:34+00:00"
+            "time": "2026-10-06T06:17:57+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
@@ -2757,7 +2757,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-07T06:26:04+00:00"
+            "time": "2026-10-07T10:55:54+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
