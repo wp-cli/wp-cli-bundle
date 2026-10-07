@@ -2688,12 +2688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "64db1f6e0466da7b926b85c072e1538394dbdd4e"
+                "reference": "29cb44206e982b572cfa7957dce6ce0aa399995d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/64db1f6e0466da7b926b85c072e1538394dbdd4e",
-                "reference": "64db1f6e0466da7b926b85c072e1538394dbdd4e",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/29cb44206e982b572cfa7957dce6ce0aa399995d",
+                "reference": "29cb44206e982b572cfa7957dce6ce0aa399995d",
                 "shasum": ""
             },
             "require": {
