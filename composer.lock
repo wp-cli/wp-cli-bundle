@@ -1138,16 +1138,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "41a409de8633053b2d9625410c83b974b25199d2"
+                "reference": "29d5426a5f3f860db7f4dc945e49c79487c72038"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/41a409de8633053b2d9625410c83b974b25199d2",
-                "reference": "41a409de8633053b2d9625410c83b974b25199d2",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/29d5426a5f3f860db7f4dc945e49c79487c72038",
+                "reference": "29d5426a5f3f860db7f4dc945e49c79487c72038",
                 "shasum": ""
             },
             "require": {
@@ -1201,6 +1201,15 @@
                     "font face install",
                     "font family",
                     "font family install",
+                    "icon",
+                    "icon collection",
+                    "icon collection get",
+                    "icon collection is-registered",
+                    "icon collection list",
+                    "icon get",
+                    "icon is-registered",
+                    "icon list",
+                    "icon render",
                     "menu",
                     "menu create",
                     "menu delete",
@@ -1426,9 +1435,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v3.0.2"
+                "source": "https://github.com/wp-cli/entity-command/tree/v3.0.3"
             },
-            "time": "2026-08-14T12:24:50+00:00"
+            "time": "2026-10-07T11:30:35+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -2054,16 +2063,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.13.1",
+            "version": "v0.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "33ba0dd13654606b6bf84cb8997dae9b80dfe0ce"
+                "reference": "5bd08e633ef3be1e21834a971e4c424fafd4f8f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/33ba0dd13654606b6bf84cb8997dae9b80dfe0ce",
-                "reference": "33ba0dd13654606b6bf84cb8997dae9b80dfe0ce",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/5bd08e633ef3be1e21834a971e4c424fafd4f8f5",
+                "reference": "5bd08e633ef3be1e21834a971e4c424fafd4f8f5",
                 "shasum": ""
             },
             "require": {
@@ -2111,9 +2120,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.1"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.2"
             },
-            "time": "2026-10-06T08:10:33+00:00"
+            "time": "2026-10-07T11:43:52+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2692,7 +2701,7 @@
                 "mustache/mustache": "^3.0.0",
                 "php": ">=7.2.24 || ^8.0",
                 "wp-cli/mustangostang-spyc": "^0.6.3",
-                "wp-cli/php-cli-tools": "~0.13.0"
+                "wp-cli/php-cli-tools": "~0.13.2"
             },
             "require-dev": {
                 "justinrainbow/json-schema": "^6.3",
@@ -2757,7 +2766,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-07T10:55:54+00:00"
+            "time": "2026-10-07T14:05:01+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
