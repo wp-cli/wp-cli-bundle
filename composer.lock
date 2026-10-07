@@ -1432,16 +1432,16 @@
         },
         {
             "name": "wp-cli/eval-command",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/eval-command.git",
-                "reference": "fbccba5595de2efb91a242610f9c55dd69eea78b"
+                "reference": "80fd654e5f222e7d40a991eae09c50acec05a6b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/fbccba5595de2efb91a242610f9c55dd69eea78b",
-                "reference": "fbccba5595de2efb91a242610f9c55dd69eea78b",
+                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/80fd654e5f222e7d40a991eae09c50acec05a6b3",
+                "reference": "80fd654e5f222e7d40a991eae09c50acec05a6b3",
                 "shasum": ""
             },
             "require": {
@@ -1458,7 +1458,7 @@
                     "eval-file"
                 ],
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1484,9 +1484,9 @@
             "homepage": "https://github.com/wp-cli/eval-command",
             "support": {
                 "issues": "https://github.com/wp-cli/eval-command/issues",
-                "source": "https://github.com/wp-cli/eval-command/tree/v3.0.0"
+                "source": "https://github.com/wp-cli/eval-command/tree/v3.0.1"
             },
-            "time": "2026-08-04T08:32:56+00:00"
+            "time": "2026-10-06T06:17:45+00:00"
         },
         {
             "name": "wp-cli/export-command",
@@ -2054,16 +2054,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.13.0",
+            "version": "v0.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "4a04ffbe322b031b4c54e176edf1dfd299c7fe55"
+                "reference": "33ba0dd13654606b6bf84cb8997dae9b80dfe0ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/4a04ffbe322b031b4c54e176edf1dfd299c7fe55",
-                "reference": "4a04ffbe322b031b4c54e176edf1dfd299c7fe55",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/33ba0dd13654606b6bf84cb8997dae9b80dfe0ce",
+                "reference": "33ba0dd13654606b6bf84cb8997dae9b80dfe0ce",
                 "shasum": ""
             },
             "require": {
@@ -2111,9 +2111,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.0"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.1"
             },
-            "time": "2026-04-08T12:28:41+00:00"
+            "time": "2026-10-06T08:10:33+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2757,7 +2757,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-06T09:54:28+00:00"
+            "time": "2026-10-07T06:26:04+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
