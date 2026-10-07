@@ -48,20 +48,23 @@ jobs:
           echo "CLI_VERSION=$CLI_VERSION" > $GITHUB_ENV
           echo "$CLI_VERSION" > cli_version.txt
 
-      - name: Upload WP-CLI version
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
-        with:
-          name: cli_version
-          path: cli_version.txt
+      # The version and manifest uploads do not depend on the Phar, so they run
+      # alongside the build instead of ahead of it.
+      - parallel:
+          - name: Upload WP-CLI version
+            uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+            with:
+              name: cli_version
+              path: cli_version.txt
 
-      - name: Upload manifest file
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
-        with:
-          name: manifest
-          path: vendor/wp-cli/wp-cli/manifest.json
+          - name: Upload manifest file
+            uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+            with:
+              name: manifest
+              path: vendor/wp-cli/wp-cli/manifest.json
 
-      - name: Build the Phar file
-        run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
+          - name: Build the Phar file
+            run: php -dphar.readonly=0 utils/make-phar.php wp-cli.phar --version=$CLI_VERSION
 
       - name: Upload built Phar file
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
@@ -112,6 +115,29 @@ jobs:
       - name: Check out source code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      # Neither the database server nor the built Phar is needed until the tests
+      # are prepared, so fetch both in the background while PHP and the Composer
+      # dependencies are set up. The MySQL action only downloads its own
+      # binaries, so it cannot contend with apt.
+      - name: Setup MySQL Server
+        id: setup-mysql
+        background: true
+        uses: shogo82148/actions-setup-mysql@334a29f22d90428932f75b11e0d5fcc00bb6b4f4 # v1
+        with:
+          mysql-version: ${{ matrix.mysql }}
+          auto-start: true
+          root-password: root
+          user: wp_cli_test
+          password: password1
+          my-cnf: |
+            default_authentication_plugin=mysql_native_password
+
+      - name: Download built Phar file
+        background: true
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: wp-cli-phar
+
       - name: Install Ghostscript
         timeout-minutes: 10
         run: |
@@ -140,28 +166,14 @@ jobs:
         run: |
           sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
-      - name: Download built Phar file
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
-        with:
-          name: wp-cli-phar
+      - name: Wait for the MySQL server and the Phar download
+        wait-all:
 
       - name: Prepare built Phar file for Behat tests
         run: |
           mkdir -p $WP_CLI_BIN_DIR
           mv wp-cli.phar $WP_CLI_BIN_DIR/wp
           chmod +x $WP_CLI_BIN_DIR/wp
-
-      - name: Setup MySQL Server
-        id: setup-mysql
-        uses: shogo82148/actions-setup-mysql@334a29f22d90428932f75b11e0d5fcc00bb6b4f4 # v1
-        with:
-          mysql-version: ${{ matrix.mysql }}
-          auto-start: true
-          root-password: root
-          user: wp_cli_test
-          password: password1
-          my-cnf: |
-            default_authentication_plugin=mysql_native_password
 
       - name: Configure DB environment
         run: |
@@ -198,24 +210,25 @@ jobs:
           repository: wp-cli/builds
           token: ${{ secrets.ACTIONS_BOT }}
 
-      - name: Download WP-CLI version
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
-        with:
-          name: cli_version
+      - parallel:
+          - name: Download WP-CLI version
+            uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+            with:
+              name: cli_version
+
+          - name: Download manifest file
+            uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+            with:
+              name: manifest
+
+          - name: Download built Phar file
+            uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+            with:
+              name: wp-cli-phar
 
       - name: Set new nightly version
         run: |
           cat cli_version.txt > phar/NIGHTLY_VERSION
-
-      - name: Download manifest file
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
-        with:
-          name: manifest
-
-      - name: Download built Phar file
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
-        with:
-          name: wp-cli-phar
 
       - name: Set file name for release branch
         if: ${{ contains(github.ref, 'release') }}
@@ -267,6 +280,14 @@ jobs:
     needs: [deploy]
 
     steps:
+      # The RPM tooling comes from apt, which is slow and independent of the
+      # checkouts and the Phar download, so install it in the background.
+      - name: Install RPM build tooling
+        background: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install rpm rpmlint -y
+
       - name: Check out builds repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -286,15 +307,13 @@ jobs:
         with:
           name: wp-cli-phar
 
-      - name: Install RPM build tooling
-        run: |
-          sudo apt-get update
-          sudo apt-get install rpm rpmlint -y
-
       - name: Copy RPM build configuration
         run: |
           cp bundle/utils/wp-cli-rpm.spec .
           cp bundle/utils/wp-cli-updaterpm.sh .
+
+      - name: Wait for the RPM build tooling
+        wait-all:
 
       - name: Build RPM package
         run: |
@@ -356,6 +375,14 @@ jobs:
     needs: [build-rpm]
 
     steps:
+      # The DEB tooling comes from apt, which is slow and independent of the
+      # checkouts and the Phar download, so install it in the background.
+      - name: Install DEB build tooling
+        background: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install fakeroot lintian -y
+
       - name: Check out builds repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -375,14 +402,12 @@ jobs:
         with:
           name: wp-cli-phar
 
-      - name: Install DEB build tooling
-        run: |
-          sudo apt-get update
-          sudo apt-get install fakeroot lintian -y
-
       - name: Copy DEB build configuration
         run: |
           cp bundle/utils/wp-cli-updatedeb.sh .
+
+      - name: Wait for the DEB build tooling
+        wait-all:
 
       - name: Build DEB package
         run: |
