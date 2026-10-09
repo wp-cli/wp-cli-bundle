@@ -3728,16 +3728,16 @@
         },
         {
             "name": "johnbillion/wp-compat",
-            "version": "2.0.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/wp-compat.git",
-                "reference": "b2e32bd91716a98bc6fc527c525b979652a4a567"
+                "reference": "3936fc9b292f501c6b014d33b904a3ed869ffafb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/wp-compat/zipball/b2e32bd91716a98bc6fc527c525b979652a4a567",
-                "reference": "b2e32bd91716a98bc6fc527c525b979652a4a567",
+                "url": "https://api.github.com/repos/johnbillion/wp-compat/zipball/3936fc9b292f501c6b014d33b904a3ed869ffafb",
+                "reference": "3936fc9b292f501c6b014d33b904a3ed869ffafb",
                 "shasum": ""
             },
             "require": {
@@ -3799,7 +3799,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-29T17:12:02+00:00"
+            "time": "2026-10-09T11:29:14+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -9728,23 +9728,23 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.3.4",
+            "version": "v5.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "5a0df948d6a0515364f83391ad7164dcb42d7248"
+                "reference": "f6ab8404041ce23a4687dc248e0ca346b7d6ebe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/5a0df948d6a0515364f83391ad7164dcb42d7248",
-                "reference": "5a0df948d6a0515364f83391ad7164dcb42d7248",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/f6ab8404041ce23a4687dc248e0ca346b7d6ebe5",
+                "reference": "f6ab8404041ce23a4687dc248e0ca346b7d6ebe5",
                 "shasum": ""
             },
             "require": {
                 "behat/behat": "^v3.15.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3 || ^0.5 || ^0.6.2 || ^0.7.1 || ^1.0.0",
                 "ext-tokenizer": "*",
-                "johnbillion/wp-compat": "^2.0",
+                "johnbillion/wp-compat": "^2.0 || ^3.0",
                 "php": ">=7.2.24",
                 "php-parallel-lint/php-console-highlighter": "^1.0",
                 "php-parallel-lint/php-parallel-lint": "^1.3.1",
@@ -9820,7 +9820,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-10-06T08:34:20+00:00"
+            "time": "2026-10-09T12:48:55+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -9828,12 +9828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "87988814d50a0d560ed89bf338300f85cbfb23a9"
+                "reference": "510f4f678ac00b65c162aa0ad57d4768940a0409"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/87988814d50a0d560ed89bf338300f85cbfb23a9",
-                "reference": "87988814d50a0d560ed89bf338300f85cbfb23a9",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/510f4f678ac00b65c162aa0ad57d4768940a0409",
+                "reference": "510f4f678ac00b65c162aa0ad57d4768940a0409",
                 "shasum": ""
             },
             "require": {
@@ -9887,7 +9887,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-09-26T19:04:56+00:00"
+            "time": "2026-10-07T20:23:40+00:00"
         },
         {
             "name": "wp-hooks/wordpress-core",
