@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/semver",
-            "version": "3.5.2",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "9dfce66f1e97360ea5e6d3e38ab14277e4cc591e"
+                "reference": "d92543b7ede9c4ec6b59853cefb061e39866d2cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/9dfce66f1e97360ea5e6d3e38ab14277e4cc591e",
-                "reference": "9dfce66f1e97360ea5e6d3e38ab14277e4cc591e",
+                "url": "https://api.github.com/repos/composer/semver/zipball/d92543b7ede9c4ec6b59853cefb061e39866d2cf",
+                "reference": "d92543b7ede9c4ec6b59853cefb061e39866d2cf",
                 "shasum": ""
             },
             "require": {
@@ -69,7 +69,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.5.2"
+                "source": "https://github.com/composer/semver/tree/3.6.0"
             },
             "funding": [
                 {
@@ -81,7 +81,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-22T15:37:26+00:00"
+            "time": "2026-10-29T09:13:34+00:00",
+            "published-time": "2026-10-29T09:14:11+00:00"
         },
         {
             "name": "eftec/bladeone",
@@ -397,7 +398,8 @@
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
                 "source": "https://github.com/bobthecow/mustache.php/tree/v3.2.0"
             },
-            "time": "2026-05-10T04:13:08+00:00"
+            "time": "2026-05-10T04:13:08+00:00",
+            "published-time": "2026-05-10T04:16:00+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -2059,7 +2061,8 @@
             "support": {
                 "source": "https://github.com/wp-cli/spyc/tree/0.6.7"
             },
-            "time": "2026-10-06T08:59:48+00:00"
+            "time": "2026-10-06T08:59:48+00:00",
+            "published-time": "2026-10-06T09:00:14+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2122,7 +2125,8 @@
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
                 "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.2"
             },
-            "time": "2026-10-07T11:43:52+00:00"
+            "time": "2026-10-07T11:43:52+00:00",
+            "published-time": "2026-10-07T11:44:13+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2766,7 +2770,8 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-29T04:54:47+00:00"
+            "time": "2026-10-29T04:54:47+00:00",
+            "published-time": "2026-10-29T04:54:52+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -10051,5 +10056,5 @@
     "platform-overrides": {
         "php": "7.2.24"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
