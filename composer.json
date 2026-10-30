@@ -42,7 +42,7 @@
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "wp-cli/package-command": "^3",
-    "wp-cli/wp-cli-tests": "^5"
+    "wp-cli/wp-cli-tests": "dev-cached-extension-installs as 5.3.99"
   },
   "suggest": {
     "psy/psysh": "Enhanced `wp shell` functionality",
