@@ -40,7 +40,6 @@
     "wp-cli/wp-cli": "dev-main"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
     "wp-cli/package-command": "^3",
     "wp-cli/wp-cli-tests": "^5"
   },
