@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b6e0c3cf150c6bf331db35ffb72814e",
+    "content-hash": "47e62947fe7f7c27b2eb639fc21fe518",
     "packages": [
         {
             "name": "composer/semver",
@@ -81,8 +81,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-29T09:13:34+00:00",
-            "published-time": "2026-10-29T09:14:11+00:00"
+            "time": "2026-10-29T09:13:34+00:00"
         },
         {
             "name": "eftec/bladeone",
@@ -398,8 +397,7 @@
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
                 "source": "https://github.com/bobthecow/mustache.php/tree/v3.2.0"
             },
-            "time": "2026-05-10T04:13:08+00:00",
-            "published-time": "2026-05-10T04:16:00+00:00"
+            "time": "2026-05-10T04:13:08+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -2061,8 +2059,7 @@
             "support": {
                 "source": "https://github.com/wp-cli/spyc/tree/0.6.7"
             },
-            "time": "2026-10-06T08:59:48+00:00",
-            "published-time": "2026-10-06T09:00:14+00:00"
+            "time": "2026-10-06T08:59:48+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2125,8 +2122,7 @@
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
                 "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.2"
             },
-            "time": "2026-10-07T11:43:52+00:00",
-            "published-time": "2026-10-07T11:44:13+00:00"
+            "time": "2026-10-07T11:43:52+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2770,8 +2766,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-30T14:14:41+00:00",
-            "published-time": "2026-10-30T14:14:48+00:00"
+            "time": "2026-10-30T14:14:41+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -9733,16 +9728,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.3.5",
+            "version": "dev-cached-extension-installs",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "f6ab8404041ce23a4687dc248e0ca346b7d6ebe5"
+                "reference": "14e93f6ba4203ce7b464ba62d6c1d28bd32e8470"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/f6ab8404041ce23a4687dc248e0ca346b7d6ebe5",
-                "reference": "f6ab8404041ce23a4687dc248e0ca346b7d6ebe5",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/14e93f6ba4203ce7b464ba62d6c1d28bd32e8470",
+                "reference": "14e93f6ba4203ce7b464ba62d6c1d28bd32e8470",
                 "shasum": ""
             },
             "require": {
@@ -9770,7 +9765,8 @@
                 "yoast/phpunit-polyfills": "^2.0 || ^3.0 || ^4.0"
             },
             "require-dev": {
-                "roave/security-advisories": "dev-latest"
+                "roave/security-advisories": "dev-latest",
+                "wp-cli/extension-command": "^1 || ^2 || ^3"
             },
             "bin": [
                 "bin/install-package-tests",
@@ -9825,7 +9821,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-10-09T12:48:55+00:00"
+            "time": "2026-10-30T20:31:35+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -10041,11 +10037,19 @@
             "time": "2025-02-09T18:58:54+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "wp-cli/wp-cli-tests",
+            "version": "dev-cached-extension-installs",
+            "alias": "5.3.99",
+            "alias_normalized": "5.3.99.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "wp-cli/wp-cli": 20
+        "wp-cli/wp-cli": 20,
+        "wp-cli/wp-cli-tests": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -10056,5 +10060,5 @@
     "platform-overrides": {
         "php": "7.2.24"
     },
-    "plugin-api-version": "2.11.0"
+    "plugin-api-version": "2.9.0"
 }
