@@ -2692,12 +2692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "3fd76a72915685a1970198638dee047f34fff120"
+                "reference": "080da3848a931bee73847d21587cf0c89ead2a08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/3fd76a72915685a1970198638dee047f34fff120",
-                "reference": "3fd76a72915685a1970198638dee047f34fff120",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/080da3848a931bee73847d21587cf0c89ead2a08",
+                "reference": "080da3848a931bee73847d21587cf0c89ead2a08",
                 "shasum": ""
             },
             "require": {
@@ -2709,7 +2709,6 @@
             },
             "require-dev": {
                 "justinrainbow/json-schema": "^6.3",
-                "roave/security-advisories": "dev-latest",
                 "wp-cli/db-command": "^2 || ^3",
                 "wp-cli/entity-command": "^2 || ^3",
                 "wp-cli/extension-command": "^2 || ^3",
@@ -2770,8 +2769,8 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-30T14:14:41+00:00",
-            "published-time": "2026-10-30T14:14:48+00:00"
+            "time": "2026-10-30T20:00:53+00:00",
+            "published-time": "2026-10-30T20:00:58+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -8918,7 +8917,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
         "wp-cli/wp-cli": 20
     },
     "prefer-stable": true,
