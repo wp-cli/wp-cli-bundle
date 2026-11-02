@@ -81,7 +81,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-29T09:13:34+00:00"
+            "time": "2026-10-29T09:13:34+00:00",
+            "published-time": "2026-10-29T09:14:11+00:00"
         },
         {
             "name": "eftec/bladeone",
@@ -397,7 +398,8 @@
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
                 "source": "https://github.com/bobthecow/mustache.php/tree/v3.2.0"
             },
-            "time": "2026-05-10T04:13:08+00:00"
+            "time": "2026-05-10T04:13:08+00:00",
+            "published-time": "2026-05-10T04:16:00+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -2059,7 +2061,8 @@
             "support": {
                 "source": "https://github.com/wp-cli/spyc/tree/0.6.7"
             },
-            "time": "2026-10-06T08:59:48+00:00"
+            "time": "2026-10-06T08:59:48+00:00",
+            "published-time": "2026-10-06T09:00:14+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2122,7 +2125,8 @@
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
                 "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.2"
             },
-            "time": "2026-10-07T11:43:52+00:00"
+            "time": "2026-10-07T11:43:52+00:00",
+            "published-time": "2026-10-07T11:44:13+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2688,12 +2692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "4b75cb486273f0b75ca00635a7806fa4d146c794"
+                "reference": "3e06725a21cf52a5bf2efe37c183ad64e0d04f46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/4b75cb486273f0b75ca00635a7806fa4d146c794",
-                "reference": "4b75cb486273f0b75ca00635a7806fa4d146c794",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/3e06725a21cf52a5bf2efe37c183ad64e0d04f46",
+                "reference": "3e06725a21cf52a5bf2efe37c183ad64e0d04f46",
                 "shasum": ""
             },
             "require": {
@@ -2765,7 +2769,8 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-10-31T15:45:48+00:00"
+            "time": "2026-11-02T05:08:06+00:00",
+            "published-time": "2026-11-02T05:08:10+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -8923,5 +8928,5 @@
     "platform-overrides": {
         "php": "7.2.24"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
