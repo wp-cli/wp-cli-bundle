@@ -81,8 +81,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-29T09:13:34+00:00",
-            "published-time": "2026-10-29T09:14:11+00:00"
+            "time": "2026-10-29T09:13:34+00:00"
         },
         {
             "name": "eftec/bladeone",
@@ -398,8 +397,7 @@
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
                 "source": "https://github.com/bobthecow/mustache.php/tree/v3.2.0"
             },
-            "time": "2026-05-10T04:13:08+00:00",
-            "published-time": "2026-05-10T04:16:00+00:00"
+            "time": "2026-05-10T04:13:08+00:00"
         },
         {
             "name": "nb/oxymel",
@@ -2061,8 +2059,7 @@
             "support": {
                 "source": "https://github.com/wp-cli/spyc/tree/0.6.7"
             },
-            "time": "2026-10-06T08:59:48+00:00",
-            "published-time": "2026-10-06T09:00:14+00:00"
+            "time": "2026-10-06T08:59:48+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -2125,8 +2122,7 @@
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
                 "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.2"
             },
-            "time": "2026-10-07T11:43:52+00:00",
-            "published-time": "2026-10-07T11:44:13+00:00"
+            "time": "2026-10-07T11:43:52+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -2769,21 +2765,20 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-11-09T04:24:50+00:00",
-            "published-time": "2026-11-09T04:24:55+00:00"
+            "time": "2026-11-09T04:24:50+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
-            "version": "v1.4.7",
+            "version": "v1.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-config-transformer.git",
-                "reference": "dc99e9eadacd6b9dd091056a98b0868b69a48a28"
+                "reference": "9627eacc7e8c78f31c70b1fbf2507c3e539ceac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/dc99e9eadacd6b9dd091056a98b0868b69a48a28",
-                "reference": "dc99e9eadacd6b9dd091056a98b0868b69a48a28",
+                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/9627eacc7e8c78f31c70b1fbf2507c3e539ceac3",
+                "reference": "9627eacc7e8c78f31c70b1fbf2507c3e539ceac3",
                 "shasum": ""
             },
             "require": {
@@ -2817,9 +2812,9 @@
             "homepage": "https://github.com/wp-cli/wp-config-transformer",
             "support": {
                 "issues": "https://github.com/wp-cli/wp-config-transformer/issues",
-                "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.4.7"
+                "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.4.8"
             },
-            "time": "2026-10-06T06:18:26+00:00"
+            "time": "2026-11-18T09:05:30+00:00"
         }
     ],
     "packages-dev": [
@@ -5194,16 +5189,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.56",
+            "version": "8.5.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "951b085c397146e9811b736f21eea53109aefcc0"
+                "reference": "6f1ab9ab0f98efe77efb4c77cd6df7e5eb6615fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/951b085c397146e9811b736f21eea53109aefcc0",
-                "reference": "951b085c397146e9811b736f21eea53109aefcc0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6f1ab9ab0f98efe77efb4c77cd6df7e5eb6615fc",
+                "reference": "6f1ab9ab0f98efe77efb4c77cd6df7e5eb6615fc",
                 "shasum": ""
             },
             "require": {
@@ -5272,7 +5267,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.56"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.57"
             },
             "funding": [
                 {
@@ -5280,7 +5275,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-10-05T05:42:27+00:00"
+            "time": "2026-11-12T14:32:26+00:00"
         },
         {
             "name": "psr/container",
@@ -6728,8 +6723,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-15T08:38:37+00:00",
-            "published-time": "2026-11-04T10:51:51+00:00"
+            "time": "2026-09-15T08:38:37+00:00"
         },
         {
             "name": "symfony/console",
@@ -6988,8 +6982,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:11:13+00:00",
-            "published-time": "2024-11-27T12:25:26+00:00"
+            "time": "2024-09-25T14:11:13+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -7224,8 +7217,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-03T06:18:36+00:00",
-            "published-time": "2026-11-04T10:51:37+00:00"
+            "time": "2026-11-03T06:18:36+00:00"
         },
         {
             "name": "symfony/finder",
@@ -7371,8 +7363,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T16:19:22+00:00",
-            "published-time": "2026-04-26T14:44:50+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -7624,8 +7615,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-10-28T09:35:49+00:00",
-            "published-time": "2026-10-28T10:07:45+00:00"
+            "time": "2026-10-28T09:35:49+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -7789,8 +7779,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T15:50:05+00:00",
-            "published-time": "2026-09-30T10:23:35+00:00"
+            "time": "2026-09-25T15:50:05+00:00"
         },
         {
             "name": "symfony/polyfill-php81",
@@ -7870,8 +7859,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-26T12:45:58+00:00",
-            "published-time": "2026-05-26T13:40:34+00:00"
+            "time": "2026-05-26T12:45:58+00:00"
         },
         {
             "name": "symfony/polyfill-php84",
@@ -8017,8 +8005,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-01T06:19:14+00:00",
-            "published-time": "2026-10-15T06:52:18+00:00"
+            "time": "2026-09-01T06:19:14+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -8441,8 +8428,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-03T13:19:21+00:00",
-            "published-time": "2026-11-04T10:51:46+00:00"
+            "time": "2026-11-03T13:19:21+00:00"
         },
         {
             "name": "szepeviktor/phpstan-wordpress",
@@ -8627,16 +8613,16 @@
         },
         {
             "name": "wp-cli/wp-cli-tests",
-            "version": "v5.5.2",
+            "version": "v5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-tests.git",
-                "reference": "169fafa678c1a17eea49aa2b6d9e02f8d6c2064f"
+                "reference": "c87933cbe21242d678d1e1450ba7a118283c2f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/169fafa678c1a17eea49aa2b6d9e02f8d6c2064f",
-                "reference": "169fafa678c1a17eea49aa2b6d9e02f8d6c2064f",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-tests/zipball/c87933cbe21242d678d1e1450ba7a118283c2f82",
+                "reference": "c87933cbe21242d678d1e1450ba7a118283c2f82",
                 "shasum": ""
             },
             "require": {
@@ -8719,7 +8705,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-tests/issues",
                 "source": "https://github.com/wp-cli/wp-cli-tests"
             },
-            "time": "2026-11-02T16:22:07+00:00"
+            "time": "2026-11-18T06:32:44+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -8727,12 +8713,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "3fa7d86e65944fe5ccb4fa8bdf2c357178c6c1d8"
+                "reference": "132bab229cdabdfb8036997b29f14d154e0fa385"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/3fa7d86e65944fe5ccb4fa8bdf2c357178c6c1d8",
-                "reference": "3fa7d86e65944fe5ccb4fa8bdf2c357178c6c1d8",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/132bab229cdabdfb8036997b29f14d154e0fa385",
+                "reference": "132bab229cdabdfb8036997b29f14d154e0fa385",
                 "shasum": ""
             },
             "require": {
@@ -8786,7 +8772,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-10-27T17:00:43+00:00"
+            "time": "2026-11-04T18:39:24+00:00"
         },
         {
             "name": "wp-hooks/wordpress-core",
@@ -8949,5 +8935,5 @@
     "platform-overrides": {
         "php": "7.2.24"
     },
-    "plugin-api-version": "2.11.0"
+    "plugin-api-version": "2.9.0"
 }
