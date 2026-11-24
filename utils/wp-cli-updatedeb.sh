@@ -31,7 +31,7 @@ Architecture: all
 Maintainer: Alain Schlesser <alain.schlesser@gmail.com>
 Section: php
 Priority: optional
-Depends: php-cli, php7.2-mysql | php7.3-mysql | php7.4-mysql | php8.0-mysql | php8.1-mysql | php8.2-mysql | php8.3-mysql | php8.4-mysql | php8.5-mysql | php-mysql, default-mysql-client | mariadb-client
+Depends: php-cli, php7.2-mysql | php7.3-mysql | php7.4-mysql | php8.0-mysql | php8.1-mysql | php8.2-mysql | php8.3-mysql | php8.4-mysql | php8.5-mysql | php-mysql, default-mysql-client | mariadb-client | virtual-mysql-client
 Homepage: https://wp-cli.org/
 Description: wp-cli is a set of command-line tools for managing
  WordPress installations. You can update plugins, set up multisite
