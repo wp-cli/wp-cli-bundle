@@ -8,11 +8,11 @@ Feature: Bootstrap WP-CLI
       """
       <?php
       if ( ! class_exists( 'WP_CLI' ) ) {
-        return;
+          return;
       }
-      $autoload = dirname( __FILE__ ) . '/vendor/autoload.php';
+      $autoload = __DIR__ . '/vendor/autoload.php';
       if ( file_exists( $autoload ) ) {
-        require_once $autoload;
+          require_once $autoload;
       }
       WP_CLI::add_command( 'cli', 'CLI_Command', array( 'when' => 'before_wp_load' ) );
       """
@@ -20,9 +20,9 @@ Feature: Bootstrap WP-CLI
       """
       <?php
       class CLI_Command extends WP_CLI_Command {
-        public function version() {
-          WP_CLI::success( "WP-Override-CLI" );
-        }
+          public function version() {
+              WP_CLI::success( 'WP-Override-CLI' );
+          }
       }
       """
     And a cli-override-command/composer.json file:

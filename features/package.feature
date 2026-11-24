@@ -10,9 +10,13 @@ Feature: Install WP-CLI packages
     And a path-command/command.php file:
       """
       <?php
-      WP_CLI::add_command( 'community-command', function(){
-        WP_CLI::success( "success!" );
-      }, array( 'when' => 'before_wp_load' ) );
+      WP_CLI::add_command(
+          'community-command',
+          function () {
+              WP_CLI::success( 'success!' );
+          },
+          array( 'when' => 'before_wp_load' )
+      );
       """
     And a path-command/composer.json file:
       """
@@ -64,9 +68,13 @@ Feature: Install WP-CLI packages
     And a path-command/command.php file:
       """
       <?php
-      WP_CLI::add_command( 'community-command', function(){
-        WP_CLI::success( "success!" );
-      }, array( 'when' => 'before_wp_load' ) );
+      WP_CLI::add_command(
+          'community-command',
+          function () {
+              WP_CLI::success( 'success!' );
+          },
+          array( 'when' => 'before_wp_load' )
+      );
       """
     And a path-command/composer.json file:
       """
@@ -107,9 +115,13 @@ Feature: Install WP-CLI packages
     And a path-command/command.php file:
       """
       <?php
-      WP_CLI::add_command( 'community-command', function(){
-        WP_CLI::success( "success!" );
-      }, array( 'when' => 'before_wp_load' ) );
+      WP_CLI::add_command(
+          'community-command',
+          function () {
+              WP_CLI::success( 'success!' );
+          },
+          array( 'when' => 'before_wp_load' )
+      );
       """
     And a path-command/composer.json file:
       """

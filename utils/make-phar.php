@@ -326,6 +326,10 @@ __HALT_COMPILER();
 EOB
 );
 
+// PHP verifies the signature over the whole archive on every invocation, and
+// SHA-512 is noticeably faster to compute than the SHA-256 default on 64-bit CPUs.
+$phar->setSignatureAlgorithm( Phar::SHA512 );
+
 $phar->stopBuffering();
 
 chmod( DEST_PATH, 0755 ); // Make executable.
