@@ -224,7 +224,6 @@ if ( 'cli' === BUILD ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/mustangostang-spyc' )
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli/php-cli-tools' )
-		->in( WP_CLI_VENDOR_DIR . '/seld/cli-prompt' )
 		->exclude( 'console' )
 		->exclude( 'filesystem' )
 		->exclude( 'composer/ca-bundle' )
@@ -235,9 +234,6 @@ if ( 'cli' === BUILD ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/wp-cli' )
 		->in( WP_CLI_VENDOR_DIR . '/nb/oxymel' )
-		->in( WP_CLI_VENDOR_DIR . '/psr' )
-		->in( WP_CLI_VENDOR_DIR . '/seld' )
-		->in( WP_CLI_VENDOR_DIR . '/justinrainbow/json-schema' )
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
 		->exclude( 'demo' )
@@ -253,10 +249,16 @@ if ( 'cli' === BUILD ) {
 		->exclude( 'composer/composer/src/Composer/Question' )
 		->exclude( 'composer/composer/src/Composer/Repository/Pear' )
 		->exclude( 'composer/composer/src/Composer/SelfUpdate' );
+}
 
-	// required by justinrainbow/json-schema v6+.
-	if ( is_dir( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' ) ) {
-		$finder->in( WP_CLI_VENDOR_DIR . '/marc-mabe/php-enum' );
+// These only exist when a bundled package pulls them in, e.g. composer/composer
+// for older versions of wp-cli/package-command. Finder errors out on missing directories.
+$optional_dirs = 'cli' === BUILD
+	? [ 'seld/cli-prompt' ]
+	: [ 'psr', 'seld', 'justinrainbow/json-schema', 'marc-mabe/php-enum' ];
+foreach ( $optional_dirs as $optional_dir ) {
+	if ( is_dir( WP_CLI_VENDOR_DIR . '/' . $optional_dir ) ) {
+		$finder->in( WP_CLI_VENDOR_DIR . '/' . $optional_dir );
 	}
 }
 
@@ -304,7 +306,7 @@ if ( 'cli' !== BUILD ) {
 }
 
 add_file( $phar, WP_CLI_VENDOR_DIR . '/autoload.php' );
-if ( 'cli' !== BUILD ) {
+if ( 'cli' !== BUILD && is_dir( WP_CLI_VENDOR_DIR . '/composer/composer' ) ) {
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/LICENSE' );
 	add_file( $phar, WP_CLI_VENDOR_DIR . '/composer/composer/res/composer-schema.json' );
 }

@@ -40,6 +40,7 @@
     "wp-cli/wp-cli": "dev-main"
   },
   "require-dev": {
+    "symfony/finder": "^5.4",
     "wp-cli/package-command": "^3",
     "wp-cli/wp-cli-tests": "^5.4.0"
   },
