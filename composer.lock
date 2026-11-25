@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b14f7d16361ad6655125b383a90eb11",
+    "content-hash": "326eb7382ec92dcc6dc2ba80d1cdcb3c",
     "packages": [
         {
             "name": "composer/semver",
@@ -2692,12 +2692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "84301a67a510768f021b71054b5092837553ce68"
+                "reference": "e9266b6939e65c76132d78750ff0a2ab37dd04b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/84301a67a510768f021b71054b5092837553ce68",
-                "reference": "84301a67a510768f021b71054b5092837553ce68",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/e9266b6939e65c76132d78750ff0a2ab37dd04b9",
+                "reference": "e9266b6939e65c76132d78750ff0a2ab37dd04b9",
                 "shasum": ""
             },
             "require": {
@@ -2769,8 +2769,8 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2026-11-23T15:45:23+00:00",
-            "published-time": "2026-11-23T15:45:29+00:00"
+            "time": "2026-11-24T23:10:58+00:00",
+            "published-time": "2026-11-24T23:11:03+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
