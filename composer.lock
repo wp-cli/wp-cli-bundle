@@ -2066,23 +2066,22 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.13.2",
+            "version": "v0.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "5bd08e633ef3be1e21834a971e4c424fafd4f8f5"
+                "reference": "5fb35fc827168f88bc328cbb103ef0a9c7e9e277"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/5bd08e633ef3be1e21834a971e4c424fafd4f8f5",
-                "reference": "5bd08e633ef3be1e21834a971e4c424fafd4f8f5",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/5fb35fc827168f88bc328cbb103ef0a9c7e9e277",
+                "reference": "5fb35fc827168f88bc328cbb103ef0a9c7e9e277",
                 "shasum": ""
             },
             "require": {
                 "php": ">= 7.2.24"
             },
             "require-dev": {
-                "roave/security-advisories": "dev-latest",
                 "wp-cli/wp-cli-tests": "^5"
             },
             "type": "library",
@@ -2123,10 +2122,10 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.2"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.13.3"
             },
-            "time": "2026-10-07T11:43:52+00:00",
-            "published-time": "2026-10-07T11:44:13+00:00"
+            "time": "2026-11-23T15:44:53+00:00",
+            "published-time": "2026-11-26T17:37:08+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
