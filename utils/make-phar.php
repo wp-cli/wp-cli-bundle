@@ -236,7 +236,6 @@ if ( 'cli' === BUILD ) {
 		->in( WP_CLI_VENDOR_DIR . '/nb/oxymel' )
 		->in( WP_CLI_VENDOR_DIR . '/gettext' )
 		->in( WP_CLI_VENDOR_DIR . '/mck89' )
-		->in( WP_CLI_VENDOR_DIR . '/nikic/php-parser/lib' )
 		->exclude( 'demo' )
 		->exclude( 'wp-cli-tests' )
 		->exclude( 'nb/oxymel/OxymelTest.php' )
@@ -256,7 +255,7 @@ if ( 'cli' === BUILD ) {
 // for older versions of wp-cli/package-command. Finder errors out on missing directories.
 $optional_dirs = 'cli' === BUILD
 	? [ 'seld/cli-prompt' ]
-	: [ 'psr', 'seld', 'justinrainbow/json-schema', 'marc-mabe/php-enum' ];
+	: [ 'psr', 'seld', 'justinrainbow/json-schema', 'marc-mabe/php-enum', 'nikic/php-parser/lib' ];
 foreach ( $optional_dirs as $optional_dir ) {
 	if ( is_dir( WP_CLI_VENDOR_DIR . '/' . $optional_dir ) ) {
 		$finder->in( WP_CLI_VENDOR_DIR . '/' . $optional_dir );
