@@ -66,3 +66,13 @@ Feature: Check `utils/make-phar.php` output
       """
       SHA-512
       """
+
+  Scenario: Bundled command assets are included in the Phar
+    Given an empty directory
+    And a new Phar with the same version
+
+    When I run `php -r '$phar = new Phar( "{PHAR_PATH}" ); echo isset( $phar["vendor/wp-cli/i18n-command/assets/block-i18n.json"] ) && isset( $phar["vendor/wp-cli/i18n-command/assets/theme-i18n.json"] ) ? "present" : "missing";'`
+    Then STDOUT should be:
+      """
+      present
+      """

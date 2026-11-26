@@ -275,6 +275,13 @@ $finder
 	->in( WP_CLI_ROOT . '/templates' )
 	->in( WP_CLI_VENDOR_DIR . '/wp-cli/*-command/templates' );
 
+if ( 'cli' !== BUILD ) {
+	$asset_dirs = glob( WP_CLI_VENDOR_DIR . '/wp-cli/*-command/assets', GLOB_ONLYDIR );
+	if ( ! empty( $asset_dirs ) ) {
+		$finder->in( $asset_dirs );
+	}
+}
+
 foreach ( $finder as $file ) {
 	add_file( $phar, $file );
 }
