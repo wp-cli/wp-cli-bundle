@@ -78,7 +78,7 @@ function add_file( $phar, $path ) {
 					'\/nb\/oxymel\/',
 					'-command\/src\/',
 					'\/wp-cli\/[^\n]+?-command\/',
-					'\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)',
+					is_dir( WP_CLI_VENDOR_DIR . '/composer/composer' ) ? '\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)' : '\/symfony\/',
 					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
 				];
@@ -91,7 +91,7 @@ function add_file( $phar, $path ) {
 					'\/phpspec\/',
 					'\/sebastian\/',
 					'\/php-parallel-lint\/',
-					'\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)',
+					is_dir( WP_CLI_VENDOR_DIR . '/composer/composer' ) ? '\/symfony\/(?:config|debug|dependency-injection|event-dispatcher|translation|yaml)' : '\/symfony\/',
 					'\/composer\/spdx-licenses\/',
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
@@ -201,7 +201,6 @@ $finder
 	->in( WP_CLI_VENDOR_DIR . '/eftec/bladeone' )
 	->in( WP_CLI_ROOT . '/bundle/rmccue/requests' )
 	->in( WP_CLI_VENDOR_DIR . '/composer' )
-	->in( WP_CLI_VENDOR_DIR . '/symfony' )
 	->notName( 'behat-tags.php' )
 	->notPath( '#(?:[^/]+-command|php-cli-tools)/vendor/#' ) // For running locally, in case have composer installed or symlinked them.
 	->exclude( 'config' )
@@ -216,6 +215,10 @@ $finder
 	->exclude( 'tests' )
 	->exclude( 'Test' )
 	->exclude( 'Tests' );
+if ( is_dir( WP_CLI_VENDOR_DIR . '/composer/composer' ) && is_dir( WP_CLI_VENDOR_DIR . '/symfony' ) ) {
+	$finder
+		->in( WP_CLI_VENDOR_DIR . '/symfony' );
+}
 if ( is_dir( WP_CLI_VENDOR_DIR . '/react' ) ) {
 	$finder
 		->in( WP_CLI_VENDOR_DIR . '/react' );
@@ -274,6 +277,13 @@ $finder
 	->ignoreDotFiles( false )
 	->in( WP_CLI_ROOT . '/templates' )
 	->in( WP_CLI_VENDOR_DIR . '/wp-cli/*-command/templates' );
+
+if ( 'cli' !== BUILD ) {
+	$asset_dirs = glob( WP_CLI_VENDOR_DIR . '/wp-cli/*-command/assets', GLOB_ONLYDIR );
+	if ( ! empty( $asset_dirs ) ) {
+		$finder->in( $asset_dirs );
+	}
+}
 
 foreach ( $finder as $file ) {
 	add_file( $phar, $file );

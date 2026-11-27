@@ -66,3 +66,23 @@ Feature: Check `utils/make-phar.php` output
       """
       SHA-512
       """
+
+  Scenario: Bundled command assets are included in the Phar
+    Given an empty directory
+    And a new Phar with the same version
+
+    When I run `php -r '$phar = new Phar( "{PHAR_PATH}" ); echo isset( $phar["vendor/wp-cli/i18n-command/assets/block-i18n.json"] ) && isset( $phar["vendor/wp-cli/i18n-command/assets/theme-i18n.json"] ) ? "present" : "missing";'`
+    Then STDOUT should be:
+      """
+      present
+      """
+
+  Scenario: Dev-only Symfony packages are excluded from the Phar
+    Given an empty directory
+    And a new Phar with the same version
+
+    When I run `php -r '$phar = new Phar( "{PHAR_PATH}" ); $found = 0; foreach ( new RecursiveIteratorIterator( $phar ) as $file ) { if ( false !== strpos( $file->getPathname(), "/vendor/symfony/" ) ) { ++$found; } } echo $found;'`
+    Then STDOUT should be:
+      """
+      0
+      """
