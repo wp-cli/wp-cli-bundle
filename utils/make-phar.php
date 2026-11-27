@@ -81,6 +81,7 @@ function add_file( $phar, $path ) {
 					is_dir( WP_CLI_VENDOR_DIR . '/composer/composer' ) ? '\/symfony\/(?:config|console|debug|dependency-injection|event-dispatcher|filesystem|translation|yaml)' : '\/symfony\/',
 					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
+					'\/psr\/log\/',
 				];
 			} else {
 				$strips = [
@@ -96,6 +97,7 @@ function add_file( $phar, $path ) {
 					'\/Composer\/(?:Command\/|Compiler\.php|Console\/|Downloader\/Pear|Installer\/Pear|Question\/|Repository\/Pear|SelfUpdate\/)',
 					'\/(?:dealerdirect|myclabs|squizlabs|wimg)\/',
 					'\/yoast\/',
+					'\/psr\/log\/',
 				];
 			}
 			$strip_res = array_map(
@@ -258,7 +260,18 @@ if ( 'cli' === BUILD ) {
 // for older versions of wp-cli/package-command. Finder errors out on missing directories.
 $optional_dirs = 'cli' === BUILD
 	? [ 'seld/cli-prompt' ]
-	: [ 'psr', 'seld', 'justinrainbow/json-schema', 'marc-mabe/php-enum', 'nikic/php-parser/lib' ];
+	: [ 'seld', 'justinrainbow/json-schema', 'marc-mabe/php-enum', 'nikic/php-parser/lib' ];
+
+// psr/log only comes in through composer/xdebug-handler, which never calls setLogger(). Leave it
+// out (here and from the autoload maps above), so that WP-CLI's autoloader never answers for
+// Psr\Log and a plugin can load its own version of it.
+if ( 'cli' !== BUILD ) {
+	foreach ( glob( WP_CLI_VENDOR_DIR . '/psr/*', GLOB_ONLYDIR ) ?: [] as $psr_dir ) {
+		if ( 'log' !== basename( $psr_dir ) ) {
+			$optional_dirs[] = 'psr/' . basename( $psr_dir );
+		}
+	}
+}
 foreach ( $optional_dirs as $optional_dir ) {
 	if ( is_dir( WP_CLI_VENDOR_DIR . '/' . $optional_dir ) ) {
 		$finder->in( WP_CLI_VENDOR_DIR . '/' . $optional_dir );
