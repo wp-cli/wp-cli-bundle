@@ -56,7 +56,9 @@ Feature: Requests integration with both v1 and v2
   @require-mysql
   Scenario: Current version with WordPress-bundled Requests v1
     Given a WP installation
-    And I run `wp core update --version=5.8 --force`
+    # May produce a warning if the checksums for the version being replaced cannot be retrieved, e.g. for a development build.
+    And I try `wp core update --version=5.8 --force`
+    And the return code should be 0
     And I run `rm -r wp-content/themes/*`
 
     When I run `wp core version`
@@ -99,7 +101,9 @@ Feature: Requests integration with both v1 and v2
       twentyten
       """
     And I try `wp theme activate twentyten`
-    And I run `wp core update --version=6.2 --force`
+    # May produce a warning if the checksums for the version being replaced cannot be retrieved, e.g. for a development build.
+    And I try `wp core update --version=6.2 --force`
+    And the return code should be 0
 
     When I run `wp core version`
     Then STDOUT should contain:
